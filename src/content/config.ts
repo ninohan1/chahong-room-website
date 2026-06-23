@@ -4,7 +4,6 @@ const treatments = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    slug: z.string().optional(),
     category: z.enum(['haircut', 'coloring', 'scalp-care', 'perm', 'foreigner', 'seo']),
     featuredImage: z.string().optional(),
     description: z.string(),
