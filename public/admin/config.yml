@@ -1,0 +1,38 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/treatments"
+public_folder: "/images/treatments"
+
+site_url: https://chahongroommyeongdonghairsalon.com
+logo_url: /images/logo.png
+
+collections:
+  - name: "treatments"
+    label: "Blog Posts & Treatment Tips"
+    label_singular: "Blog Post"
+    folder: "src/content/treatments"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Slug (URL — lowercase, hyphens only)", name: "slug", widget: "string", required: true, hint: "e.g. korean-c-curl-perm" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        required: true
+        options:
+          - { label: "✂️ Haircut & Styling", value: "haircut" }
+          - { label: "🎨 Hair Coloring", value: "coloring" }
+          - { label: "💆 Scalp & Hair Care", value: "scalp-care" }
+          - { label: "🧪 Perm & Texture", value: "perm" }
+          - { label: "🌍 Foreigner Tips", value: "foreigner" }
+          - { label: "⭐ Seoul Tips", value: "seo" }
+      - { label: "Featured Image", name: "featuredImage", widget: "image", required: false }
+      - { label: "Short Description (shown on card)", name: "description", widget: "text", required: true }
+      - { label: "Content (full article)", name: "body", widget: "markdown", required: true }
+      - { label: "SEO Title", name: "seoTitle", widget: "string", required: false }
+      - { label: "Meta Description (max 155 chars)", name: "metaDescription", widget: "text", required: false }
+      - { label: "Publish Date", name: "pubDate", widget: "datetime", required: true }
+      - { label: "Draft (hide from site)", name: "draft", widget: "boolean", default: false }

@@ -1,0 +1,58 @@
+---
+---
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark-bg">
+
+  <!-- Subtle grid bg -->
+  <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#C9A96E 1px, transparent 1px), linear-gradient(90deg, #C9A96E 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+  <!-- Gold orb -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(201,169,110,0.07) 0%, transparent 65%);"></div>
+
+  <!-- Top accent line -->
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-40"></div>
+
+  <div class="relative z-10 text-center px-6 max-w-5xl mx-auto pt-24">
+
+    <!-- Eyebrow -->
+    <p class="section-label fade-up delay-1 mb-6">Myeongdong · Seoul · K-Beauty Studio</p>
+
+    <!-- Main headline -->
+    <h1 class="fade-up delay-2 font-display font-300 leading-[1.02] text-white mb-6" style="font-size: clamp(3rem, 8vw, 6.5rem);">
+      Your Seoul<br/>
+      <em class="text-gold" style="font-style:italic; font-weight:400;">Hair Story</em><br/>
+      Starts Here
+    </h1>
+
+    <div class="gold-line fade-up delay-3"></div>
+
+    <p class="fade-up delay-3 text-sm md:text-base text-text-muted max-w-lg mx-auto leading-relaxed font-300 mb-10">
+      Premium K-beauty hair treatments in the heart of Myeongdong. Expert cuts, perms, coloring &amp; scalp care — with full English service for international visitors.
+    </p>
+
+    <div class="fade-up delay-4 flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Book via WhatsApp</a>
+      <a href="/treatments" class="btn-outline">View All Services</a>
+    </div>
+
+    <!-- Trust badges -->
+    <div class="fade-up delay-5 mt-20 grid grid-cols-3 max-w-md mx-auto gap-6">
+      {[
+        { num: '10+', label: 'Years Experience' },
+        { num: '4.9★', label: 'Guest Rating' },
+        { num: '8+', label: 'Expert Stylists' },
+      ].map(b => (
+        <div class="text-center border-r border-dark-border last:border-0">
+          <p class="font-display text-2xl md:text-3xl text-gold font-400">{b.num}</p>
+          <p class="text-text-muted text-[0.65rem] tracking-widest uppercase mt-1">{b.label}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+    <span class="section-label" style="font-size:0.55rem">Scroll</span>
+    <div class="w-px h-10 bg-gradient-to-b from-gold to-transparent"></div>
+  </div>
+</section>

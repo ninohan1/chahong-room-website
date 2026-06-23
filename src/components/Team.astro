@@ -1,0 +1,42 @@
+---
+const team = [
+  { name: 'Myunghoon Kim', role: 'Director' },
+  { name: 'Ruah Lee', role: 'Director' },
+  { name: 'Seungmi Hong', role: 'Director' },
+  { name: 'Seungyeon Oh', role: 'Designer' },
+  { name: 'Subin Park', role: 'Designer' },
+  { name: 'Juyoung Kim', role: 'Designer' },
+  { name: 'Taerin Lee', role: 'Designer' },
+  { name: 'Heejae Kim', role: 'Designer' },
+];
+const initials = (n: string) => n.split(' ').map(w => w[0]).join('');
+---
+<section id="team" class="py-28 px-6 lg:px-12 max-w-7xl mx-auto">
+  <div class="text-center mb-14">
+    <p class="section-label mb-4">The Professionals</p>
+    <h2 class="font-display text-4xl md:text-5xl font-300">
+      Our <em class="text-gold">Expert</em> Team
+    </h2>
+    <span class="gold-line"></span>
+    <p class="text-text-muted max-w-md mx-auto text-sm font-300">
+      Trained to deliver polished, personalized results reflecting the latest Korean trends while enhancing your unique features.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+    {team.map(m => (
+      <div class="text-center group">
+        <div class="mx-auto mb-4 aspect-square max-w-[160px] border border-dark-border group-hover:border-gold transition-colors overflow-hidden bg-dark-card flex items-center justify-center">
+          <!-- Replace with: <img src={`/images/team/${m.name.toLowerCase().replace(' ','-')}.jpg`} alt={m.name} class="w-full h-full object-cover" /> -->
+          <span class="font-display text-2xl text-gold opacity-30 group-hover:opacity-60 transition-opacity">{initials(m.name)}</span>
+        </div>
+        <p class="section-label mb-1">{m.role}</p>
+        <h3 class="font-display text-sm font-600 group-hover:text-gold transition-colors">{m.name}</h3>
+      </div>
+    ))}
+  </div>
+
+  <div class="text-center mt-12">
+    <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Book with a Stylist</a>
+  </div>
+</section>

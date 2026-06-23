@@ -1,0 +1,68 @@
+---
+const services = [
+  {
+    emoji: '✂️',
+    title: 'Haircut & Styling',
+    href: '/haircut-myeongdong',
+    items: ["Women's Cut", "Men's Cut", "Wolf Cut", "See-through Bangs", "Korean Trend Styling"],
+  },
+  {
+    emoji: '🎨',
+    title: 'Hair Coloring',
+    href: '/hair-color-myeongdong',
+    items: ["Full Color", "Balayage", "Highlights", "Bleaching", "K-pop Fashion Color"],
+  },
+  {
+    emoji: '🧪',
+    title: 'Perm & Texture',
+    href: '/hair-perm-myeongdong',
+    items: ["C-Curl Perm", "S-Curl Perm", "Digital Perm", "Setting Perm", "Japanese Straightening"],
+  },
+  {
+    emoji: '💆',
+    title: 'Scalp & Hair Care',
+    href: '/scalp-treatment-myeongdong',
+    items: ["Head Spa", "Scalp Treatment", "Keratin", "Hair Clinic", "Anti-Hair Loss"],
+  },
+];
+---
+
+<section id="services" class="py-28 bg-dark-card border-y border-dark-border">
+  <div class="px-6 lg:px-12 max-w-7xl mx-auto">
+
+    <div class="text-center mb-16">
+      <p class="section-label mb-4">What We Offer</p>
+      <h2 class="font-display text-4xl md:text-5xl font-300 leading-tight">
+        Our <em class="text-gold">Signature</em> Services
+      </h2>
+      <span class="gold-line"></span>
+      <p class="text-text-muted max-w-md mx-auto text-sm font-300">
+        Every service is crafted with Korean beauty expertise and personalized care for each guest.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      {services.map(s => (
+        <a href={s.href} class="border border-dark-border hover:border-gold transition-all duration-300 group p-7 block">
+          <span class="text-3xl mb-5 block">{s.emoji}</span>
+          <h3 class="font-display text-lg font-400 mb-5 group-hover:text-gold transition-colors">{s.title}</h3>
+          <ul class="space-y-2">
+            {s.items.map(item => (
+              <li class="flex items-center gap-2 text-text-muted text-xs font-300">
+                <span class="text-gold text-[0.4rem]">◆</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p class="mt-6 text-gold text-xs tracking-widest uppercase group-hover:text-gold-light transition-colors">Learn More →</p>
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="/pricing" class="btn-outline mr-4">View Pricing</a>
+      <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Book Now</a>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,174 @@
+---
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about-us', label: 'About' },
+  {
+    label: 'Services',
+    dropdown: [
+      { href: '/haircut-myeongdong', label: '✂️ Haircut' },
+      { href: '/hair-color-myeongdong', label: '🎨 Hair Color' },
+      { href: '/hair-perm-myeongdong', label: '🧪 Perm' },
+      { href: '/digital-perm-myeongdong', label: '🧪 Digital Perm' },
+      { href: '/scalp-treatment-myeongdong', label: '💆 Scalp Care' },
+      { href: '/hair-treatment-myeongdong', label: '💆 Hair Treatment' },
+      { href: '/keratin-treatment-myeongdong', label: '💆 Keratin' },
+      { href: '/mens-haircut-myeongdong', label: '✂️ Men\'s Cut' },
+      { href: '/womens-haircut-myeongdong', label: '✂️ Women\'s Cut' },
+    ]
+  },
+  { href: '/treatments', label: 'Blog' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/how-to-book', label: 'How to Book' },
+  { href: '/contact-us', label: 'Contact' },
+];
+---
+
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-400">
+  <div class="header-wrap flex items-center justify-between px-6 lg:px-12 py-5 transition-all duration-300">
+
+    <!-- ── Logo ── -->
+    <a href="/" class="logo-mark group">
+      <!-- SVG Logo Mark -->
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="38" height="38" fill="#C9A96E" rx="2"/>
+        <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle"
+          font-family="Cormorant Garamond, serif" font-size="16" font-weight="600" fill="#080808">
+          CR
+        </text>
+      </svg>
+      <div class="flex flex-col leading-none">
+        <span class="font-display text-base font-600 tracking-[0.12em] text-white group-hover:text-gold transition-colors">CHAHONG ROOM</span>
+        <span class="font-mono text-[0.52rem] tracking-[0.22em] text-gold uppercase mt-0.5">Myeongdong · Seoul</span>
+      </div>
+    </a>
+
+    <!-- ── Desktop Nav ── -->
+    <nav class="hidden xl:flex items-center gap-8">
+      {navLinks.map(link => (
+        link.dropdown ? (
+          <div class="relative group/dropdown">
+            <button class="nav-link flex items-center gap-1">
+              {link.label}
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M1 1l4 4 4-4"/>
+              </svg>
+            </button>
+            <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 bg-dark-card border border-dark-border opacity-0 invisible group-hover/dropdown:opacity-100 group-hover/dropdown:visible transition-all duration-200 py-2">
+              {link.dropdown.map(item => (
+                <a href={item.href} class="block px-5 py-2.5 text-xs text-text-muted hover:text-gold hover:bg-dark-border/50 tracking-wider transition-colors">{item.label}</a>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <a href={link.href} class="nav-link">{link.label}</a>
+        )
+      ))}
+    </nav>
+
+    <!-- ── CTA ── -->
+    <div class="hidden xl:flex items-center gap-4">
+      <a href="https://wa.me/821047944623" target="_blank" class="flex items-center gap-2 text-xs text-gold hover:text-gold-light transition-colors tracking-wider">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        +82 10-4794-4623
+      </a>
+      <a href="https://wa.me/821047944623" target="_blank" class="btn-gold text-[0.68rem]">Book Now</a>
+    </div>
+
+    <!-- ── Mobile Toggle ── -->
+    <button id="menu-btn" class="xl:hidden p-2 flex flex-col gap-[5px]" aria-label="Menu">
+      <span class="w-6 h-px bg-white block transition-all duration-300" id="bar1"></span>
+      <span class="w-6 h-px bg-white block transition-all duration-300" id="bar2"></span>
+      <span class="w-4 h-px bg-white block transition-all duration-300" id="bar3"></span>
+    </button>
+  </div>
+
+  <!-- ── Mobile Menu ── -->
+  <div id="mobile-menu" class="xl:hidden hidden bg-dark-bg border-t border-dark-border px-6 py-8 max-h-[80vh] overflow-y-auto">
+    <nav class="flex flex-col gap-1 mb-8">
+      {navLinks.map(link => (
+        link.dropdown ? (
+          <div>
+            <p class="nav-link py-3 border-b border-dark-border/50 text-text-muted">{link.label}</p>
+            <div class="pl-4 flex flex-col gap-1 mt-1">
+              {link.dropdown.map(item => (
+                <a href={item.href} class="block py-2 text-xs text-text-muted hover:text-gold transition-colors tracking-wider mobile-close">{item.label}</a>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <a href={link.href} class="nav-link py-3 border-b border-dark-border/50 mobile-close">{link.label}</a>
+        )
+      ))}
+    </nav>
+    <a href="https://wa.me/821047944623" target="_blank" class="btn-gold w-full text-center block">Book via WhatsApp</a>
+  </div>
+</header>
+
+<style>
+  .nav-link {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+    background: none;
+    cursor: pointer;
+  }
+  .nav-link:hover { color: #C9A96E; }
+
+  #site-header.scrolled .header-wrap {
+    background: rgba(8,8,8,0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid #1A1A1A;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+</style>
+
+<script>
+  const header = document.getElementById('site-header');
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const bar1 = document.getElementById('bar1');
+  const bar2 = document.getElementById('bar2');
+  const bar3 = document.getElementById('bar3');
+
+  let menuOpen = false;
+
+  window.addEventListener('scroll', () => {
+    header?.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  menuBtn?.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    mobileMenu?.classList.toggle('hidden', !menuOpen);
+    if (bar1 && bar2 && bar3) {
+      if (menuOpen) {
+        bar1.style.transform = 'translateY(6px) rotate(45deg)';
+        bar2.style.opacity = '0';
+        bar3.style.transform = 'translateY(-6px) rotate(-45deg)';
+        bar3.style.width = '24px';
+      } else {
+        bar1.style.transform = '';
+        bar2.style.opacity = '1';
+        bar3.style.transform = '';
+        bar3.style.width = '16px';
+      }
+    }
+  });
+
+  document.querySelectorAll('.mobile-close').forEach(el => {
+    el.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      menuOpen = false;
+      if (bar1 && bar2 && bar3) {
+        bar1.style.transform = '';
+        bar2.style.opacity = '1';
+        bar3.style.transform = '';
+        bar3.style.width = '16px';
+      }
+    });
+  });
+</script>

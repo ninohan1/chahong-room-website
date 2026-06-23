@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Contact from '../components/Contact.astro';
+---
+<Layout
+  title="About CHAHONG ROOM | Premium Hair Salon in Myeongdong Seoul"
+  description="Learn about CHAHONG ROOM — a flagship Korean beauty salon in Myeongdong, Seoul. Our story, our team, and our commitment to international guests."
+>
+  <Nav />
+  <main class="pt-28">
+
+    <section class="py-20 px-6 text-center border-b border-dark-border">
+      <p class="section-label mb-4">Our Story</p>
+      <h1 class="font-display text-5xl md:text-7xl font-300 mb-6">
+        About <em class="text-gold">CHAHONG ROOM</em>
+      </h1>
+      <span class="gold-line"></span>
+      <p class="text-text-muted max-w-xl mx-auto text-sm font-300 leading-relaxed">
+        A flagship premium Korean beauty salon in the heart of Myeongdong — where craft, care, and international hospitality come together.
+      </p>
+    </section>
+
+    <section class="py-24 px-6 lg:px-12 max-w-5xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+        <div>
+          <p class="section-label mb-4">The Brand</p>
+          <h2 class="font-display text-3xl font-300 mb-6">CHAHONG Beauty</h2>
+          <div class="space-y-4 text-text-muted text-sm font-300 leading-relaxed">
+            <p>CHAHONG ROOM is part of CHAHONG — one of Korea's most respected beauty brands, founded by master stylist and beauty entrepreneur Cha Hong. Known for redefining Korean hair aesthetics, CHAHONG has shaped the look of countless K-pop stars, K-drama actors, and everyday people who want to feel their best.</p>
+            <p>The Myeongdong branch was established with a clear mission: to bring world-class Korean hair and beauty services to the international visitors who make Myeongdong one of Seoul's most visited destinations.</p>
+            <p>Our team of directors and designers trains continuously to stay at the cutting edge of Korean beauty trends — while also developing the cross-cultural communication skills that make international guests feel truly understood.</p>
+          </div>
+        </div>
+        <div class="space-y-5">
+          {[
+            { label: 'Founded', value: '10+ Years in Korean Beauty' },
+            { label: 'Location', value: '5F, 13 Myeong-dong-gil, Jung-gu, Seoul' },
+            { label: 'Team', value: '8 Expert Directors & Designers' },
+            { label: 'Languages', value: 'Korean · English · Japanese · Chinese' },
+            { label: 'Rating', value: '4.9★ — International Guest Reviews' },
+            { label: 'Hours', value: 'Mon–Sun, 10:00 AM–7:00 PM' },
+          ].map(item => (
+            <div class="flex gap-5 border-b border-dark-border pb-5">
+              <span class="section-label w-28 flex-shrink-0">{item.label}</span>
+              <span class="text-sm text-white font-300">{item.value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 px-6 bg-dark-card border-y border-dark-border text-center">
+      <p class="section-label mb-4">Our Promise</p>
+      <h2 class="font-display text-3xl font-300 max-w-2xl mx-auto mb-6">
+        Every international guest deserves to feel <em class="text-gold">completely at ease.</em>
+      </h2>
+      <p class="text-text-muted max-w-xl mx-auto text-sm font-300 leading-relaxed mb-10">
+        We know visiting a hair salon abroad can feel intimidating. At CHAHONG ROOM, we've built every part of our service — from WhatsApp booking to English consultation to aftercare advice — around making you feel confident and cared for from the first message to the final look.
+      </p>
+      <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Start with a WhatsApp Message</a>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-xl hover:bg-[#1EBE5A] hover:scale-110 transition-all" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
