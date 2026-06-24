@@ -4,10 +4,19 @@ import ServiceLayout from '../layouts/ServiceLayout.astro';
 <ServiceLayout
   title="Haircut Myeongdong"
   seoTitle="Haircut Myeongdong | Expert Korean Haircut at CHAHONG ROOM Seoul"
-  metaDesc="Get an expert Korean haircut in Myeongdong at CHAHONG ROOM. Wolf cut, layered cut, see-through bangs and trend styling. English-friendly, international visitors welcome."
+  metaDesc="Get an expert Korean haircut in Myeongdong at CHAHONG ROOM. Wolf cut, layered cut, see-through bangs. English-friendly, international visitors welcome."
   emoji="✂️"
   category="Haircut & Styling"
-  intro="From precision wolf cuts to see-through bangs and layered styles — our expert directors and designers craft Korean haircuts that complement your face shape and lifestyle."
+  heroImage="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80"
+  intro="From precision wolf cuts to see-through bangs — our expert stylists craft Korean haircuts that complement your face shape and lifestyle."
+  pricing={[
+    { service: "Women's Haircut", price: "From ₩40,000" },
+    { service: "Men's Haircut", price: "From ₩25,000" },
+    { service: "Bang Trim / See-through Bangs", price: "From ₩10,000" },
+    { service: "Wolf Cut / Layered Cut", price: "From ₩50,000" },
+    { service: "Blow Dry & Styling", price: "From ₩20,000" },
+    { service: "Korean Trend Styling", price: "From ₩30,000" },
+  ]}
   benefits={[
     "Full English consultation before every haircut — no language barrier",
     "Personalized face-shape analysis to find your best style",
@@ -17,10 +26,10 @@ import ServiceLayout from '../layouts/ServiceLayout.astro';
     "Walk-ins welcome, or book via WhatsApp for priority service",
   ]}
   faqs={[
-    { q: "How long does a haircut take?", a: "Standard cuts take 30–60 minutes. If you're adding styling, a blow-dry, or a bang perm, allow 90 minutes." },
-    { q: "Can I bring reference photos?", a: "Absolutely — we encourage it. Pinterest, Instagram, or Google Images all work great. The more specific your reference, the better we can match your vision." },
-    { q: "Do you cut men's hair too?", a: "Yes! We specialize in Korean men's haircuts including the two-block cut, undercut, textured crops, and men's perm." },
-    { q: "Is English service really available?", a: "Yes — our stylists are trained to consult and communicate fully in English. You will not feel lost or misunderstood." },
+    { q: "How long does a haircut take?", a: "Standard cuts take 30–60 minutes. If you're adding styling or a bang perm, allow 90 minutes." },
+    { q: "Can I bring reference photos?", a: "Absolutely — we encourage it. Pinterest, Instagram, or Google Images all work great." },
+    { q: "Do you cut men's hair too?", a: "Yes! We specialize in Korean men's haircuts including the two-block cut, undercut, and men's perm." },
+    { q: "Is English service really available?", a: "Yes — our stylists consult and communicate fully in English. You will not feel lost or misunderstood." },
   ]}
   relatedLinks={[
     { href: '/mens-haircut-myeongdong', label: "Men's Haircut" },
@@ -28,7 +37,6 @@ import ServiceLayout from '../layouts/ServiceLayout.astro';
     { href: '/korean-style-haircut-myeongdong', label: "Korean Style Cut" },
     { href: '/hair-perm-myeongdong', label: "Add a Perm" },
     { href: '/hair-color-myeongdong', label: "Add Color" },
-    { href: '/best-hair-salon-myeongdong', label: "Best Salon Myeongdong" },
   ]}
 >
   <span slot="headline">Haircut &amp; Styling<br/><em class="text-gold">in Myeongdong</em></span>
