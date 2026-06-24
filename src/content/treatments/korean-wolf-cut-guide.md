@@ -1,7 +1,7 @@
 ---
 title: "Korean Wolf Cut — The Complete Guide for International Visitors"
 category: "haircut"
-featuredImage: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80"
+featuredImage: "https://picsum.photos/seed/wolfcut/800/450"
 description: "Everything you need to know about the Korean Wolf Cut — what it is, who it suits, and why CHAHONG ROOM in Myeongdong is the best place to get it in Seoul."
 seoTitle: "Korean Wolf Cut Guide | CHAHONG ROOM Myeongdong Hair Salon"
 metaDescription: "Learn about the Korean Wolf Cut trend and book yours at CHAHONG ROOM Myeongdong. English-friendly stylists, expert cuts, international visitors welcome."
