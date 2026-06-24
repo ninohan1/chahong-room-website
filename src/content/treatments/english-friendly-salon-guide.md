@@ -1,7 +1,7 @@
 ---
 title: "English-Friendly Hair Salon in Myeongdong — What to Expect at CHAHONG ROOM"
-slug: "english-friendly-salon-guide"
 category: "foreigner"
+featuredImage: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&q=80"
 description: "Nervous about visiting a Korean hair salon with a language barrier? Here's exactly what to expect at CHAHONG ROOM — Seoul's most foreigner-friendly hair studio."
 seoTitle: "English Speaking Hair Salon Myeongdong | CHAHONG ROOM Seoul"
 metaDescription: "CHAHONG ROOM is Myeongdong's top English-speaking hair salon. No language barrier, expert Korean stylists, easy WhatsApp booking for international tourists in Seoul."
@@ -21,10 +21,10 @@ Our consultation process is fully available in **English** — and we regularly 
 Book your appointment via WhatsApp at **+82 10-4794-4623**. Send us your reference photos and tell us what you're hoping to achieve. We'll confirm your appointment and let you know how long to allow.
 
 ### When You Arrive
-Our reception team will greet you and offer you a seat. You'll be offered a beverage, and your stylist will come to meet you shortly. No awkward guessing — just clear, friendly communication.
+Our reception team will greet you and offer you a seat. You'll be offered a beverage, and your stylist will come to meet you shortly.
 
 ### The Consultation
-Your stylist will review your reference photos, assess your hair texture and condition, and make honest recommendations about what's achievable in one session. We never overpromise.
+Your stylist will review your reference photos, assess your hair texture and condition, and make honest recommendations about what's achievable in one session.
 
 ### During the Service
 You can relax, watch Netflix, or chat. Your stylist will check in throughout to make sure you're comfortable and happy with progress.
@@ -35,8 +35,8 @@ Your stylist will walk you through aftercare advice in English and recommend pro
 ## Tips for International Visitors
 
 - **Bring reference photos** — Google Images or Instagram saves work great
-- **Be clear about your lifestyle** — how much time you spend on styling matters for recommending cuts
+- **Be clear about your lifestyle** — how much time you spend on styling matters
 - **Ask questions freely** — no question is too basic
-- **Book ahead for color** — walk-ins are welcome for cuts, but color should be pre-booked
+- **Book ahead for color** — walk-ins welcome for cuts, but color should be pre-booked
 
 We're located just **2 minutes from Myeongdong Station Exit 6** — easy to find, easy to visit.
