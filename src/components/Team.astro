@@ -1,16 +1,14 @@
 ---
 const team = [
-  { name: 'Myunghoon Kim', role: 'Director' },
-  { name: 'Ruah Lee', role: 'Director' },
-  { name: 'Seungmi Hong', role: 'Director' },
-  { name: 'Seungyeon Oh', role: 'Designer' },
-  { name: 'Subin Park', role: 'Designer' },
-  { name: 'Juyoung Kim', role: 'Designer' },
-  { name: 'Taerin Lee', role: 'Designer' },
-  { name: 'Heejae Kim', role: 'Designer' },
+  { name: 'Myunghoon Kim', role: 'Director', seed: 'myunghoon' },
+  { name: 'Ruah Lee', role: 'Director', seed: 'ruahlee' },
+  { name: 'Seungmi Hong', role: 'Director', seed: 'seungmi' },
+  { name: 'Seungyeon Oh', role: 'Designer', seed: 'seungyeon' },
+  { name: 'Subin Park', role: 'Designer', seed: 'subinpark' },
+  { name: 'Juyoung Kim', role: 'Designer', seed: 'juyoung' },
+  { name: 'Taerin Lee', role: 'Designer', seed: 'taerin' },
+  { name: 'Heejae Kim', role: 'Designer', seed: 'heejae' },
 ];
-const initials = (n: string) => n.split(' ').map(w => w[0]).join('');
-const avatarColors = ['#C9A96E', '#B8955A', '#D4B483', '#A07840', '#C9A96E', '#B8955A', '#D4B483', '#A07840'];
 ---
 <section id="team" class="py-28 px-6 lg:px-12 max-w-7xl mx-auto">
   <div class="text-center mb-14">
@@ -25,28 +23,15 @@ const avatarColors = ['#C9A96E', '#B8955A', '#D4B483', '#A07840', '#C9A96E', '#B
   </div>
 
   <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-    {team.map((m, i) => (
+    {team.map((m) => (
       <div class="text-center group">
         <div class="mx-auto mb-4 aspect-square max-w-[180px] border border-dark-border group-hover:border-gold transition-colors overflow-hidden relative bg-dark-card">
-          <!-- Silhouette Avatar -->
-          <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-            <rect width="180" height="180" fill="#0F0F0F"/>
-            <!-- Body silhouette -->
-            <ellipse cx="90" cy="75" rx="28" ry="28" fill={avatarColors[i]}  opacity="0.3"/>
-            <ellipse cx="90" cy="155" rx="50" ry="35" fill={avatarColors[i]} opacity="0.3"/>
-            <!-- Initials overlay -->
-            <text
-              x="90" y="82"
-              text-anchor="middle"
-              dominant-baseline="middle"
-              font-family="serif"
-              font-size="22"
-              font-weight="400"
-              fill={avatarColors[i]}
-              opacity="0.9"
-            >{initials(m.name)}</text>
-          </svg>
-          <!-- Hover overlay -->
+          <img
+            src={`https://api.dicebear.com/7.x/personas/svg?seed=${m.seed}&backgroundColor=1a1a1a&skinColor=f2d3b1,e8b88a,d4956a&hair=ballerinaHair,buns,curlyBun,curlyHighTop,extraLong,froBun,long,longAfro,longBangs,longCurly&clothingColor=C9A96E,B8955A,A07840`}
+            alt={m.name}
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
           <div class="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
             <a href="https://wa.me/821047944623" target="_blank" class="text-[0.6rem] tracking-widest uppercase text-gold border border-gold px-3 py-1.5 hover:bg-gold hover:text-dark-bg transition-colors">
               Book Now
