@@ -1,7 +1,7 @@
 ---
 title: "English-Friendly Hair Salon in Myeongdong — What to Expect at CHAHONG ROOM"
 category: "foreigner"
-featuredImage: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&q=80"
+featuredImage: "https://picsum.photos/seed/salon/800/450"
 description: "Nervous about visiting a Korean hair salon with a language barrier? Here's exactly what to expect at CHAHONG ROOM — Seoul's most foreigner-friendly hair studio."
 seoTitle: "English Speaking Hair Salon Myeongdong | CHAHONG ROOM Seoul"
 metaDescription: "CHAHONG ROOM is Myeongdong's top English-speaking hair salon. No language barrier, expert Korean stylists, easy WhatsApp booking for international tourists in Seoul."
