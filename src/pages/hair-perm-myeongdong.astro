@@ -7,7 +7,16 @@ import ServiceLayout from '../layouts/ServiceLayout.astro';
   metaDesc="Expert Korean perm services in Myeongdong. C-curl, S-curl, digital perm at CHAHONG ROOM Seoul. English consultation for international tourists."
   emoji="🧪"
   category="Perm & Texture"
-  intro="From soft C-curl waves to dramatic digital perms — our perm specialists customize every treatment for your hair texture, length and desired lifestyle."
+  heroImage="https://images.unsplash.com/photo-1519735777090-ec97162dc266?w=1200&q=80"
+  intro="From soft C-curl waves to dramatic digital perms — our perm specialists customize every treatment for your hair texture and desired lifestyle."
+  pricing={[
+    { service: "C-Curl Perm", price: "From ₩120,000" },
+    { service: "S-Curl Perm", price: "From ₩120,000" },
+    { service: "Digital Perm", price: "From ₩150,000" },
+    { service: "Setting Perm", price: "From ₩130,000" },
+    { service: "Bang Perm", price: "From ₩30,000" },
+    { service: "Japanese Straightening", price: "From ₩200,000" },
+  ]}
   benefits={[
     "C-curl, S-curl, digital perm, setting perm and bang perm all available",
     "Personalized rod selection based on your face shape and hair length",
@@ -17,8 +26,8 @@ import ServiceLayout from '../layouts/ServiceLayout.astro';
     "Results last 4–6 months with proper aftercare",
   ]}
   faqs={[
-    { q: "What's the difference between C-curl and digital perm?", a: "C-curl uses cold rods at room temperature for a soft, natural wave at the ends. Digital perm uses heated rods for a more defined, lasting curl from mid-length to ends." },
-    { q: "Can I perm colored hair?", a: "Depending on your hair's condition, yes. We assess this in consultation. Highly bleached hair may need conditioning first." },
+    { q: "What's the difference between C-curl and digital perm?", a: "C-curl uses cold rods for soft, natural waves at ends. Digital perm uses heated rods for defined, lasting curls from mid-length." },
+    { q: "Can I perm colored hair?", a: "Depending on condition, yes. We assess this in consultation. Highly bleached hair may need conditioning first." },
     { q: "How long does a perm take?", a: "2–4 hours depending on hair length and perm type." },
     { q: "How do I maintain my perm?", a: "Avoid washing for 48 hours, use sulfate-free shampoo, air-dry when possible, and apply curl cream daily." },
   ]}
@@ -27,7 +36,6 @@ import ServiceLayout from '../layouts/ServiceLayout.astro';
     { href: '/setting-perm-myeongdong', label: "Setting Perm" },
     { href: '/haircut-myeongdong', label: "Add a Haircut" },
     { href: '/hair-straightening-myeongdong', label: "Hair Straightening" },
-    { href: '/best-hair-salon-myeongdong', label: "Best Salon Myeongdong" },
   ]}
 >
   <span slot="headline">Hair Perm<br/><em class="text-gold">in Myeongdong</em></span>
