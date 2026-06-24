@@ -1,7 +1,7 @@
 ---
 title: "Head Spa in Myeongdong — Why Every Seoul Visitor Should Try It"
-slug: "head-spa-benefits"
 category: "scalp-care"
+featuredImage: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80"
 description: "CHAHONG ROOM's signature Head Spa is one of Seoul's most relaxing experiences. Discover what it includes, who it's for, and why your scalp will thank you."
 seoTitle: "Head Spa Myeongdong | Scalp Treatment at CHAHONG ROOM Seoul"
 metaDescription: "Experience the best head spa in Myeongdong at CHAHONG ROOM Seoul. Deep scalp cleansing, aromatherapy massage and hair treatment. English-friendly service."
