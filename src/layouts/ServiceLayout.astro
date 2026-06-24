@@ -15,25 +15,56 @@ interface Props {
   benefits: string[];
   faqs: { q: string; a: string }[];
   relatedLinks: { href: string; label: string }[];
+  heroImage?: string;
+  pricing?: { service: string; price: string }[];
 }
 
-const { title, seoTitle, metaDesc, emoji, category, intro, benefits, faqs, relatedLinks } = Astro.props;
+const { title, seoTitle, metaDesc, emoji, category, intro, benefits, faqs, relatedLinks, heroImage, pricing } = Astro.props;
 ---
 <Layout title={seoTitle} description={metaDesc}>
   <Nav />
   <main class="pt-28 pb-0">
 
-    <!-- Hero -->
-    <section class="py-20 px-6 text-center border-b border-dark-border">
-      <span class="text-5xl block mb-6">{emoji}</span>
-      <p class="section-label mb-4">{category}</p>
-      <h1 class="font-display text-4xl md:text-6xl font-300 max-w-3xl mx-auto leading-tight mb-6">
-        <slot name="headline" />
-      </h1>
-      <span class="gold-line"></span>
-      <p class="text-text-muted max-w-xl mx-auto text-sm font-300 leading-relaxed mb-10">{intro}</p>
-      <a href="https://wa.me/821047944623" target="_blank" class="btn-gold mr-4">Book Now</a>
-      <a href="/pricing" class="btn-outline">View Pricing</a>
+    <!-- Hero with Image -->
+    <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0">
+        {heroImage ? (
+          <img src={heroImage} alt={title} class="w-full h-full object-cover opacity-25" loading="eager" />
+        ) : (
+          <div class="w-full h-full bg-dark-card"></div>
+        )}
+        <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(8,8,8,0.6) 0%, rgba(8,8,8,0.85) 60%, #080808 100%);"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-4xl mx-auto py-20">
+        <span class="text-5xl block mb-6">{emoji}</span>
+        <p class="section-label mb-4">{category}</p>
+        <h1 class="font-display text-4xl md:text-6xl font-300 leading-tight mb-6">
+          <slot name="headline" />
+        </h1>
+        <span class="gold-line"></span>
+        <p class="text-text-muted max-w-xl mx-auto text-sm font-300 leading-relaxed mb-10">{intro}</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">📱 Book via WhatsApp</a>
+          <a href="/pricing" class="btn-outline">View Full Pricing</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="border-y border-dark-border bg-dark-card py-8 px-6">
+      <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        {[
+          { num: '10+', label: 'Years Experience' },
+          { num: '4.9★', label: 'Guest Rating' },
+          { num: '100%', label: 'English Service' },
+          { num: 'Free', label: 'Consultation' },
+        ].map(b => (
+          <div>
+            <p class="font-display text-2xl text-gold">{b.num}</p>
+            <p class="text-text-muted text-xs tracking-widest uppercase mt-1">{b.label}</p>
+          </div>
+        ))}
+      </div>
     </section>
 
     <!-- Benefits -->
@@ -45,6 +76,54 @@ const { title, seoTitle, metaDesc, emoji, category, intro, benefits, faqs, relat
           <div class="flex items-start gap-4 p-5 border border-dark-border hover:border-gold transition-colors group">
             <span class="font-mono text-xs text-gold mt-0.5 flex-shrink-0">0{i+1}</span>
             <p class="text-text-muted text-sm font-300 leading-relaxed">{b}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Pricing Table -->
+    <section class="py-20 px-6 lg:px-12 max-w-3xl mx-auto border-t border-dark-border">
+      <p class="section-label mb-4 text-center">Transparent Pricing</p>
+      <h2 class="font-display text-3xl font-300 text-center mb-4">
+        Service <em class="text-gold">Pricing</em>
+      </h2>
+      <p class="text-text-muted text-xs text-center mb-10 font-300">Prices in Korean Won (KRW). Final price may vary by hair length & condition.</p>
+      <div class="border border-dark-border overflow-hidden">
+        {(pricing ?? [
+          { service: 'Basic Service', price: 'From ₩30,000' },
+          { service: 'Standard Service', price: 'From ₩60,000' },
+          { service: 'Premium Service', price: 'From ₩100,000' },
+          { service: 'Full Package', price: 'From ₩150,000' },
+        ]).map((item, i) => (
+          <div class={`flex items-center justify-between px-6 py-4 ${i % 2 === 0 ? 'bg-dark-card' : 'bg-dark-bg'} border-b border-dark-border last:border-0 hover:bg-dark-border/30 transition-colors`}>
+            <span class="text-sm text-text-muted font-300">{item.service}</span>
+            <span class="text-sm text-gold font-mono font-500">{item.price}</span>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 border border-gold/30 text-center">
+        <p class="text-text-muted text-xs font-300 mb-4">Need an exact quote? Send us your reference photo via WhatsApp!</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold text-xs">Get a Free Quote</a>
+      </div>
+    </section>
+
+    <!-- Process Steps -->
+    <section class="py-20 px-6 lg:px-12 max-w-3xl mx-auto border-t border-dark-border">
+      <p class="section-label mb-4 text-center">How It Works</p>
+      <h2 class="font-display text-3xl font-300 text-center mb-12">Our <em class="text-gold">Process</em></h2>
+      <div class="space-y-8">
+        {[
+          { step: '01', title: 'Book via WhatsApp', desc: 'Send us a message with your desired service and reference photos. We\'ll confirm your appointment within a few hours.' },
+          { step: '02', title: 'English Consultation', desc: 'Your stylist will discuss your hair goals, assess your hair condition, and recommend the best approach for you.' },
+          { step: '03', title: 'Expert Treatment', desc: 'Relax while our skilled stylists work their magic using premium Korean products and techniques.' },
+          { step: '04', title: 'Aftercare Guidance', desc: 'We\'ll walk you through aftercare tips in English so you can maintain your new look at home.' },
+        ].map(s => (
+          <div class="flex gap-6 items-start group">
+            <span class="font-mono text-3xl text-gold/20 group-hover:text-gold/50 transition-colors flex-shrink-0">{s.step}</span>
+            <div class="border-l border-dark-border pl-6 group-hover:border-gold transition-colors">
+              <h3 class="font-display text-lg font-400 mb-2">{s.title}</h3>
+              <p class="text-text-muted text-sm font-300 leading-relaxed">{s.desc}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -71,7 +150,7 @@ const { title, seoTitle, metaDesc, emoji, category, intro, benefits, faqs, relat
 
     <!-- Related Services -->
     <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto border-t border-dark-border">
-      <p class="section-label mb-6 text-center">Explore More</p>
+      <p class="section-label mb-6 text-center">Explore More Services</p>
       <div class="flex flex-wrap gap-3 justify-center">
         {relatedLinks.map(l => (
           <a href={l.href} class="btn-outline text-[0.68rem]">{l.label}</a>
