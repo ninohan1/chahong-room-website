@@ -1,14 +1,15 @@
 ---
 const team = [
-  { name: 'Myunghoon Kim', role: 'Director', seed: 'myunghoon' },
-  { name: 'Ruah Lee', role: 'Director', seed: 'ruahlee' },
-  { name: 'Seungmi Hong', role: 'Director', seed: 'seungmi' },
-  { name: 'Seungyeon Oh', role: 'Designer', seed: 'seungyeon' },
-  { name: 'Subin Park', role: 'Designer', seed: 'subinpark' },
-  { name: 'Juyoung Kim', role: 'Designer', seed: 'juyoung' },
-  { name: 'Taerin Lee', role: 'Designer', seed: 'taerin' },
-  { name: 'Heejae Kim', role: 'Designer', seed: 'heejae' },
+  { name: 'Myunghoon Kim', role: 'Director' },
+  { name: 'Ruah Lee', role: 'Director' },
+  { name: 'Seungmi Hong', role: 'Director' },
+  { name: 'Seungyeon Oh', role: 'Designer' },
+  { name: 'Subin Park', role: 'Designer' },
+  { name: 'Juyoung Kim', role: 'Designer' },
+  { name: 'Taerin Lee', role: 'Designer' },
+  { name: 'Heejae Kim', role: 'Designer' },
 ];
+const initials = (n: string) => n.split(' ').map(w => w[0]).join('');
 ---
 <section id="team" class="py-28 px-6 lg:px-12 max-w-7xl mx-auto">
   <div class="text-center mb-14">
@@ -25,14 +26,15 @@ const team = [
   <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
     {team.map((m) => (
       <div class="text-center group">
-        <div class="mx-auto mb-4 aspect-square max-w-[180px] border border-dark-border group-hover:border-gold transition-colors overflow-hidden relative bg-dark-card">
-          <img
-            src={`https://api.dicebear.com/7.x/personas/svg?seed=${m.seed}&backgroundColor=1a1a1a&skinColor=f2d3b1,e8b88a,d4956a&hair=ballerinaHair,buns,curlyBun,curlyHighTop,extraLong,froBun,long,longAfro,longBangs,longCurly&clothingColor=C9A96E,B8955A,A07840`}
-            alt={m.name}
-            class="w-full h-full object-cover"
-            loading="lazy"
-          />
-          <div class="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+        <div class="mx-auto mb-4 aspect-square max-w-[180px] border border-dark-border group-hover:border-gold transition-all duration-300 overflow-hidden relative bg-dark-card flex flex-col items-center justify-center">
+          <!-- Gold circle with initials -->
+          <div class="w-20 h-20 rounded-full border-2 border-gold/40 flex items-center justify-center mb-3 group-hover:border-gold transition-colors">
+            <span class="font-display text-2xl text-gold/60 group-hover:text-gold transition-colors">{initials(m.name)}</span>
+          </div>
+          <!-- Scissors icon -->
+          <span class="text-gold/20 group-hover:text-gold/40 transition-colors text-lg">✂️</span>
+          <!-- Hover overlay -->
+          <div class="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
             <a href="https://wa.me/821047944623" target="_blank" class="text-[0.6rem] tracking-widest uppercase text-gold border border-gold px-3 py-1.5 hover:bg-gold hover:text-dark-bg transition-colors">
               Book Now
             </a>
