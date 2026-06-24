@@ -119,18 +119,30 @@
 
 <script>
   const form = document.getElementById('contact-form') as HTMLFormElement;
-  const ok   = document.getElementById('form-ok');
+  const ok = document.getElementById('form-ok');
 
-  form?.addEventListener('submit', async (e) => {
+  form?.addEventListener('submit', (e) => {
     e.preventDefault();
-    const data = new FormData(form);
-    try {
-      const res = await fetch('/', { method: 'POST', body: data, headers: { 'Content-Type': 'application/x-www-form-urlencoded' } });
-      if (res.ok) { ok?.classList.remove('hidden'); form.reset(); }
-    } catch {
+    const data = new URLSearchParams();
+    new FormData(form).forEach((value, key) => {
+      data.append(key, value.toString());
+    });
+    data.append('form-name', 'contact');
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: data.toString(),
+    })
+    .then(() => {
       ok?.classList.remove('hidden');
       form.reset();
-    }
-    setTimeout(() => ok?.classList.add('hidden'), 6000);
+      setTimeout(() => ok?.classList.add('hidden'), 6000);
+    })
+    .catch(() => {
+      ok?.classList.remove('hidden');
+      form.reset();
+      setTimeout(() => ok?.classList.add('hidden'), 6000);
+    });
   });
 </script>
