@@ -1,7 +1,7 @@
 ---
 title: "C-Curl Perm in Myeongdong — Seoul's Most Popular Wave Treatment"
 category: "perm"
-featuredImage: "https://images.unsplash.com/photo-1519735777090-ec97162dc266?w=800&q=80"
+featuredImage: "https://picsum.photos/seed/perm/800/450"
 description: "The C-Curl Perm is Korea's most beloved wave treatment — soft, natural-looking curls that frame your face beautifully. Book yours at CHAHONG ROOM Myeongdong."
 seoTitle: "C-Curl Perm Myeongdong | Korean Perm at CHAHONG ROOM Seoul"
 metaDescription: "Get a Korean C-Curl Perm in Myeongdong at CHAHONG ROOM Seoul. Natural waves, English consultation, expert stylists for international tourists."
