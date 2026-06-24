@@ -1,7 +1,7 @@
 ---
 title: "Balayage in Seoul — Korean vs. Western Technique Explained"
-slug: "balayage-seoul-guide"
 category: "coloring"
+featuredImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80"
 description: "Wondering how Korean balayage differs from what you get at home? At CHAHONG ROOM Myeongdong, our colorists blend both techniques for a softer, more natural result."
 seoTitle: "Balayage Seoul Myeongdong | Hair Color at CHAHONG ROOM"
 metaDescription: "Get expert balayage in Myeongdong Seoul at CHAHONG ROOM. Korean colorists, English consultation, natural highlights for international visitors."
