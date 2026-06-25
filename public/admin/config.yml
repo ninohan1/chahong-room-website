@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: ninohan1/chahong-room-website
   branch: main
 
 media_folder: "public/images/treatments"
@@ -17,7 +18,6 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string", required: true }
-      - { label: "Slug (URL — lowercase, hyphens only)", name: "slug", widget: "string", required: true, hint: "e.g. korean-c-curl-perm" }
       - label: "Category"
         name: "category"
         widget: "select"
@@ -30,9 +30,9 @@ collections:
           - { label: "🌍 Foreigner Tips", value: "foreigner" }
           - { label: "⭐ Seoul Tips", value: "seo" }
       - { label: "Featured Image", name: "featuredImage", widget: "image", required: false }
-      - { label: "Short Description (shown on card)", name: "description", widget: "text", required: true }
-      - { label: "Content (full article)", name: "body", widget: "markdown", required: true }
+      - { label: "Short Description", name: "description", widget: "text", required: true }
+      - { label: "Content", name: "body", widget: "markdown", required: true }
       - { label: "SEO Title", name: "seoTitle", widget: "string", required: false }
-      - { label: "Meta Description (max 155 chars)", name: "metaDescription", widget: "text", required: false }
+      - { label: "Meta Description", name: "metaDescription", widget: "text", required: false }
       - { label: "Publish Date", name: "pubDate", widget: "datetime", required: true }
-      - { label: "Draft (hide from site)", name: "draft", widget: "boolean", default: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
