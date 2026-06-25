@@ -1,37 +1,42 @@
 ---
 ---
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark-bg">
-
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden" style="background-color: #F7F4EF;">
   <!-- Subtle grid bg -->
-  <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#C9A96E 1px, transparent 1px), linear-gradient(90deg, #C9A96E 1px, transparent 1px); background-size: 60px 60px;"></div>
-
-  <!-- Gold orb -->
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(201,169,110,0.07) 0%, transparent 65%);"></div>
-
+  <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(#A88F7B 1px, transparent 1px), linear-gradient(90deg, #A88F7B 1px, transparent 1px); background-size: 60px 60px;"></div>
+  <!-- Warm orb -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(168,143,123,0.10) 0%, transparent 65%);"></div>
   <!-- Top accent line -->
-  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-40"></div>
+  <div class="absolute top-0 left-0 right-0 h-px opacity-40" style="background: linear-gradient(to right, transparent, #A88F7B, transparent);"></div>
 
   <div class="relative z-10 text-center px-6 max-w-5xl mx-auto pt-24">
-
     <!-- Eyebrow -->
-    <p class="section-label fade-up delay-1 mb-6">Myeongdong · Seoul · K-Beauty Studio</p>
+    <p class="fade-up delay-1 mb-6 tracking-widest uppercase text-xs font-medium" style="color: #8D8076;">Myeongdong · Seoul · K-Beauty Studio</p>
 
     <!-- Main headline -->
-    <h1 class="fade-up delay-2 font-display font-300 leading-[1.02] text-white mb-6" style="font-size: clamp(3rem, 8vw, 6.5rem);">
+    <h1 class="fade-up delay-2 font-display leading-[1.02] mb-6" style="font-size: clamp(3rem, 8vw, 6.5rem); color: #3A3838; font-weight: 300;">
       Your Seoul<br/>
-      <em class="text-gold" style="font-style:italic; font-weight:400;">Hair Story</em><br/>
+      <em style="color: #A88F7B; font-style: italic; font-weight: 400;">Hair Story</em><br/>
       Starts Here
     </h1>
 
-    <div class="gold-line fade-up delay-3"></div>
+    <!-- Divider line -->
+    <div class="fade-up delay-3 mx-auto mb-8" style="width: 60px; height: 1px; background: #A88F7B;"></div>
 
-    <p class="fade-up delay-3 text-sm md:text-base text-text-muted max-w-lg mx-auto leading-relaxed font-300 mb-10">
+    <p class="fade-up delay-3 max-w-lg mx-auto leading-relaxed mb-10" style="color: #8D8076; font-size: 1rem;">
       Premium K-beauty hair treatments in the heart of Myeongdong. Expert cuts, perms, coloring &amp; scalp care — with full English service for international visitors.
     </p>
 
     <div class="fade-up delay-4 flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Book via WhatsApp</a>
-      <a href="/treatments" class="btn-outline">View All Services</a>
+      <a href="https://wa.me/821047944623" target="_blank"
+        style="background: #A88F7B; color: white; font-weight: 600; padding: 14px 32px; border-radius: 6px; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; display: inline-block; transition: background 0.2s;"
+        onmouseover="this.style.background='#8D8076'" onmouseout="this.style.background='#A88F7B'">
+        Book via WhatsApp
+      </a>
+      <a href="/treatments"
+        style="border: 1.5px solid #A88F7B; color: #A88F7B; font-weight: 600; padding: 14px 32px; border-radius: 6px; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; display: inline-block; transition: all 0.2s;"
+        onmouseover="this.style.background='#A88F7B'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#A88F7B'">
+        View All Services
+      </a>
     </div>
 
     <!-- Trust badges -->
@@ -41,18 +46,17 @@
         { num: '4.9★', label: 'Guest Rating' },
         { num: '8+', label: 'Expert Stylists' },
       ].map(b => (
-        <div class="text-center border-r border-dark-border last:border-0">
-          <p class="font-display text-2xl md:text-3xl text-gold font-400">{b.num}</p>
-          <p class="text-text-muted text-[0.65rem] tracking-widest uppercase mt-1">{b.label}</p>
+        <div class="text-center" style="border-right: 1px solid #DCCDBD;">
+          <p class="font-display text-2xl md:text-3xl font-400" style="color: #A88F7B;">{b.num}</p>
+          <p class="text-[0.65rem] tracking-widest uppercase mt-1" style="color: #8D8076;">{b.label}</p>
         </div>
       ))}
     </div>
-
   </div>
 
   <!-- Scroll indicator -->
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-    <span class="section-label" style="font-size:0.55rem">Scroll</span>
-    <div class="w-px h-10 bg-gradient-to-b from-gold to-transparent"></div>
+    <span class="tracking-widest uppercase" style="font-size:0.55rem; color: #8D8076;">Scroll</span>
+    <div class="w-px h-10" style="background: linear-gradient(to bottom, #A88F7B, transparent);"></div>
   </div>
 </section>
