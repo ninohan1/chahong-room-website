@@ -2,12 +2,13 @@ backend:
   name: github
   repo: ninohan1/chahong-room-website
   branch: main
+  base_url: https://chahong-room-website.vercel.app
+  auth_endpoint: api/auth
 
 media_folder: "public/images/treatments"
 public_folder: "/images/treatments"
 
 site_url: https://chahongroommyeongdonghairsalon.com
-logo_url: /images/logo.png
 
 collections:
   - name: "treatments"
