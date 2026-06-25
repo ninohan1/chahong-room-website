@@ -1,15 +1,15 @@
 ---
 ---
-<section id="contact" class="py-28 bg-dark-card border-y border-dark-border">
+<section id="contact" class="py-28" style="background: #F7F4EF; border-top: 1px solid #DCCDBD; border-bottom: 1px solid #DCCDBD;">
   <div class="px-6 lg:px-12 max-w-5xl mx-auto">
 
     <div class="text-center mb-14">
-      <p class="section-label mb-4">Get In Touch</p>
-      <h2 class="font-display text-4xl md:text-5xl font-300">
-        Book a <em class="text-gold">Consultation</em>
+      <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #8D8076;">Get In Touch</p>
+      <h2 class="font-display text-4xl md:text-5xl" style="color: #3A3838; font-weight: 300;">
+        Book a <em style="color: #A88F7B;">Consultation</em>
       </h2>
-      <span class="gold-line"></span>
-      <p class="text-text-muted max-w-md mx-auto text-sm font-300">
+      <div class="mx-auto my-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      <p class="max-w-md mx-auto text-sm" style="color: #8D8076;">
         Not sure which treatment is right for you? Fill in the form and our experts will recommend the best option.
       </p>
     </div>
@@ -24,125 +24,125 @@
           { label: 'Hours', value: 'Monday – Sunday\n10:00 AM – 7:00 PM', href: null },
           { label: 'Instagram', value: '@ch.myeongdong', href: 'https://www.instagram.com/ch.myeongdong/' },
         ].map(info => (
-          <div class="border-l-2 border-gold pl-5">
-            <p class="section-label mb-1.5">{info.label}</p>
+          <div class="pl-5" style="border-left: 2px solid #A88F7B;">
+            <p class="mb-1.5 tracking-widest uppercase text-xs font-medium" style="color: #8D8076;">{info.label}</p>
             {info.href ? (
-              <a href={info.href} target="_blank" class="font-display text-base text-gold hover:text-gold-light transition-colors whitespace-pre-line">{info.value}</a>
+              <a href={info.href} target="_blank" class="font-display text-base transition-colors whitespace-pre-line" style="color: #A88F7B;">{info.value}</a>
             ) : (
-              <p class="text-sm text-text-muted font-300 whitespace-pre-line leading-relaxed">{info.value}</p>
+              <p class="text-sm whitespace-pre-line leading-relaxed" style="color: #8D8076;">{info.value}</p>
             )}
           </div>
         ))}
 
-        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold w-full text-center block mt-4">
+        <a href="https://wa.me/821047944623" target="_blank" class="w-full text-center block mt-4" style="background: #A88F7B; color: white; font-weight: 600; padding: 14px 32px; border-radius: 6px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em;">
           💬 Chat on WhatsApp
         </a>
       </div>
 
       <!-- Form -->
       <div class="lg:col-span-3">
-        <form id="contact-form" name="contact" method="POST" data-netlify="true" class="space-y-5">
-          <input type="hidden" name="form-name" value="contact" />
+        <form id="contact-form" class="space-y-5">
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+          <input type="hidden" name="subject" value="New inquiry from CHAHONG ROOM website" />
+          <input type="checkbox" name="botcheck" style="display:none" />
 
           <div class="grid md:grid-cols-2 gap-5">
             <div>
-              <label class="section-label mb-2" for="name">Full Name</label>
+              <label class="mb-2 block tracking-widest uppercase text-xs font-medium" style="color: #8D8076;" for="name">Full Name</label>
               <input type="text" id="name" name="name" required placeholder="Your name" class="f-input" />
             </div>
             <div>
-              <label class="section-label mb-2" for="email">Email</label>
+              <label class="mb-2 block tracking-widest uppercase text-xs font-medium" style="color: #8D8076;" for="email">Email</label>
               <input type="email" id="email" name="email" required placeholder="your@email.com" class="f-input" />
             </div>
           </div>
 
           <div>
-            <label class="section-label mb-2" for="phone">WhatsApp / Phone</label>
+            <label class="mb-2 block tracking-widest uppercase text-xs font-medium" style="color: #8D8076;" for="phone">WhatsApp / Phone</label>
             <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8901" class="f-input" />
           </div>
 
           <div>
-            <p class="section-label mb-3">Services Needed</p>
+            <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #8D8076;">Services Needed</p>
             <div class="grid grid-cols-2 gap-2.5">
               {['Haircut', 'Hair Color', 'Perm', 'Digital Perm', 'Scalp Treatment', 'Head Spa', 'Keratin', 'Other'].map(s => (
-                <label class="flex items-center gap-2 px-3 py-2.5 border border-dark-border hover:border-gold transition-colors cursor-pointer text-xs text-text-muted hover:text-gold">
-                  <input type="checkbox" name="services" value={s} class="accent-gold" /> {s}
+                <label class="flex items-center gap-2 px-3 py-2.5 cursor-pointer text-xs transition-colors" style="border: 1px solid #DCCDBD; color: #8D8076;">
+                  <input type="checkbox" name="services" value={s} /> {s}
                 </label>
               ))}
             </div>
           </div>
 
           <div>
-            <p class="section-label mb-3">Preferred Contact</p>
+            <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #8D8076;">Preferred Contact</p>
             <div class="flex gap-5">
-              <label class="flex items-center gap-2 text-xs text-text-muted cursor-pointer hover:text-gold">
-                <input type="radio" name="contact_pref" value="whatsapp" checked class="accent-gold" /> WhatsApp
+              <label class="flex items-center gap-2 text-xs cursor-pointer" style="color: #8D8076;">
+                <input type="radio" name="contact_pref" value="whatsapp" checked /> WhatsApp
               </label>
-              <label class="flex items-center gap-2 text-xs text-text-muted cursor-pointer hover:text-gold">
-                <input type="radio" name="contact_pref" value="email" class="accent-gold" /> Email
+              <label class="flex items-center gap-2 text-xs cursor-pointer" style="color: #8D8076;">
+                <input type="radio" name="contact_pref" value="email" /> Email
               </label>
             </div>
           </div>
 
           <div>
-            <label class="section-label mb-2" for="message">Message</label>
+            <label class="mb-2 block tracking-widest uppercase text-xs font-medium" style="color: #8D8076;" for="message">Message</label>
             <textarea id="message" name="message" rows="4" placeholder="Tell us about your hair goals..." class="f-input resize-none"></textarea>
           </div>
 
-          <button type="submit" class="btn-gold w-full">Send Inquiry</button>
+          <button type="submit" class="w-full" style="background: #A88F7B; color: white; font-weight: 600; padding: 14px 32px; border-radius: 6px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; border: none; width: 100%;">Send Inquiry</button>
 
-          <div id="form-ok" class="hidden p-4 border border-gold text-gold text-xs text-center tracking-wider">
+          <div id="form-ok" class="hidden p-4 text-xs text-center tracking-wider" style="border: 1px solid #A88F7B; color: #A88F7B;">
             ✓ Thank you! We'll reply as soon as possible.
           </div>
         </form>
       </div>
     </div>
-
   </div>
 </section>
 
 <style>
   .f-input {
     width: 100%;
-    background: #080808;
-    border: 1px solid #1A1A1A;
-    color: #fff;
+    background: #FFFFFF;
+    border: 1px solid #DCCDBD;
+    color: #3A3838;
     padding: 11px 13px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.85rem;
     outline: none;
     transition: border-color 0.2s;
     display: block;
+    border-radius: 4px;
   }
-  .f-input:focus { border-color: #C9A96E; }
-  .f-input::placeholder { color: #444; }
+  .f-input:focus { border-color: #A88F7B; }
+  .f-input::placeholder { color: #DCCDBD; }
 </style>
 
 <script>
   const form = document.getElementById('contact-form') as HTMLFormElement;
   const ok = document.getElementById('form-ok');
 
-  form?.addEventListener('submit', (e) => {
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const data = new URLSearchParams();
-    new FormData(form).forEach((value, key) => {
-      data.append(key, value.toString());
-    });
-    data.append('form-name', 'contact');
+    const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
 
-    fetch('/', {
+    const data = Object.fromEntries(new FormData(form));
+    const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: data.toString(),
-    })
-    .then(() => {
-      ok?.classList.remove('hidden');
-      form.reset();
-      setTimeout(() => ok?.classList.add('hidden'), 6000);
-    })
-    .catch(() => {
-      ok?.classList.remove('hidden');
-      form.reset();
-      setTimeout(() => ok?.classList.add('hidden'), 6000);
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
     });
+    const json = await res.json();
+
+    if (json.success) {
+      ok?.classList.remove('hidden');
+      form.reset();
+      setTimeout(() => ok?.classList.add('hidden'), 6000);
+    }
+    btn.disabled = false;
+    btn.textContent = 'Send Inquiry';
   });
 </script>
