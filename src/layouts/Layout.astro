@@ -1,143 +1,57 @@
----
-interface Props {
-  title?: string;
-  description?: string;
-  ogImage?: string;
-}
-const {
-  title = 'CHAHONG ROOM | Best Hair Salon in Myeongdong Seoul',
-  description = 'Premium Korean hair salon in Myeongdong, Seoul. Expert haircut, perm, coloring, scalp treatment & head spa. English-friendly service for international visitors.',
-  ogImage = '/images/og-image.jpg',
-} = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
----
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content={description} />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:image" content={ogImage} />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content={canonicalURL} />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="canonical" href={canonicalURL} />
-  <title>{title}</title>
-  <!-- Schema.org Local Business -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "HairSalon",
-      "name": "CHAHONG ROOM Myeongdong Hair Salon",
-      "url": "https://chahongroommyeongdonghairsalon.com",
-      "telephone": "+821047944623",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "5F, 13 Myeong-dong-gil",
-        "addressLocality": "Jung-gu",
-        "addressRegion": "Seoul",
-        "addressCountry": "KR"
-      },
-      "openingHours": "Mo-Su 10:00-19:00",
-      "priceRange": "$$",
-      "image": "https://chahongroommyeongdonghairsalon.com/images/og-image.jpg"
-    }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
-</head>
-<body class="bg-dark-bg text-white font-body antialiased">
-  <slot />
-</body>
-</html>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style is:global>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
-  /* ── Logo SVG ── */
-  .logo-mark {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
+  :root {
+    --bg: #F7F4EF;
+    --beige: #DCCDBD;
+    --brown: #A88F7B;
+    --dark-brown: #8D8076;
+    --dark: #3A3838;
   }
 
-  /* ── Typography ── */
-  .section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: #C9A96E;
-    display: block;
+  body {
+    background-color: var(--bg);
+    color: var(--dark);
+    font-family: 'Poppins', system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* ── Divider ── */
-  .gold-line {
-    display: block;
-    width: 36px;
-    height: 1px;
-    background: linear-gradient(90deg, #C9A96E, transparent);
-    margin: 18px auto;
-  }
-  .gold-line-left {
-    margin-left: 0;
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--dark);
+    line-height: 1.2;
   }
 
-  /* ── Buttons ── */
-  .btn-gold {
-    display: inline-block;
-    padding: 13px 34px;
-    background: #C9A96E;
-    color: #080808;
-    font-family: 'DM Sans', sans-serif;
+  h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+  h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); }
+  h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
+
+  .btn-primary {
+    background: var(--brown);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.25s ease;
-    cursor: pointer;
-    border: none;
-  }
-  .btn-gold:hover { background: #E8D5B0; transform: translateY(-1px); }
-
-  .btn-outline {
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-size: 14px;
     display: inline-block;
-    padding: 12px 33px;
-    border: 1px solid #C9A96E;
-    color: #C9A96E;
-    font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--dark-brown); }
+
+  nav a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
     font-weight: 500;
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.25s ease;
+    color: var(--dark);
   }
-  .btn-outline:hover { background: #C9A96E; color: #080808; }
 
-  /* ── Scrollbar ── */
-  ::-webkit-scrollbar { width: 3px; }
-  ::-webkit-scrollbar-track { background: #080808; }
-  ::-webkit-scrollbar-thumb { background: #C9A96E44; }
-  ::-webkit-scrollbar-thumb:hover { background: #C9A96E; }
-
-  ::selection { background: #C9A96E22; }
-
-  /* ── Animations ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
+  .hero-bg {
+    background: var(--brown);
+    color: white;
   }
-  .fade-up { animation: fadeUp 0.75s ease forwards; }
-  .delay-1 { animation-delay: 0.1s; opacity: 0; }
-  .delay-2 { animation-delay: 0.2s; opacity: 0; }
-  .delay-3 { animation-delay: 0.35s; opacity: 0; }
-  .delay-4 { animation-delay: 0.5s; opacity: 0; }
-  .delay-5 { animation-delay: 0.65s; opacity: 0; }
 </style>
