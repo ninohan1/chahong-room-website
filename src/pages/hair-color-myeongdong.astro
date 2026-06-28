@@ -1,42 +1,264 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Hair Color Myeongdong"
-  seoTitle="Hair Color Myeongdong | Korean Coloring at CHAHONG ROOM Seoul"
-  metaDesc="Expert hair coloring in Myeongdong Seoul. Balayage, highlights, bleaching, K-pop fashion color at CHAHONG ROOM. English consultation for international visitors."
-  emoji="🎨"
-  category="Hair Coloring"
-  heroImage="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80"
-  intro="From natural balayage to vivid K-pop fashion color — our Korean colorists create precise, on-trend results while protecting your hair health."
-  pricing={[
-    { service: "Full Color", price: "From ₩80,000" },
-    { service: "Root Touch-up", price: "From ₩50,000" },
-    { service: "Toning", price: "From ₩40,000" },
-    { service: "Highlights / Balayage", price: "From ₩120,000" },
-    { service: "Bleaching (1 round)", price: "From ₩80,000" },
-    { service: "K-Pop Fashion Color", price: "From ₩100,000" },
-  ]}
-  benefits={[
-    "Full-color, balayage, highlights, babylights, ombre and toning all available",
-    "Bleaching service with bond-strengthening treatment included",
-    "Korean ash, beige, rose and grey tones — specialist colorists",
-    "K-pop fashion colors: vivid pink, blue, violet, silver and more",
-    "Root touch-up and color correction services available",
-    "English consultation — bring your reference photos and we match them",
-  ]}
-  faqs={[
-    { q: "How long does hair coloring take?", a: "Simple toning: 1–2 hours. Balayage: 2–4 hours. Full bleach + color: 4–6 hours." },
-    { q: "Can I bleach and color in one visit?", a: "Depending on your hair condition, yes. Our colorist will assess and advise on what's safely achievable." },
-    { q: "Will color damage my hair?", a: "All color services include a conditioning treatment. We use professional Korean products to minimize damage." },
-    { q: "How long will the color last?", a: "Standard color: 6–8 weeks. Balayage: 3–5 months. Fashion colors: 4–8 weeks." },
-  ]}
-  relatedLinks={[
-    { href: '/haircut-myeongdong', label: "Add a Haircut" },
-    { href: '/hair-treatment-myeongdong', label: "Hair Treatment" },
-    { href: '/keratin-treatment-myeongdong', label: "Keratin Treatment" },
-    { href: '/best-hair-salon-myeongdong', label: "Best Salon Myeongdong" },
-  ]}
+<Layout
+  title="Hair Color Myeongdong | Korean Hair Coloring at CHAHONG ROOM Seoul"
+  description="Expert hair coloring in Myeongdong Seoul. Balayage, highlights, bleaching, milk tea brown, K-pop fashion color. Full English service at CHAHONG ROOM."
 >
-  <span slot="headline">Hair Coloring<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero -->
+    <section class="relative min-h-[70vh] flex items-center overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1400&q=80" alt="Hair coloring Myeongdong Seoul" class="w-full h-full object-cover" style="opacity: 0.35;" loading="eager" />
+        <div class="absolute inset-0" style="background: linear-gradient(to right, #F7F4EF 50%, transparent 100%);"></div>
+      </div>
+      <div class="relative z-10 px-6 lg:px-12 max-w-7xl mx-auto w-full py-20">
+        <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Hair Coloring · Myeongdong · Seoul</p>
+        <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5rem); color: #3A3838; font-weight: 300; line-height: 1.1;">
+          Korean Hair Coloring<br/>
+          <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+        </h1>
+        <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        <p class="max-w-xl leading-relaxed mb-8" style="color: #8D8076; font-size: 1rem;">
+          From natural milk tea brown to vivid K-pop fashion colors — our Korean colorists create precise, on-trend results tailored to your hair type and skin tone, with full English consultation.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+          <a href="/pricing" class="btn-outline">View Pricing</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="py-8 px-6" style="background: #FFFFFF; border-top: 1px solid #DCCDBD; border-bottom: 1px solid #DCCDBD;">
+      <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        {[
+          { num: '10+', label: 'Years Experience' },
+          { num: '4.9★', label: 'Guest Rating' },
+          { num: '100%', label: 'English Service' },
+          { num: 'Free', label: 'Consultation' },
+        ].map(b => (
+          <div>
+            <p class="font-display text-2xl" style="color: #A88F7B;">{b.num}</p>
+            <p class="text-xs tracking-widest uppercase mt-1" style="color: #8D8076;">{b.label}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Color Services -->
+    <section class="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Our Color Services</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Every Color Technique <em style="color: #A88F7B;">Available</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          {
+            img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80',
+            title: 'Balayage',
+            desc: 'Hand-painted highlights for a natural sun-kissed gradient. The most popular color technique at CHAHONG ROOM — perfect for international visitors who want a low-maintenance, natural-looking result that grows out beautifully.',
+            price: 'From ₩150,000',
+            time: '2–4 hours'
+          },
+          {
+            img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80',
+            title: 'Highlights & Foiling',
+            desc: 'Precise foil highlights for defined, uniform lightening. Create dimension and brightness with partial or full highlights. Popular choices include money piece highlights and face-framing pieces.',
+            price: 'From ₩120,000',
+            time: '2–3 hours'
+          },
+          {
+            img: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80',
+            title: 'Full Color',
+            desc: 'All-over single color application. Perfect for covering grey, switching to a new shade or refreshing your current color. Popular Korean shades: milk tea brown, dark chocolate, copper, ash brown.',
+            price: 'From ₩80,000',
+            time: '1.5–2.5 hours'
+          },
+          {
+            img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80',
+            title: 'Bleaching',
+            desc: 'Safe lightening for dark Asian hair using bond-protecting treatments throughout. Required before achieving platinum blonde, silver, pastel or vivid fashion colors. Honest consultation on what\'s achievable in one session.',
+            price: 'From ₩120,000',
+            time: '2–4 hours'
+          },
+          {
+            img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80',
+            title: 'Toning & Gloss',
+            desc: 'Neutralize brassy or yellow tones after bleaching. Achieve perfect ash, beige, silver or warm tones. Popular Korean tones: ash grey, milk tea beige, lavender silver. Also available as a standalone gloss treatment for extra shine.',
+            price: 'From ₩40,000',
+            time: '30–60 minutes'
+          },
+          {
+            img: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80',
+            title: 'K-Pop Fashion Color',
+            desc: 'Bold, vivid fashion colors inspired by Korean celebrities and K-pop idols. Pink, blue, violet, silver, green and more. Requires bleaching first. Our colorists match your reference photos for the most accurate result.',
+            price: 'From ₩100,000',
+            time: '3–6 hours'
+          },
+        ].map(s => (
+          <div class="overflow-hidden" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #FFFFFF;">
+            <div style="height: 180px; overflow: hidden;">
+              <img src={s.img} alt={s.title + ' hair color Seoul'} class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div class="p-5">
+              <h3 class="font-display text-lg mb-2" style="color: #3A3838;">{s.title}</h3>
+              <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">{s.desc}</p>
+              <div class="flex items-center justify-between">
+                <span class="text-sm font-semibold" style="color: #A88F7B;">{s.price}</span>
+                <span class="text-xs" style="color: #8D8076;">⏱ {s.time}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Korean Color Trends -->
+    <section class="py-20 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">2025 Trends</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Most Popular <em style="color: #A88F7B;">Korean Color Trends</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            { color: '#C4956A', name: 'Milk Tea Brown', desc: 'Korea\'s most-requested shade. Warm, golden-beige brown that flatters all skin tones. Grows out naturally without harsh lines.' },
+            { color: '#8B7355', name: 'Dark Chocolate', desc: 'Rich, deep brown with a glossy finish. Minimal processing — no bleaching needed for most clients. Timeless and sophisticated.' },
+            { color: '#B8A99A', name: 'Ash Beige', desc: 'Cool-toned beige with an elegant, muted finish. Requires light bleaching for best results. Extremely popular in 2025.' },
+            { color: '#9E9E9E', name: 'Ash Grey / Silver', desc: 'Statement look requiring full bleaching. Stunning on dark Asian hair when lifted properly. Very popular K-pop inspired look.' },
+          ].map(t => (
+            <div class="p-5" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+              <div class="w-12 h-12 rounded-full mb-4" style={`background: ${t.color};`}></div>
+              <h3 class="font-display text-base mb-2" style="color: #3A3838;">{t.name}</h3>
+              <p class="text-sm leading-relaxed" style="color: #8D8076;">{t.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Table -->
+    <section class="py-20 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Hair Color <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW. Final price depends on hair length & complexity.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Root Touch-Up', price: 'From ₩50,000', time: '1–1.5 hrs' },
+          { service: 'Full Color', price: 'From ₩80,000', time: '1.5–2.5 hrs' },
+          { service: 'Toning / Gloss', price: 'From ₩40,000', time: '30–60 min' },
+          { service: 'Highlights (Partial)', price: 'From ₩80,000', time: '1.5–2.5 hrs' },
+          { service: 'Highlights (Full)', price: 'From ₩130,000', time: '2–3 hrs' },
+          { service: 'Balayage', price: 'From ₩150,000', time: '2–4 hrs' },
+          { service: 'Money Piece', price: 'From ₩60,000', time: '1–1.5 hrs' },
+          { service: 'Bleaching (1 round)', price: 'From ₩120,000', time: '2–4 hrs' },
+          { service: 'Bleach + Toner', price: 'From ₩150,000', time: '3–5 hrs' },
+          { service: 'K-Pop Fashion Color', price: 'From ₩100,000', time: '3–6 hrs' },
+          { service: 'Ombre', price: 'From ₩120,000', time: '2–3 hrs' },
+          { service: 'Color Correction', price: 'Consultation Required', time: 'Varies' },
+        ].map((item, i) => (
+          <div class="flex items-center justify-between px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <span class="text-sm" style="color: #3A3838;">{item.service}</span>
+            <div class="text-right">
+              <p class="text-sm font-semibold" style="color: #A88F7B;">{item.price}</p>
+              <p class="text-xs" style="color: #8D8076;">{item.time}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Send us your reference photo via WhatsApp for an exact quote!</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Get a Free Quote</a>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-20 px-6 lg:px-12" style="background: #3A3838;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">What to Expect</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #F7F4EF; font-weight: 300;">Your Color <em style="color: #A88F7B;">Appointment</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-5 gap-6">
+          {[
+            { step: '01', title: 'English Consultation', desc: 'We review your reference photos, assess your hair condition and discuss what\'s achievable.' },
+            { step: '02', title: 'Strand Test', desc: 'For significant changes, we test how your hair responds to color or bleach.' },
+            { step: '03', title: 'Color Application', desc: 'Premium Korean color products applied with precision by our trained colorists.' },
+            { step: '04', title: 'Toning & Finishing', desc: 'Toner applied to perfect your shade. Conditioning treatment included.' },
+            { step: '05', title: 'Aftercare Advice', desc: 'Full English aftercare guidance so your color stays vibrant at home.' },
+          ].map(s => (
+            <div class="text-center">
+              <p class="font-display text-4xl mb-3" style="color: #A88F7B; opacity: 0.4;">{s.step}</p>
+              <h3 class="font-display text-base mb-2" style="color: #F7F4EF;">{s.title}</h3>
+              <p class="text-xs leading-relaxed" style="color: #DCCDBD;">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Common <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'Can you achieve Korean hair colors on dark hair without bleaching?', a: 'Many Korean colors — like milk tea brown, dark chocolate and copper — can be achieved on dark hair with minimal or no bleaching. For blonde, grey or pastel shades, some bleaching is usually required. We\'ll give you an honest assessment during consultation.' },
+          { q: 'How long does hair coloring take?', a: 'Simple toning: 30–60 minutes. Full color: 1.5–2.5 hours. Balayage: 2–4 hours. Full bleach + color: 3–6 hours. We\'ll give you an accurate time estimate during consultation.' },
+          { q: 'Will coloring damage my hair?', a: 'All color services include a conditioning treatment. We use bond-protecting products alongside bleaching to minimize damage. We\'ll always be honest about the condition of your hair and what\'s safely achievable.' },
+          { q: 'How long will my color last?', a: 'Standard color: 6–8 weeks. Balayage: 3–5 months. Fashion colors: 4–8 weeks. Toner: 4–8 weeks. We\'ll advise on the best maintenance routine to extend your color at home.' },
+          { q: 'Can I get colored and permed in the same visit?', a: 'Generally we recommend doing color and perm in separate visits to protect your hair health. However, our colorist will assess your hair and advise on what\'s appropriate for your specific situation.' },
+          { q: 'Do you do color corrections?', a: 'Yes — color correction is available but requires a detailed consultation first. Please send photos via WhatsApp before booking so we can accurately assess the time and cost involved.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Explore More Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/highlights-balayage-myeongdong', label: '🌟 Highlights & Balayage' },
+          { href: '/bleaching-myeongdong', label: '⚡ Bleaching' },
+          { href: '/hair-toning-myeongdong', label: '🎨 Hair Toning' },
+          { href: '/ombre-hair-color-myeongdong', label: '🌈 Ombre Color' },
+          { href: '/olaplex-treatment-myeongdong', label: '🔬 Olaplex Treatment' },
+          { href: '/haircut-myeongdong', label: '✂️ Add a Haircut' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
