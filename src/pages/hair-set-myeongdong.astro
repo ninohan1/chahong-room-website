@@ -1,0 +1,40 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+---
+<ServiceLayout
+  title="Hair Set Myeongdong"
+  seoTitle="Hair Set Myeongdong | Korean 셋팅 Styling at CHAHONG ROOM Seoul"
+  metaDesc="Professional Korean hair set (셋팅) in Myeongdong Seoul. Sleek, polished styling for any occasion. English-friendly service at CHAHONG ROOM."
+  emoji="💅"
+  category="Styling"
+  heroImage="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1200&q=80"
+  intro="Korean hair set (셋팅) creates polished, structured styles using rollers, irons and setting techniques — perfect for that iconic K-drama-worthy look."
+  pricing={[
+    { service: "Basic Hair Set", price: "From ₩30,000" },
+    { service: "Curl Set / Wave Set", price: "From ₩50,000" },
+    { service: "Full Glamour Set", price: "From ₩80,000" },
+    { service: "Hair Set + Updo", price: "From ₩100,000" },
+  ]}
+  benefits={[
+    "Creates polished Korean-style hair looks seen in K-dramas and K-pop",
+    "Uses professional setting techniques for long-lasting results",
+    "Perfect for photoshoots, events and special occasions",
+    "Creates volume, waves and structured curls that hold all day",
+    "Available in combination with updo styling",
+    "Full English consultation and style planning",
+  ]}
+  faqs={[
+    { q: "What is a Korean hair set?", a: "Hair set (셋팅) is a Korean styling technique using rollers, curling irons and setting sprays to create structured, long-lasting styles." },
+    { q: "How long does hair set last?", a: "A professional hair set typically lasts 1–2 days." },
+    { q: "Is hair set the same as a perm?", a: "No — a hair set is temporary styling. A perm permanently changes your curl pattern." },
+    { q: "Can I get a hair set for my graduation or photoshoot?", a: "Absolutely — hair set is perfect for any occasion where you want a polished, memorable look." },
+  ]}
+  relatedLinks={[
+    { href: '/blow-dry-styling-myeongdong', label: "Blow Dry & Styling" },
+    { href: '/bridal-updo-myeongdong', label: "Bridal Updo" },
+    { href: '/event-styling-myeongdong', label: "Event Styling" },
+    { href: '/hair-perm-myeongdong', label: "Hair Perm" },
+  ]}
+>
+  <span slot="headline">Hair Set 셋팅<br/><em class="text-gold">in Myeongdong</em></span>
+</ServiceLayout>
