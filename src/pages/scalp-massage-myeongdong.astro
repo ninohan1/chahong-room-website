@@ -1,0 +1,40 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+---
+<ServiceLayout
+  title="Scalp Massage Myeongdong"
+  seoTitle="Scalp Massage Myeongdong | Relaxing Head Spa at CHAHONG ROOM Seoul"
+  metaDesc="Relaxing scalp massage in Myeongdong Seoul. Stimulate hair growth, relieve tension and improve scalp health. English-friendly service at CHAHONG ROOM."
+  emoji="💆"
+  category="Scalp Services"
+  heroImage="https://images.unsplash.com/photo-1595252129834-c68e1f0a5f69?w=1200&q=80"
+  intro="A professional scalp massage stimulates blood circulation, relieves tension headaches, promotes hair growth and leaves you deeply relaxed."
+  pricing={[
+    { service: "Scalp Massage (20 min)", price: "From ₩30,000" },
+    { service: "Scalp Massage (40 min)", price: "From ₩50,000" },
+    { service: "Scalp Massage + Hair Treatment", price: "From ₩80,000" },
+    { service: "Full Head Spa Package", price: "From ₩120,000" },
+  ]}
+  benefits={[
+    "Stimulates blood circulation to promote healthy hair growth",
+    "Relieves scalp tension, headaches and neck stiffness",
+    "Removes product buildup and unclogs hair follicles",
+    "Deeply relaxing — perfect after travel or long days exploring Seoul",
+    "Can be combined with scalp treatment or hair mask",
+    "Performed by trained specialists in a calm, relaxing environment",
+  ]}
+  faqs={[
+    { q: "Is scalp massage good for hair growth?", a: "Yes — regular scalp massage increases blood flow to the follicles, which can stimulate hair growth and reduce thinning." },
+    { q: "How often should I get a scalp massage?", a: "Once or twice a month is ideal for maintaining scalp health and promoting growth." },
+    { q: "Can I combine it with a hair treatment?", a: "Absolutely — we recommend combining scalp massage with a deep conditioning treatment for maximum benefit." },
+    { q: "Is it relaxing or medical?", a: "Both! Our scalp massage is deeply relaxing while also targeting scalp health and hair growth." },
+  ]}
+  relatedLinks={[
+    { href: '/scalp-treatment-myeongdong', label: "Scalp Treatment" },
+    { href: '/scalp-detox-myeongdong', label: "Scalp Detox" },
+    { href: '/hair-loss-treatment-myeongdong', label: "Hair Loss Treatment" },
+    { href: '/hair-treatment-myeongdong', label: "Hair Treatment" },
+  ]}
+>
+  <span slot="headline">Scalp Massage<br/><em class="text-gold">in Myeongdong</em></span>
+</ServiceLayout>
