@@ -1,0 +1,40 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+---
+<ServiceLayout
+  title="Blow Dry Styling Myeongdong"
+  seoTitle="Blow Dry & Styling Myeongdong | Blowout at CHAHONG ROOM Seoul"
+  metaDesc="Professional blow dry and blowout styling in Myeongdong Seoul. Smooth, voluminous Korean blowout. English-friendly service at CHAHONG ROOM."
+  emoji="💨"
+  category="Styling"
+  heroImage="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80"
+  intro="A professional blow dry gives you that salon-perfect finish — smooth, shiny and full of volume — that's nearly impossible to recreate at home."
+  pricing={[
+    { service: "Blow Dry — Short Hair", price: "From ₩20,000" },
+    { service: "Blow Dry — Medium Hair", price: "From ₩30,000" },
+    { service: "Blow Dry — Long Hair", price: "From ₩40,000" },
+    { service: "Blow Dry + Waves/Curls", price: "From ₩50,000" },
+  ]}
+  benefits={[
+    "Achieves salon-smooth, frizz-free results that last days",
+    "Adds volume and body to fine, flat hair",
+    "Creates sleek straight looks or bouncy waves depending on your preference",
+    "Uses professional round brushes and heat protection",
+    "Perfect add-on after any color, perm or treatment service",
+    "Quick service — usually 20–40 minutes",
+  ]}
+  faqs={[
+    { q: "How long does a blow dry last?", a: "Typically 2–4 days depending on your hair type and how you sleep/style it." },
+    { q: "Can I get just a blow dry without a cut?", a: "Absolutely — blow dry only services are very popular, especially before events." },
+    { q: "What styles can you create with a blow dry?", a: "Sleek straight, bouncy volume, Korean S-curl waves, or smooth with ends flicked out — your choice!" },
+    { q: "Is it included with a haircut?", a: "Yes — blow dry and basic styling is included with all our haircut services." },
+  ]}
+  relatedLinks={[
+    { href: '/haircut-myeongdong', label: "Haircut" },
+    { href: '/hair-set-myeongdong', label: "Hair Set" },
+    { href: '/event-styling-myeongdong', label: "Event Styling" },
+    { href: '/bridal-updo-myeongdong', label: "Bridal Updo" },
+  ]}
+>
+  <span slot="headline">Blow Dry &amp; Styling<br/><em class="text-gold">in Myeongdong</em></span>
+</ServiceLayout>
