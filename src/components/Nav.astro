@@ -4,16 +4,55 @@ const navLinks = [
   { href: '/about-us', label: 'About' },
   {
     label: 'Services',
-    dropdown: [
-      { href: '/haircut-myeongdong', label: '✂️ Haircut' },
-      { href: '/hair-color-myeongdong', label: '🎨 Hair Color' },
-      { href: '/hair-perm-myeongdong', label: '🧪 Perm' },
-      { href: '/digital-perm-myeongdong', label: '🧪 Digital Perm' },
-      { href: '/scalp-treatment-myeongdong', label: '💆 Scalp Care' },
-      { href: '/hair-treatment-myeongdong', label: '💆 Hair Treatment' },
-      { href: '/keratin-treatment-myeongdong', label: '💆 Keratin' },
-      { href: '/mens-haircut-myeongdong', label: '✂️ Men\'s Cut' },
-      { href: '/womens-haircut-myeongdong', label: '✂️ Women\'s Cut' },
+    subMenu: [
+      {
+        category: 'Hair Services',
+        links: [
+          { href: '/haircut-myeongdong', label: '✂️ Haircut' },
+          { href: '/hair-color-myeongdong', label: '🎨 Hair Color' },
+          { href: '/hair-perm-myeongdong', label: '🧪 Perm' },
+          { href: '/digital-perm-myeongdong', label: '🧪 Digital Perm' },
+          { href: '/hair-botox-myeongdong', label: '💉 Hair Botox' },
+          { href: '/hair-gloss-treatment-myeongdong', label: '✨ Hair Gloss' },
+          { href: '/highlights-balayage-myeongdong', label: '🌟 Highlights & Balayage' },
+          { href: '/olaplex-treatment-myeongdong', label: '🔬 Olaplex' },
+          { href: '/hair-toning-myeongdong', label: '🎨 Hair Toning' },
+          { href: '/hair-treatment-myeongdong', label: '💆 Hair Treatment' },
+          { href: '/keratin-treatment-myeongdong', label: '💆 Keratin' },
+        ]
+      },
+      {
+        category: 'Scalp Services',
+        links: [
+          { href: '/scalp-treatment-myeongdong', label: '💆 Scalp Care' },
+          { href: '/scalp-massage-myeongdong', label: '💆 Scalp Massage' },
+          { href: '/dandruff-treatment-myeongdong', label: '🌿 Dandruff Treatment' },
+          { href: '/hair-loss-treatment-myeongdong', label: '🌱 Hair Loss Treatment' },
+          { href: '/scalp-detox-myeongdong', label: '🫧 Scalp Detox' },
+        ]
+      },
+      {
+        category: 'Styling',
+        links: [
+          { href: '/womens-haircut-myeongdong', label: '✂️ Women\'s Cut' },
+          { href: '/mens-haircut-myeongdong', label: '✂️ Men\'s Cut' },
+          { href: '/bridal-updo-myeongdong', label: '👰 Bridal Updo' },
+          { href: '/event-styling-myeongdong', label: '🎉 Event Styling' },
+          { href: '/blow-dry-styling-myeongdong', label: '💨 Blow Dry & Styling' },
+          { href: '/hair-set-myeongdong', label: '💅 Hair Set 셋팅' },
+        ]
+      },
+      {
+        category: 'Specialty',
+        links: [
+          { href: '/ombre-hair-color-myeongdong', label: '🌈 Ombre Color' },
+          { href: '/gray-hair-coloring-myeongdong', label: '🩶 Gray Hair Coloring' },
+          { href: '/bleaching-myeongdong', label: '⚡ Bleaching' },
+          { href: '/curl-defining-treatment-myeongdong', label: '🌀 Curl Defining' },
+          { href: '/hair-straightening-myeongdong', label: '💈 Hair Straightening' },
+          { href: '/korean-style-haircut-myeongdong', label: '🇰🇷 Korean Style Cut' },
+        ]
+      },
     ]
   },
   { href: '/treatments', label: 'Blog' },
@@ -27,34 +66,54 @@ const navLinks = [
   <div class="header-wrap flex items-center justify-between px-6 lg:px-12 py-5 transition-all duration-300" style="background: #F7F4EF; border-bottom: 1px solid #DCCDBD;">
 
     <!-- Logo -->
-    <a href="/" class="logo-mark group flex items-center gap-3">
-      <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <a href="/" class="flex items-center gap-3">
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
         <rect width="38" height="38" fill="#A88F7B" rx="2"/>
         <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle"
-          font-family="Cormorant Garamond, serif" font-size="16" font-weight="600" fill="#ffffff">
-          CR
-        </text>
+          font-family="serif" font-size="16" font-weight="600" fill="#ffffff">CR</text>
       </svg>
       <div class="flex flex-col leading-none">
-        <span class="font-display text-base font-600 tracking-[0.12em] transition-colors" style="color: #3A3838;">CHAHONG ROOM</span>
-        <span class="font-mono text-[0.52rem] tracking-[0.22em] uppercase mt-0.5" style="color: #A88F7B;">Myeongdong · Seoul</span>
+        <span class="text-base font-semibold tracking-[0.12em]" style="color: #3A3838;">CHAHONG ROOM</span>
+        <span class="text-[0.52rem] tracking-[0.22em] uppercase mt-0.5" style="color: #A88F7B;">Myeongdong · Seoul</span>
       </div>
     </a>
 
     <!-- Desktop Nav -->
     <nav class="hidden xl:flex items-center gap-8">
       {navLinks.map(link => (
-        link.dropdown ? (
-          <div class="relative group/dropdown">
+        link.subMenu ? (
+          <div class="relative group">
             <button class="nav-link flex items-center gap-1">
               {link.label}
               <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M1 1l4 4 4-4"/>
               </svg>
             </button>
-            <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 opacity-0 invisible group-hover/dropdown:opacity-100 group-hover/dropdown:visible transition-all duration-200 py-2" style="background: #F7F4EF; border: 1px solid #DCCDBD;">
-              {link.dropdown.map(item => (
-                <a href={item.href} class="block px-5 py-2.5 text-xs tracking-wider transition-colors" style="color: #8D8076;" onmouseover="this.style.color='#A88F7B'" onmouseout="this.style.color='#8D8076'">{item.label}</a>
+            <!-- Category Dropdown -->
+            <div class="absolute top-full left-0 mt-3 w-52 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2 z-50"
+              style="background: #F7F4EF; border: 1px solid #DCCDBD; border-radius: 4px;">
+              {link.subMenu.map(cat => (
+                <div class="relative group/cat">
+                  <button class="w-full flex items-center justify-between px-5 py-2.5 text-xs tracking-wider transition-colors text-left"
+                    style="color: #3A3838;">
+                    {cat.category}
+                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M1 1l4 4-4 4"/>
+                    </svg>
+                  </button>
+                  <!-- Services Dropdown -->
+                  <div class="absolute left-full top-0 w-56 opacity-0 invisible group-hover/cat:opacity-100 group-hover/cat:visible transition-all duration-200 py-2 z-50"
+                    style="background: #F7F4EF; border: 1px solid #DCCDBD; border-radius: 4px;">
+                    {cat.links.map(item => (
+                      <a href={item.href} class="block px-5 py-2 text-xs tracking-wider transition-colors"
+                        style="color: #8D8076;"
+                        onmouseover="this.style.color='#A88F7B'; this.style.background='#F0EBE4'"
+                        onmouseout="this.style.color='#8D8076'; this.style.background='transparent'">
+                        {item.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -66,11 +125,11 @@ const navLinks = [
 
     <!-- CTA -->
     <div class="hidden xl:flex items-center gap-4">
-      <a href="https://wa.me/821047944623" target="_blank" class="flex items-center gap-2 text-xs tracking-wider transition-colors" style="color: #A88F7B;">
+      <a href="https://wa.me/821047944623" target="_blank" class="flex items-center gap-2 text-xs tracking-wider" style="color: #A88F7B;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         +82 10-4794-4623
       </a>
-      <a href="https://wa.me/821047944623" target="_blank" style="background: #A88F7B; color: white; font-weight: 600; padding: 10px 24px; border-radius: 6px; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; display: inline-block; transition: background 0.2s;" onmouseover="this.style.background='#8D8076'" onmouseout="this.style.background='#A88F7B'">Book Now</a>
+      <a href="https://wa.me/821047944623" target="_blank" class="btn-gold text-[0.68rem]">Book Now</a>
     </div>
 
     <!-- Mobile Toggle -->
@@ -85,21 +144,24 @@ const navLinks = [
   <div id="mobile-menu" class="xl:hidden hidden px-6 py-8 max-h-[80vh] overflow-y-auto" style="background: #F7F4EF; border-top: 1px solid #DCCDBD;">
     <nav class="flex flex-col gap-1 mb-8">
       {navLinks.map(link => (
-        link.dropdown ? (
+        link.subMenu ? (
           <div>
-            <p class="nav-link py-3" style="border-bottom: 1px solid #DCCDBD;">{link.label}</p>
-            <div class="pl-4 flex flex-col gap-1 mt-1">
-              {link.dropdown.map(item => (
-                <a href={item.href} class="block py-2 text-xs tracking-wider mobile-close transition-colors" style="color: #8D8076;">{item.label}</a>
-              ))}
-            </div>
+            <p class="nav-link py-3" style="border-bottom: 1px solid #DCCDBD; color: #3A3838;">{link.label}</p>
+            {link.subMenu.map(cat => (
+              <div class="pl-4 mt-2 mb-2">
+                <p class="text-[0.6rem] tracking-widest uppercase font-semibold mb-1" style="color: #A88F7B;">{cat.category}</p>
+                {cat.links.map(item => (
+                  <a href={item.href} class="block py-1.5 text-xs mobile-close" style="color: #8D8076;">{item.label}</a>
+                ))}
+              </div>
+            ))}
           </div>
         ) : (
           <a href={link.href} class="nav-link py-3 mobile-close" style="border-bottom: 1px solid #DCCDBD;">{link.label}</a>
         )
       ))}
     </nav>
-    <a href="https://wa.me/821047944623" target="_blank" class="w-full text-center block" style="background: #A88F7B; color: white; font-weight: 600; padding: 14px 32px; border-radius: 6px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em;">Book via WhatsApp</a>
+    <a href="https://wa.me/821047944623" target="_blank" class="btn-gold w-full text-center block">Book via WhatsApp</a>
   </div>
 </header>
 
@@ -124,7 +186,6 @@ const navLinks = [
   const bar1 = document.getElementById('bar1');
   const bar2 = document.getElementById('bar2');
   const bar3 = document.getElementById('bar3');
-
   let menuOpen = false;
 
   window.addEventListener('scroll', () => {
