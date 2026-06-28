@@ -1,42 +1,211 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Hair Perm Myeongdong"
-  seoTitle="Hair Perm Myeongdong | Korean Perm at CHAHONG ROOM Seoul"
-  metaDesc="Expert Korean perm services in Myeongdong. C-curl, S-curl, digital perm at CHAHONG ROOM Seoul. English consultation for international tourists."
-  emoji="🧪"
-  category="Perm & Texture"
-  heroImage="https://images.unsplash.com/photo-1519735777090-ec97162dc266?w=1200&q=80"
-  intro="From soft C-curl waves to dramatic digital perms — our perm specialists customize every treatment for your hair texture and desired lifestyle."
-  pricing={[
-    { service: "C-Curl Perm", price: "From ₩120,000" },
-    { service: "S-Curl Perm", price: "From ₩120,000" },
-    { service: "Digital Perm", price: "From ₩150,000" },
-    { service: "Setting Perm", price: "From ₩130,000" },
-    { service: "Bang Perm", price: "From ₩30,000" },
-    { service: "Japanese Straightening", price: "From ₩200,000" },
-  ]}
-  benefits={[
-    "C-curl, S-curl, digital perm, setting perm and bang perm all available",
-    "Personalized rod selection based on your face shape and hair length",
-    "Gentle Korean perm solutions — conditioning treatment included",
-    "Full English consultation before every perm service",
-    "Before and after styling walkthrough so you can recreate the look at home",
-    "Results last 4–6 months with proper aftercare",
-  ]}
-  faqs={[
-    { q: "What's the difference between C-curl and digital perm?", a: "C-curl uses cold rods for soft, natural waves at ends. Digital perm uses heated rods for defined, lasting curls from mid-length." },
-    { q: "Can I perm colored hair?", a: "Depending on condition, yes. We assess this in consultation. Highly bleached hair may need conditioning first." },
-    { q: "How long does a perm take?", a: "2–4 hours depending on hair length and perm type." },
-    { q: "How do I maintain my perm?", a: "Avoid washing for 48 hours, use sulfate-free shampoo, air-dry when possible, and apply curl cream daily." },
-  ]}
-  relatedLinks={[
-    { href: '/digital-perm-myeongdong', label: "Digital Perm" },
-    { href: '/setting-perm-myeongdong', label: "Setting Perm" },
-    { href: '/haircut-myeongdong', label: "Add a Haircut" },
-    { href: '/hair-straightening-myeongdong', label: "Hair Straightening" },
-  ]}
+<Layout
+  title="Hair Perm Myeongdong | Korean Perm at CHAHONG ROOM Seoul"
+  description="Expert Korean perm in Myeongdong Seoul. C-curl, S-curl, digital perm, wave perm & volume perm. Full English service at CHAHONG ROOM. Book via WhatsApp."
 >
-  <span slot="headline">Hair Perm<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero -->
+    <section class="relative min-h-[70vh] flex items-center overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=1400&q=80" alt="Korean perm Myeongdong Seoul" class="w-full h-full object-cover" style="opacity: 0.35;" loading="eager" />
+        <div class="absolute inset-0" style="background: linear-gradient(to right, #F7F4EF 50%, transparent 100%);"></div>
+      </div>
+      <div class="relative z-10 px-6 lg:px-12 max-w-7xl mx-auto w-full py-20">
+        <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Korean Perm · Myeongdong · Seoul</p>
+        <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5rem); color: #3A3838; font-weight: 300; line-height: 1.1;">
+          Korean Perm<br/>
+          <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+        </h1>
+        <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        <p class="max-w-xl leading-relaxed mb-8" style="color: #8D8076; font-size: 1rem;">
+          Soft C-curls, beachy waves, defined digital perm — Korean perms create natural-looking movement that lasts months. Full English consultation and reference photo matching at CHAHONG ROOM Myeongdong.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+          <a href="/pricing" class="btn-outline">View Pricing</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="py-8 px-6" style="background: #FFFFFF; border-top: 1px solid #DCCDBD; border-bottom: 1px solid #DCCDBD;">
+      <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        {[
+          { num: '10+', label: 'Years Experience' },
+          { num: '4.9★', label: 'Guest Rating' },
+          { num: '100%', label: 'English Service' },
+          { num: 'Free', label: 'Consultation' },
+        ].map(b => (
+          <div>
+            <p class="font-display text-2xl" style="color: #A88F7B;">{b.num}</p>
+            <p class="text-xs tracking-widest uppercase mt-1" style="color: #8D8076;">{b.label}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">About Korean Perms</p>
+          <h2 class="font-display text-4xl mb-6" style="color: #3A3838; font-weight: 300;">Korean Perms Are <em style="color: #A88F7B;">Different</em></h2>
+          <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">Forget the tight, frizzy perms of the past. Modern Korean perms create soft, natural-looking waves and curls that enhance your hair's texture without looking overdone. The goal is hair that looks like it naturally waves — not hair that's obviously been permed.</p>
+          <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">Korean perm techniques are specifically designed for Asian hair texture — finer and straighter than most Western hair types. Our stylists at CHAHONG ROOM have mastered every technique from gentle C-curls to defined digital perms.</p>
+          <p class="text-sm leading-relaxed mb-6" style="color: #8D8076;">Every perm appointment includes a thorough English consultation, conditioning treatment before and after, and full aftercare advice in English so you can maintain your new look at home.</p>
+          <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book Now</a>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=500&q=80" alt="Korean perm waves Seoul" class="w-full rounded-lg object-cover" style="height: 220px;" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80" alt="Hair perm Myeongdong" class="w-full rounded-lg object-cover" style="height: 220px; margin-top: 24px;" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Perm Types -->
+    <section class="py-20 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Perm Types</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Korean Perm <em style="color: #A88F7B;">Styles We Offer</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80',
+              title: 'C-Curl Perm (C컬 파마)',
+              desc: 'The most popular Korean perm. Creates soft, inward-curling ends that frame the face beautifully. The curl starts from mid-length and curves inward — like a natural blowout that never drops. Perfect for medium to long hair.',
+              lasts: '4–6 months',
+              time: '2–3 hours',
+              price: 'From ₩80,000',
+              popular: true
+            },
+            {
+              img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80',
+              title: 'S-Curl Perm (S컬 파마)',
+              desc: 'Creates a gentle S-shaped wave through the hair. More movement than a C-curl, less structured than a wave perm. Perfect for adding texture and volume without looking too done. Works on all hair lengths.',
+              lasts: '4–6 months',
+              time: '2–3 hours',
+              price: 'From ₩80,000',
+              popular: false
+            },
+            {
+              img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80',
+              title: 'Digital Perm (디지털 파마)',
+              desc: 'The most long-lasting Korean perm. Uses heated rods at precise temperatures to create defined waves that hold their shape even after washing. Results look better dry than wet — opposite to traditional perms. Ideal for those who want defined curls.',
+              lasts: '6–12 months',
+              time: '3–4 hours',
+              price: 'From ₩130,000',
+              popular: false
+            },
+            {
+              img: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80',
+              title: 'Wave Perm (웨이브 파마)',
+              desc: 'Creates loose, beachy waves throughout the hair. More relaxed and natural-looking than a digital perm — perfect for that effortless K-drama hair look. Very popular among international visitors wanting a natural transformation.',
+              lasts: '3–5 months',
+              time: '2–3 hours',
+              price: 'From ₩90,000',
+              popular: false
+            },
+            {
+              img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80',
+              title: 'Volume Perm (볼륨 파마)',
+              desc: 'Focuses on adding volume at the roots rather than curls through the length. Perfect for fine, flat hair that needs lift and body. Creates natural-looking fullness without defined curls — ideal for men and women with limp hair.',
+              lasts: '3–5 months',
+              time: '2–3 hours',
+              price: 'From ₩80,000',
+              popular: false
+            },
+            {
+              img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80',
+              title: 'Setting Perm (셋팅 파마)',
+              desc: 'Creates structured, defined curls using a setting technique. More dramatic than other Korean perm styles — popular for special occasions and K-pop inspired looks. A bold choice for those wanting a head-turning transformation.',
+              lasts: '4–6 months',
+              time: '3–4 hours',
+              price: 'From ₩100,000',
+              popular: false
+            },
+          ].map(s => (
+            <div class="overflow-hidden relative" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #F7F4EF;">
+              {s.popular && (
+                <div class="absolute top-3 right-3 z-10 px-2 py-1 text-xs font-semibold tracking-widest uppercase" style="background: #A88F7B; color: white; border-radius: 4px;">Most Popular</div>
+              )}
+              <div style="height: 200px; overflow: hidden;">
+                <img src={s.img} alt={s.title} class="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div class="p-5">
+                <h3 class="font-display text-lg mb-2" style="color: #3A3838;">{s.title}</h3>
+                <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">{s.desc}</p>
+                <div class="grid grid-cols-3 gap-2 text-xs pt-3" style="border-top: 1px solid #DCCDBD;">
+                  <div>
+                    <p style="color: #8D8076;">Price</p>
+                    <p style="color: #A88F7B; font-weight: 600;">{s.price}</p>
+                  </div>
+                  <div>
+                    <p style="color: #8D8076;">Duration</p>
+                    <p style="color: #3A3838;">{s.time}</p>
+                  </div>
+                  <div>
+                    <p style="color: #8D8076;">Lasts</p>
+                    <p style="color: #3A3838;">{s.lasts}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Table -->
+    <section class="py-20 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Perm <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW. Final price depends on hair length & density.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'C-Curl / S-Curl — Short', price: 'From ₩80,000', time: '2–3 hrs' },
+          { service: 'C-Curl / S-Curl — Medium', price: 'From ₩100,000', time: '2–3 hrs' },
+          { service: 'C-Curl / S-Curl — Long', price: 'From ₩130,000', time: '2.5–3.5 hrs' },
+          { service: 'Digital Perm — Short', price: 'From ₩130,000', time: '3–4 hrs' },
+          { service: 'Digital Perm — Medium', price: 'From ₩160,000', time: '3.5–4.5 hrs' },
+          { service: 'Digital Perm — Long', price: 'From ₩200,000', time: '4–5 hrs' },
+          { service: 'Wave Perm — Short', price: 'From ₩90,000', time: '2–3 hrs' },
+          { service: 'Wave Perm — Medium', price: 'From ₩110,000', time: '2.5–3.5 hrs' },
+          { service: 'Wave Perm — Long', price: 'From ₩140,000', time: '3–4 hrs' },
+          { service: 'Volume Perm', price: 'From ₩80,000', time: '2–3 hrs' },
+          { service: 'Setting Perm', price: 'From ₩100,000', time: '3–4 hrs' },
+        ].map((item, i) => (
+          <div class="flex items-center justify-between px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <span class="text-sm" style="color: #3A3838;">{item.service}</span>
+            <div class="text-right">
+              <p class="text-sm font-semibold" style="color: #A88F7B;">{item.price}</p>
+              <p class="text-xs" style="color: #8D8076;">{item.time}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Send us your reference photo via WhatsApp for an exact quote!</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Get a Free Quote</a>
+      </div>
+    </section>
+
+    <!-- Before & After Care -->
+    <section class="py-20 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Perm Care Guide</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Before & After <em style="color: #A88F7B;">Perm Care</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
