@@ -1,62 +1,267 @@
 ---
 ---
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden" style="background-color: #F7F4EF;">
-  <!-- Subtle grid bg -->
   <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(#A88F7B 1px, transparent 1px), linear-gradient(90deg, #A88F7B 1px, transparent 1px); background-size: 60px 60px;"></div>
-  <!-- Warm orb -->
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(168,143,123,0.10) 0%, transparent 65%);"></div>
-  <!-- Top accent line -->
   <div class="absolute top-0 left-0 right-0 h-px opacity-40" style="background: linear-gradient(to right, transparent, #A88F7B, transparent);"></div>
 
-  <div class="relative z-10 text-center px-6 max-w-5xl mx-auto pt-24">
-    <!-- Eyebrow -->
-    <p class="fade-up delay-1 mb-6 tracking-widest uppercase text-xs font-medium" style="color: #8D8076;">Myeongdong · Seoul · K-Beauty Studio</p>
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pt-28 pb-16">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
 
-    <!-- Main headline -->
-    <h1 class="fade-up delay-2 font-display leading-[1.02] mb-6" style="font-size: clamp(3rem, 8vw, 6.5rem); color: #3A3838; font-weight: 300;">
-      Your Seoul<br/>
-      <em style="color: #A88F7B; font-style: italic; font-weight: 400;">Hair Story</em><br/>
-      Starts Here
-    </h1>
+      <!-- Left: Text -->
+      <div>
+        <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Myeongdong · Seoul · K-Beauty Studio</p>
+        <h1 class="font-display leading-[1.05] mb-6" style="font-size: clamp(2.8rem, 6vw, 5.5rem); color: #3A3838; font-weight: 300;">
+          Your Seoul<br/>
+          <em style="color: #A88F7B; font-style: italic; font-weight: 400;">Hair Story</em><br/>
+          Starts Here
+        </h1>
+        <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        <p class="max-w-lg leading-relaxed mb-8" style="color: #8D8076; font-size: 1rem;">
+          Premium K-beauty hair treatments in the heart of Myeongdong. Expert cuts, perms, coloring & scalp care — with full English service for international visitors.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 mb-12">
+          <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">
+            💬 Book via WhatsApp
+          </a>
+          <a href="/treatments" class="btn-outline">
+            View All Services
+          </a>
+        </div>
+        <!-- Trust row -->
+        <div class="grid grid-cols-3 gap-4 max-w-sm">
+          {[
+            { num: '10+', label: 'Years Experience' },
+            { num: '4.9★', label: 'Guest Rating' },
+            { num: '8+', label: 'Expert Stylists' },
+          ].map(b => (
+            <div class="text-center py-3" style="border: 1px solid #DCCDBD; border-radius: 4px;">
+              <p class="font-display text-xl font-400" style="color: #A88F7B;">{b.num}</p>
+              <p class="text-[0.6rem] tracking-widest uppercase mt-1" style="color: #8D8076;">{b.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
 
-    <!-- Divider line -->
-    <div class="fade-up delay-3 mx-auto mb-8" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      <!-- Right: Image Grid -->
+      <div class="hidden lg:grid grid-cols-2 gap-3">
+        <div class="space-y-3">
+          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="Korean hair salon Myeongdong" class="w-full rounded-lg object-cover" style="height: 280px;" loading="eager" />
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Hair coloring Seoul" class="w-full rounded-lg object-cover" style="height: 180px;" loading="eager" />
+        </div>
+        <div class="space-y-3 mt-8">
+          <img src="https://images.unsplash.com/photo-1595252129834-c68e1f0a5f69?w=600&q=80" alt="Head spa Korea" class="w-full rounded-lg object-cover" style="height: 180px;" loading="eager" />
+          <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80" alt="Korean perm Myeongdong" class="w-full rounded-lg object-cover" style="height: 280px;" loading="eager" />
+        </div>
+      </div>
 
-    <p class="fade-up delay-3 max-w-lg mx-auto leading-relaxed mb-10" style="color: #8D8076; font-size: 1rem;">
-      Premium K-beauty hair treatments in the heart of Myeongdong. Expert cuts, perms, coloring &amp; scalp care — with full English service for international visitors.
-    </p>
-
-    <div class="fade-up delay-4 flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="https://wa.me/821047944623" target="_blank"
-        style="background: #A88F7B; color: white; font-weight: 600; padding: 14px 32px; border-radius: 6px; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; display: inline-block; transition: background 0.2s;"
-        onmouseover="this.style.background='#8D8076'" onmouseout="this.style.background='#A88F7B'">
-        Book via WhatsApp
-      </a>
-      <a href="/treatments"
-        style="border: 1.5px solid #A88F7B; color: #A88F7B; font-weight: 600; padding: 14px 32px; border-radius: 6px; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; display: inline-block; transition: all 0.2s;"
-        onmouseover="this.style.background='#A88F7B'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#A88F7B'">
-        View All Services
-      </a>
     </div>
+  </div>
+</section>
 
-    <!-- Trust badges -->
-    <div class="fade-up delay-5 mt-20 grid grid-cols-3 max-w-md mx-auto gap-6">
+<!-- Why Choose Us -->
+<section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Why CHAHONG ROOM</p>
+      <h2 class="font-display text-4xl md:text-5xl mb-4" style="color: #3A3838; font-weight: 300;">
+        The <em style="color: #A88F7B;">Smart Choice</em> for<br/>International Visitors
+      </h2>
+      <div class="mx-auto" style="width: 60px; height: 1px; background: #A88F7B; margin-top: 16px;"></div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
       {[
-        { num: '10+', label: 'Years Experience' },
-        { num: '4.9★', label: 'Guest Rating' },
-        { num: '8+', label: 'Expert Stylists' },
-      ].map(b => (
-        <div class="text-center" style="border-right: 1px solid #DCCDBD;">
-          <p class="font-display text-2xl md:text-3xl font-400" style="color: #A88F7B;">{b.num}</p>
-          <p class="text-[0.65rem] tracking-widest uppercase mt-1" style="color: #8D8076;">{b.label}</p>
+        { icon: '🇬🇧', title: 'Full English Service', desc: 'Our stylists consult, recommend and communicate entirely in English. No language barrier, ever.' },
+        { icon: '✂️', title: 'Expert Korean Technique', desc: 'Wolf cuts, C-curl perms, balayage — trained in Korea\'s most in-demand styles and treatments.' },
+        { icon: '📍', title: 'Heart of Myeongdong', desc: '5F, 13 Myeong-dong-gil. Steps from the subway, surrounded by Seoul\'s most iconic streets.' },
+        { icon: '💬', title: 'Easy WhatsApp Booking', desc: 'No complicated forms. Message us, send a reference photo, we confirm within hours.' },
+      ].map(item => (
+        <div class="p-6 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+          <div class="text-4xl mb-4">{item.icon}</div>
+          <h3 class="font-display text-lg mb-3" style="color: #3A3838;">{item.title}</h3>
+          <p class="text-sm leading-relaxed" style="color: #8D8076;">{item.desc}</p>
         </div>
       ))}
     </div>
   </div>
+</section>
 
-  <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-    <span class="tracking-widest uppercase" style="font-size:0.55rem; color: #8D8076;">Scroll</span>
-    <div class="w-px h-10" style="background: linear-gradient(to bottom, #A88F7B, transparent);"></div>
+<!-- Popular Services -->
+<section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Most Requested</p>
+      <h2 class="font-display text-4xl md:text-5xl mb-4" style="color: #3A3838; font-weight: 300;">
+        Popular <em style="color: #A88F7B;">Services</em>
+      </h2>
+      <div class="mx-auto" style="width: 60px; height: 1px; background: #A88F7B; margin-top: 16px;"></div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        { img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80', title: 'Korean Haircut', desc: 'Wolf cut, see-through bangs, curtain bangs & more', price: 'From ₩25,000', href: '/haircut-myeongdong' },
+        { img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80', title: 'Hair Coloring', desc: 'Milk tea brown, balayage, highlights & Korean color trends', price: 'From ₩70,000', href: '/hair-color-myeongdong' },
+        { img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80', title: 'Korean Perm', desc: 'C-curl, S-curl, digital perm & wave perm', price: 'From ₩80,000', href: '/hair-perm-myeongdong' },
+        { img: 'https://images.unsplash.com/photo-1595252129834-c68e1f0a5f69?w=600&q=80', title: 'Head Spa', desc: 'Deep scalp cleanse, massage & nourishing treatment', price: 'From ₩80,000', href: '/scalp-treatment-myeongdong' },
+        { img: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80', title: 'Hair Treatment', desc: 'Olaplex, hair botox, keratin & deep conditioning', price: 'From ₩50,000', href: '/hair-treatment-myeongdong' },
+        { img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80', title: 'Scalp Care', desc: 'Dandruff treatment, hair loss & scalp detox', price: 'From ₩60,000', href: '/scalp-treatment-myeongdong' },
+      ].map(s => (
+        <a href={s.href} class="group block overflow-hidden" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #FFFFFF;">
+          <div class="overflow-hidden" style="height: 200px;">
+            <img src={s.img} alt={s.title} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <h3 class="font-display text-lg mb-2" style="color: #3A3838;">{s.title}</h3>
+            <p class="text-sm mb-3" style="color: #8D8076;">{s.desc}</p>
+            <p class="text-sm font-semibold" style="color: #A88F7B;">{s.price}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+    <div class="text-center mt-10">
+      <a href="/pricing" class="btn-outline">View Full Pricing</a>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="py-24 px-6 lg:px-12" style="background: #3A3838;">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Simple Process</p>
+      <h2 class="font-display text-4xl md:text-5xl mb-4" style="color: #F7F4EF; font-weight: 300;">
+        How to <em style="color: #A88F7B;">Book & Visit</em>
+      </h2>
+      <div class="mx-auto" style="width: 60px; height: 1px; background: #A88F7B; margin-top: 16px;"></div>
+    </div>
+    <div class="grid md:grid-cols-4 gap-8">
+      {[
+        { step: '01', title: 'Message Us', desc: 'WhatsApp +82 10-4794-4623 with your desired service and preferred date.' },
+        { step: '02', title: 'Send Photos', desc: 'Share reference photos so we can prepare for your exact style.' },
+        { step: '03', title: 'Confirmation', desc: 'We confirm within hours. Walk-ins also welcome.' },
+        { step: '04', title: 'Enjoy & Transform', desc: 'Visit us in Myeongdong for your full English service experience.' },
+      ].map(s => (
+        <div class="text-center">
+          <p class="font-display text-5xl mb-4" style="color: #A88F7B; opacity: 0.4;">{s.step}</p>
+          <h3 class="font-display text-lg mb-3" style="color: #F7F4EF;">{s.title}</h3>
+          <p class="text-sm leading-relaxed" style="color: #DCCDBD;">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+    <div class="text-center mt-12">
+      <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Client Reviews</p>
+      <h2 class="font-display text-4xl md:text-5xl mb-4" style="color: #3A3838; font-weight: 300;">
+        What Our <em style="color: #A88F7B;">Guests Say</em>
+      </h2>
+      <div class="mx-auto" style="width: 60px; height: 1px; background: #A88F7B; margin-top: 16px;"></div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      {[
+        { name: 'Sarah M.', country: '🇺🇸 USA', text: 'I was nervous about getting my hair done in Korea but CHAHONG ROOM made it so easy. Full English service, they matched my reference photo perfectly. My wolf cut with C-curl perm is everything!', service: 'Wolf Cut + C-Curl Perm' },
+        { name: 'Emma L.', country: '🇬🇧 UK', text: 'The head spa was the most relaxing hour of my entire Korea trip. The scalp massage was incredible and my hair felt completely transformed. I booked again the next day!', service: 'Head Spa + Hair Treatment' },
+        { name: 'Yuki T.', country: '🇯🇵 Japan', text: 'Finally found a salon in Myeongdong with real English service. The balayage came out exactly as I wanted. The consultation was thorough and they explained every step.', service: 'Balayage Color' },
+        { name: 'Rachel K.', country: '🇦🇺 Australia', text: 'Booked via WhatsApp the day before visiting and they fit me in. The digital perm gave me the most beautiful natural waves. Still obsessed months later!', service: 'Digital Perm' },
+        { name: 'Maria S.', country: '🇸🇬 Singapore', text: 'The milk tea brown color they created was exactly what I wanted. So natural and the condition of my hair after the treatment was amazing. Will return every Seoul trip!', service: 'Milk Tea Brown Color' },
+        { name: 'Tom H.', country: '🇨🇦 Canada', text: 'Got the two-block cut and it\'s the best haircut I\'ve ever had. They really understood what I wanted from my reference photos. Reasonable price for incredible quality.', service: 'Men\'s Two-Block Cut' },
+      ].map(r => (
+        <div class="p-6" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #F7F4EF;">
+          <div class="flex mb-3">
+            {'★★★★★'.split('').map(() => (
+              <span style="color: #A88F7B; font-size: 14px;">★</span>
+            ))}
+          </div>
+          <p class="text-sm leading-relaxed mb-4 italic" style="color: #3A3838;">"{r.text}"</p>
+          <div style="border-top: 1px solid #DCCDBD; padding-top: 12px; margin-top: 12px;">
+            <p class="font-semibold text-sm" style="color: #3A3838;">{r.name} {r.country}</p>
+            <p class="text-xs" style="color: #A88F7B;">{r.service}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Our Work</p>
+      <h2 class="font-display text-4xl md:text-5xl mb-4" style="color: #3A3838; font-weight: 300;">
+        Hair <em style="color: #A88F7B;">Gallery</em>
+      </h2>
+      <div class="mx-auto" style="width: 60px; height: 1px; background: #A88F7B; margin-top: 16px;"></div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+      {[
+        { img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=80', label: 'Wolf Cut' },
+        { img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80', label: 'Balayage' },
+        { img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=400&q=80', label: 'Highlights' },
+        { img: 'https://images.unsplash.com/photo-1595252129834-c68e1f0a5f69?w=400&q=80', label: 'Head Spa' },
+        { img: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&q=80', label: 'Color' },
+        { img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=80', label: 'Perm' },
+        { img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80', label: 'Treatment' },
+        { img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=400&q=80', label: 'Haircut' },
+      ].map(g => (
+        <div class="relative group overflow-hidden" style="border-radius: 6px; aspect-ratio: 1;">
+          <img src={g.img} alt={g.label + ' at CHAHONG ROOM Myeongdong'} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+          <div class="absolute inset-0 flex items-end p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: linear-gradient(to top, rgba(58,56,56,0.7), transparent);">
+            <span class="text-xs font-medium tracking-widest uppercase" style="color: white;">{g.label}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="text-center mt-10">
+      <a href="https://www.instagram.com/ch.myeongdong/" target="_blank" class="btn-outline">Follow @ch.myeongdong</a>
+    </div>
+  </div>
+</section>
+
+<!-- Location & CTA -->
+<section class="py-24 px-6 lg:px-12" style="background: #A88F7B;">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: rgba(255,255,255,0.7);">Visit Us</p>
+        <h2 class="font-display text-4xl mb-6" style="color: #FFFFFF; font-weight: 300;">
+          Find Us in<br/><em style="font-style: italic;">Myeongdong, Seoul</em>
+        </h2>
+        <div class="space-y-4 mb-8">
+          {[
+            { icon: '📍', text: '5F, 13 Myeong-dong-gil, Jung-gu, Seoul' },
+            { icon: '🚇', text: 'Myeongdong Station (Line 4) Exit 6 — 5 min walk' },
+            { icon: '🕐', text: 'Monday–Sunday, 10:00 AM – 7:00 PM' },
+            { icon: '📱', text: 'WhatsApp: +82 10-4794-4623' },
+            { icon: '📧', text: 'koreahealthglobal@gmail.com' },
+          ].map(item => (
+            <div class="flex items-start gap-3">
+              <span class="text-lg">{item.icon}</span>
+              <p class="text-sm" style="color: rgba(255,255,255,0.9);">{item.text}</p>
+            </div>
+          ))}
+        </div>
+        <a href="https://wa.me/821047944623" target="_blank" style="background: #FFFFFF; color: #A88F7B; font-weight: 700; padding: 14px 32px; border-radius: 6px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block;">
+          💬 Book Now via WhatsApp
+        </a>
+      </div>
+      <div>
+        <div style="border-radius: 8px; overflow: hidden; height: 350px;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.8!2d126.9847!3d37.5636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2ef3e5c2d1f%3A0x1234!2sMyeongdong%2C+Jung-gu%2C+Seoul!5e0!3m2!1sen!2skr!4v1234567890"
+            width="100%"
+            height="350"
+            style="border: 0;"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
