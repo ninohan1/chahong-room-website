@@ -95,18 +95,27 @@ const { title, description = "Premium Korean hair salon in Myeongdong, Seoul." }
   background: #A88F7B;
   color: white !important;
 }
-/* Blog post content */
-.prose h1, .prose h2, .prose h3, .prose h4 {
+/* Blog post markdown fix */
+article h1, article h2, article h3, article h4,
+article p, article li, article ul, article ol,
+article blockquote, article strong {
   color: #3A3838 !important;
 }
-.prose p, .prose li {
-  color: #3A3838 !important;
+article a { color: #A88F7B !important; }
+article ul { list-style: disc; padding-left: 1.5rem; }
+article ol { list-style: decimal; padding-left: 1.5rem; }
+article li { margin-bottom: 0.5rem; }
+article h2 { 
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
-.prose a {
-  color: #A88F7B !important;
-}
-h2, h3 {
-  color: #3A3838 !important;
+article h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
 }
     </style>
   </head>
