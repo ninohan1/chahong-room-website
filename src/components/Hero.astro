@@ -6,8 +6,6 @@
 
   <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pt-28 pb-16">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
-
-      <!-- Left: Text -->
       <div>
         <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Myeongdong · Seoul · K-Beauty Studio</p>
         <h1 class="font-display leading-[1.05] mb-6" style="font-size: clamp(2.8rem, 6vw, 5.5rem); color: #3A3838; font-weight: 300;">
@@ -20,14 +18,9 @@
           Premium K-beauty hair treatments in the heart of Myeongdong. Expert cuts, perms, coloring & scalp care — with full English service for international visitors.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 mb-12">
-          <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">
-            💬 Book via WhatsApp
-          </a>
-          <a href="/treatments" class="btn-outline">
-            View All Services
-          </a>
+          <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+          <a href="/treatments" class="btn-outline">View All Services</a>
         </div>
-        <!-- Trust row -->
         <div class="grid grid-cols-3 gap-4 max-w-sm">
           {[
             { num: '10+', label: 'Years Experience' },
@@ -35,25 +28,22 @@
             { num: '8+', label: 'Expert Stylists' },
           ].map(b => (
             <div class="text-center py-3" style="border: 1px solid #DCCDBD; border-radius: 4px;">
-              <p class="font-display text-xl font-400" style="color: #A88F7B;">{b.num}</p>
+              <p class="font-display text-xl" style="color: #A88F7B;">{b.num}</p>
               <p class="text-[0.6rem] tracking-widest uppercase mt-1" style="color: #8D8076;">{b.label}</p>
             </div>
           ))}
         </div>
       </div>
-
-      <!-- Right: Image Grid -->
       <div class="hidden lg:grid grid-cols-2 gap-3">
         <div class="space-y-3">
           <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="Korean hair salon Myeongdong" class="w-full rounded-lg object-cover" style="height: 280px;" loading="eager" />
           <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Hair coloring Seoul" class="w-full rounded-lg object-cover" style="height: 180px;" loading="eager" />
         </div>
         <div class="space-y-3 mt-8">
-          <img src="https://images.unsplash.com/photo-1595252129834-c68e1f0a5f69?w=600&q=80" alt="Head spa Korea" class="w-full rounded-lg object-cover" style="height: 180px;" loading="eager" />
+          <img src="https://images.unsplash.com/photo-1470259078422-826894b933aa?w=600&q=80" alt="Head spa Korea" class="w-full rounded-lg object-cover" style="height: 180px;" loading="eager" />
           <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80" alt="Korean perm Myeongdong" class="w-full rounded-lg object-cover" style="height: 280px;" loading="eager" />
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -66,7 +56,7 @@
       <h2 class="font-display text-4xl md:text-5xl mb-4" style="color: #3A3838; font-weight: 300;">
         The <em style="color: #A88F7B;">Smart Choice</em> for<br/>International Visitors
       </h2>
-      <div class="mx-auto" style="width: 60px; height: 1px; background: #A88F7B; margin-top: 16px;"></div>
+      <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
       {[
@@ -93,7 +83,7 @@
       <h2 class="font-display text-4xl md:text-5xl mb-4" style="color: #3A3838; font-weight: 300;">
         Popular <em style="color: #A88F7B;">Services</em>
       </h2>
-      <div class="mx-auto" style="width: 60px; height: 1px; background: #A88F7B; margin-top: 16px;"></div>
+      <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {[
@@ -102,7 +92,7 @@
         { img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80', title: 'Korean Perm', desc: 'C-curl, S-curl, digital perm & wave perm', price: 'From ₩80,000', href: '/hair-perm-myeongdong' },
         { img: 'https://images.unsplash.com/photo-1470259078422-826894b933aa?w=600&q=80', title: 'Head Spa', desc: 'Deep scalp cleanse, massage & nourishing treatment', price: 'From ₩80,000', href: '/scalp-treatment-myeongdong' },
         { img: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80', title: 'Hair Treatment', desc: 'Olaplex, hair botox, keratin & deep conditioning', price: 'From ₩50,000', href: '/hair-treatment-myeongdong' },
-        { img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80', title: 'Scalp Care', desc: 'Dandruff treatment, hair loss & scalp detox', price: 'From ₩60,000', href: '/scalp-treatment-myeongdong' },
+        { img: 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=600&q=80', title: 'Scalp Care', desc: 'Dandruff treatment, hair loss & scalp detox', price: 'From ₩60,000', href: '/scalp-treatment-myeongdong' },
       ].map(s => (
         <a href={s.href} class="group block overflow-hidden" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #FFFFFF;">
           <div class="overflow-hidden" style="height: 200px;">
@@ -130,7 +120,7 @@
       <h2 class="font-display text-4xl md:text-5xl mb-4" style="color: #F7F4EF; font-weight: 300;">
         How to <em style="color: #A88F7B;">Book & Visit</em>
       </h2>
-      <div class="mx-auto" style="width: 60px; height: 1px; background: #A88F7B; margin-top: 16px;"></div>
+      <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
     </div>
     <div class="grid md:grid-cols-4 gap-8">
       {[
@@ -160,7 +150,7 @@
       <h2 class="font-display text-4xl md:text-5xl mb-4" style="color: #3A3838; font-weight: 300;">
         What Our <em style="color: #A88F7B;">Guests Say</em>
       </h2>
-      <div class="mx-auto" style="width: 60px; height: 1px; background: #A88F7B; margin-top: 16px;"></div>
+      <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
     </div>
     <div class="grid md:grid-cols-3 gap-6">
       {[
@@ -196,18 +186,18 @@
       <h2 class="font-display text-4xl md:text-5xl mb-4" style="color: #3A3838; font-weight: 300;">
         Hair <em style="color: #A88F7B;">Gallery</em>
       </h2>
-      <div class="mx-auto" style="width: 60px; height: 1px; background: #A88F7B; margin-top: 16px;"></div>
+      <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
       {[
         { img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=80', label: 'Wolf Cut' },
         { img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80', label: 'Balayage' },
         { img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=400&q=80', label: 'Highlights' },
-        { img: 'https://images.unsplash.com/photo-1595252129834-c68e1f0a5f69?w=400&q=80', label: 'Head Spa' },
+        { img: 'https://images.unsplash.com/photo-1470259078422-826894b933aa?w=400&q=80', label: 'Head Spa' },
         { img: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&q=80', label: 'Color' },
-        { img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=80', label: 'Perm' },
+        { img: 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=400&q=80', label: 'Scalp Care' },
         { img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80', label: 'Treatment' },
-        { img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=400&q=80', label: 'Haircut' },
+        { img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=80', label: 'Haircut' },
       ].map(g => (
         <div class="relative group overflow-hidden" style="border-radius: 6px; aspect-ratio: 1;">
           <img src={g.img} alt={g.label + ' at CHAHONG ROOM Myeongdong'} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
@@ -250,17 +240,15 @@
           💬 Book Now via WhatsApp
         </a>
       </div>
-      <div>
-        <div style="border-radius: 8px; overflow: hidden; height: 350px;">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.8!2d126.9847!3d37.5636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2ef3e5c2d1f%3A0x1234!2sMyeongdong%2C+Jung-gu%2C+Seoul!5e0!3m2!1sen!2skr!4v1234567890"
-            width="100%"
-            height="350"
-            style="border: 0;"
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
-        </div>
+      <div style="border-radius: 8px; overflow: hidden; height: 350px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.8!2d126.9847!3d37.5636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2ef3e5c2d1f%3A0x1234!2sMyeongdong%2C+Jung-gu%2C+Seoul!5e0!3m2!1sen!2skr!4v1234567890"
+          width="100%"
+          height="350"
+          style="border: 0;"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
       </div>
     </div>
   </div>
