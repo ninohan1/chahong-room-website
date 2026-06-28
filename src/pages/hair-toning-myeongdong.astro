@@ -1,0 +1,40 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+---
+<ServiceLayout
+  title="Hair Toning Myeongdong"
+  seoTitle="Hair Toning Myeongdong | Neutralize Brassiness at CHAHONG ROOM Seoul"
+  metaDesc="Professional hair toning in Myeongdong Seoul. Neutralize brassiness, refresh color and achieve ashy, cool or warm tones. English service at CHAHONG ROOM."
+  emoji="🎨"
+  category="Hair Color"
+  heroImage="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80"
+  intro="Hair toning neutralizes unwanted yellow and brassy tones after bleaching or lightening — giving you the perfect ash, beige, silver or warm tone you're after."
+  pricing={[
+    { service: "Toner Only", price: "From ₩40,000" },
+    { service: "Toner + Blow Dry", price: "From ₩60,000" },
+    { service: "Highlights + Toner", price: "From ₩160,000" },
+    { service: "Bleach + Toner", price: "From ₩150,000" },
+  ]}
+  benefits={[
+    "Eliminates brassy, yellow and orange tones after bleaching",
+    "Achieves popular Korean tones: ash grey, beige blonde, milk tea brown",
+    "Adds shine and depth to lightened hair",
+    "Quick service — usually 20–40 minutes",
+    "Can be combined with highlights, balayage or bleaching",
+    "Full English consultation to choose your perfect tone",
+  ]}
+  faqs={[
+    { q: "Do I need to bleach first before toning?", a: "Usually yes — toners work best on pre-lightened hair. We can assess your hair and advise during consultation." },
+    { q: "How long does toner last?", a: "Typically 4–8 weeks depending on your hair porosity and washing frequency." },
+    { q: "Can toning fix orange hair?", a: "Yes! Blue-based toners neutralize orange, while purple toners neutralize yellow." },
+    { q: "Will toning damage my hair?", a: "No — toning is a very gentle process and actually conditions the hair while depositing color." },
+  ]}
+  relatedLinks={[
+    { href: '/hair-color-myeongdong', label: "Hair Color" },
+    { href: '/bleaching-myeongdong', label: "Bleaching" },
+    { href: '/highlights-balayage-myeongdong', label: "Highlights & Balayage" },
+    { href: '/ombre-hair-color-myeongdong', label: "Ombre Color" },
+  ]}
+>
+  <span slot="headline">Hair Toning<br/><em class="text-gold">in Myeongdong</em></span>
+</ServiceLayout>
