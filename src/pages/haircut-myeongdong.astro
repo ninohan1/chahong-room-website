@@ -1,0 +1,295 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout
+  title="Haircut Myeongdong | Expert Korean Haircut at CHAHONG ROOM Seoul"
+  description="Expert Korean haircut in Myeongdong Seoul. Wolf cut, see-through bangs, curtain bangs, two-block cut. Full English service at CHAHONG ROOM. Walk-ins welcome."
+>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero -->
+    <section class="relative min-h-[70vh] flex items-center overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1400&q=80" alt="Korean haircut Myeongdong Seoul" class="w-full h-full object-cover" style="opacity: 0.35;" loading="eager" />
+        <div class="absolute inset-0" style="background: linear-gradient(to right, #F7F4EF 50%, transparent 100%);"></div>
+      </div>
+      <div class="relative z-10 px-6 lg:px-12 max-w-7xl mx-auto w-full py-20">
+        <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Haircut & Styling · Myeongdong · Seoul</p>
+        <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5rem); color: #3A3838; font-weight: 300; line-height: 1.1;">
+          Korean Haircut<br/>
+          <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+        </h1>
+        <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        <p class="max-w-xl leading-relaxed mb-8" style="color: #8D8076; font-size: 1rem;">
+          From precision wolf cuts to see-through bangs — our expert stylists craft Korean haircuts that complement your face shape and lifestyle, with full English consultation and reference photo matching.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+          <a href="/pricing" class="btn-outline">View Pricing</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="py-8 px-6" style="background: #FFFFFF; border-top: 1px solid #DCCDBD; border-bottom: 1px solid #DCCDBD;">
+      <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        {[
+          { num: '10+', label: 'Years Experience' },
+          { num: '4.9★', label: 'Guest Rating' },
+          { num: '100%', label: 'English Service' },
+          { num: 'Free', label: 'Consultation' },
+        ].map(b => (
+          <div>
+            <p class="font-display text-2xl" style="color: #A88F7B;">{b.num}</p>
+            <p class="text-xs tracking-widest uppercase mt-1" style="color: #8D8076;">{b.label}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">About Our Haircuts</p>
+          <h2 class="font-display text-4xl mb-6" style="color: #3A3838; font-weight: 300;">Why International Visitors <em style="color: #A88F7B;">Choose Us</em></h2>
+          <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">Getting a haircut in a foreign country can be stressful — especially when there's a language barrier. At CHAHONG ROOM in Myeongdong, we've eliminated that barrier completely. Our stylists consult, cut and style entirely in English.</p>
+          <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">We specialize in Korean hair trends that international visitors love — wolf cuts, see-through bangs, curtain bangs, mushroom cuts and precision layered cuts. Bring your reference photos and we'll make them happen.</p>
+          <p class="text-sm leading-relaxed mb-6" style="color: #8D8076;">Every haircut includes a thorough consultation, shampoo treatment, precision cut and professional blow dry and styling. What you see is what you get — no hidden costs.</p>
+          <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book Now</a>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80" alt="Korean haircut salon Myeongdong" class="w-full rounded-lg object-cover" style="height: 220px;" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&q=80" alt="Hair styling Seoul" class="w-full rounded-lg object-cover" style="height: 220px; margin-top: 24px;" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Haircut Styles -->
+    <section class="py-20 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Popular Styles</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Korean Haircut <em style="color: #A88F7B;">Styles We Specialize In</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="max-w-lg mx-auto mt-4 text-sm" style="color: #8D8076;">Every style below is available with full English consultation and reference photo matching.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80',
+              title: 'Wolf Cut (울프컷)',
+              desc: 'Korea\'s most viral haircut. Combines the volume of a shag with choppy, textured layers and face-framing pieces. Creates an effortless, edgy look that works on all hair lengths and face shapes. Often combined with a C-curl or wave perm for maximum movement and texture.',
+              best: 'All face shapes & hair lengths',
+              time: '45–75 min',
+              price: 'From ₩50,000'
+            },
+            {
+              img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80',
+              title: 'See-Through Bangs (시스루뱅)',
+              desc: 'The Korean alternative to heavy blunt bangs. Wispy, delicate and light — you can literally see through them. Softens the face without overwhelming it and grows out gracefully without an awkward stage. The most requested bang style at CHAHONG ROOM.',
+              best: 'All face shapes',
+              time: '15–25 min',
+              price: 'From ₩10,000'
+            },
+            {
+              img: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80',
+              title: 'Curtain Bangs (커튼뱅)',
+              desc: 'Center-parted, face-framing bangs that fall softly on either side of the forehead. A timeless Korean style that flatters oval and heart-shaped faces. Easy to style at home with a small round brush and blow dryer — our stylists show you how.',
+              best: 'Oval & heart face shapes',
+              time: '20–30 min',
+              price: 'From ₩10,000'
+            },
+            {
+              img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80',
+              title: 'Layered Cut',
+              desc: 'Classic layers that add movement and reduce weight without dramatically changing your overall shape. Available in face-framing layers, long layers or shag-style choppy layers. A universally flattering option that pairs beautifully with any color service.',
+              best: 'Medium to long hair',
+              time: '45–60 min',
+              price: 'From ₩40,000'
+            },
+            {
+              img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80',
+              title: 'Two-Block Cut (투블럭컷)',
+              desc: 'Korea\'s most popular men\'s haircut. Short faded sides with longer hair on top — the contrast creates a sharp, modern look. Available in classic two-block, two-block + perm for texture, or two-block + fringe. Perfect for the professional or fashion-forward traveler.',
+              best: 'Men — all face shapes',
+              time: '40–60 min',
+              price: 'From ₩30,000'
+            },
+            {
+              img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80',
+              title: 'Mushroom Cut (머시룸컷)',
+              desc: 'A rounded, bowl-like shape with tapered sides — reimagined with Korean elegance. Trending for both men and women. Fashion-forward and distinctive, often combined with a slight perm for texture. A bold choice that turns heads on the streets of Myeongdong.',
+              best: 'Round & oval face shapes',
+              time: '45–60 min',
+              price: 'From ₩45,000'
+            },
+          ].map(s => (
+            <div class="overflow-hidden" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #F7F4EF;">
+              <div style="height: 200px; overflow: hidden;">
+                <img src={s.img} alt={s.title + ' Korean haircut Seoul'} class="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div class="p-5">
+                <h3 class="font-display text-lg mb-2" style="color: #3A3838;">{s.title}</h3>
+                <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">{s.desc}</p>
+                <div class="flex items-center justify-between text-xs pt-3" style="border-top: 1px solid #DCCDBD;">
+                  <span style="color: #A88F7B; font-weight: 600;">{s.price}</span>
+                  <span style="color: #8D8076;">⏱ {s.time}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Face Shape Guide -->
+    <section class="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Style Guide</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Find Your <em style="color: #A88F7B;">Perfect Korean Cut</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        <p class="max-w-lg mx-auto mt-4 text-sm" style="color: #8D8076;">Not sure which style suits you? Our stylists will analyze your face shape during consultation. Here's a general guide:</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {[
+          { shape: 'Oval Face', icon: '🥚', cuts: 'Wolf Cut, Curtain Bangs, Any Length Layers, See-Through Bangs', note: 'Most versatile face shape — almost any style works beautifully.' },
+          { shape: 'Round Face', icon: '⭕', cuts: 'Long Layers, Wolf Cut, Side-Swept Bangs, Asymmetric Cut', note: 'Longer cuts and layers that add length and slim the face.' },
+          { shape: 'Square Face', icon: '🟥', cuts: 'Soft Layers, Curtain Bangs, Wolf Cut, Wispy Bangs', note: 'Soft, layered styles that soften angular features.' },
+          { shape: 'Heart Face', icon: '❤️', cuts: 'Curtain Bangs, Bob, Layered Cut, See-Through Bangs', note: 'Chin-length or below cuts that balance a wider forehead.' },
+        ].map(f => (
+          <div class="p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #FFFFFF;">
+            <div class="text-4xl mb-3">{f.icon}</div>
+            <h3 class="font-display text-lg mb-2" style="color: #3A3838;">{f.shape}</h3>
+            <p class="text-xs font-semibold mb-2" style="color: #A88F7B;">{f.cuts}</p>
+            <p class="text-xs leading-relaxed" style="color: #8D8076;">{f.note}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-20 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Haircut <em style="color: #A88F7B;">Pricing</em></h2>
+          <p class="text-sm" style="color: #8D8076;">All prices in KRW. Shampoo & blow dry included with all cuts.</p>
+        </div>
+        <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+          {[
+            { service: "Women's Haircut", price: 'From ₩40,000', note: 'Shampoo, cut & blow dry included' },
+            { service: "Men's Haircut", price: 'From ₩25,000', note: 'Shampoo, cut & styling included' },
+            { service: 'See-Through Bangs', price: 'From ₩10,000', note: 'Add-on or standalone' },
+            { service: 'Curtain Bangs', price: 'From ₩10,000', note: 'Add-on or standalone' },
+            { service: 'Wolf Cut', price: 'From ₩50,000', note: 'Includes blow dry & styling' },
+            { service: 'Mushroom Cut', price: 'From ₩45,000', note: 'Includes styling' },
+            { service: 'Two-Block Cut', price: 'From ₩30,000', note: 'Men\'s — includes styling' },
+            { service: 'Layered Cut', price: 'From ₩40,000', note: 'Includes blow dry' },
+            { service: 'Blow Dry & Styling Only', price: 'From ₩20,000', note: 'No cut required' },
+            { service: 'Korean Trend Styling', price: 'From ₩30,000', note: 'Event or photoshoot styling' },
+          ].map((item, i) => (
+            <div class="flex items-center justify-between px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+              <div>
+                <p class="text-sm" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note}</p>
+              </div>
+              <span class="text-sm font-semibold" style="color: #A88F7B;">{item.price}</span>
+            </div>
+          ))}
+        </div>
+        <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+          <p class="text-sm mb-4" style="color: #8D8076;">Send us your reference photo for a free consultation before booking!</p>
+          <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Get Free Advice via WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-20 px-6 lg:px-12" style="background: #3A3838;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">What to Expect</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #F7F4EF; font-weight: 300;">Your Haircut <em style="color: #A88F7B;">Experience</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-4 gap-8">
+          {[
+            { step: '01', title: 'English Consultation', desc: 'We review your reference photos, analyze your face shape and recommend the perfect cut and bang option for you.' },
+            { step: '02', title: 'Shampoo & Prep', desc: 'Your hair is washed with a premium shampoo and treated with a conditioning product to prepare for the cut.' },
+            { step: '03', title: 'Precision Cut', desc: 'Your stylist works carefully to execute your chosen style, checking in with you at each stage of the cut.' },
+            { step: '04', title: 'Blow Dry & Style', desc: 'Finished with a professional blow dry. We show you how to recreate the look at home before you leave.' },
+          ].map(s => (
+            <div class="text-center">
+              <p class="font-display text-5xl mb-4" style="color: #A88F7B; opacity: 0.4;">{s.step}</p>
+              <h3 class="font-display text-lg mb-3" style="color: #F7F4EF;">{s.title}</h3>
+              <p class="text-sm leading-relaxed" style="color: #DCCDBD;">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div class="text-center mt-12">
+          <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book Your Haircut Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Common <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'How long does a haircut take?', a: 'Standard cuts take 45–75 minutes including shampoo and blow dry. Bang trims take 15–25 minutes. Wolf cuts and layered cuts take 60–75 minutes. If you\'re adding a perm or color, allow additional time.' },
+          { q: 'Can I bring reference photos?', a: 'Absolutely — we encourage it. Pinterest, Instagram, Google Images or screenshots all work perfectly. The more specific your reference, the better we can match your vision to your specific hair type.' },
+          { q: 'Do you cut men\'s hair?', a: 'Yes! We specialize in Korean men\'s haircuts including the two-block cut, mushroom cut, undercut and men\'s perm combinations. Men\'s cuts start from ₩25,000 including shampoo and styling.' },
+          { q: 'Is English service really available?', a: 'Yes — our stylists consult, cut and communicate entirely in English. You will never feel lost, confused or misunderstood at CHAHONG ROOM. This is one of our proudest features.' },
+          { q: 'Can I walk in without a booking?', a: 'Yes, walk-ins are welcome and we do our best to accommodate. However, booking via WhatsApp guarantees your preferred time slot and allows us to prepare for your appointment.' },
+          { q: 'Do you recommend a cut for my face shape?', a: 'Yes! Every consultation begins with a face shape analysis. We\'ll recommend the most flattering cut, length and bang option for your specific features — just tell us you\'d like our recommendation.' },
+          { q: 'Can I add color or a perm to my haircut appointment?', a: 'Yes — we offer combined appointments for haircut + color or haircut + perm. Book via WhatsApp and let us know what you\'re planning so we can allocate the right amount of time.' },
+          { q: 'What if I\'m not happy with my cut?', a: 'We check in with you throughout the cut and want you to love the result before you leave. Please speak up at any point — we\'re happy to make adjustments. Your satisfaction is our priority.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Explore More Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/mens-haircut-myeongdong', label: "✂️ Men's Haircut" },
+          { href: '/womens-haircut-myeongdong', label: "✂️ Women's Haircut" },
+          { href: '/korean-style-haircut-myeongdong', label: '🇰🇷 Korean Style Cut' },
+          { href: '/hair-perm-myeongdong', label: '🧪 Add a Perm' },
+          { href: '/hair-color-myeongdong', label: '🎨 Add Color' },
+          { href: '/blow-dry-styling-myeongdong', label: '💨 Blow Dry & Styling' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0.00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
