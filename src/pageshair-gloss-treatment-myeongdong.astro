@@ -1,0 +1,39 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+---
+<ServiceLayout
+  title="Hair Gloss Treatment Myeongdong"
+  seoTitle="Hair Gloss Treatment Myeongdong | Shine & Color Boost at CHAHONG ROOM"
+  metaDesc="Professional hair gloss treatment in Myeongdong Seoul. Boost shine, refresh color and add vibrancy. English-friendly service at CHAHONG ROOM."
+  emoji="✨"
+  category="Hair Treatment"
+  heroImage="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1200&q=80"
+  intro="A hair gloss treatment adds an ultra-shiny, semi-permanent color boost that enhances your natural tone and refreshes faded color in just 30 minutes."
+  pricing={[
+    { service: "Clear Gloss (Shine Only)", price: "From ₩50,000" },
+    { service: "Tinted Gloss", price: "From ₩70,000" },
+    { service: "Gloss + Blow Dry", price: "From ₩80,000" },
+  ]}
+  benefits={[
+    "Adds mirror-like shine and vibrancy to dull, flat hair",
+    "Refreshes and enhances existing color without full re-coloring",
+    "Semi-permanent — fades gradually with no harsh regrowth line",
+    "Adds a protective coating that reduces frizz and breakage",
+    "Quick treatment — usually 30–45 minutes",
+    "Perfect for maintaining color between full coloring appointments",
+  ]}
+  faqs={[
+    { q: "How long does a gloss last?", a: "Typically 4–6 weeks depending on how often you wash your hair." },
+    { q: "Can I get a gloss if I haven't colored my hair?", a: "Yes! A clear gloss adds shine to natural hair without changing your color." },
+    { q: "Is it damaging?", a: "Not at all — hair gloss is one of the gentlest salon treatments available." },
+    { q: "Can I combine it with other treatments?", a: "Yes, gloss is often combined with highlights or balayage as a finishing step." },
+  ]}
+  relatedLinks={[
+    { href: '/hair-color-myeongdong', label: "Hair Color" },
+    { href: '/highlights-balayage-myeongdong', label: "Highlights & Balayage" },
+    { href: '/hair-toning-myeongdong', label: "Hair Toning" },
+    { href: '/hair-botox-myeongdong', label: "Hair Botox" },
+  ]}
+>
+  <span slot="headline">Hair Gloss<br/><em class="text-gold">in Myeongdong</em></span>
+</ServiceLayout>
