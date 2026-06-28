@@ -1,0 +1,40 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+---
+<ServiceLayout
+  title="Olaplex Treatment Myeongdong"
+  seoTitle="Olaplex Treatment Myeongdong | Bond Repair at CHAHONG ROOM Seoul"
+  metaDesc="Professional Olaplex hair treatment in Myeongdong Seoul. Rebuild broken bonds, restore strength and shine. English-friendly service at CHAHONG ROOM."
+  emoji="🔬"
+  category="Hair Treatment"
+  heroImage="https://images.unsplash.com/photo-1595252129834-c68e1f0a5f69?w=1200&q=80"
+  intro="Olaplex rebuilds broken disulfide bonds inside the hair shaft — restoring strength, elasticity and shine to damaged, over-processed hair."
+  pricing={[
+    { service: "Olaplex No.3 Treatment", price: "From ₩40,000" },
+    { service: "Olaplex In-Salon Treatment", price: "From ₩80,000" },
+    { service: "Olaplex + Color Service", price: "From ₩50,000 (add-on)" },
+    { service: "Olaplex Full Course (3 sessions)", price: "From ₩200,000" },
+  ]}
+  benefits={[
+    "Rebuilds broken bonds caused by bleaching, coloring and heat styling",
+    "Dramatically reduces breakage and split ends",
+    "Restores elasticity so hair stretches without snapping",
+    "Safe to use during color, bleach and perm services as an add-on",
+    "Suitable for all hair types — especially over-processed hair",
+    "Visible results after just one session",
+  ]}
+  faqs={[
+    { q: "What is Olaplex exactly?", a: "Olaplex is a patented bond-building treatment that reconnects broken disulfide bonds in the hair caused by chemical and heat damage." },
+    { q: "How many sessions do I need?", a: "You'll see results after one session, but a course of 3 sessions gives the best long-term results." },
+    { q: "Can I add Olaplex to my color appointment?", a: "Yes — we highly recommend adding Olaplex to any bleaching or coloring service." },
+    { q: "Is Olaplex safe for all hair?", a: "Yes, Olaplex is safe for all hair types and conditions including bleached and color-treated hair." },
+  ]}
+  relatedLinks={[
+    { href: '/hair-botox-myeongdong', label: "Hair Botox" },
+    { href: '/keratin-treatment-myeongdong', label: "Keratin Treatment" },
+    { href: '/hair-treatment-myeongdong', label: "Hair Treatment" },
+    { href: '/bleaching-myeongdong', label: "Bleaching" },
+  ]}
+>
+  <span slot="headline">Olaplex Treatment<br/><em class="text-gold">in Myeongdong</em></span>
+</ServiceLayout>
