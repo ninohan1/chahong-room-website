@@ -1,0 +1,40 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+---
+<ServiceLayout
+  title="Ombre Hair Color Myeongdong"
+  seoTitle="Ombre Hair Color Myeongdong | Gradient Color at CHAHONG ROOM Seoul"
+  metaDesc="Professional ombre hair color in Myeongdong Seoul. Dark to light gradient, Korean ombre styles. English-friendly service at CHAHONG ROOM."
+  emoji="🌈"
+  category="Specialty Color"
+  heroImage="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=1200&q=80"
+  intro="Ombre creates a seamless gradient from dark roots to lighter ends — a timeless, low-maintenance color technique that looks stunning on Asian hair."
+  pricing={[
+    { service: "Basic Ombre", price: "From ₩120,000" },
+    { service: "Ombre + Toner", price: "From ₩160,000" },
+    { service: "Full Ombre + Treatment", price: "From ₩200,000" },
+    { service: "Reverse Ombre", price: "From ₩140,000" },
+  ]}
+  benefits={[
+    "Natural-looking gradient that grows out beautifully with no harsh lines",
+    "Low maintenance — requires fewer touch-up appointments than full color",
+    "Stunning on dark Asian hair — creates beautiful contrast",
+    "Customizable from subtle to dramatic gradient",
+    "Can be combined with toning for cool ash, beige or warm caramel results",
+    "Bond protection treatment included to minimize damage",
+  ]}
+  faqs={[
+    { q: "What's the difference between ombre and balayage?", a: "Ombre is a more defined gradient from dark to light. Balayage is a freehand technique for a more natural, sun-kissed effect." },
+    { q: "Will ombre work on black hair?", a: "Yes — we specialize in lifting dark Asian hair to create beautiful ombre effects." },
+    { q: "How long does ombre take?", a: "Usually 2–4 hours depending on your hair length and how light you want to go." },
+    { q: "How often do I need touch-ups?", a: "Every 3–6 months — one of the great advantages of ombre is its low maintenance." },
+  ]}
+  relatedLinks={[
+    { href: '/hair-color-myeongdong', label: "Hair Color" },
+    { href: '/highlights-balayage-myeongdong', label: "Highlights & Balayage" },
+    { href: '/bleaching-myeongdong', label: "Bleaching" },
+    { href: '/hair-toning-myeongdong', label: "Hair Toning" },
+  ]}
+>
+  <span slot="headline">Ombre Hair Color<br/><em class="text-gold">in Myeongdong</em></span>
+</ServiceLayout>
