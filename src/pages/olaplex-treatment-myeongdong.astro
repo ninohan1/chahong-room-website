@@ -1,40 +1,234 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Olaplex Treatment Myeongdong"
-  seoTitle="Olaplex Treatment Myeongdong | Bond Repair at CHAHONG ROOM Seoul"
-  metaDesc="Professional Olaplex hair treatment in Myeongdong Seoul. Rebuild broken bonds, restore strength and shine. English-friendly service at CHAHONG ROOM."
-  emoji="🔬"
-  category="Hair Treatment"
-  heroImage="https://images.unsplash.com/photo-1595252129834-c68e1f0a5f69?w=1200&q=80"
-  intro="Olaplex rebuilds broken disulfide bonds inside the hair shaft — restoring strength, elasticity and shine to damaged, over-processed hair."
-  pricing={[
-    { service: "Olaplex No.3 Treatment", price: "From ₩40,000" },
-    { service: "Olaplex In-Salon Treatment", price: "From ₩80,000" },
-    { service: "Olaplex + Color Service", price: "From ₩50,000 (add-on)" },
-    { service: "Olaplex Full Course (3 sessions)", price: "From ₩200,000" },
-  ]}
-  benefits={[
-    "Rebuilds broken bonds caused by bleaching, coloring and heat styling",
-    "Dramatically reduces breakage and split ends",
-    "Restores elasticity so hair stretches without snapping",
-    "Safe to use during color, bleach and perm services as an add-on",
-    "Suitable for all hair types — especially over-processed hair",
-    "Visible results after just one session",
-  ]}
-  faqs={[
-    { q: "What is Olaplex exactly?", a: "Olaplex is a patented bond-building treatment that reconnects broken disulfide bonds in the hair caused by chemical and heat damage." },
-    { q: "How many sessions do I need?", a: "You'll see results after one session, but a course of 3 sessions gives the best long-term results." },
-    { q: "Can I add Olaplex to my color appointment?", a: "Yes — we highly recommend adding Olaplex to any bleaching or coloring service." },
-    { q: "Is Olaplex safe for all hair?", a: "Yes, Olaplex is safe for all hair types and conditions including bleached and color-treated hair." },
-  ]}
-  relatedLinks={[
-    { href: '/hair-botox-myeongdong', label: "Hair Botox" },
-    { href: '/keratin-treatment-myeongdong', label: "Keratin Treatment" },
-    { href: '/hair-treatment-myeongdong', label: "Hair Treatment" },
-    { href: '/bleaching-myeongdong', label: "Bleaching" },
-  ]}
+<Layout
+  title="Olaplex Treatment Myeongdong | Bond Repair at CHAHONG ROOM Seoul"
+  description="Professional Olaplex treatment in Myeongdong Seoul. Rebuild broken bonds, restore strength and shine to damaged hair. English service at CHAHONG ROOM."
 >
-  <span slot="headline">Olaplex Treatment<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Minimal, science-focused layout -->
+    <section class="py-32 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Olaplex · Bond Repair · Myeongdong</p>
+            <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5rem); color: #3A3838; font-weight: 300; line-height: 1.1;">
+              Olaplex<br/>Treatment<br/>
+              <em style="color: #A88F7B; font-style: italic;">in Seoul</em>
+            </h1>
+            <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+            <p class="leading-relaxed mb-8" style="color: #8D8076; font-size: 1rem;">
+              The world's #1 bond-building treatment. Olaplex reconnects broken disulfide bonds inside the hair shaft — the damage caused by bleaching, coloring, heat styling and chemical treatments. Used by salons worldwide. Available at CHAHONG ROOM with full English service.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 mb-10">
+              <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+              <a href="/pricing" class="btn-outline">View Pricing</a>
+            </div>
+            <!-- Science badges -->
+            <div class="flex flex-wrap gap-3">
+              {['Patented Formula', 'Bond-Building Technology', 'No Harsh Chemicals', 'Safe for All Hair'].map(b => (
+                <span class="px-3 py-1 text-xs" style="border: 1px solid #DCCDBD; border-radius: 20px; color: #8D8076;">{b}</span>
+              ))}
+            </div>
+          </div>
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=700&q=80" alt="Olaplex treatment Seoul" class="w-full rounded-lg object-cover" style="height: 500px;" loading="eager" />
+            <div class="absolute bottom-6 left-6 right-6 p-4" style="background: rgba(255,255,255,0.95); border-radius: 8px; border: 1px solid #DCCDBD;">
+              <p class="text-xs font-semibold mb-1" style="color: #3A3838;">Why Olaplex Works</p>
+              <p class="text-xs" style="color: #8D8076;">The active ingredient Bis-Aminopropyl Diglycol Dimaleate links broken bonds back together at a molecular level — something no other treatment can do.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Science -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">The Science</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">How Olaplex <em style="color: #A88F7B;">Actually Works</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            {
+              num: '01',
+              title: 'The Problem — Broken Bonds',
+              desc: 'Hair is made up of disulfide bonds — the chemical bonds that give hair its strength and structure. Bleaching, coloring, heat and chemical treatments break these bonds, leaving hair weak, brittle and prone to breakage. No amount of conditioning can fix broken bonds.',
+              icon: '🔗'
+            },
+            {
+              num: '02',
+              title: 'The Olaplex Difference',
+              desc: 'Olaplex contains a patented active ingredient that specifically seeks out and reconnects broken disulfide bonds. It works at a molecular level — inside the hair shaft, not just on the surface. This is what makes it fundamentally different from regular conditioning treatments.',
+              icon: '🔬'
+            },
+            {
+              num: '03',
+              title: 'The Result — Stronger Hair',
+              desc: 'After treatment, broken bonds are reconnected. Hair regains its structural integrity — becoming stronger, more elastic and resistant to breakage. Color holds better, perms last longer, and hair withstands heat styling with less damage.',
+              icon: '✨'
+            },
+          ].map(s => (
+            <div class="p-6" style="background: #FFFFFF; border: 1px solid #DCCDBD; border-radius: 8px;">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-2xl">{s.icon}</span>
+                <span class="font-display text-sm" style="color: #A88F7B;">{s.num}</span>
+              </div>
+              <h3 class="font-display text-lg mb-3" style="color: #3A3838;">{s.title}</h3>
+              <p class="text-sm leading-relaxed" style="color: #8D8076;">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Olaplex System -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">The System</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Olaplex <em style="color: #A88F7B;">Treatment Options</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            { no: 'No.0', name: 'Intensive Bond Builder', use: 'In-salon', desc: 'The most intensive Olaplex treatment. Applied before No.3 for maximum bond repair. Used as a pre-treatment before color or bleach services.', price: 'Add-on ₩20,000' },
+            { no: 'No.1', name: 'Bond Multiplier', use: 'In-salon only', desc: 'Professional-only formula mixed directly into color or bleach. Protects bonds during chemical services. The most important step for colored hair.', price: 'Add-on ₩30,000' },
+            { no: 'No.2', name: 'Bond Perfector', use: 'In-salon', desc: 'Applied after color is rinsed. Continues rebuilding bonds and prepares hair for styling. Used in combination with No.1 for maximum effect.', price: 'Included in treatment' },
+            { no: 'No.3', name: 'Hair Perfector', use: 'Standalone treatment', desc: 'The most popular standalone Olaplex treatment. Significantly repairs and strengthens hair from the inside out. Recommended as a regular maintenance treatment.', price: 'From ₩40,000' },
+          ].map(o => (
+            <div class="p-5" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #F7F4EF;">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background: #A88F7B; color: white; font-size: 12px; font-weight: 600;">{o.no}</div>
+              <h3 class="font-display text-base mb-1" style="color: #3A3838;">{o.name}</h3>
+              <p class="text-xs mb-3" style="color: #A88F7B;">{o.use}</p>
+              <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">{o.desc}</p>
+              <p class="text-xs font-semibold" style="color: #3A3838;">{o.price}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Who needs it -->
+    <section class="py-24 px-6 lg:px-12" style="background: #3A3838;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Is It Right For You?</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #FFFFFF; font-weight: 300;">Who Benefits Most From <em style="color: #A88F7B;">Olaplex?</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {[
+            { icon: '⚡', title: 'Bleached Hair', desc: 'Bleaching breaks the most bonds of any process. Olaplex is essential — we recommend adding it to every bleaching service.' },
+            { icon: '🎨', title: 'Color-Treated Hair', desc: 'Regular coloring weakens hair over time. Olaplex reverses this damage and helps color last longer and fade more evenly.' },
+            { icon: '🧪', title: 'Permed or Relaxed Hair', desc: 'Chemical straightening and perming break bonds intentionally. Olaplex rebuilds strength afterwards.' },
+            { icon: '🔥', title: 'Heat Damaged Hair', desc: 'Daily heat styling slowly breaks bonds. Olaplex reverses cumulative heat damage over time with regular treatments.' },
+            { icon: '✈️', title: 'International Travelers', desc: 'Flying, hard water and climate changes stress hair. A treatment before your flight home helps hair recover.' },
+            { icon: '💆', title: 'Generally Damaged Hair', desc: 'If your hair breaks easily, lacks elasticity or feels rough and dry — Olaplex will make a noticeable difference.' },
+          ].map(item => (
+            <div class="p-5 flex items-start gap-4" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;">
+              <span class="text-2xl flex-shrink-0">{item.icon}</span>
+              <div>
+                <h3 class="font-display text-base mb-2" style="color: #FFFFFF;">{item.title}</h3>
+                <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.6);">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Olaplex <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Olaplex No.3 Treatment', price: 'From ₩40,000', time: '45–60 min', note: 'Standalone bond repair' },
+          { service: 'Olaplex In-Salon Full Treatment', price: 'From ₩80,000', time: '60–90 min', note: 'No.0 + No.3 combined' },
+          { service: 'Olaplex Add-On (with color)', price: 'From ₩30,000', time: '+15 min', note: 'No.1 mixed into color' },
+          { service: 'Olaplex Add-On (with bleach)', price: 'From ₩50,000', time: '+20 min', note: 'Essential for bleaching' },
+          { service: 'Olaplex Add-On (with perm)', price: 'From ₩30,000', time: '+15 min', note: 'Post-perm bond repair' },
+          { service: 'Olaplex Course (3 sessions)', price: 'From ₩200,000', time: 'Monthly x3', note: 'Best for severe damage' },
+        ].map((item, i) => (
+          <div class="px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note} · {item.time}</p>
+              </div>
+              <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Adding Olaplex to your color or bleach appointment? Message us and we'll include it in your quote.</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Book via WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Olaplex <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'What makes Olaplex different from regular conditioning?', a: 'Regular conditioners coat the outside of the hair shaft to make it feel smoother. Olaplex works inside the hair, reconnecting broken disulfide bonds at a molecular level. It actually repairs damage rather than masking it.' },
+          { q: 'How quickly will I see results?', a: 'Most clients notice a significant difference immediately after their first in-salon treatment. Hair feels stronger, looks shinier and has noticeably less breakage. Bond-building continues improving over the following weeks as bonds continue to reconnect.' },
+          { q: 'Can I add Olaplex to my color appointment?', a: 'Yes — and we highly recommend it. Adding No.1 to your color or bleach service protects bonds during the process. This means your color can lift further with less damage, and your hair condition afterwards is significantly better.' },
+          { q: 'Is Olaplex safe for all hair types?', a: 'Yes — Olaplex is safe for all hair types, textures and conditions. It\'s particularly beneficial for bleached, colored, heat-damaged and chemically treated hair. There are no harsh chemicals and no risk of allergic reaction to the active ingredient.' },
+          { q: 'How many sessions do I need?', a: 'You\'ll see results after one session. For moderately damaged hair, 2–3 monthly sessions gives excellent results. For severely damaged hair (multiple bleach processes, years of heat damage), a course of 3+ monthly sessions is recommended for the most dramatic transformation.' },
+          { q: 'Should I do Olaplex before or after coloring?', a: 'For maximum protection, Olaplex No.1 is mixed directly into your color or bleach during the service. No.3 can be used as a standalone treatment before or between color appointments. We\'ll recommend the right approach for your situation.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Treatments</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/hair-botox-myeongdong', label: '💉 Hair Botox' },
+          { href: '/keratin-treatment-myeongdong', label: '💆 Keratin Treatment' },
+          { href: '/hair-treatment-myeongdong', label: '💆 Hair Treatment' },
+          { href: '/bleaching-myeongdong', label: '⚡ Bleaching' },
+          { href: '/hair-color-myeongdong', label: '🎨 Hair Color' },
+          { href: '/hair-gloss-treatment-myeongdong', label: '✨ Hair Gloss' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
