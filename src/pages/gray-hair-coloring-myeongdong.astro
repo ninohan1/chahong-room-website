@@ -1,41 +1,247 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Gray Hair Coloring Myeongdong"
-  seoTitle="Gray Hair Coloring Myeongdong | Cover Grey at CHAHONG ROOM Seoul"
-  metaDesc="Professional gray hair coloring in Myeongdong Seoul. Full gray coverage, blending and silver hair styling. English-friendly at CHAHONG ROOM."
-  emoji="🩶"
-  category="Specialty Color"
-  heroImage="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1200&q=80"
-  intro="Whether you want full gray coverage or to embrace and enhance your silver hair — our color specialists have the expertise to give you the perfect result."
-  pricing={[
-    { service: "Gray Coverage — Short Hair", price: "From ₩50,000" },
-    { service: "Gray Coverage — Medium Hair", price: "From ₩70,000" },
-    { service: "Gray Coverage — Long Hair", price: "From ₩90,000" },
-    { service: "Gray Blending (Natural Look)", price: "From ₩80,000" },
-    { service: "Silver/White Hair Styling", price: "From ₩150,000" },
-  ]}
-  benefits={[
-    "100% gray coverage using long-lasting, professional color",
-    "Gray blending for a natural, low-maintenance look",
-    "Specialist in silver and white hair transformation",
-    "Gentle formula suitable for mature or sensitive scalps",
-    "Includes scalp protection application during coloring",
-    "Full English consultation to choose coverage level and tone",
-  ]}
-  faqs={[
-    { q: "How often do I need to recolor my gray hair?", a: "Typically every 4–6 weeks for full coverage, or every 8–12 weeks if you prefer a blended look." },
-    { q: "Can you make my hair fully silver/white?", a: "Yes — silver and white hair transformations are one of our specialties, though this requires bleaching first." },
-    { q: "Is coloring safe for mature hair?", a: "Yes — we use gentle, nourishing formulas specifically suited for mature hair types." },
-    { q: "What's gray blending?", a: "Gray blending uses color techniques to soften the contrast between gray and pigmented hair for a natural, low-maintenance result." },
-  ]}
-  relatedLinks={[
-    { href: '/hair-color-myeongdong', label: "Hair Color" },
-    { href: '/highlights-balayage-myeongdong', label: "Highlights & Balayage" },
-    { href: '/hair-toning-myeongdong', label: "Hair Toning" },
-    { href: '/hair-treatment-myeongdong', label: "Hair Treatment" },
-  ]}
+<Layout
+  title="Gray Hair Coloring Myeongdong | Cover Grey at CHAHONG ROOM Seoul"
+  description="Professional gray hair coloring in Myeongdong Seoul. Full gray coverage, blending and silver hair styling. English-friendly service at CHAHONG ROOM."
 >
-  <span slot="headline">Gray Hair Coloring<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Sophisticated, mature, elegant -->
+    <section class="py-28 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Gray Hair · Color Coverage · Myeongdong</p>
+            <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5rem); color: #3A3838; font-weight: 300; line-height: 1.1;">
+              Gray Hair<br/>Coloring<br/>
+              <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+            </h1>
+            <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+            <p class="leading-relaxed mb-8" style="color: #8D8076; font-size: 1rem;">
+              Whether you want to fully cover your grey, blend it naturally or transform it into a stunning silver — our Korean colorists specialize in every approach to grey hair. Full English consultation to understand your goals and find the perfect solution for your hair type and lifestyle.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 mb-10">
+              <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+              <a href="/pricing" class="btn-outline">View Pricing</a>
+            </div>
+            <!-- Three approaches -->
+            <div class="grid grid-cols-3 gap-3">
+              {[
+                { approach: 'Cover It', desc: 'Full coverage' },
+                { approach: 'Blend It', desc: 'Natural look' },
+                { approach: 'Embrace It', desc: 'Silver styling' },
+              ].map(a => (
+                <div class="text-center p-3" style="border: 1px solid #DCCDBD; border-radius: 6px;">
+                  <p class="font-display text-sm font-semibold" style="color: #A88F7B;">{a.approach}</p>
+                  <p class="text-xs mt-1" style="color: #8D8076;">{a.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="space-y-4">
+            <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=700&q=80" alt="Gray hair coloring Seoul" class="w-full rounded-lg object-cover" style="height: 300px;" loading="eager" />
+            <div class="grid grid-cols-3 gap-3">
+              {[
+                { color: '#B8B8B0', label: 'Ash Grey' },
+                { color: '#D4D4D4', label: 'Silver' },
+                { color: '#E8E8E8', label: 'Platinum' },
+              ].map(c => (
+                <div class="text-center p-3" style="border: 1px solid #DCCDBD; border-radius: 6px; background: #F7F4EF;">
+                  <div class="w-8 h-8 rounded-full mx-auto mb-2" style={`background: ${c.color}; border: 1px solid #DCCDBD;`}></div>
+                  <p class="text-xs" style="color: #8D8076;">{c.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Three Approaches -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Choose Your Approach</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Three Ways to Handle <em style="color: #A88F7B;">Grey Hair</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            {
+              approach: '01 — Cover It',
+              title: 'Full Gray Coverage',
+              img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80',
+              desc: 'Complete grey coverage using permanent color matched to your natural shade or a shade you love. Our colorists expertly match your natural base color for seamless, undetectable coverage that looks completely natural.',
+              includes: ['Precise color matching', 'Full root-to-tip coverage', 'Long-lasting permanent formula', 'Conditioning treatment included', 'Scalp protection application'],
+              bestFor: 'Those who want to completely eliminate grey',
+              maintenance: 'Every 4–6 weeks',
+              price: 'From ₩50,000'
+            },
+            {
+              approach: '02 — Blend It',
+              title: 'Gray Blending',
+              img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80',
+              desc: 'Instead of covering grey entirely, blending uses color techniques to soften the contrast between grey and pigmented hair. Creates a natural, low-maintenance look that grows out gracefully without a harsh regrowth line.',
+              includes: ['Customized blending technique', 'Highlights or lowlights to soften', 'Natural-looking result', 'Low maintenance approach', 'Grows out beautifully'],
+              bestFor: 'Those wanting a natural, low-maintenance result',
+              maintenance: 'Every 8–12 weeks',
+              price: 'From ₩80,000'
+            },
+            {
+              approach: '03 — Embrace It',
+              title: 'Silver Transformation',
+              img: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80',
+              desc: 'Rather than fighting the grey, transform it into a stunning silver or white statement. Uses toning and lightening to create a beautiful, intentional silver look. The most fashion-forward approach to grey hair.',
+              includes: ['Bleaching if needed', 'Purple/silver toner application', 'Custom silver shade creation', 'Shine-boosting treatment', 'Full aftercare guidance'],
+              bestFor: 'Those who want to embrace and enhance their grey',
+              maintenance: 'Every 4–6 weeks (toner)',
+              price: 'From ₩100,000'
+            },
+          ].map(a => (
+            <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden; background: #FFFFFF;">
+              <div style="height: 200px; overflow: hidden;">
+                <img src={a.img} alt={a.title} class="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div class="p-6">
+                <p class="text-xs mb-1" style="color: #A88F7B;">{a.approach}</p>
+                <h3 class="font-display text-xl mb-3" style="color: #3A3838;">{a.title}</h3>
+                <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">{a.desc}</p>
+                <div class="space-y-1 mb-4">
+                  {a.includes.map(i => (
+                    <div class="flex items-center gap-2">
+                      <span style="color: #A88F7B; font-size: 10px;">✓</span>
+                      <p class="text-xs" style="color: #8D8076;">{i}</p>
+                    </div>
+                  ))}
+                </div>
+                <div class="pt-4" style="border-top: 1px solid #DCCDBD;">
+                  <p class="text-xs mb-1" style="color: #8D8076;">Best for: {a.bestFor}</p>
+                  <p class="text-xs mb-2" style="color: #8D8076;">Maintenance: {a.maintenance}</p>
+                  <p class="text-sm font-semibold" style="color: #A88F7B;">From {a.price}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Gray Hair Needs Special Care -->
+    <section class="py-24 px-6 lg:px-12" style="background: #3A3838;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Special Considerations</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #FFFFFF; font-weight: 300;">Why Gray Hair Needs <em style="color: #A88F7B;">Expert Handling</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          {[
+            { icon: '🔬', title: 'Different Hair Structure', desc: 'Grey hair has a different chemical structure than pigmented hair — it\'s often more resistant, coarser and has a different porosity. This means standard color formulas don\'t always work the same way. Our colorists understand these differences and adjust their approach accordingly.' },
+            { icon: '⏱️', title: 'Processing Time Varies', desc: 'Resistant grey hair often requires longer processing times or stronger developer to achieve full coverage. We never rush this — proper processing is essential for even, long-lasting color results.' },
+            { icon: '💆', title: 'Scalp Sensitivity', desc: 'Mature scalps can be more sensitive to color chemicals. We always apply a protective barrier to the scalp before coloring and use gentle, nourishing formulas appropriate for mature hair and scalp.' },
+            { icon: '✨', title: 'Maintaining Vibrancy', desc: 'Grey-covered hair can look dull faster than naturally pigmented hair. We always finish with a gloss or shine treatment to ensure your color looks vibrant and healthy, not flat or grey-looking.' },
+          ].map(item => (
+            <div class="flex items-start gap-4 p-5" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;">
+              <span class="text-2xl flex-shrink-0">{item.icon}</span>
+              <div>
+                <h3 class="font-display text-base mb-2" style="color: #FFFFFF;">{item.title}</h3>
+                <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.6);">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Gray Hair Coloring <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW. Final price depends on hair length & grey percentage.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Gray Coverage — Short Hair', price: 'From ₩50,000', time: '1–1.5 hrs', note: 'Full coverage' },
+          { service: 'Gray Coverage — Medium Hair', price: 'From ₩70,000', time: '1.5–2 hrs', note: 'Full coverage' },
+          { service: 'Gray Coverage — Long Hair', price: 'From ₩90,000', time: '2–2.5 hrs', note: 'Full coverage' },
+          { service: 'Gray Root Touch-Up', price: 'From ₩40,000', time: '45–60 min', note: 'Roots only' },
+          { service: 'Gray Blending', price: 'From ₩80,000', time: '1.5–2.5 hrs', note: 'Natural blend technique' },
+          { service: 'Silver Transformation', price: 'From ₩100,000', time: '2–4 hrs', note: 'Embrace the grey' },
+          { service: 'Platinum/White Transformation', price: 'From ₩180,000', time: '3–5 hrs', note: 'Full silver/white' },
+        ].map((item, i) => (
+          <div class="px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note} · {item.time}</p>
+              </div>
+              <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Send a photo of your current hair for an accurate quote and recommendation!</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Get a Free Consultation</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Gray Hair <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'How often do I need to recolor grey hair?', a: 'For full coverage, every 4–6 weeks as roots grow. For grey blending, every 8–12 weeks as the blended result grows out more naturally. For silver transformation with toner, every 4–6 weeks to maintain the cool tone.' },
+          { q: 'Can you match my natural hair color exactly?', a: 'We do our best to match as closely as possible using professional color swatches and your reference photos. Natural hair color is complex and varies in different lights, but our colorists are highly skilled at color matching.' },
+          { q: 'Is coloring safe for mature hair?', a: 'Yes — we use professional-grade formulas specifically chosen to be gentle on mature hair. We always apply scalp protection and use nourishing conditioning treatments alongside color.' },
+          { q: 'What is grey blending?', a: 'Grey blending is a technique that uses color (often highlights or lowlights) to soften the contrast between your grey and naturally pigmented hair. Instead of covering grey entirely, it creates a dimensional, natural-looking result that grows out gracefully without a harsh line.' },
+          { q: 'Can I go fully silver/white in one session?', a: 'If your hair is already mostly grey, transformation to silver can often be achieved in one session with toning. If your hair is dark with grey, it requires lightening first, which may need one or two sessions depending on your hair\'s condition.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/hair-color-myeongdong', label: '🎨 Hair Color' },
+          { href: '/hair-toning-myeongdong', label: '🎨 Hair Toning' },
+          { href: '/highlights-balayage-myeongdong', label: '🌟 Highlights & Balayage' },
+          { href: '/hair-treatment-myeongdong', label: '💆 Hair Treatment' },
+          { href: '/hair-gloss-treatment-myeongdong', label: '✨ Hair Gloss' },
+          { href: '/haircut-myeongdong', label: '✂️ Add a Haircut' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
