@@ -1,41 +1,249 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Highlights & Balayage Myeongdong"
-  seoTitle="Highlights & Balayage Myeongdong | Korean Hair Color at CHAHONG ROOM Seoul"
-  metaDesc="Get expert highlights and balayage in Myeongdong Seoul. Natural sun-kissed looks, money piece, foil highlights. English service at CHAHONG ROOM."
-  emoji="🌟"
-  category="Hair Color"
-  heroImage="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=1200&q=80"
-  intro="From sun-kissed balayage to bold foil highlights — our color specialists create dimensional, natural-looking results tailored to your skin tone and lifestyle."
-  pricing={[
-    { service: "Partial Highlights", price: "From ₩80,000" },
-    { service: "Full Highlights", price: "From ₩130,000" },
-    { service: "Balayage", price: "From ₩150,000" },
-    { service: "Money Piece Highlights", price: "From ₩60,000" },
-    { service: "Highlights + Toner", price: "From ₩160,000" },
-  ]}
-  benefits={[
-    "Natural-looking dimension that flatters every hair type and skin tone",
-    "Balayage grows out beautifully — no harsh regrowth lines",
-    "Money piece framing adds instant brightness around the face",
-    "Custom color blending using premium Korean color products",
-    "Full English consultation with reference photo matching",
-    "Combined with toning or gloss for maximum vibrancy",
-  ]}
-  faqs={[
-    { q: "What's the difference between highlights and balayage?", a: "Highlights use foils for more precise, uniform lightening. Balayage is hand-painted for a softer, sun-kissed natural effect." },
-    { q: "How long do highlights take?", a: "2–4 hours depending on technique and hair length." },
-    { q: "Will highlights damage my hair?", a: "We use bond-protecting treatments alongside all lightening services to minimize damage." },
-    { q: "Can I get highlights on dark Asian hair?", a: "Yes! We specialize in lifting dark hair and creating beautiful results on Asian hair types." },
-  ]}
-  relatedLinks={[
-    { href: '/hair-color-myeongdong', label: "Hair Color" },
-    { href: '/ombre-hair-color-myeongdong', label: "Ombre Color" },
-    { href: '/hair-toning-myeongdong', label: "Hair Toning" },
-    { href: '/bleaching-myeongdong', label: "Bleaching" },
-  ]}
+<Layout
+  title="Highlights & Balayage Myeongdong | Korean Hair Color at CHAHONG ROOM Seoul"
+  description="Expert highlights and balayage in Myeongdong Seoul. Natural sun-kissed looks, money piece, foil highlights. English-friendly service at CHAHONG ROOM."
 >
-  <span slot="headline">Highlights &amp; Balayage<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Horizontal scroll feel with large typography -->
+    <section class="relative overflow-hidden" style="background: #F7F4EF; min-height: 85vh;">
+      <div class="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block">
+        <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=900&q=80" alt="Highlights balayage Myeongdong Seoul" class="w-full h-full object-cover" loading="eager" />
+        <div class="absolute inset-0" style="background: linear-gradient(to right, #F7F4EF 5%, transparent 40%);"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex items-center min-h-[85vh]">
+        <div class="max-w-xl">
+          <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Highlights & Balayage · Myeongdong · Seoul</p>
+          <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5.5rem); color: #3A3838; font-weight: 300; line-height: 1.05;">
+            Highlights &<br/>
+            <em style="color: #A88F7B; font-style: italic;">Balayage</em><br/>
+            in Myeongdong
+          </h1>
+          <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="leading-relaxed mb-8" style="color: #8D8076; font-size: 1rem;">
+            From sun-kissed balayage to precise foil highlights — our Korean color specialists create dimensional, natural-looking results that complement your skin tone and grow out beautifully. No harsh lines, no brassy tones.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+            <a href="/pricing" class="btn-outline">View Pricing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technique Comparison -->
+    <section class="py-24 px-6 lg:px-12" style="background: #3A3838;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Know the Difference</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #FFFFFF; font-weight: 300;">Highlights vs <em style="color: #A88F7B;">Balayage</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          {[
+            {
+              name: 'Balayage',
+              korean: '발레아쥬',
+              img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80',
+              desc: 'Hand-painted technique where color is swept freely onto the hair surface. Creates a soft, natural gradient that mimics the way the sun naturally lightens hair. No foils used.',
+              pros: ['Most natural-looking result', 'Grows out with no harsh line', 'Low maintenance — every 3–5 months', 'Customizable gradient depth'],
+              best: 'Those wanting natural, low-maintenance color',
+              time: '2–4 hours',
+              from: '₩150,000'
+            },
+            {
+              name: 'Foil Highlights',
+              korean: '하이라이트',
+              img: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80',
+              desc: 'Color is applied to sections wrapped in foil. Creates more precise, uniform lightening than balayage. Can achieve lighter results and more dramatic brightness.',
+              pros: ['More defined, brighter result', 'Even coverage throughout', 'Great for adding dimension', 'Can be partial or full'],
+              best: 'Those wanting bright, defined highlights',
+              time: '2–3 hours',
+              from: '₩120,000'
+            },
+          ].map(t => (
+            <div style="border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; overflow: hidden;">
+              <div style="height: 220px; overflow: hidden;">
+                <img src={t.img} alt={t.name + ' Myeongdong Seoul'} class="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <h3 class="font-display text-xl" style="color: #FFFFFF;">{t.name}</h3>
+                  <span class="text-xs" style="color: #A88F7B;">{t.korean}</span>
+                </div>
+                <p class="text-sm leading-relaxed mb-4" style="color: rgba(255,255,255,0.6);">{t.desc}</p>
+                <div class="space-y-2 mb-4">
+                  {t.pros.map(p => (
+                    <div class="flex items-start gap-2">
+                      <span style="color: #A88F7B; flex-shrink: 0;">✓</span>
+                      <p class="text-xs" style="color: rgba(255,255,255,0.7);">{p}</p>
+                    </div>
+                  ))}
+                </div>
+                <div class="flex items-center justify-between pt-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+                  <div>
+                    <p class="text-xs" style="color: rgba(255,255,255,0.4);">From</p>
+                    <p class="text-sm font-semibold" style="color: #A88F7B;">{t.from}</p>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-xs" style="color: rgba(255,255,255,0.4);">Time</p>
+                    <p class="text-xs" style="color: rgba(255,255,255,0.6);">{t.time}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- All Techniques -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">All Techniques</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Every Highlight Technique <em style="color: #A88F7B;">Available</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {[
+            { title: 'Classic Balayage', desc: 'The original hand-painted technique. Color swept onto the surface of the hair for a natural sun-kissed gradient from roots to ends.', time: '2.5–4 hrs', price: 'From ₩150,000' },
+            { title: 'Money Piece', desc: 'Face-framing highlights that brighten the front sections of hair. Instant brightness without a full color service. Very popular in Korea in 2025.', time: '1–1.5 hrs', price: 'From ₩60,000' },
+            { title: 'Partial Highlights', desc: 'Highlights applied to the top and front sections only. Adds brightness and dimension without committing to a full highlight service.', time: '1.5–2.5 hrs', price: 'From ₩80,000' },
+            { title: 'Full Highlights', desc: 'All-over foil highlights from root to tip throughout the entire head. Maximum brightness and dimension.', time: '2–3 hrs', price: 'From ₩130,000' },
+            { title: 'Babylights', desc: 'Very fine, delicate highlights that mimic the natural lightness of childhood hair. The most subtle and natural-looking highlight technique available.', time: '2.5–3.5 hrs', price: 'From ₩140,000' },
+            { title: 'Highlights + Toner', desc: 'Highlights followed by a toning treatment to neutralize brassiness and achieve the perfect ash, beige or warm finish. Our most popular combo.', time: '3–4.5 hrs', price: 'From ₩160,000' },
+          ].map(t => (
+            <div class="p-5" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #F7F4EF;">
+              <h3 class="font-display text-lg mb-2" style="color: #3A3838;">{t.title}</h3>
+              <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">{t.desc}</p>
+              <div class="flex items-center justify-between pt-3" style="border-top: 1px solid #DCCDBD;">
+                <span class="text-sm font-semibold" style="color: #A88F7B;">{t.price}</span>
+                <span class="text-xs" style="color: #8D8076;">⏱ {t.time}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Korean Color Swatches -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Popular Shades</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Most Requested <em style="color: #A88F7B;">Korean Highlight Shades</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {[
+            { color: '#E8D5B7', name: 'Milk Tea Beige', desc: 'Most requested in Korea 2025' },
+            { color: '#D4A76A', name: 'Honey Blonde', desc: 'Warm, sun-kissed golden' },
+            { color: '#C8B89A', name: 'Caramel', desc: 'Rich warm dimension' },
+            { color: '#B8B8B0', name: 'Ash Blonde', desc: 'Cool, sophisticated' },
+            { color: '#D4C5B5', name: 'Sand Beige', desc: 'Natural, effortless' },
+            { color: '#E8E0D8', name: 'Platinum', desc: 'Bold statement look' },
+          ].map(s => (
+            <div class="text-center">
+              <div class="w-full aspect-square rounded-full mb-3 mx-auto" style={`background: ${s.color}; max-width: 80px; border: 2px solid #DCCDBD;`}></div>
+              <p class="text-xs font-semibold" style="color: #3A3838;">{s.name}</p>
+              <p class="text-xs mt-1" style="color: #8D8076;">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+        <p class="text-center mt-8 text-sm" style="color: #8D8076;">Bring your reference photos — we match your desired shade as closely as possible to your hair type and skin tone.</p>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Highlights & Balayage <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW. Final price depends on hair length & technique complexity.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Money Piece Highlights', price: 'From ₩60,000', time: '1–1.5 hrs' },
+          { service: 'Partial Highlights', price: 'From ₩80,000', time: '1.5–2.5 hrs' },
+          { service: 'Full Highlights', price: 'From ₩130,000', time: '2–3 hrs' },
+          { service: 'Babylights', price: 'From ₩140,000', time: '2.5–3.5 hrs' },
+          { service: 'Balayage', price: 'From ₩150,000', time: '2.5–4 hrs' },
+          { service: 'Highlights + Toner', price: 'From ₩160,000', time: '3–4.5 hrs' },
+          { service: 'Balayage + Toner', price: 'From ₩170,000', time: '3–5 hrs' },
+          { service: 'Full Highlight + Treatment', price: 'From ₩160,000', time: '3–4 hrs' },
+        ].map((item, i) => (
+          <div class="flex items-center justify-between px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <span class="text-sm" style="color: #3A3838;">{item.service}</span>
+            <div class="text-right">
+              <p class="text-sm font-semibold" style="color: #A88F7B;">{item.price}</p>
+              <p class="text-xs" style="color: #8D8076;">{item.time}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Send your reference photo via WhatsApp for an accurate quote!</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Get a Free Quote</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto" style="background: #FFFFFF; border-radius: 8px;">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Common <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'Which is better — balayage or highlights?', a: 'Neither is objectively better — they serve different purposes. Balayage creates a softer, more natural result that grows out beautifully. Highlights create a brighter, more defined result. We\'ll recommend the best option for your hair type and desired look during consultation.' },
+          { q: 'Can you do balayage on dark Asian hair?', a: 'Yes — we specialize in lifting dark Asian hair for balayage. The process may require bleaching first to lift the hair enough for the color to show. We\'ll always give you an honest assessment of what\'s achievable in one session.' },
+          { q: 'How long do highlights last?', a: 'Highlights don\'t fade the same way as full color — they stay in until your hair grows. However, you\'ll want a root touch-up or toner refresh every 2–4 months to keep them looking fresh.' },
+          { q: 'Will highlights damage my hair?', a: 'We use bond-protecting treatments alongside all lightening services to minimize damage. Partial or money piece highlights have minimal impact on overall hair health. Full highlights on bleached or previously damaged hair require a damage assessment first.' },
+          { q: 'Can I get highlights and a perm together?', a: 'We generally recommend doing these services on separate visits to protect your hair health. Most stylists recommend coloring first, waiting 2 weeks, then perming. We\'ll advise during consultation.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/hair-color-myeongdong', label: '🎨 Hair Color' },
+          { href: '/hair-toning-myeongdong', label: '🎨 Hair Toning' },
+          { href: '/bleaching-myeongdong', label: '⚡ Bleaching' },
+          { href: '/ombre-hair-color-myeongdong', label: '🌈 Ombre Color' },
+          { href: '/olaplex-treatment-myeongdong', label: '🔬 Olaplex' },
+          { href: '/haircut-myeongdong', label: '✂️ Add a Haircut' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
