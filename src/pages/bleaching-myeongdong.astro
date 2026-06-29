@@ -1,41 +1,254 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Hair Bleaching Myeongdong"
-  seoTitle="Hair Bleaching Myeongdong | Professional Bleach at CHAHONG ROOM Seoul"
-  metaDesc="Professional hair bleaching in Myeongdong Seoul. Safe bleaching for dark Asian hair, platinum blonde, pastel ready. English service at CHAHONG ROOM."
-  emoji="⚡"
-  category="Specialty Color"
-  heroImage="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=1200&q=80"
-  intro="Professional hair bleaching lifts your natural color to achieve platinum blonde, pastel-ready or vivid fashion colors — with maximum care for your hair's health."
-  pricing={[
-    { service: "Full Bleach — Short Hair", price: "From ₩120,000" },
-    { service: "Full Bleach — Medium Hair", price: "From ₩180,000" },
-    { service: "Full Bleach — Long Hair", price: "From ₩240,000" },
-    { service: "Bleach + Toner", price: "From ₩160,000" },
-    { service: "Root Touch-Up Bleach", price: "From ₩80,000" },
-  ]}
-  benefits={[
-    "Specialists in safely bleaching dark Asian hair",
-    "Bond protection treatments used throughout the bleaching process",
-    "Achieves platinum blonde, silver, pastel and vivid color-ready results",
-    "Scalp protection applied to minimize irritation",
-    "Honest consultation — we'll tell you what's achievable in one session",
-    "Aftercare kit and guidance provided after every bleaching service",
-  ]}
-  faqs={[
-    { q: "Is bleaching safe for Asian hair?", a: "Yes, when done professionally. We specialize in safely lifting dark Asian hair with bond protection to minimize damage." },
-    { q: "Can I go platinum in one session?", a: "It depends on your starting hair color and condition. We'll give you an honest assessment during consultation." },
-    { q: "How damaged will my hair be?", a: "We use Olaplex and bond-builders throughout to significantly reduce damage. Most clients are happy with the condition post-bleach." },
-    { q: "How long does bleaching take?", a: "1–4 hours depending on your hair length, density and target level." },
-  ]}
-  relatedLinks={[
-    { href: '/hair-toning-myeongdong', label: "Hair Toning" },
-    { href: '/olaplex-treatment-myeongdong', label: "Olaplex Treatment" },
-    { href: '/ombre-hair-color-myeongdong', label: "Ombre Color" },
-    { href: '/highlights-balayage-myeongdong', label: "Highlights & Balayage" },
-  ]}
+<Layout
+  title="Hair Bleaching Myeongdong | Professional Bleach at CHAHONG ROOM Seoul"
+  description="Professional hair bleaching in Myeongdong Seoul. Safe bleaching for dark Asian hair, platinum blonde, pastel ready. English service at CHAHONG ROOM."
 >
-  <span slot="headline">Hair Bleaching<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Bold, dramatic, high-fashion -->
+    <section class="relative overflow-hidden" style="background: #3A3838; min-height: 85vh;">
+      <div class="absolute inset-0 opacity-20">
+        <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=1600&q=80" alt="Hair bleaching Myeongdong Seoul" class="w-full h-full object-cover" loading="eager" />
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-32">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Bleaching · Lightening · Myeongdong</p>
+            <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5rem); color: #FFFFFF; font-weight: 300; line-height: 1.1;">
+              Hair Bleaching<br/>
+              <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+            </h1>
+            <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+            <p class="leading-relaxed mb-8" style="color: rgba(255,255,255,0.75); font-size: 1rem;">
+              Professional bleaching lifts your natural color to achieve platinum blonde, pastel-ready or vivid fashion colors — with maximum care for your hair's health. We specialize in safely lightening dark Asian hair, using bond-protecting treatments throughout every bleaching service.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 mb-10">
+              <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+              <a href="/pricing" style="border: 1.5px solid rgba(255,255,255,0.4); color: white; font-weight: 600; padding: 14px 32px; border-radius: 6px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block;">View Pricing</a>
+            </div>
+            <div class="p-4" style="background: rgba(168,143,123,0.2); border: 1px solid rgba(168,143,123,0.3); border-radius: 8px;">
+              <p class="text-sm font-semibold mb-1" style="color: #A88F7B;">⚠️ Honest Policy</p>
+              <p class="text-xs leading-relaxed" style="color: rgba(255,255,255,0.7);">We will always tell you honestly what's achievable in one session. We never bleach hair to the point of breakage. If your hair needs conditioning before bleaching, we'll tell you.</p>
+            </div>
+          </div>
+          <!-- Bleach level chart -->
+          <div class="p-6" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;">
+            <p class="text-xs font-semibold mb-4 tracking-widest uppercase" style="color: #A88F7B;">Bleach Lift Levels</p>
+            <div class="space-y-2">
+              {[
+                { level: 'Level 4–5', color: '#3A2A1A', label: 'Dark Brown (natural)', desc: 'Starting point for most Asian hair' },
+                { level: 'Level 6–7', color: '#8B6914', label: 'Medium Brown / Dark Blonde', desc: 'After 1 light bleach session' },
+                { level: 'Level 8', color: '#C4956A', label: 'Light Brown / Warm Blonde', desc: 'After 1 standard bleach' },
+                { level: 'Level 9', color: '#E8C87A', label: 'Blonde / Yellow Blonde', desc: 'Ready for honey, beige tones' },
+                { level: 'Level 10', color: '#F5E8B4', label: 'Pale Yellow / Platinum', desc: 'Ready for silver, pastels, vivid' },
+              ].map(l => (
+                <div class="flex items-center gap-3 p-2" style="border-radius: 4px;">
+                  <div class="w-6 h-6 rounded-full flex-shrink-0" style={`background: ${l.color}; border: 1px solid rgba(255,255,255,0.2);`}></div>
+                  <div class="flex-1">
+                    <p class="text-xs font-semibold" style="color: #FFFFFF;">{l.level} — {l.label}</p>
+                    <p class="text-xs" style="color: rgba(255,255,255,0.5);">{l.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p class="text-xs mt-4" style="color: rgba(255,255,255,0.4);">Results vary by starting hair color & condition. We assess during consultation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What You Can Achieve -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">What's Possible</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">What You Can Achieve <em style="color: #A88F7B;">With Bleaching</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="max-w-lg mx-auto mt-4 text-sm" style="color: #8D8076;">Bleaching is the foundation for many color transformations. Here's what becomes possible:</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              title: 'Platinum Blonde',
+              gradient: 'linear-gradient(135deg, #F5E8B4, #E8D5A0)',
+              desc: 'The ultimate bleach result. Requires lifting to the palest possible level and toning to neutralize yellow. Stunning, high-fashion and one of our most requested results.',
+              bleachSessions: '1–2 sessions',
+              maintenance: 'Toner every 4–6 weeks'
+            },
+            {
+              title: 'Ash / Silver',
+              gradient: 'linear-gradient(135deg, #E0E0D8, #B8B8B0)',
+              desc: 'Cool, grey-toned silver achieved by lifting to pale yellow and applying a silver or purple toner. Korea\'s most popular blonde direction in 2025.',
+              bleachSessions: '1–2 sessions',
+              maintenance: 'Toner every 4–6 weeks'
+            },
+            {
+              title: 'Pastel Colors',
+              gradient: 'linear-gradient(135deg, #F5C6D0, #C6D8F5)',
+              desc: 'Pink, lavender, baby blue, mint — pastel colors require hair to be bleached to a pale yellow level. Perfect for K-pop inspired looks.',
+              bleachSessions: '1–2 sessions',
+              maintenance: 'Color every 4–8 weeks'
+            },
+            {
+              title: 'Vivid Fashion Colors',
+              gradient: 'linear-gradient(135deg, #FF6B9D, #C44DE8)',
+              desc: 'Bold, saturated colors — vivid pink, electric blue, bright purple. Requires full bleaching for maximum color vibrancy. The boldest transformation available.',
+              bleachSessions: '1–2 sessions',
+              maintenance: 'Color every 4–6 weeks'
+            },
+            {
+              title: 'Honey Blonde',
+              gradient: 'linear-gradient(135deg, #E8C87A, #C4956A)',
+              desc: 'Warm, golden blonde achievable at a mid-lift level. More accessible for dark Asian hair as it doesn\'t require full platinum lift. Beautiful and flattering.',
+              bleachSessions: '1 session',
+              maintenance: 'Toner every 6–8 weeks'
+            },
+            {
+              title: 'Ombre / Balayage Base',
+              gradient: 'linear-gradient(135deg, #3A3838, #E8D5B7)',
+              desc: 'Bleaching the ends or mid-lengths creates the perfect base for ombre or balayage color techniques. The most natural-looking bleach application.',
+              bleachSessions: '1 session',
+              maintenance: 'Touch-up every 4–6 months'
+            },
+          ].map(s => (
+            <div class="overflow-hidden" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #F7F4EF;">
+              <div class="h-12" style={`background: ${s.gradient};`}></div>
+              <div class="p-5">
+                <h3 class="font-display text-lg mb-2" style="color: #3A3838;">{s.title}</h3>
+                <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">{s.desc}</p>
+                <div class="grid grid-cols-2 gap-2 pt-3 text-xs" style="border-top: 1px solid #DCCDBD;">
+                  <div>
+                    <p style="color: #8D8076;">Sessions needed</p>
+                    <p style="color: #A88F7B; font-weight: 600;">{s.bleachSessions}</p>
+                  </div>
+                  <div>
+                    <p style="color: #8D8076;">Maintenance</p>
+                    <p style="color: #3A3838;">{s.maintenance}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Bleaching Promise -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Our Promise</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">How We Keep Your Hair <em style="color: #A88F7B;">Healthy During Bleaching</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            { icon: '🔬', title: 'Olaplex Throughout', desc: 'We add Olaplex bond-builder to every bleach mix. It reconnects broken bonds during the bleaching process — significantly reducing damage.' },
+            { icon: '📊', title: 'Honest Assessment', desc: 'Before bleaching, we assess your hair\'s current condition and elasticity. If your hair can\'t handle bleaching safely, we\'ll tell you — and suggest alternative approaches.' },
+            { icon: '🌡️', title: 'Correct Developer', desc: 'Using the right developer strength is critical. We never use stronger developer than necessary for your target level — protecting your hair while achieving your goal.' },
+            { icon: '💆', title: 'Post-Bleach Treatment', desc: 'Every bleach service includes a deep conditioning treatment to restore moisture and close the cuticle. We never let you leave with hair that hasn\'t been properly conditioned.' },
+          ].map(item => (
+            <div class="p-5 text-center" style="background: #FFFFFF; border: 1px solid #DCCDBD; border-radius: 8px;">
+              <span class="text-3xl block mb-3">{item.icon}</span>
+              <h3 class="font-display text-base mb-2" style="color: #3A3838;">{item.title}</h3>
+              <p class="text-sm leading-relaxed" style="color: #8D8076;">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Bleaching <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW. Final price depends on hair length & starting color.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Full Bleach — Short Hair', price: 'From ₩120,000', time: '2–3 hrs', note: 'Above shoulder' },
+          { service: 'Full Bleach — Medium Hair', price: 'From ₩160,000', time: '2.5–3.5 hrs', note: 'Shoulder to mid-back' },
+          { service: 'Full Bleach — Long Hair', price: 'From ₩200,000', time: '3–4 hrs', note: 'Below mid-back' },
+          { service: 'Bleach + Toner', price: 'From ₩150,000', time: '3–5 hrs', note: 'Bleach + color finish' },
+          { service: 'Root Touch-Up Bleach', price: 'From ₩80,000', time: '1.5–2.5 hrs', note: 'Roots only' },
+          { service: 'Partial Bleach (ends/ombre)', price: 'From ₩100,000', time: '2–3 hrs', note: 'Mid-length to ends' },
+          { service: 'Bleach + Pastel Color', price: 'From ₩180,000', time: '3.5–5 hrs', note: 'Lift + fashion color' },
+          { service: 'Olaplex Add-On', price: 'From ₩50,000', time: '+15 min', note: 'Highly recommended' },
+        ].map((item, i) => (
+          <div class="px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note} · {item.time}</p>
+              </div>
+              <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Send a photo of your current hair color for an accurate quote and honest assessment!</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Get a Free Assessment</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Bleaching <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'Is bleaching safe for Asian hair?', a: 'Yes, when done professionally with proper care. We specialize in safely lightening dark Asian hair. We use bond-building treatments throughout the process and never bleach beyond what the hair can safely handle.' },
+          { q: 'Can I go platinum in one session?', a: 'It depends on your starting hair color and condition. Most dark Asian hair can reach a light blonde level in one session. True platinum (very pale yellow or white) may require 1–2 sessions. We\'ll give you an honest assessment during consultation.' },
+          { q: 'How damaged will my hair be?', a: 'We use Olaplex bond-builder in every bleach mix, which significantly reduces damage. Most clients are happy with their hair condition after a professional bleach service. We also apply a deep conditioning treatment afterwards.' },
+          { q: 'Can I bleach previously colored hair?', a: 'It depends on the color and condition. Permanent dark color can be harder to lift and may require additional sessions. We\'ll assess your hair\'s condition and history during consultation and advise the best approach.' },
+          { q: 'What\'s the difference between bleach and hair color?', a: 'Regular hair color adds pigment — it can darken or change tone but has limited lightening power. Bleach removes pigment entirely, allowing you to lift your hair to very light levels. Bleach is required for any dramatic lightening or for achieving pastel and vivid colors on dark hair.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/hair-toning-myeongdong', label: '🎨 Hair Toning' },
+          { href: '/olaplex-treatment-myeongdong', label: '🔬 Olaplex Treatment' },
+          { href: '/ombre-hair-color-myeongdong', label: '🌈 Ombre Color' },
+          { href: '/highlights-balayage-myeongdong', label: '🌟 Highlights & Balayage' },
+          { href: '/gray-hair-coloring-myeongdong', label: '🩶 Gray Hair Coloring' },
+          { href: '/hair-color-myeongdong', label: '🎨 Hair Color' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
