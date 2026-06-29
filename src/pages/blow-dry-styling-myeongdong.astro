@@ -1,40 +1,219 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Blow Dry Styling Myeongdong"
-  seoTitle="Blow Dry & Styling Myeongdong | Blowout at CHAHONG ROOM Seoul"
-  metaDesc="Professional blow dry and blowout styling in Myeongdong Seoul. Smooth, voluminous Korean blowout. English-friendly service at CHAHONG ROOM."
-  emoji="💨"
-  category="Styling"
-  heroImage="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80"
-  intro="A professional blow dry gives you that salon-perfect finish — smooth, shiny and full of volume — that's nearly impossible to recreate at home."
-  pricing={[
-    { service: "Blow Dry — Short Hair", price: "From ₩20,000" },
-    { service: "Blow Dry — Medium Hair", price: "From ₩30,000" },
-    { service: "Blow Dry — Long Hair", price: "From ₩40,000" },
-    { service: "Blow Dry + Waves/Curls", price: "From ₩50,000" },
-  ]}
-  benefits={[
-    "Achieves salon-smooth, frizz-free results that last days",
-    "Adds volume and body to fine, flat hair",
-    "Creates sleek straight looks or bouncy waves depending on your preference",
-    "Uses professional round brushes and heat protection",
-    "Perfect add-on after any color, perm or treatment service",
-    "Quick service — usually 20–40 minutes",
-  ]}
-  faqs={[
-    { q: "How long does a blow dry last?", a: "Typically 2–4 days depending on your hair type and how you sleep/style it." },
-    { q: "Can I get just a blow dry without a cut?", a: "Absolutely — blow dry only services are very popular, especially before events." },
-    { q: "What styles can you create with a blow dry?", a: "Sleek straight, bouncy volume, Korean S-curl waves, or smooth with ends flicked out — your choice!" },
-    { q: "Is it included with a haircut?", a: "Yes — blow dry and basic styling is included with all our haircut services." },
-  ]}
-  relatedLinks={[
-    { href: '/haircut-myeongdong', label: "Haircut" },
-    { href: '/hair-set-myeongdong', label: "Hair Set" },
-    { href: '/event-styling-myeongdong', label: "Event Styling" },
-    { href: '/bridal-updo-myeongdong', label: "Bridal Updo" },
-  ]}
+<Layout
+  title="Blow Dry & Styling Myeongdong | Blowout at CHAHONG ROOM Seoul"
+  description="Professional blow dry and blowout styling in Myeongdong Seoul. Smooth, voluminous Korean blowout. English-friendly service at CHAHONG ROOM."
 >
-  <span slot="headline">Blow Dry &amp; Styling<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Clean, fresh, airy -->
+    <section class="py-28 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Blow Dry · Styling · Myeongdong</p>
+            <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5rem); color: #3A3838; font-weight: 300; line-height: 1.1;">
+              Blow Dry<br/>& Styling<br/>
+              <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+            </h1>
+            <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+            <p class="leading-relaxed mb-8" style="color: #8D8076; font-size: 1rem;">
+              A professional blow dry gives you that salon-perfect finish that's nearly impossible to recreate at home. Smooth, frizz-free and full of volume — your hair will look and feel incredible for days. The perfect finishing touch to any service, or a standalone treat during your Seoul visit.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 mb-10">
+              <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+              <a href="/pricing" class="btn-outline">View Pricing</a>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+              {[
+                { num: 'From ₩20,000', label: 'Starting Price' },
+                { num: '20–40', label: 'Minutes' },
+                { num: '2–4', label: 'Days Results Last' },
+              ].map(b => (
+                <div class="text-center p-3" style="border: 1px solid #DCCDBD; border-radius: 6px;">
+                  <p class="font-display text-sm font-semibold" style="color: #A88F7B;">{b.num}</p>
+                  <p class="text-xs tracking-widest uppercase mt-1" style="color: #8D8076;">{b.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="space-y-3">
+              <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=80" alt="Blow dry styling Seoul" class="w-full rounded-lg object-cover" style="height: 250px;" loading="eager" />
+              <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=400&q=80" alt="Korean blowout Myeongdong" class="w-full rounded-lg object-cover" style="height: 160px;" loading="lazy" />
+            </div>
+            <div class="space-y-3 mt-8">
+              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80" alt="Hair styling Seoul salon" class="w-full rounded-lg object-cover" style="height: 160px;" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&q=80" alt="Blowout result Korea" class="w-full rounded-lg object-cover" style="height: 250px;" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blowout Styles -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Choose Your Finish</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Blow Dry <em style="color: #A88F7B;">Style Options</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            {
+              title: 'Sleek & Straight',
+              desc: 'Pin-straight, mirror-smooth finish using a round brush and tension drying technique. Creates maximum shine and frizz control. The most polished, professional-looking result.',
+              best: 'Office, formal events',
+              icon: '—'
+            },
+            {
+              title: 'Bouncy Volume',
+              desc: 'Full, voluminous blowout with movement and body. Classic salon blowout look. Uses a large round brush to create lift at the roots and soft flicks at the ends.',
+              best: 'Everyday glamour, dates',
+              icon: '◡'
+            },
+            {
+              title: 'Korean S-Wave',
+              desc: 'The signature Korean blowout — soft S-shaped waves created with a round brush. Natural-looking movement that\'s effortlessly chic. Very popular among K-drama fans.',
+              best: 'Korean aesthetic, events',
+              icon: '〜'
+            },
+            {
+              title: 'Soft Curls',
+              desc: 'Loose, soft curls created with a curling iron after blow drying. Adds dimension and romance to the blowout. Perfect for special occasions when you want something extra.',
+              best: 'Parties, special events',
+              icon: '∿'
+            },
+          ].map(s => (
+            <div class="p-5" style="background: #FFFFFF; border: 1px solid #DCCDBD; border-radius: 8px;">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4 font-display text-xl" style="background: #F7F4EF; color: #A88F7B;">{s.icon}</div>
+              <h3 class="font-display text-lg mb-2" style="color: #3A3838;">{s.title}</h3>
+              <p class="text-sm leading-relaxed mb-3" style="color: #8D8076;">{s.desc}</p>
+              <p class="text-xs font-semibold" style="color: #A88F7B;">Best for: {s.best}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- When to get a blowout -->
+    <section class="py-24 px-6 lg:px-12" style="background: #3A3838;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Perfect Timing</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #FFFFFF; font-weight: 300;">When to Get a <em style="color: #A88F7B;">Blow Dry</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {[
+            { icon: '✈️', title: 'After Your Flight', desc: 'Arrive in Seoul looking fresh. A blow dry immediately fixes travel-flattened hair and helps you look great from day one of your trip.' },
+            { icon: '📸', title: 'Before a Photoshoot', desc: 'Professional blow dry creates the best possible base for photographs — smooth, shiny and full of body.' },
+            { icon: '🎉', title: 'Before an Event', desc: 'A blow dry before dinner, a concert or a party gives you that salon-fresh look without the full appointment.' },
+            { icon: '✂️', title: 'After a Haircut', desc: 'Included with every haircut service — but also available as a standalone if you got your hair cut elsewhere and want a professional finish.' },
+            { icon: '🎨', title: 'After Color Service', desc: 'A professional blow dry after coloring seals the cuticle, boosts shine and shows off your new color at its very best.' },
+            { icon: '💆', title: 'After a Treatment', desc: 'Completes any scalp or hair treatment service. Blow drying after treatment seals in the benefits for longer-lasting results.' },
+          ].map(item => (
+            <div class="flex items-start gap-4 p-5" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;">
+              <span class="text-2xl flex-shrink-0">{item.icon}</span>
+              <div>
+                <h3 class="font-display text-base mb-2" style="color: #FFFFFF;">{item.title}</h3>
+                <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.6);">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Blow Dry <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW. Blow dry included FREE with all haircut services.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Blow Dry — Short Hair', price: 'From ₩20,000', time: '20–30 min', note: 'Above shoulder' },
+          { service: 'Blow Dry — Medium Hair', price: 'From ₩30,000', time: '25–35 min', note: 'Shoulder to mid-back' },
+          { service: 'Blow Dry — Long Hair', price: 'From ₩40,000', time: '30–45 min', note: 'Below mid-back' },
+          { service: 'Blow Dry + Soft Curls', price: 'From ₩50,000', time: '40–55 min', note: 'Blow dry + curling iron' },
+          { service: 'Blow Dry + Korean S-Wave', price: 'From ₩45,000', time: '35–50 min', note: 'Signature Korean finish' },
+          { service: 'Blowout (Full Glam)', price: 'From ₩60,000', time: '45–60 min', note: 'Maximum volume & finish' },
+        ].map((item, i) => (
+          <div class="px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note} · {item.time}</p>
+              </div>
+              <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Walk-ins welcome for blow dry services — or book ahead via WhatsApp!</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Book via WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Blow Dry <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'How long does a blow dry last?', a: 'Typically 2–4 days depending on your hair type, how you sleep and your daily activities. Fine hair tends to hold blowouts longer than thick or curly hair. Using a silk pillowcase significantly extends results.' },
+          { q: 'Is blow dry included with a haircut?', a: 'Yes — a professional blow dry and basic styling is included with all our haircut services at no extra charge.' },
+          { q: 'Can I get just a blow dry without a haircut?', a: 'Absolutely — standalone blow dry services are very popular, especially before events or photoshoots. No haircut required.' },
+          { q: 'What styles can you create with a blow dry?', a: 'Sleek straight, bouncy volume, Korean S-wave, soft curls or smooth with ends flicked out — tell us what you want and we\'ll create it.' },
+          { q: 'Is blow dry safe for color-treated hair?', a: 'Yes — we always use heat protection spray on color-treated hair. A professional blow dry can actually enhance the appearance of freshly colored hair by adding shine and smoothness.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/haircut-myeongdong', label: '✂️ Haircut' },
+          { href: '/hair-set-myeongdong', label: '💅 Hair Set' },
+          { href: '/event-styling-myeongdong', label: '🎉 Event Styling' },
+          { href: '/bridal-updo-myeongdong', label: '👰 Bridal Updo' },
+          { href: '/hair-color-myeongdong', label: '🎨 Hair Color' },
+          { href: '/hair-treatment-myeongdong', label: '💆 Hair Treatment' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
