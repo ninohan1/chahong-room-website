@@ -1,40 +1,221 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Event Styling Myeongdong"
-  seoTitle="Event Hair Styling Myeongdong | Special Occasion Hair at CHAHONG ROOM"
-  metaDesc="Professional event hair styling in Myeongdong Seoul. Party, graduation, photoshoot and special occasion hair. English-friendly at CHAHONG ROOM."
-  emoji="🎉"
-  category="Styling"
-  heroImage="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80"
-  intro="Looking stunning for a special occasion? Our event styling service creates glamorous, long-lasting looks perfect for parties, photoshoots, graduations and more."
-  pricing={[
-    { service: "Event Updo", price: "From ₩70,000" },
-    { service: "Event Waves & Curls", price: "From ₩60,000" },
-    { service: "Photoshoot Styling", price: "From ₩80,000" },
-    { service: "Full Glam Package", price: "From ₩120,000" },
-  ]}
-  benefits={[
-    "Stunning styles for any occasion — party, graduation, photoshoot, date night",
-    "Long-lasting hold with professional styling products",
-    "Expert at creating Korean-style glamour looks",
-    "Reference photos welcome — we'll recreate your dream style",
-    "Quick turnaround — most styles completed in 45–60 minutes",
-    "Full English consultation to understand your event and vision",
-  ]}
-  faqs={[
-    { q: "Do I need to book in advance for event styling?", a: "We recommend booking 1–2 weeks ahead for special occasions. Same-day bookings are sometimes available." },
-    { q: "How long will the style last?", a: "With professional products, most styles last 8–12 hours." },
-    { q: "Can I bring reference photos?", a: "Yes — we love reference photos and will work to match your inspiration as closely as possible." },
-    { q: "Do you offer group bookings for events?", a: "Yes! Contact us via WhatsApp for group pricing and scheduling." },
-  ]}
-  relatedLinks={[
-    { href: '/bridal-updo-myeongdong', label: "Bridal Updo" },
-    { href: '/blow-dry-styling-myeongdong', label: "Blow Dry & Styling" },
-    { href: '/hair-set-myeongdong', label: "Hair Set" },
-    { href: '/haircut-myeongdong', label: "Haircut" },
-  ]}
+<Layout
+  title="Event Styling Myeongdong | Special Occasion Hair at CHAHONG ROOM Seoul"
+  description="Professional event hair styling in Myeongdong Seoul. Party, graduation, photoshoot and special occasion hair. English-friendly service at CHAHONG ROOM."
 >
-  <span slot="headline">Event Styling<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Glamorous, celebratory -->
+    <section class="relative overflow-hidden" style="background: #3A3838; min-height: 80vh;">
+      <div class="absolute inset-0 opacity-25">
+        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1600&q=80" alt="Event styling Myeongdong Seoul" class="w-full h-full object-cover" loading="eager" />
+      </div>
+      <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(58,56,56,0.4) 0%, rgba(58,56,56,0.9) 100%);"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex items-end min-h-[80vh] pb-20 py-20">
+        <div class="max-w-3xl">
+          <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Event Styling · Special Occasions · Myeongdong</p>
+          <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 7vw, 6rem); color: #FFFFFF; font-weight: 300; line-height: 1.05;">
+            Event Hair Styling<br/>
+            <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+          </h1>
+          <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="leading-relaxed mb-8 max-w-xl" style="color: rgba(255,255,255,0.8); font-size: 1rem;">
+            Look stunning for any special occasion. Whether it's a graduation, birthday celebration, photoshoot, K-pop concert, dinner party or any event worth remembering — our stylists create glamorous, long-lasting looks in English.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-10">
+            <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+            <a href="/pricing" style="border: 1.5px solid rgba(255,255,255,0.4); color: white; font-weight: 600; padding: 14px 32px; border-radius: 6px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block;">View Pricing</a>
+          </div>
+          <!-- Event tags -->
+          <div class="flex flex-wrap gap-2">
+            {['Graduation 🎓', 'Birthday 🎂', 'Photoshoot 📸', 'Date Night 💕', 'Concert 🎵', 'Party 🎉', 'Dinner 🍽️', 'K-Pop Event ✨'].map(tag => (
+              <span class="text-xs px-3 py-1" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; color: rgba(255,255,255,0.7);">{tag}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Styles -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Style Options</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Event Styling <em style="color: #A88F7B;">Options</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          {[
+            {
+              title: 'Glamour Updo',
+              img: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80',
+              occasions: ['Graduation', 'Gala', 'Formal dinner', 'Award ceremony'],
+              desc: 'A polished, structured updo that radiates sophistication. Clean lines, elegant details and a finish that lasts all evening. Perfect when you want to look undeniably put-together.',
+              price: 'From ₩70,000',
+              time: '45–60 min'
+            },
+            {
+              title: 'Glamour Waves & Curls',
+              img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80',
+              occasions: ['Birthday', 'Party', 'Date night', 'Concert'],
+              desc: 'Voluminous, bouncy curls or smooth Hollywood waves that create maximum impact. Long-lasting with professional setting products — your hair will look incredible all night.',
+              price: 'From ₩60,000',
+              time: '45–60 min'
+            },
+            {
+              title: 'Photoshoot Styling',
+              img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80',
+              occasions: ['Instagram content', 'Professional headshots', 'Travel content', 'K-pop photo concept'],
+              desc: 'Styled specifically to look amazing in photographs. We consider lighting, angles and the aesthetic of your shoot. Many international content creators and influencers choose CHAHONG ROOM for their Seoul photoshoot styling.',
+              price: 'From ₩80,000',
+              time: '60–75 min'
+            },
+            {
+              title: 'Korean Celebrity Style',
+              img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80',
+              occasions: ['K-pop concert', 'Fan meeting', 'Theme party', 'Social media content'],
+              desc: 'Recreate the signature looks of Korean celebrities and K-pop idols. Sleek, polished and incredibly detailed. Bring reference photos of your favorite K-pop star\'s styling and we\'ll bring it to life.',
+              price: 'From ₩80,000',
+              time: '60–90 min'
+            },
+          ].map(s => (
+            <div class="overflow-hidden" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+              <div style="height: 220px; overflow: hidden;">
+                <img src={s.img} alt={s.title} class="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div class="p-6">
+                <h3 class="font-display text-xl mb-2" style="color: #3A3838;">{s.title}</h3>
+                <div class="flex flex-wrap gap-1 mb-3">
+                  {s.occasions.map(o => (
+                    <span class="text-xs px-2 py-0.5" style="background: #A88F7B20; color: #A88F7B; border-radius: 4px;">{o}</span>
+                  ))}
+                </div>
+                <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">{s.desc}</p>
+                <div class="flex items-center justify-between pt-3" style="border-top: 1px solid #DCCDBD;">
+                  <span class="text-sm font-semibold" style="color: #A88F7B;">{s.price}</span>
+                  <span class="text-xs" style="color: #8D8076;">⏱ {s.time}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us for Events -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Why CHAHONG ROOM</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Why Choose Us for Your <em style="color: #A88F7B;">Special Occasion?</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            { icon: '⏳', title: 'Long-Lasting Results', desc: 'Professional setting products ensure your style holds for 8–12 hours or longer — no drooping or frizzing mid-event.' },
+            { icon: '🇬🇧', title: 'Full English Service', desc: 'Describe exactly what you want, show reference photos and get real-time feedback — all in English with zero language barrier.' },
+            { icon: '📸', title: 'Photo-Ready Finish', desc: 'Our stylists understand how hair photographs. We create styles that look stunning in both real life and photos.' },
+            { icon: '⚡', title: 'Quick Turnaround', desc: 'Most event styles are completed in 45–75 minutes. Perfect for fitting into a busy Seoul itinerary.' },
+          ].map(item => (
+            <div class="p-5 text-center" style="background: #FFFFFF; border: 1px solid #DCCDBD; border-radius: 8px;">
+              <span class="text-3xl block mb-3">{item.icon}</span>
+              <h3 class="font-display text-base mb-2" style="color: #3A3838;">{item.title}</h3>
+              <p class="text-sm leading-relaxed" style="color: #8D8076;">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Event Styling <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Event Updo', price: 'From ₩70,000', time: '45–60 min', note: 'Formal & structured' },
+          { service: 'Glamour Waves & Curls', price: 'From ₩60,000', time: '45–60 min', note: 'Party & date night' },
+          { service: 'Photoshoot Styling', price: 'From ₩80,000', time: '60–75 min', note: 'Content & professional' },
+          { service: 'Korean Celebrity Style', price: 'From ₩80,000', time: '60–90 min', note: 'K-pop inspired' },
+          { service: 'Full Glam Package', price: 'From ₩120,000', time: '90–120 min', note: 'Maximum styling' },
+          { service: 'Event Style + Haircut', price: 'From ₩100,000', time: '90–120 min', note: 'Cut + style' },
+        ].map((item, i) => (
+          <div class="px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note} · {item.time}</p>
+              </div>
+              <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Send your reference photo and event details — we'll create the perfect look for you!</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Book via WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Event Styling <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'Do I need to book in advance for event styling?', a: 'We recommend booking 1–3 days in advance for event styling to secure your preferred time. Same-day bookings are sometimes available — message us on WhatsApp to check availability.' },
+          { q: 'How long will my event style last?', a: 'With professional products, most event styles last 8–12 hours. Updos and structured styles generally last longer than waves or curls. We\'ll advise on the best style for your event duration.' },
+          { q: 'Can I bring reference photos?', a: 'Yes — reference photos are very welcome. The more specific your references, the better we can match your vision. Pinterest boards, Instagram saves and screenshots all work perfectly.' },
+          { q: 'Do you offer group bookings for events?', a: 'Yes! For groups (graduation parties, birthday groups, photoshoot teams), contact us via WhatsApp to arrange scheduling and group pricing.' },
+          { q: 'Can you do K-pop style looks for concerts?', a: 'Absolutely — K-pop inspired styling is one of our specialties. Many international fans visiting Seoul for concerts come to CHAHONG ROOM for their concert styling. Bring photos of your desired K-pop look!' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/bridal-updo-myeongdong', label: '👰 Bridal Updo' },
+          { href: '/blow-dry-styling-myeongdong', label: '💨 Blow Dry & Styling' },
+          { href: '/hair-set-myeongdong', label: '💅 Hair Set' },
+          { href: '/haircut-myeongdong', label: '✂️ Add a Haircut' },
+          { href: '/hair-color-myeongdong', label: '🎨 Add Color' },
+          { href: '/hair-treatment-myeongdong', label: '💆 Hair Treatment' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
