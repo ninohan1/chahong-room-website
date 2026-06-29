@@ -1,39 +1,272 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Hair Loss Treatment Myeongdong"
-  seoTitle="Hair Loss Treatment Myeongdong | Thinning Hair Care at CHAHONG ROOM Seoul"
-  metaDesc="Professional hair loss treatment in Myeongdong Seoul. Stimulate regrowth, strengthen follicles and reduce thinning. English-friendly at CHAHONG ROOM."
-  emoji="🌱"
-  category="Scalp Services"
-  heroImage="https://images.unsplash.com/photo-1595252129834-c68e1f0a5f69?w=1200&q=80"
-  intro="Our targeted hair loss treatment strengthens follicles, stimulates regrowth and reduces shedding using advanced Korean scalp technology and serums."
-  pricing={[
-    { service: "Hair Loss Scalp Treatment", price: "From ₩80,000" },
-    { service: "Hair Loss Treatment + Massage", price: "From ₩120,000" },
-    { service: "Full Hair Loss Package (3 sessions)", price: "From ₩300,000" },
-  ]}
-  benefits={[
-    "Stimulates dormant hair follicles to promote new growth",
-    "Strengthens existing hair to reduce shedding and breakage",
-    "Uses professional Korean scalp serums and ampoules",
-    "Includes scalp analysis to assess thinning patterns",
-    "Suitable for both men and women experiencing hair loss",
-    "Combines scalp massage, treatment and targeted serums",
-  ]}
-  faqs={[
-    { q: "Can a salon really treat hair loss?", a: "Yes — professional scalp treatments stimulate blood flow, deliver nutrients to follicles and create optimal conditions for hair growth." },
-    { q: "How many sessions will I need?", a: "We recommend a minimum course of 3–6 sessions for visible results, with monthly maintenance." },
-    { q: "Is this treatment for men or women?", a: "Both — hair thinning affects all genders and our treatments are customized accordingly." },
-    { q: "What causes hair loss?", a: "Stress, diet, hormones, scalp health and genetics all play a role. Our scalp analysis helps identify your specific factors." },
-  ]}
-  relatedLinks={[
-    { href: '/scalp-treatment-myeongdong', label: "Scalp Treatment" },
-    { href: '/scalp-massage-myeongdong', label: "Scalp Massage" },
-    { href: '/dandruff-treatment-myeongdong', label: "Dandruff Treatment" },
-    { href: '/scalp-detox-myeongdong', label: "Scalp Detox" },
-  ]}
+<Layout
+  title="Hair Loss Treatment Myeongdong | Thinning Hair Care at CHAHONG ROOM Seoul"
+  description="Professional hair loss treatment in Myeongdong Seoul. Stimulate regrowth, strengthen follicles and reduce thinning. English-friendly service at CHAHONG ROOM."
 >
-  <span slot="headline">Hair Loss Treatment<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Hopeful, professional, medical trust -->
+    <section class="relative overflow-hidden" style="background: #3A3838; min-height: 80vh;">
+      <div class="absolute inset-0 opacity-15">
+        <img src="https://images.unsplash.com/photo-1470259078422-826894b933aa?w=1600&q=80" alt="Hair loss treatment Seoul" class="w-full h-full object-cover" loading="eager" />
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-32">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Hair Loss Treatment · Growth Stimulation · Myeongdong</p>
+            <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5rem); color: #FFFFFF; font-weight: 300; line-height: 1.1;">
+              Hair Loss<br/>Treatment<br/>
+              <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+            </h1>
+            <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+            <p class="leading-relaxed mb-8" style="color: rgba(255,255,255,0.75); font-size: 1rem;">
+              Hair loss affects millions of people worldwide — and Korean scalp care offers some of the most advanced professional treatments available outside of a clinic. Our targeted hair loss treatment combines professional scalp analysis, growth-stimulating serums and therapeutic massage to strengthen follicles and encourage regrowth.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+              <a href="/pricing" style="border: 1.5px solid rgba(255,255,255,0.4); color: white; font-weight: 600; padding: 14px 32px; border-radius: 6px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block;">View Pricing</a>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            {[
+              { num: '3–6', label: 'Sessions Recommended', icon: '📅' },
+              { num: '60–75', label: 'Minutes Per Session', icon: '⏱' },
+              { num: '↑', label: 'Follicle Stimulation', icon: '🌱' },
+              { num: '100%', label: 'English Service', icon: '🇬🇧' },
+            ].map(b => (
+              <div class="p-4 text-center" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px;">
+                <p class="text-2xl mb-2">{b.icon}</p>
+                <p class="font-display text-xl" style="color: #A88F7B;">{b.num}</p>
+                <p class="text-xs tracking-widest uppercase mt-1" style="color: rgba(255,255,255,0.5);">{b.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Understanding Hair Loss -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+          <div>
+            <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Understanding the Cause</p>
+            <h2 class="font-display text-4xl mb-6" style="color: #3A3838; font-weight: 300;">Why Are You <em style="color: #A88F7B;">Losing Hair?</em></h2>
+            <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">Hair loss has many causes — and identifying the right cause is the first step to effective treatment. Our scalp analysis examines your hair loss pattern, scalp condition and follicle health to understand what's happening at the root level.</p>
+            <p class="text-sm leading-relaxed mb-6" style="color: #8D8076;">Professional salon treatments are most effective for hair loss caused by poor scalp circulation, product buildup blocking follicles, stress-related shedding and general follicle weakness. For hormonal or genetic hair loss, our treatments complement medical treatment by optimizing scalp health.</p>
+            <div class="space-y-3">
+              {[
+                { cause: 'Stress (Telogen Effluvium)', treatable: true, desc: 'Sudden hair shedding triggered by stress, illness or major life events. Often reversible with proper scalp care.' },
+                { cause: 'Poor Scalp Circulation', treatable: true, desc: 'Insufficient blood flow starves follicles of nutrients. Massage and circulation-boosting treatments are highly effective.' },
+                { cause: 'Follicle Blockage', treatable: true, desc: 'Product buildup and sebum block follicles. Scalp detox and regular professional cleansing restore follicle health.' },
+                { cause: 'Hormonal / Genetic', treatable: false, desc: 'Professional treatments can slow progression and optimize scalp conditions, complementing medical treatment.' },
+              ].map(c => (
+                <div class="flex items-start gap-3 p-4" style="border: 1px solid #DCCDBD; border-radius: 6px;">
+                  <span style={`color: ${c.treatable ? '#A88F7B' : '#8D8076'}; flex-shrink: 0; font-weight: bold; font-size: 16px;`}>{c.treatable ? '✓' : '→'}</span>
+                  <div>
+                    <p class="text-sm font-semibold mb-1" style="color: #3A3838;">{c.cause}</p>
+                    <p class="text-xs" style="color: #8D8076;">{c.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=700&q=80" alt="Hair loss scalp analysis Seoul" class="w-full rounded-lg object-cover mb-4" style="height: 300px;" loading="lazy" />
+            <div class="p-5" style="background: #F7F4EF; border: 1px solid #DCCDBD; border-radius: 8px;">
+              <p class="text-sm font-semibold mb-2" style="color: #3A3838;">⚠️ Important Note</p>
+              <p class="text-xs leading-relaxed" style="color: #8D8076;">Our hair loss treatments are professional salon-level scalp care — not medical procedures. For severe or rapidly progressing hair loss, we recommend consulting a dermatologist alongside your salon treatments. We\'ll be honest about what we can and cannot achieve during your English consultation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Treatment Protocol -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Our Approach</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">The Hair Loss <em style="color: #A88F7B;">Treatment Protocol</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              phase: 'Phase 1',
+              title: 'Assessment & Cleanse',
+              sessions: 'Session 1',
+              steps: [
+                'Scalp analysis with professional tools',
+                'Hair loss pattern assessment',
+                'Deep scalp detox cleanse',
+                'Remove follicle-blocking buildup',
+                'English consultation & treatment plan',
+              ]
+            },
+            {
+              phase: 'Phase 2',
+              title: 'Stimulation & Treatment',
+              sessions: 'Sessions 2–4',
+              steps: [
+                'Growth-stimulating scalp massage',
+                'Professional ampoule serum application',
+                'Follicle strengthening treatment',
+                'Blood circulation therapy',
+                'Scalp microbiome balancing',
+              ]
+            },
+            {
+              phase: 'Phase 3',
+              title: 'Maintenance & Prevention',
+              sessions: 'Monthly ongoing',
+              steps: [
+                'Monthly maintenance treatment',
+                'Progress assessment',
+                'Serum adjustment based on results',
+                'Home care routine optimization',
+                'Ongoing English support',
+              ]
+            },
+          ].map(p => (
+            <div class="p-6" style="background: #FFFFFF; border: 1px solid #DCCDBD; border-radius: 8px;">
+              <p class="text-xs font-semibold mb-1" style="color: #A88F7B;">{p.phase} · {p.sessions}</p>
+              <h3 class="font-display text-xl mb-4" style="color: #3A3838;">{p.title}</h3>
+              <div class="space-y-2">
+                {p.steps.map(s => (
+                  <div class="flex items-start gap-2">
+                    <span style="color: #A88F7B; flex-shrink: 0;">✓</span>
+                    <p class="text-sm" style="color: #8D8076;">{s}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Timeline -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">What to Expect</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Results <em style="color: #A88F7B;">Timeline</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="max-w-lg mx-auto mt-4 text-sm" style="color: #8D8076;">Hair growth is slow — realistic expectations are key. Here's what most clients experience:</p>
+        </div>
+        <div class="space-y-4">
+          {[
+            { period: 'After Session 1', result: 'Scalp feels cleaner and less irritated. Reduced shedding during washing. Improved scalp comfort.', realistic: true },
+            { period: 'After 4–6 Weeks', result: 'Noticeable reduction in daily hair shedding. Scalp feels healthier. Existing hair may appear thicker.', realistic: true },
+            { period: 'After 3 Months', result: 'Visible improvement in hair density for most clients. New baby hairs beginning to appear at hairline and parting.', realistic: true },
+            { period: 'After 6 Months', result: 'Significant improvement in overall hair fullness. Hairline recovery for stress-related loss. Continued progress for other types.', realistic: true },
+          ].map((r, i) => (
+            <div class="flex gap-6 items-start p-5" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+              <div class="flex-shrink-0 text-center" style="min-width: 60px;">
+                <div class="w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-1" style="background: #A88F7B; color: white; font-size: 12px; font-weight: 600;">{i + 1}</div>
+                <p class="text-xs" style="color: #A88F7B; font-weight: 600;">{r.period}</p>
+              </div>
+              <div style="border-left: 1px solid #DCCDBD; padding-left: 20px;">
+                <p class="text-sm leading-relaxed" style="color: #3A3838;">{r.result}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="mt-6 p-4 text-center" style="background: #F7F4EF; border-radius: 8px;">
+          <p class="text-xs" style="color: #8D8076;">Results vary by individual, cause of hair loss and consistency of treatment. We\'ll give you realistic expectations during your English consultation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Hair Loss Treatment <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Single Hair Loss Treatment', price: 'From ₩80,000', time: '60–75 min', note: 'Includes scalp analysis' },
+          { service: 'Hair Loss + Massage', price: 'From ₩120,000', time: '75–90 min', note: 'Treatment + stimulating massage' },
+          { service: 'Hair Loss Course (3 sessions)', price: 'From ₩210,000', time: 'Monthly x3', note: 'Save ₩30,000 vs single' },
+          { service: 'Hair Loss Course (6 sessions)', price: 'From ₩420,000', time: 'Monthly x6', note: 'Best for significant thinning' },
+          { service: 'Assessment Only', price: 'From ₩30,000', time: '20–30 min', note: 'Scalp analysis + consultation' },
+        ].map((item, i) => (
+          <div class="px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note} · {item.time}</p>
+              </div>
+              <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Concerned about hair loss? Message us on WhatsApp — we'll discuss your situation honestly and recommend the right approach.</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Book via WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Hair Loss <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'Can a salon really treat hair loss?', a: 'Professional scalp treatments can significantly help with hair loss caused by poor scalp circulation, follicle blockage and stress-related shedding. They complement medical treatment for hormonal or genetic hair loss by optimizing scalp health conditions for growth.' },
+          { q: 'How many sessions will I need?', a: 'We recommend a minimum course of 3 sessions for initial results, with monthly maintenance ongoing. For significant thinning, 6 monthly sessions gives the most comprehensive results. Hair growth is slow — patience and consistency are key.' },
+          { q: 'Is this treatment for men or women?', a: 'Both — hair thinning affects all genders and our treatments are customized for each individual\'s hair loss pattern and cause. We welcome all clients experiencing thinning.' },
+          { q: 'How quickly will I see results?', a: 'Most clients notice reduced shedding after 2–3 sessions and visible density improvement after 3–4 months of consistent treatment. Hair grows approximately 1cm per month, so visible regrowth takes time.' },
+          { q: 'Should I see a doctor as well?', a: 'For significant or rapidly progressing hair loss, yes — we recommend consulting a dermatologist alongside your salon treatments. We\'ll be honest during consultation if we believe medical evaluation would benefit you.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/scalp-treatment-myeongdong', label: '💆 Head Spa' },
+          { href: '/scalp-massage-myeongdong', label: '💆 Scalp Massage' },
+          { href: '/scalp-detox-myeongdong', label: '🫧 Scalp Detox' },
+          { href: '/dandruff-treatment-myeongdong', label: '🌿 Dandruff Treatment' },
+          { href: '/hair-treatment-myeongdong', label: '💆 Hair Treatment' },
+          { href: '/olaplex-treatment-myeongdong', label: '🔬 Olaplex' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
