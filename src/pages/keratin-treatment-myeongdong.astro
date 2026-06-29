@@ -1,35 +1,330 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Keratin Treatment"
-  seoTitle="Keratin Treatment Myeongdong | CHAHONG ROOM Seoul"
-  metaDesc="Expert keratin smoothing treatment in Myeongdong Seoul at CHAHONG ROOM. Frizz control, smooth and shiny hair. English service."
-  emoji="💆"
-  category="Keratin Treatment"
-  intro="Keratin smoothing eliminates frizz and adds brilliant shine — results last 3–5 months with the right aftercare."
-  benefits={[
-    "Expert Korean stylists with 10+ years of combined experience",
-    "Full English consultation — no language barrier for international visitors",
-    "Professional Korean beauty products and techniques",
-    "Personalized service tailored to your hair type and goals",
-    "Easy booking via WhatsApp: +82 10-4794-4623",
-    "Located 2 minutes from Myeongdong Station Exit 6",
-  ]}
-  faqs={[
-    { q: "Do I need to book in advance?", a: "Walk-ins are welcome for haircuts. For color, perm and scalp treatments, we recommend booking via WhatsApp to secure your preferred time." },
-    { q: "Is English service available?", a: "Yes — our stylists are trained to consult fully in English. You will not face any language barrier at CHAHONG ROOM." },
-    { q: "Where are you located?", a: "5F, 13 Myeong-dong-gil, Jung-gu, Seoul. Just 2 minutes walk from Myeongdong Station Exit 6." },
-    { q: "What are your opening hours?", a: "We are open every day — Monday through Sunday — from 10:00 AM to 7:00 PM." },
-  ]}
-  relatedLinks={[
-    { href: '/haircut-myeongdong', label: "Haircut" },
-    { href: '/hair-color-myeongdong', label: "Hair Color" },
-    { href: '/hair-perm-myeongdong', label: "Perm" },
-    { href: '/scalp-treatment-myeongdong', label: "Scalp Care" },
-    { href: '/english-speaking-hair-salon-myeongdong', label: "English Friendly" },
-    { href: '/best-hair-salon-myeongdong', label: "Best Salon Myeongdong" },
-  ]}
+<Layout
+  title="Keratin Treatment Myeongdong | Smooth Frizz-Free Hair at CHAHONG ROOM Seoul"
+  description="Professional keratin treatment in Myeongdong Seoul. Eliminate frizz, achieve silky smooth hair for 3-5 months. Full English service at CHAHONG ROOM."
 >
-  <span slot="headline">Keratin Treatment<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Sleek, smooth aesthetic -->
+    <section class="relative overflow-hidden" style="min-height: 85vh; background: #FFFFFF;">
+      <div class="absolute inset-0 hidden lg:block" style="left: 45%;">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1000&q=80" alt="Keratin treatment smooth hair Seoul" class="w-full h-full object-cover" loading="eager" />
+        <div class="absolute inset-0" style="background: linear-gradient(to right, #FFFFFF 10%, transparent 50%);"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex items-center min-h-[85vh] py-20">
+        <div class="max-w-xl">
+          <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Keratin Treatment · Smoothing · Myeongdong</p>
+          <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5rem); color: #3A3838; font-weight: 300; line-height: 1.1;">
+            Keratin<br/>Treatment<br/>
+            <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+          </h1>
+          <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="leading-relaxed mb-8" style="color: #8D8076; font-size: 1rem;">
+            Silky, frizz-free hair for 3–5 months. Keratin treatment coats the hair shaft with a protein-rich formula that permanently smooths the cuticle — eliminating frizz, reducing drying time by 50% and leaving hair looking salon-perfect every single day.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-10">
+            <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+            <a href="/pricing" class="btn-outline">View Pricing</a>
+          </div>
+          <div class="grid grid-cols-4 gap-3">
+            {[
+              { num: '3–5', label: 'Months Lasts' },
+              { num: '50%', label: 'Less Drying Time' },
+              { num: '2–3', label: 'Hours Treatment' },
+              { num: '100%', label: 'English Service' },
+            ].map(b => (
+              <div class="text-center p-3" style="border: 1px solid #DCCDBD; border-radius: 6px;">
+                <p class="font-display text-base" style="color: #A88F7B;">{b.num}</p>
+                <p class="text-[0.6rem] tracking-widest uppercase mt-1" style="color: #8D8076;">{b.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What is Keratin -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+          <div>
+            <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Understanding Keratin</p>
+            <h2 class="font-display text-4xl mb-6" style="color: #3A3838; font-weight: 300;">What Does Keratin <em style="color: #A88F7B;">Actually Do?</em></h2>
+            <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">Hair is naturally made of keratin protein. Heat styling, chemical treatments, humidity and daily wear break down this protein over time — leaving hair frizzy, rough and difficult to manage. Keratin treatment replenishes this lost protein.</p>
+            <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">The treatment formula coats each hair strand with a liquid keratin solution, which is then sealed in with a flat iron at high heat. This creates a smooth, protective layer around every strand that lasts months.</p>
+            <p class="text-sm leading-relaxed mb-6" style="color: #8D8076;">Unlike hair botox (which works inside the hair), keratin works primarily on the outside of the hair shaft — smoothing the cuticle and creating a protective barrier. This is why keratin can slightly relax curl patterns while hair botox does not.</p>
+            <div class="p-5" style="background: #FFFFFF; border: 1px solid #DCCDBD; border-radius: 8px;">
+              <p class="text-xs font-semibold mb-3" style="color: #3A3838;">⚠️ Important Note for Curly Hair Clients</p>
+              <p class="text-xs leading-relaxed" style="color: #8D8076;">Keratin treatment can loosen and relax your natural curl pattern. If you want to maintain your curls, we recommend hair botox instead. Our stylists will discuss this during your English consultation.</p>
+            </div>
+          </div>
+          <div class="space-y-4">
+            {[
+              { before: 'Frizzy, unruly hair', after: 'Smooth, manageable hair', icon: '💆' },
+              { before: '45–60 min drying time', after: '20–30 min drying time', icon: '⏱' },
+              { before: 'Hair puffs in humidity', after: 'Humidity-resistant finish', icon: '🌧' },
+              { before: 'Rough, coarse texture', after: 'Silky, soft texture', icon: '✨' },
+              { before: 'Needs daily styling', after: 'Wash & wear simplicity', icon: '🚿' },
+            ].map(item => (
+              <div class="flex items-center gap-4 p-4" style="background: #FFFFFF; border: 1px solid #DCCDBD; border-radius: 8px;">
+                <span class="text-xl flex-shrink-0">{item.icon}</span>
+                <div class="flex-1 grid grid-cols-2 gap-3">
+                  <div>
+                    <p class="text-xs" style="color: #8D8076;">Before</p>
+                    <p class="text-sm" style="color: #3A3838;">{item.before}</p>
+                  </div>
+                  <div>
+                    <p class="text-xs" style="color: #A88F7B;">After Keratin</p>
+                    <p class="text-sm font-semibold" style="color: #A88F7B;">{item.after}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Keratin Types -->
+    <section class="py-24 px-6 lg:px-12" style="background: #3A3838;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Treatment Options</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #FFFFFF; font-weight: 300;">Types of Keratin <em style="color: #A88F7B;">Treatments</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              name: 'Classic Keratin',
+              desc: 'The original keratin smoothing treatment. Eliminates frizz and adds shine while significantly reducing drying time. Results last 3–5 months. Suitable for most hair types.',
+              smoothing: '70–80%',
+              lasts: '3–5 months',
+              price: 'From ₩150,000',
+              recommended: true
+            },
+            {
+              name: 'Express Keratin',
+              desc: 'A faster version of the classic treatment with a shorter processing time. Slightly less dramatic results (50–60% smoothing) but perfect for those with time constraints. Can be done in 90 minutes.',
+              smoothing: '50–60%',
+              lasts: '2–3 months',
+              price: 'From ₩100,000',
+              recommended: false
+            },
+            {
+              name: 'Intensive Keratin',
+              desc: 'The most powerful keratin treatment for extremely frizzy or coarse hair. Maximum smoothing effect — up to 90% frizz elimination. Best for very curly, very thick or resistant hair types.',
+              smoothing: '85–90%',
+              lasts: '4–6 months',
+              price: 'From ₩200,000',
+              recommended: false
+            },
+          ].map(t => (
+            <div class="p-6 relative" style={`border: 1px solid ${t.recommended ? '#A88F7B' : 'rgba(255,255,255,0.1)'}; border-radius: 8px; background: rgba(255,255,255,0.05);`}>
+              {t.recommended && (
+                <span class="absolute top-4 right-4 text-xs px-2 py-1" style="background: #A88F7B; color: white; border-radius: 4px;">Most Popular</span>
+              )}
+              <h3 class="font-display text-xl mb-3" style="color: #FFFFFF;">{t.name}</h3>
+              <p class="text-sm leading-relaxed mb-5" style="color: rgba(255,255,255,0.6);">{t.desc}</p>
+              <div class="space-y-2 pt-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+                <div class="flex justify-between text-xs">
+                  <span style="color: rgba(255,255,255,0.5);">Frizz Reduction</span>
+                  <span style="color: #A88F7B; font-weight: 600;">{t.smoothing}</span>
+                </div>
+                <div class="flex justify-between text-xs">
+                  <span style="color: rgba(255,255,255,0.5);">Lasts</span>
+                  <span style="color: rgba(255,255,255,0.8);">{t.lasts}</span>
+                </div>
+                <div class="flex justify-between text-xs">
+                  <span style="color: rgba(255,255,255,0.5);">Price</span>
+                  <span style="color: #A88F7B; font-weight: 600;">{t.price}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Keratin vs Hair Botox -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Which is Right For You?</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Keratin vs <em style="color: #A88F7B;">Hair Botox</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="max-w-lg mx-auto mt-4 text-sm" style="color: #8D8076;">The two most popular smoothing treatments — here's how to choose between them.</p>
+        </div>
+        <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+          <div class="grid grid-cols-3 px-6 py-4" style="background: #F7F4EF;">
+            <p class="text-xs font-semibold tracking-widest uppercase" style="color: #8D8076;"></p>
+            <p class="text-xs font-semibold tracking-widest uppercase text-center" style="color: #A88F7B;">Keratin</p>
+            <p class="text-xs font-semibold tracking-widest uppercase text-center" style="color: #8D8076;">Hair Botox</p>
+          </div>
+          {[
+            { label: 'Main Effect', keratin: 'Smoothing & frizz control', botox: 'Repair & shine' },
+            { label: 'Changes Curl?', keratin: 'Yes — can relax curls', botox: 'No — preserves curls' },
+            { label: 'Works On', keratin: 'Outside of hair shaft', botox: 'Inside of hair shaft' },
+            { label: 'Lasts', keratin: '3–5 months', botox: '2–4 months' },
+            { label: 'Best for', keratin: 'Frizzy, unruly hair', botox: 'Damaged, dull hair' },
+            { label: 'Price', keratin: 'From ₩150,000', botox: 'From ₩80,000' },
+            { label: 'Chemicals', keratin: 'Some formulas contain', botox: 'None' },
+          ].map((row, i) => (
+            <div class="grid grid-cols-3 px-6 py-4" style={`border-top: 1px solid #DCCDBD; background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}`}>
+              <p class="text-xs" style="color: #8D8076;">{row.label}</p>
+              <p class="text-xs text-center font-semibold" style="color: #A88F7B;">{row.keratin}</p>
+              <p class="text-xs text-center" style="color: #8D8076;">{row.botox}</p>
+            </div>
+          ))}
+        </div>
+        <p class="text-center mt-6 text-sm" style="color: #8D8076;">Not sure which is right for you? Send us a photo and description of your hair concern — we'll recommend the best option for free.</p>
+        <div class="text-center mt-4">
+          <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Get Free Recommendation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Keratin <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW. Final price depends on hair length & density.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Express Keratin — Short Hair', price: 'From ₩100,000', time: '90 min', note: 'Above shoulder' },
+          { service: 'Express Keratin — Medium Hair', price: 'From ₩130,000', time: '2 hrs', note: 'Shoulder to mid-back' },
+          { service: 'Classic Keratin — Short Hair', price: 'From ₩150,000', time: '2–2.5 hrs', note: 'Above shoulder' },
+          { service: 'Classic Keratin — Medium Hair', price: 'From ₩180,000', time: '2.5–3 hrs', note: 'Shoulder to mid-back' },
+          { service: 'Classic Keratin — Long Hair', price: 'From ₩220,000', time: '3–3.5 hrs', note: 'Below mid-back' },
+          { service: 'Intensive Keratin — Short Hair', price: 'From ₩200,000', time: '2.5–3 hrs', note: 'Very thick/coarse hair' },
+          { service: 'Intensive Keratin — Medium Hair', price: 'From ₩240,000', time: '3–4 hrs', note: 'Very thick/coarse hair' },
+          { service: 'Keratin + Haircut', price: 'From ₩190,000', time: '3–4 hrs', note: 'Best combo' },
+        ].map((item, i) => (
+          <div class="px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note} · {item.time}</p>
+              </div>
+              <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Send a photo of your hair for an accurate quote based on your length and texture.</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Get a Free Quote</a>
+      </div>
+    </section>
+
+    <!-- Aftercare -->
+    <section class="py-24 px-6 lg:px-12" style="background: #A88F7B;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: rgba(255,255,255,0.7);">Make It Last</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #FFFFFF; font-weight: 300;">Keratin <em style="font-style: italic;">Aftercare Guide</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: rgba(255,255,255,0.4);"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="p-6" style="background: rgba(255,255,255,0.15); border-radius: 8px;">
+            <h3 class="font-display text-lg mb-4" style="color: #FFFFFF;">First 72 Hours ⚠️</h3>
+            <div class="space-y-3">
+              {[
+                'Do NOT wash your hair for 72 hours',
+                'Do NOT tie, clip or pin your hair',
+                'Do NOT tuck hair behind ears',
+                'Avoid sweating — no exercise',
+                'Sleep with hair completely flat',
+                'Avoid rain and humidity',
+              ].map(r => (
+                <div class="flex items-start gap-2">
+                  <span style="color: rgba(255,255,255,0.6); flex-shrink: 0;">·</span>
+                  <p class="text-sm" style="color: rgba(255,255,255,0.85);">{r}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="p-6" style="background: rgba(255,255,255,0.15); border-radius: 8px;">
+            <h3 class="font-display text-lg mb-4" style="color: #FFFFFF;">Long-Term Care ✅</h3>
+            <div class="space-y-3">
+              {[
+                'Use sulfate-free, sodium chloride-free shampoo only',
+                'Avoid salt water and chlorine pools',
+                'Use a keratin-safe conditioner',
+                'Blow dry with a round brush for maximum smoothness',
+                'Sleep on a silk pillowcase',
+                'Touch-up every 3–5 months to maintain results',
+              ].map(r => (
+                <div class="flex items-start gap-2">
+                  <span style="color: rgba(255,255,255,0.6); flex-shrink: 0;">✓</span>
+                  <p class="text-sm" style="color: rgba(255,255,255,0.85);">{r}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Keratin <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'Will keratin straighten my hair?', a: 'Keratin treatment smooths and reduces frizz, which can make curly hair appear straighter. Classic keratin can relax curl patterns by 30–50%. If you want to keep your natural curl, we recommend hair botox instead.' },
+          { q: 'Can I get keratin on colored hair?', a: 'Yes — keratin is safe for colored hair. In fact, many clients get a keratin treatment shortly after coloring to smooth the hair and lock in shine. We recommend waiting at least 2 weeks after coloring before keratin.' },
+          { q: 'Does keratin contain formaldehyde?', a: 'Some keratin formulas contain formaldehyde or formaldehyde-releasing ingredients. We use formaldehyde-free formulas that are safe for salon use. Please ask about our specific formula during consultation.' },
+          { q: 'How long until I can wash my hair?', a: 'You must wait 72 hours (3 days) before washing your hair after a keratin treatment. This is the most critical rule for getting the best results and maximum longevity.' },
+          { q: 'Can I get keratin if I\'m pregnant?', a: 'We recommend consulting your doctor before any chemical treatment during pregnancy. As a precaution, we generally advise waiting until after delivery before keratin treatment.' },
+          { q: 'How do I maintain my keratin treatment?', a: 'Use only sulfate-free, sodium chloride-free shampoo. Avoid salt water and chlorinated pools. Blow dry with a round brush for the smoothest finish. These steps can extend your results from 3 months to 5+ months.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Treatments</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/hair-botox-myeongdong', label: '💉 Hair Botox' },
+          { href: '/olaplex-treatment-myeongdong', label: '🔬 Olaplex' },
+          { href: '/hair-treatment-myeongdong', label: '💆 Hair Treatment' },
+          { href: '/hair-straightening-myeongdong', label: '💈 Hair Straightening' },
+          { href: '/hair-color-myeongdong', label: '🎨 Hair Color' },
+          { href: '/haircut-myeongdong', label: '✂️ Add a Haircut' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
