@@ -1,35 +1,306 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Hair Straightening"
-  seoTitle="Hair Straightening Myeongdong | CHAHONG ROOM Seoul"
-  metaDesc="Japanese straightening and Korean straight perm in Myeongdong at CHAHONG ROOM. Permanently smooth hair, English service."
-  emoji="💆"
-  category="Hair Straightening"
-  intro="Japanese straightening and volume magic straight perm — permanently smooth, frizz-free hair that stays sleek in any weather."
-  benefits={[
-    "Expert Korean stylists with 10+ years of combined experience",
-    "Full English consultation — no language barrier for international visitors",
-    "Professional Korean beauty products and techniques",
-    "Personalized service tailored to your hair type and goals",
-    "Easy booking via WhatsApp: +82 10-4794-4623",
-    "Located 2 minutes from Myeongdong Station Exit 6",
-  ]}
-  faqs={[
-    { q: "Do I need to book in advance?", a: "Walk-ins are welcome for haircuts. For color, perm and scalp treatments, we recommend booking via WhatsApp to secure your preferred time." },
-    { q: "Is English service available?", a: "Yes — our stylists are trained to consult fully in English. You will not face any language barrier at CHAHONG ROOM." },
-    { q: "Where are you located?", a: "5F, 13 Myeong-dong-gil, Jung-gu, Seoul. Just 2 minutes walk from Myeongdong Station Exit 6." },
-    { q: "What are your opening hours?", a: "We are open every day — Monday through Sunday — from 10:00 AM to 7:00 PM." },
-  ]}
-  relatedLinks={[
-    { href: '/haircut-myeongdong', label: "Haircut" },
-    { href: '/hair-color-myeongdong', label: "Hair Color" },
-    { href: '/hair-perm-myeongdong', label: "Perm" },
-    { href: '/scalp-treatment-myeongdong', label: "Scalp Care" },
-    { href: '/english-speaking-hair-salon-myeongdong', label: "English Friendly" },
-    { href: '/best-hair-salon-myeongdong', label: "Best Salon Myeongdong" },
-  ]}
+<Layout
+  title="Hair Straightening Myeongdong | Smooth Straight Hair at CHAHONG ROOM Seoul"
+  description="Professional hair straightening in Myeongdong Seoul. Permanent straightening, Japanese straightening and thermal reconditioning. English service at CHAHONG ROOM."
 >
-  <span slot="headline">Hair Straightening<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Sleek, straight, sophisticated -->
+    <section class="relative overflow-hidden" style="min-height: 85vh; background: #FFFFFF;">
+      <div class="absolute right-0 top-0 bottom-0 hidden lg:block" style="width: 48%;">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900&q=80" alt="Hair straightening Myeongdong Seoul" class="w-full h-full object-cover" loading="eager" />
+        <div class="absolute inset-0" style="background: linear-gradient(to right, #FFFFFF 5%, transparent 40%);"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex items-center min-h-[85vh] py-20">
+        <div class="max-w-lg">
+          <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Hair Straightening · Permanent · Myeongdong</p>
+          <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5rem); color: #3A3838; font-weight: 300; line-height: 1.1;">
+            Hair<br/>Straightening<br/>
+            <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+          </h1>
+          <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="leading-relaxed mb-8" style="color: #8D8076; font-size: 1rem;">
+            Wake up every morning with perfectly straight, smooth hair. Professional hair straightening eliminates frizz, removes curl and wave permanently — giving you the pin-straight, silky hair you've always wanted. Full English consultation at CHAHONG ROOM Myeongdong.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-10">
+            <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+            <a href="/pricing" class="btn-outline">View Pricing</a>
+          </div>
+          <div class="grid grid-cols-3 gap-3">
+            {[
+              { num: '6–12', label: 'Months Results' },
+              { num: '2–4', label: 'Hours Treatment' },
+              { num: '100%', label: 'English Service' },
+            ].map(b => (
+              <div class="text-center p-3" style="border: 1px solid #DCCDBD; border-radius: 6px;">
+                <p class="font-display text-xl" style="color: #A88F7B;">{b.num}</p>
+                <p class="text-xs tracking-widest uppercase mt-1" style="color: #8D8076;">{b.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Straightening Methods -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Treatment Options</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Hair Straightening <em style="color: #A88F7B;">Methods</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              name: 'Permanent Straightening',
+              korean: '매직 스트레이트',
+              img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80',
+              desc: 'The most powerful straightening method. Uses chemical solution to permanently break and reform the hair\'s bonds in a straight pattern. Results are completely permanent on the treated hair — new growth will come in naturally. Best for very curly or frizzy hair that resists other methods.',
+              straightening: '95–100%',
+              lasts: 'Permanent (on treated hair)',
+              price: 'From ₩150,000',
+              time: '3–4 hours',
+              recommended: true
+            },
+            {
+              name: 'Soft Rebonding',
+              korean: '소프트 리본딩',
+              img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80',
+              desc: 'A gentler version of permanent straightening that creates smooth, straight hair with slightly more natural-looking movement. Less damaging than classic rebonding. Results look sleek but not poker-straight — ideal for wavy hair wanting a smoother, more manageable result.',
+              straightening: '75–85%',
+              lasts: '6–8 months',
+              price: 'From ₩130,000',
+              time: '2.5–3.5 hours',
+              recommended: false
+            },
+            {
+              name: 'Thermal Reconditioning',
+              korean: '열 교정',
+              img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80',
+              desc: 'Uses heat and chemical treatment to permanently straighten hair while adding deep conditioning and shine. Similar result to rebonding but with added hair conditioning benefits. Popular for clients who want straight hair but are concerned about damage.',
+              straightening: '90–95%',
+              lasts: 'Permanent (on treated hair)',
+              price: 'From ₩180,000',
+              time: '3–4.5 hours',
+              recommended: false
+            },
+          ].map(m => (
+            <div class="overflow-hidden" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #FFFFFF; position: relative;">
+              {m.recommended && (
+                <div class="absolute top-3 right-3 z-10 px-2 py-1 text-xs font-semibold" style="background: #A88F7B; color: white; border-radius: 4px;">Most Popular</div>
+              )}
+              <div style="height: 200px; overflow: hidden;">
+                <img src={m.img} alt={m.name} class="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div class="p-5">
+                <div class="flex items-start justify-between mb-2">
+                  <h3 class="font-display text-lg" style="color: #3A3838;">{m.name}</h3>
+                  <span class="text-xs ml-2 flex-shrink-0" style="color: #A88F7B;">{m.korean}</span>
+                </div>
+                <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">{m.desc}</p>
+                <div class="grid grid-cols-2 gap-2 pt-3 text-xs" style="border-top: 1px solid #DCCDBD;">
+                  <div>
+                    <p style="color: #8D8076;">Straightening</p>
+                    <p style="color: #A88F7B; font-weight: 600;">{m.straightening}</p>
+                  </div>
+                  <div>
+                    <p style="color: #8D8076;">Lasts</p>
+                    <p style="color: #3A3838;">{m.lasts}</p>
+                  </div>
+                  <div>
+                    <p style="color: #8D8076;">Price</p>
+                    <p style="color: #A88F7B; font-weight: 600;">{m.price}</p>
+                  </div>
+                  <div>
+                    <p style="color: #8D8076;">Time</p>
+                    <p style="color: #3A3838;">{m.time}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Straightening vs Keratin -->
+    <section class="py-24 px-6 lg:px-12" style="background: #3A3838;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Which Is Right For You?</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #FFFFFF; font-weight: 300;">Straightening vs <em style="color: #A88F7B;">Keratin Treatment</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div style="border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; overflow: hidden;">
+          <div class="grid grid-cols-3 px-6 py-4" style="background: rgba(168,143,123,0.2);">
+            <p class="text-xs font-semibold tracking-widest uppercase" style="color: #A88F7B;"></p>
+            <p class="text-xs font-semibold tracking-widest uppercase text-center" style="color: #A88F7B;">Straightening</p>
+            <p class="text-xs font-semibold tracking-widest uppercase text-center" style="color: rgba(255,255,255,0.5);">Keratin</p>
+          </div>
+          {[
+            { label: 'Result', straight: 'Completely straight', keratin: 'Smoother, less frizzy' },
+            { label: 'Permanent?', straight: 'Yes — on treated hair', keratin: 'No — fades over time' },
+            { label: 'Lasts', straight: 'Until new growth', keratin: '3–5 months' },
+            { label: 'Changes curl?', straight: 'Yes — eliminates curl', keratin: 'Partially relaxes curl' },
+            { label: 'Best for', straight: 'Curly/frizzy wanting straight', keratin: 'Frizzy wanting smoother' },
+            { label: 'Price', straight: 'From ₩150,000', keratin: 'From ₩150,000' },
+            { label: 'Maintenance', straight: 'New growth touch-up only', keratin: 'Repeat every 3–5 months' },
+          ].map((row, i) => (
+            <div class="grid grid-cols-3 px-6 py-4" style={`border-top: 1px solid rgba(255,255,255,0.08); background: ${i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.03)'}`}>
+              <p class="text-xs" style="color: rgba(255,255,255,0.5);">{row.label}</p>
+              <p class="text-xs text-center font-semibold" style="color: #A88F7B;">{row.straight}</p>
+              <p class="text-xs text-center" style="color: rgba(255,255,255,0.5);">{row.keratin}</p>
+            </div>
+          ))}
+        </div>
+        <p class="text-center mt-6 text-sm" style="color: rgba(255,255,255,0.5);">Not sure which is right for you? Send us a photo of your hair — we'll recommend the best option for free.</p>
+        <div class="text-center mt-4">
+          <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Get Free Recommendation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Hair Straightening <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW. Final price depends on hair length & thickness.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Soft Rebonding — Short', price: 'From ₩130,000', time: '2.5–3 hrs', note: 'Above shoulder' },
+          { service: 'Soft Rebonding — Medium', price: 'From ₩160,000', time: '3–3.5 hrs', note: 'Shoulder to mid-back' },
+          { service: 'Permanent Straightening — Short', price: 'From ₩150,000', time: '3–4 hrs', note: 'Above shoulder' },
+          { service: 'Permanent Straightening — Medium', price: 'From ₩190,000', time: '3.5–4.5 hrs', note: 'Shoulder to mid-back' },
+          { service: 'Permanent Straightening — Long', price: 'From ₩230,000', time: '4–5 hrs', note: 'Below mid-back' },
+          { service: 'Thermal Reconditioning — Short', price: 'From ₩180,000', time: '3–4.5 hrs', note: 'Above shoulder' },
+          { service: 'Thermal Reconditioning — Medium', price: 'From ₩220,000', time: '3.5–5 hrs', note: 'Shoulder to mid-back' },
+          { service: 'New Growth Touch-Up', price: 'From ₩100,000', time: '2–3 hrs', note: 'Roots only' },
+        ].map((item, i) => (
+          <div class="px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note} · {item.time}</p>
+              </div>
+              <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Send a photo of your hair for an accurate quote and honest recommendation!</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Get a Free Quote</a>
+      </div>
+    </section>
+
+    <!-- Aftercare -->
+    <section class="py-24 px-6 lg:px-12" style="background: #A88F7B;">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: rgba(255,255,255,0.7);">Make It Last</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #FFFFFF; font-weight: 300;">Straightening <em style="font-style: italic;">Aftercare</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: rgba(255,255,255,0.4);"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="p-6" style="background: rgba(255,255,255,0.15); border-radius: 8px;">
+            <h3 class="font-display text-lg mb-4" style="color: #FFFFFF;">First 72 Hours ⚠️</h3>
+            <div class="space-y-2">
+              {[
+                'Do NOT wash hair for 72 hours',
+                'Do NOT tie, clip or pin hair',
+                'Avoid sweating — no exercise',
+                'Keep hair completely straight',
+                'Avoid rain and humidity',
+                'Sleep with hair flat and loose',
+              ].map(r => (
+                <div class="flex items-start gap-2">
+                  <span style="color: rgba(255,255,255,0.6); flex-shrink: 0;">·</span>
+                  <p class="text-sm" style="color: rgba(255,255,255,0.85);">{r}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="p-6" style="background: rgba(255,255,255,0.15); border-radius: 8px;">
+            <h3 class="font-display text-lg mb-4" style="color: #FFFFFF;">Long-Term Care ✅</h3>
+            <div class="space-y-2">
+              {[
+                'Use sulfate-free shampoo only',
+                'Avoid salt water and chlorine',
+                'Deep condition weekly',
+                'Use heat protection if blow drying',
+                'Avoid excessive heat on new growth',
+                'Return for new growth touch-up when needed',
+              ].map(r => (
+                <div class="flex items-start gap-2">
+                  <span style="color: rgba(255,255,255,0.6); flex-shrink: 0;">✓</span>
+                  <p class="text-sm" style="color: rgba(255,255,255,0.85);">{r}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Straightening <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'How long does hair straightening last?', a: 'Permanent straightening lasts on the treated hair forever — your new growth will come in naturally curly/wavy, requiring a touch-up only on the roots. Soft rebonding fades after 6–8 months. Thermal reconditioning is permanent on treated hair.' },
+          { q: 'Is straightening damaging?', a: 'Chemical straightening does cause some damage to the hair structure. We minimize this with bond-protecting treatments and thorough conditioning. We\'ll always assess your hair\'s condition first and recommend the gentlest method that achieves your goal.' },
+          { q: 'Can I color my hair after straightening?', a: 'We recommend waiting at least 2 weeks after straightening before coloring. Chemical processes should not be done too close together. We\'ll advise during consultation.' },
+          { q: 'Will my curls come back?', a: 'On the treated portions of your hair, no — straightening is permanent on those sections. Your new growth will come in with your natural curl pattern. This is why periodic root touch-ups are needed as hair grows.' },
+          { q: 'What\'s the difference between rebonding and thermal reconditioning?', a: 'Rebonding uses chemicals to permanently break and reform bonds in a straight pattern. Thermal reconditioning combines chemicals with heat for similar results but with more conditioning benefits. Both are permanent — thermal reconditioning is generally gentler and leaves hair in better condition.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/keratin-treatment-myeongdong', label: '💆 Keratin Treatment' },
+          { href: '/hair-botox-myeongdong', label: '💉 Hair Botox' },
+          { href: '/hair-treatment-myeongdong', label: '💆 Hair Treatment' },
+          { href: '/hair-perm-myeongdong', label: '🧪 Hair Perm' },
+          { href: '/haircut-myeongdong', label: '✂️ Add a Haircut' },
+          { href: '/hair-color-myeongdong', label: '🎨 Hair Color' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
