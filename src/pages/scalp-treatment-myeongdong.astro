@@ -1,42 +1,292 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Scalp Treatment Myeongdong"
-  seoTitle="Scalp Treatment Myeongdong | Head Spa at CHAHONG ROOM Seoul"
-  metaDesc="Professional scalp treatment and head spa in Myeongdong at CHAHONG ROOM. Anti-hair loss, deep cleansing, aromatherapy. English-friendly service."
-  emoji="💆"
-  category="Scalp & Hair Care"
-  heroImage="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&q=80"
-  intro="Our signature scalp treatment combines deep cleansing, targeted serums and aromatherapy massage for optimal hair health and deep relaxation."
-  pricing={[
-    { service: "Head Spa (Full Treatment)", price: "From ₩60,000" },
-    { service: "Deep Scalp Cleansing", price: "From ₩40,000" },
-    { service: "Anti-Hair Loss Treatment", price: "From ₩60,000" },
-    { service: "Scalp Clinic (Dandruff/Oily)", price: "From ₩50,000" },
-    { service: "Hair Clinic (Protein Pack)", price: "From ₩30,000" },
-    { service: "Aromatherapy Massage Add-on", price: "From ₩20,000" },
-  ]}
-  benefits={[
-    "Full scalp diagnosis before every treatment — customized to your needs",
-    "Deep scalp cleansing removes buildup, dead skin cells and excess sebum",
-    "Aromatherapy head, neck and shoulder massage — deeply relaxing",
-    "Anti-hair loss serums and ampoules for hair growth stimulation",
-    "Nourishing hair mask included to restore softness and shine",
-    "Perfect for travelers — unwind after sightseeing in Seoul",
-  ]}
-  faqs={[
-    { q: "How long does a head spa take?", a: "A full head spa takes approximately 60–90 minutes including consultation, treatment and styling." },
-    { q: "Is it suitable for sensitive scalps?", a: "Yes — we customize the products based on your scalp type. Please inform us of any allergies beforehand." },
-    { q: "How often should I get a scalp treatment?", a: "For best results, once a month. As a visitor, even a single session will leave a noticeable difference." },
-    { q: "Do I need to book in advance?", a: "We recommend booking via WhatsApp to secure your preferred time slot, especially for longer treatments." },
-  ]}
-  relatedLinks={[
-    { href: '/hair-treatment-myeongdong', label: "Hair Treatment" },
-    { href: '/keratin-treatment-myeongdong', label: "Keratin Treatment" },
-    { href: '/haircut-myeongdong', label: "Add a Haircut" },
-    { href: '/best-hair-salon-myeongdong', label: "Best Salon Myeongdong" },
-  ]}
+<Layout
+  title="Scalp Treatment Myeongdong | Korean Head Spa at CHAHONG ROOM Seoul"
+  description="Professional scalp treatment and head spa in Myeongdong Seoul. Deep cleanse, scalp analysis and targeted treatment. Full English service at CHAHONG ROOM."
 >
-  <span slot="headline">Scalp Treatment<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Spa, calm, wellness aesthetic -->
+    <section class="relative overflow-hidden" style="min-height: 85vh; background: #3A3838;">
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1470259078422-826894b933aa?w=1600&q=80" alt="Scalp treatment head spa Myeongdong Seoul" class="w-full h-full object-cover" style="opacity: 0.25;" loading="eager" />
+      </div>
+      <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(58,56,56,0.3) 0%, rgba(58,56,56,0.8) 100%);"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex items-center min-h-[85vh] py-20">
+        <div class="max-w-3xl mx-auto text-center">
+          <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Scalp Treatment · Head Spa · Myeongdong</p>
+          <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 7vw, 6rem); color: #FFFFFF; font-weight: 300; line-height: 1.05;">
+            Korean Scalp<br/>
+            <em style="color: #A88F7B; font-style: italic;">Treatment & Head Spa</em>
+          </h1>
+          <div class="mb-6 mx-auto" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="leading-relaxed mb-8 mx-auto max-w-2xl" style="color: rgba(255,255,255,0.8); font-size: 1rem;">
+            Korea treats the scalp like skin — with analysis, targeted treatments and professional care. Our scalp treatment goes far beyond a regular shampoo. Experience the most thorough scalp care available in Myeongdong, with full English service.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+            <a href="/pricing" style="border: 1.5px solid rgba(255,255,255,0.4); color: white; font-weight: 600; padding: 14px 32px; border-radius: 6px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block;">View Pricing</a>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
+            {[
+              { num: '60–90', label: 'Minutes' },
+              { num: '4★', label: 'Scalp Analysis' },
+              { num: '100%', label: 'English Service' },
+              { num: 'Free', label: 'Consultation' },
+            ].map(b => (
+              <div class="text-center p-3" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 6px;">
+                <p class="font-display text-xl" style="color: #A88F7B;">{b.num}</p>
+                <p class="text-xs tracking-widest uppercase mt-1" style="color: rgba(255,255,255,0.5);">{b.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Korean Scalp Care Philosophy -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">The Korean Approach</p>
+            <h2 class="font-display text-4xl mb-6" style="color: #3A3838; font-weight: 300;">Why Korean Scalp Care is <em style="color: #A88F7B;">Different</em></h2>
+            <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">Korea is famous for its skincare obsession — but did you know that same meticulous care extends to the scalp? Koreans treat the scalp as an extension of facial skin, requiring regular cleansing, analysis, treatment and nourishment.</p>
+            <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">Unlike Western salons where scalp care is an afterthought, CHAHONG ROOM follows a multi-step Korean scalp care protocol. We begin with a professional scalp analysis using specialized tools to identify your scalp type and specific concerns before any treatment begins.</p>
+            <p class="text-sm leading-relaxed mb-6" style="color: #8D8076;">The result? Targeted treatment that actually addresses the root cause of your scalp concern — not just the symptoms.</p>
+            <div class="grid grid-cols-2 gap-3">
+              {[
+                { icon: '🔬', label: 'Scalp Analysis First' },
+                { icon: '🎯', label: 'Targeted Treatment' },
+                { icon: '💆', label: 'Professional Massage' },
+                { icon: '🌿', label: 'Premium Korean Products' },
+              ].map(item => (
+                <div class="flex items-center gap-3 p-3" style="border: 1px solid #DCCDBD; border-radius: 6px;">
+                  <span class="text-xl">{item.icon}</span>
+                  <p class="text-sm" style="color: #3A3838;">{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="space-y-4">
+            <img src="https://images.unsplash.com/photo-1470259078422-826894b933aa?w=700&q=80" alt="Korean scalp treatment Seoul" class="w-full rounded-lg object-cover" style="height: 300px;" loading="lazy" />
+            <div class="grid grid-cols-2 gap-4">
+              <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=80" alt="Head spa Myeongdong" class="w-full rounded-lg object-cover" style="height: 150px;" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1595252129834-c68e1f0a5f69?w=400&q=80" alt="Scalp massage Seoul" class="w-full rounded-lg object-cover" style="height: 150px;" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scalp Treatment Menu -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Treatment Menu</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Our Scalp <em style="color: #A88F7B;">Treatment Options</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              icon: '🫧',
+              name: 'Head Spa (헤드스파)',
+              tag: 'Most Popular',
+              desc: 'The ultimate Korean scalp experience. Includes deep cleansing shampoo, scalp exfoliation, steam treatment, targeted serum application and a deeply relaxing scalp massage. The most comprehensive scalp treatment available.',
+              includes: ['Scalp analysis', 'Deep cleanse', 'Scalp scrub', 'Steam treatment', 'Serum application', 'Scalp massage', 'Conditioning mask'],
+              price: 'From ₩80,000',
+              time: '60–90 min'
+            },
+            {
+              icon: '🔬',
+              name: 'Scalp Analysis & Treatment',
+              tag: 'Medical Approach',
+              desc: 'Professional scalp examination using a scalp analyzer that magnifies the scalp 200x. Identifies scalp type, pore condition, sebum levels and any concerns. Treatment plan customized based on results.',
+              includes: ['200x scalp magnification', 'Scalp type assessment', 'Problem identification', 'Targeted serum', 'Professional advice'],
+              price: 'From ₩60,000',
+              time: '45–60 min'
+            },
+            {
+              icon: '⚡',
+              name: 'Scalp Detox Treatment',
+              tag: 'Deep Cleanse',
+              desc: 'Removes months of product buildup, excess sebum and environmental pollutants. Unclogs follicles and creates an optimal environment for healthy hair growth. Perfect before any chemical service.',
+              includes: ['Clarifying shampoo', 'Scalp scrub', 'Detox mask', 'Pore cleansing', 'Balancing serum'],
+              price: 'From ₩70,000',
+              time: '45–60 min'
+            },
+            {
+              icon: '💆',
+              name: 'Relaxing Scalp Massage',
+              tag: 'Stress Relief',
+              desc: 'A standalone scalp, neck and shoulder massage focused on relaxation and blood circulation. No products required — just deeply relaxing pressure point massage that relieves tension and promotes hair growth.',
+              includes: ['Pressure point massage', 'Neck & shoulder release', 'Blood circulation boost', 'Stress relief'],
+              price: 'From ₩30,000',
+              time: '20–40 min'
+            },
+            {
+              icon: '🌿',
+              name: 'Dandruff Treatment',
+              tag: 'Targeted Care',
+              desc: 'A specialized treatment targeting the root cause of dandruff — whether dry scalp, excess oil, or fungal imbalance. Uses professional anti-dandruff products to eliminate flakes and soothe irritation.',
+              includes: ['Scalp analysis', 'Anti-dandruff shampoo', 'Targeted scalp mask', 'Balancing serum', 'Aftercare advice'],
+              price: 'From ₩60,000',
+              time: '45–60 min'
+            },
+            {
+              icon: '🌱',
+              name: 'Hair Loss Treatment',
+              tag: 'Growth Stimulation',
+              desc: 'Combines scalp massage, targeted growth serums and professional treatment to stimulate follicles, reduce shedding and encourage new hair growth. Recommended as a monthly course.',
+              includes: ['Scalp analysis', 'Growth serum ampoule', 'Stimulating massage', 'Follicle treatment', 'Progress tracking'],
+              price: 'From ₩80,000',
+              time: '60–75 min'
+            },
+          ].map(t => (
+            <div class="p-5" style="background: #FFFFFF; border: 1px solid #DCCDBD; border-radius: 8px;">
+              <div class="flex items-start justify-between mb-3">
+                <span class="text-3xl">{t.icon}</span>
+                <span class="text-xs px-2 py-1" style="background: #A88F7B20; color: #A88F7B; border-radius: 4px; flex-shrink: 0;">{t.tag}</span>
+              </div>
+              <h3 class="font-display text-lg mb-2" style="color: #3A3838;">{t.name}</h3>
+              <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">{t.desc}</p>
+              <div class="mb-4">
+                <p class="text-xs font-semibold mb-2" style="color: #3A3838;">Includes:</p>
+                <div class="flex flex-wrap gap-1">
+                  {t.includes.map(i => (
+                    <span class="text-xs px-2 py-0.5" style="background: #F7F4EF; border: 1px solid #DCCDBD; border-radius: 4px; color: #8D8076;">{i}</span>
+                  ))}
+                </div>
+              </div>
+              <div class="flex items-center justify-between pt-3" style="border-top: 1px solid #DCCDBD;">
+                <span class="text-sm font-semibold" style="color: #A88F7B;">{t.price}</span>
+                <span class="text-xs" style="color: #8D8076;">⏱ {t.time}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Scalp Types -->
+    <section class="py-24 px-6 lg:px-12" style="background: #3A3838;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Know Your Scalp</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #FFFFFF; font-weight: 300;">What's Your <em style="color: #A88F7B;">Scalp Type?</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            { type: 'Normal Scalp', signs: 'Balanced oil, no flakes, no itching, healthy hair growth', treatment: 'Monthly head spa for maintenance', color: '#A88F7B' },
+            { type: 'Oily Scalp', signs: 'Hair looks greasy within 24 hours, roots feel heavy, possible smell', treatment: 'Scalp detox + oil-control treatment', color: '#8D8076' },
+            { type: 'Dry Scalp', signs: 'Tight feeling, flakes, itching, hair feels brittle', treatment: 'Hydrating scalp mask + gentle massage', color: '#DCCDBD' },
+            { type: 'Sensitive Scalp', signs: 'Redness, irritation, burning sensation, reacts to products', treatment: 'Gentle analysis + soothing treatment', color: '#C4956A' },
+          ].map(s => (
+            <div class="p-5" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;">
+              <div class="w-3 h-3 rounded-full mb-4" style={`background: ${s.color};`}></div>
+              <h3 class="font-display text-lg mb-2" style="color: #FFFFFF;">{s.type}</h3>
+              <p class="text-xs mb-3" style="color: rgba(255,255,255,0.5);">Signs: {s.signs}</p>
+              <p class="text-xs font-semibold" style="color: #A88F7B;">Best treatment: {s.treatment}</p>
+            </div>
+          ))}
+        </div>
+        <p class="text-center mt-8 text-sm" style="color: rgba(255,255,255,0.5);">Not sure your scalp type? Our professional scalp analysis identifies it precisely — in English.</p>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Scalp Treatment <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Scalp Massage (20 min)', price: 'From ₩30,000', time: '20 min', note: 'Standalone relaxation' },
+          { service: 'Scalp Massage (40 min)', price: 'From ₩50,000', time: '40 min', note: 'Extended relaxation' },
+          { service: 'Scalp Analysis & Treatment', price: 'From ₩60,000', time: '45–60 min', note: 'Includes analysis' },
+          { service: 'Dandruff Treatment', price: 'From ₩60,000', time: '45–60 min', note: 'Targeted flake control' },
+          { service: 'Scalp Detox Treatment', price: 'From ₩70,000', time: '45–60 min', note: 'Deep cleanse' },
+          { service: 'Head Spa (Full)', price: 'From ₩80,000', time: '60–90 min', note: 'Most comprehensive' },
+          { service: 'Hair Loss Treatment', price: 'From ₩80,000', time: '60–75 min', note: 'Growth stimulation' },
+          { service: 'Hair Loss Course (3 sessions)', price: 'From ₩210,000', time: 'Monthly x3', note: 'Best for hair loss' },
+          { service: 'Head Spa + Haircut', price: 'From ₩110,000', time: '90–120 min', note: 'Popular combo' },
+        ].map((item, i) => (
+          <div class="px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note} · {item.time}</p>
+              </div>
+              <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Not sure which treatment is right for your scalp? Ask us on WhatsApp — we'll recommend the best option.</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Book via WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Scalp Treatment <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'What is a Korean head spa?', a: 'A Korean head spa is a multi-step professional scalp treatment that combines deep cleansing, scalp exfoliation, steam, targeted serum application and a relaxing massage. It\'s designed to improve scalp health, stimulate hair growth and provide deep relaxation — all in one session.' },
+          { q: 'How often should I get a scalp treatment?', a: 'For general maintenance, once a month is ideal. For specific concerns like dandruff or hair loss, we recommend every 2–3 weeks initially until the condition improves, then monthly maintenance.' },
+          { q: 'Is scalp treatment good for hair growth?', a: 'Yes — professional scalp treatment improves blood circulation, removes buildup that can clog follicles and delivers nutrients directly to the scalp. All of these factors create optimal conditions for healthy hair growth.' },
+          { q: 'Can I get a scalp treatment if I have colored hair?', a: 'Absolutely — all our scalp treatments are safe for colored hair. We actually recommend a scalp treatment before any color service to create the optimal environment for even color absorption.' },
+          { q: 'Is the treatment painful?', a: 'Not at all. Scalp treatments are deeply relaxing. The massage component relieves tension and many clients fall asleep during the session.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/scalp-massage-myeongdong', label: '💆 Scalp Massage' },
+          { href: '/dandruff-treatment-myeongdong', label: '🌿 Dandruff Treatment' },
+          { href: '/hair-loss-treatment-myeongdong', label: '🌱 Hair Loss Treatment' },
+          { href: '/scalp-detox-myeongdong', label: '🫧 Scalp Detox' },
+          { href: '/hair-treatment-myeongdong', label: '💆 Hair Treatment' },
+          { href: '/haircut-myeongdong', label: '✂️ Add a Haircut' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
