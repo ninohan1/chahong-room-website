@@ -1,35 +1,259 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Men's Haircut"
-  seoTitle="Men's Haircut Myeongdong | CHAHONG ROOM Seoul"
-  metaDesc="Korean men's haircuts in Myeongdong — two block, undercut, texture cuts and men's perm at CHAHONG ROOM Seoul."
-  emoji="✂️"
-  category="Men's Haircut"
-  intro="Two-block, undercut, textured crop, fade and men's perm — Korean men's haircut specialists at CHAHONG ROOM Myeongdong."
-  benefits={[
-    "Expert Korean stylists with 10+ years of combined experience",
-    "Full English consultation — no language barrier for international visitors",
-    "Professional Korean beauty products and techniques",
-    "Personalized service tailored to your hair type and goals",
-    "Easy booking via WhatsApp: +82 10-4794-4623",
-    "Located 2 minutes from Myeongdong Station Exit 6",
-  ]}
-  faqs={[
-    { q: "Do I need to book in advance?", a: "Walk-ins are welcome for haircuts. For color, perm and scalp treatments, we recommend booking via WhatsApp to secure your preferred time." },
-    { q: "Is English service available?", a: "Yes — our stylists are trained to consult fully in English. You will not face any language barrier at CHAHONG ROOM." },
-    { q: "Where are you located?", a: "5F, 13 Myeong-dong-gil, Jung-gu, Seoul. Just 2 minutes walk from Myeongdong Station Exit 6." },
-    { q: "What are your opening hours?", a: "We are open every day — Monday through Sunday — from 10:00 AM to 7:00 PM." },
-  ]}
-  relatedLinks={[
-    { href: '/haircut-myeongdong', label: "Haircut" },
-    { href: '/hair-color-myeongdong', label: "Hair Color" },
-    { href: '/hair-perm-myeongdong', label: "Perm" },
-    { href: '/scalp-treatment-myeongdong', label: "Scalp Care" },
-    { href: '/english-speaking-hair-salon-myeongdong', label: "English Friendly" },
-    { href: '/best-hair-salon-myeongdong', label: "Best Salon Myeongdong" },
-  ]}
+<Layout
+  title="Men's Haircut Myeongdong | Korean Men's Hair at CHAHONG ROOM Seoul"
+  description="Expert men's haircut in Myeongdong Seoul. Two-block cut, mushroom cut, undercut & men's perm. Full English service at CHAHONG ROOM. Walk-ins welcome."
 >
-  <span slot="headline">Men's Haircut<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Bold, masculine, clean -->
+    <section class="relative overflow-hidden" style="background: #3A3838; min-height: 80vh;">
+      <div class="absolute inset-0 opacity-20">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1600&q=80" alt="Men's haircut Myeongdong Seoul" class="w-full h-full object-cover" loading="eager" />
+      </div>
+      <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(58,56,56,0.95) 40%, rgba(58,56,56,0.3) 100%);"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex items-center min-h-[80vh] py-20">
+        <div class="max-w-xl">
+          <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Men's Haircut · Korean Style · Myeongdong</p>
+          <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5rem); color: #FFFFFF; font-weight: 300; line-height: 1.1;">
+            Men's Haircut<br/>
+            <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+          </h1>
+          <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="leading-relaxed mb-8" style="color: rgba(255,255,255,0.75); font-size: 1rem;">
+            Korean men's haircuts are globally recognized for their precision and style. From the iconic two-block cut to the trending mushroom cut — our male stylists specialize in the cuts worn by Korean celebrities and K-pop idols, with full English consultation.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-10">
+            <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+            <a href="/pricing" style="border: 1.5px solid rgba(255,255,255,0.4); color: white; font-weight: 600; padding: 14px 32px; border-radius: 6px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block;">View Pricing</a>
+          </div>
+          <div class="grid grid-cols-3 gap-3">
+            {[
+              { num: 'From ₩25,000', label: "Men's Cut" },
+              { num: '40–60', label: 'Minutes' },
+              { num: '100%', label: 'English' },
+            ].map(b => (
+              <div class="text-center p-3" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 6px;">
+                <p class="font-display text-sm font-semibold" style="color: #A88F7B;">{b.num}</p>
+                <p class="text-xs tracking-widest uppercase mt-1" style="color: rgba(255,255,255,0.5);">{b.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Men's Styles -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Most Requested</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Popular Korean <em style="color: #A88F7B;">Men's Haircuts</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80',
+              title: 'Two-Block Cut (투블럭)',
+              tag: '#1 Most Popular',
+              desc: 'Korea\'s most iconic men\'s haircut. Short, faded sides with longer hair on top — the contrast between the two "blocks" creates a sharp, modern look. Endlessly versatile: style it slick, textured or with a fringe depending on your mood.',
+              variations: ['Classic Two-Block', 'Two-Block + Fringe', 'Two-Block + Perm', 'Two-Block Undercut'],
+              price: 'From ₩30,000',
+              time: '40–55 min'
+            },
+            {
+              img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80',
+              title: 'Mushroom Cut (머시룸컷)',
+              tag: 'Trending 2025',
+              desc: 'A rounded, bowl-like shape with tapered sides — reimagined with Korean precision. The mushroom cut has exploded in popularity across Asia. Fashion-forward and distinctive, it can be styled smooth for a clean look or textured for something edgier.',
+              variations: ['Classic Mushroom', 'Mushroom + Texture', 'Mushroom + Slight Perm'],
+              price: 'From ₩35,000',
+              time: '45–60 min'
+            },
+            {
+              img: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80',
+              title: 'Undercut',
+              tag: 'Clean & Sharp',
+              desc: 'A sharper, more defined version of the two-block. The sides are cut very close or shaved clean, creating maximum contrast with the length on top. A bold, confident choice for those who want a dramatic, high-fashion look.',
+              variations: ['Side Part Undercut', 'Slick Back Undercut', 'Textured Undercut'],
+              price: 'From ₩35,000',
+              time: '45–60 min'
+            },
+            {
+              img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80',
+              title: 'Korean Fade',
+              desc: 'A skin fade or taper fade applied with Korean precision. Gradual transition from very short at the sides to longer on top. Can be combined with any top style — two-block, textured crop or pompadour.',
+              variations: ['Skin Fade', 'Mid Fade', 'Low Taper Fade'],
+              price: 'From ₩30,000',
+              time: '40–55 min'
+            },
+            {
+              img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80',
+              title: 'Textured Crop',
+              desc: 'Short on the sides with textured, slightly longer hair on top. Casual and effortless — minimal styling required. Very popular among travelers who want a low-maintenance cut that still looks polished.',
+              variations: ['Classic Textured Crop', 'French Crop', 'Textured Fringe'],
+              price: 'From ₩25,000',
+              time: '35–50 min'
+            },
+            {
+              img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80',
+              title: 'Two-Block + Perm',
+              tag: 'K-Pop Style',
+              desc: 'The definitive K-pop inspired look. Two-block sides with a volume or wave perm on top. Creates textured, dimensional movement that looks effortlessly stylish. Our most requested men\'s combo.',
+              variations: ['Two-Block + Volume Perm', 'Two-Block + Wave Perm', 'Two-Block + C-Curl'],
+              price: 'From ₩130,000',
+              time: '2.5–3.5 hrs'
+            },
+          ].map(s => (
+            <div class="overflow-hidden" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #F7F4EF;">
+              <div style="height: 200px; overflow: hidden; position: relative;">
+                <img src={s.img} alt={s.title} class="w-full h-full object-cover" loading="lazy" />
+                {s.tag && (
+                  <span class="absolute top-3 left-3 text-xs px-2 py-1" style="background: #A88F7B; color: white; border-radius: 4px;">{s.tag}</span>
+                )}
+              </div>
+              <div class="p-5">
+                <h3 class="font-display text-lg mb-2" style="color: #3A3838;">{s.title}</h3>
+                <p class="text-sm leading-relaxed mb-3" style="color: #8D8076;">{s.desc}</p>
+                <div class="flex flex-wrap gap-1 mb-4">
+                  {s.variations.map(v => (
+                    <span class="text-xs px-2 py-0.5" style="background: #FFFFFF; border: 1px solid #DCCDBD; border-radius: 4px; color: #8D8076;">{v}</span>
+                  ))}
+                </div>
+                <div class="flex items-center justify-between pt-3" style="border-top: 1px solid #DCCDBD;">
+                  <span class="text-sm font-semibold" style="color: #A88F7B;">{s.price}</span>
+                  <span class="text-xs" style="color: #8D8076;">⏱ {s.time}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Men's Perm Section -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Popular Add-On</p>
+            <h2 class="font-display text-4xl mb-6" style="color: #3A3838; font-weight: 300;">Men's Perm — <em style="color: #A88F7B;">The Ultimate Upgrade</em></h2>
+            <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">In Korea, men's perms are completely mainstream and incredibly popular. A perm adds texture, volume and movement to your haircut — transforming a simple two-block into a head-turning K-pop inspired style.</p>
+            <p class="text-sm leading-relaxed mb-6" style="color: #8D8076;">Our most requested men's combination is the two-block cut + volume or wave perm. The two-block creates the clean, sharp silhouette while the perm adds the textured, effortless movement on top.</p>
+            <div class="space-y-3 mb-6">
+              {[
+                { type: 'Volume Perm', desc: 'Adds lift and body at the roots for natural-looking fullness', price: 'From ₩80,000' },
+                { type: 'Wave Perm', desc: 'Loose, natural waves through the length for easy texture', price: 'From ₩90,000' },
+                { type: 'Two-Block + Perm', desc: 'The complete Korean men\'s look — cut and perm combined', price: 'From ₩130,000' },
+              ].map(p => (
+                <div class="flex items-start justify-between p-3" style="border: 1px solid #DCCDBD; border-radius: 6px; background: #FFFFFF;">
+                  <div>
+                    <p class="text-sm font-semibold" style="color: #3A3838;">{p.type}</p>
+                    <p class="text-xs mt-0.5" style="color: #8D8076;">{p.desc}</p>
+                  </div>
+                  <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{p.price}</p>
+                </div>
+              ))}
+            </div>
+            <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book Cut + Perm</a>
+          </div>
+          <div class="space-y-3">
+            <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=700&q=80" alt="Men's perm Korean style Seoul" class="w-full rounded-lg object-cover" style="height: 300px;" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=700&q=80" alt="Korean men's haircut two-block" class="w-full rounded-lg object-cover" style="height: 200px;" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Men's Haircut <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW. Shampoo & styling included.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: "Men's Haircut", price: 'From ₩25,000', note: 'Shampoo, cut & styling' },
+          { service: 'Two-Block Cut', price: 'From ₩30,000', note: 'Korea\'s most popular men\'s cut' },
+          { service: 'Mushroom Cut', price: 'From ₩35,000', note: 'Trending 2025' },
+          { service: 'Undercut', price: 'From ₩35,000', note: 'Sharp, defined contrast' },
+          { service: 'Korean Fade', price: 'From ₩30,000', note: 'Skin or taper fade' },
+          { service: 'Two-Block + Volume Perm', price: 'From ₩130,000', note: '2.5–3.5 hrs — most popular combo' },
+          { service: 'Two-Block + Wave Perm', price: 'From ₩140,000', note: 'Natural textured waves' },
+          { service: "Men's Cut + Color", price: 'From ₩80,000', note: 'Cut + single color/toner' },
+        ].map((item, i) => (
+          <div class="flex items-center justify-between px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div>
+              <p class="text-sm" style="color: #3A3838;">{item.service}</p>
+              <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note}</p>
+            </div>
+            <span class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</span>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Send your reference photo via WhatsApp for a free consultation!</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Book via WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Men's Haircut <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'What\'s the most popular men\'s haircut in Korea right now?', a: 'The two-block cut remains Korea\'s most popular men\'s haircut — and has been for years. In 2025, the mushroom cut has surged in popularity alongside the two-block. Many clients combine the two-block with a volume or wave perm for the full K-pop inspired look.' },
+          { q: 'How long does a men\'s haircut take?', a: 'Standard men\'s cuts take 35–55 minutes including shampoo and styling. A two-block with perm takes 2.5–3.5 hours. We\'ll give you an accurate time estimate when you book.' },
+          { q: 'Can I get a men\'s perm too?', a: 'Absolutely — men\'s perms are extremely popular in Korea and we specialize in them. The most popular combo is a two-block cut with a volume or wave perm. Many international male visitors specifically come to CHAHONG ROOM for this service.' },
+          { q: 'I\'m not sure what style suits me — can you advise?', a: 'Yes — our stylists will analyze your face shape, hair texture and lifestyle during your English consultation and recommend the most flattering style. Bring reference photos of styles you like as a starting point.' },
+          { q: 'Do you cut non-Asian hair types?', a: 'Yes — we welcome all hair types and ethnicities. Our stylists adapt Korean cutting techniques to work with your specific hair texture for the best possible result.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/haircut-myeongdong', label: '✂️ All Haircuts' },
+          { href: '/womens-haircut-myeongdong', label: "✂️ Women's Haircut" },
+          { href: '/hair-perm-myeongdong', label: '🧪 Men\'s Perm' },
+          { href: '/digital-perm-myeongdong', label: '🧪 Digital Perm' },
+          { href: '/hair-color-myeongdong', label: '🎨 Men\'s Color' },
+          { href: '/korean-style-haircut-myeongdong', label: '🇰🇷 Korean Style Cut' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
