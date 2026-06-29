@@ -1,40 +1,271 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Hair Botox Myeongdong"
-  seoTitle="Hair Botox Myeongdong | Deep Repair Treatment at CHAHONG ROOM Seoul"
-  metaDesc="Get a professional hair botox treatment in Myeongdong, Seoul. Deep conditioning, frizz control & shine restoration. English-friendly service at CHAHONG ROOM."
-  emoji="💉"
-  category="Hair Treatment"
-  heroImage="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80"
-  intro="Hair Botox is a deep conditioning treatment that fills damaged hair fibers, eliminates frizz, and restores brilliant shine — without chemicals."
-  pricing={[
-    { service: "Hair Botox — Short Hair", price: "From ₩80,000" },
-    { service: "Hair Botox — Medium Hair", price: "From ₩120,000" },
-    { service: "Hair Botox — Long Hair", price: "From ₩160,000" },
-    { service: "Hair Botox + Blow Dry", price: "From ₩140,000" },
-  ]}
-  benefits={[
-    "Repairs damaged, dry and over-processed hair from root to tip",
-    "Eliminates frizz and controls flyaways for up to 3 months",
-    "Restores natural shine and silky texture without harsh chemicals",
-    "Safe for color-treated, permed and bleached hair",
-    "Full English consultation to assess your hair condition",
-    "Results last 2–4 months with proper aftercare",
-  ]}
-  faqs={[
-    { q: "Is hair botox the same as keratin?", a: "No — hair botox is a filler treatment that repairs from within. Keratin smooths and straightens. Botox adds volume and shine without altering your curl pattern." },
-    { q: "How long does the treatment take?", a: "Typically 1.5–2 hours depending on hair length and condition." },
-    { q: "Can I wash my hair after?", a: "We recommend waiting 48–72 hours after treatment for best results." },
-    { q: "Is it safe for colored hair?", a: "Yes, hair botox is safe and actually recommended for color-treated hair." },
-  ]}
-  relatedLinks={[
-    { href: '/hair-treatment-myeongdong', label: "Hair Treatment" },
-    { href: '/keratin-treatment-myeongdong', label: "Keratin Treatment" },
-    { href: '/olaplex-treatment-myeongdong', label: "Olaplex Treatment" },
-    { href: '/scalp-treatment-myeongdong', label: "Scalp Treatment" },
-  ]}
+<Layout
+  title="Hair Botox Myeongdong | Deep Repair Treatment at CHAHONG ROOM Seoul"
+  description="Professional hair botox treatment in Myeongdong Seoul. Eliminate frizz, restore shine and repair damaged hair. Full English service at CHAHONG ROOM. Book via WhatsApp."
 >
-  <span slot="headline">Hair Botox<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Split layout with stats on right -->
+    <section class="relative overflow-hidden" style="background: #3A3838; min-height: 80vh;">
+      <div class="absolute inset-0 opacity-20">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1400&q=80" alt="Hair botox treatment Seoul" class="w-full h-full object-cover" loading="eager" />
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-32">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Hair Botox · Deep Repair · Myeongdong</p>
+            <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5rem); color: #FFFFFF; font-weight: 300; line-height: 1.1;">
+              Hair Botox<br/>
+              <em style="color: #A88F7B; font-style: italic;">Treatment Seoul</em>
+            </h1>
+            <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+            <p class="max-w-lg leading-relaxed mb-8" style="color: rgba(255,255,255,0.75); font-size: 1rem;">
+              Hair Botox fills damaged hair fibers from the inside out — restoring shine, eliminating frizz and rebuilding strength without harsh chemicals. The ultimate repair treatment for over-processed, dry or dull hair.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+              <a href="/pricing" style="border: 1.5px solid rgba(255,255,255,0.4); color: white; font-weight: 600; padding: 14px 32px; border-radius: 6px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block;">View Pricing</a>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            {[
+              { num: '2–4', label: 'Months Results Last' },
+              { num: '90', label: 'Minutes Treatment' },
+              { num: '0', label: 'Harsh Chemicals' },
+              { num: '100%', label: 'English Service' },
+            ].map(b => (
+              <div class="p-5 text-center" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px;">
+                <p class="font-display text-3xl mb-1" style="color: #A88F7B;">{b.num}</p>
+                <p class="text-xs tracking-widest uppercase" style="color: rgba(255,255,255,0.5);">{b.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What is Hair Botox -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="order-2 lg:order-1">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=700&q=80" alt="Hair botox result before after" class="w-full rounded-lg object-cover" style="height: 400px;" loading="lazy" />
+          </div>
+          <div class="order-1 lg:order-2">
+            <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Understanding Hair Botox</p>
+            <h2 class="font-display text-4xl mb-6" style="color: #3A3838; font-weight: 300;">It's Not What You <em style="color: #A88F7B;">Think It Is</em></h2>
+            <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">Hair Botox has nothing to do with the injectable cosmetic treatment. The name comes from the "filling" effect it has on hair — similar to how facial botox fills and smooths skin, hair botox fills and smooths damaged hair fibers.</p>
+            <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">The treatment works by filling the gaps and holes in the hair cortex (caused by bleaching, heat damage, chemical treatments and aging) with a rich blend of proteins, vitamins, amino acids and antioxidants.</p>
+            <p class="text-sm leading-relaxed mb-6" style="color: #8D8076;">Unlike keratin treatment, hair botox does NOT straighten or alter your natural curl pattern. It simply restores your hair to its healthiest version — shinier, softer and frizz-free, while maintaining your natural texture.</p>
+            <div class="space-y-3">
+              {[
+                'Contains zero formaldehyde or harsh chemicals',
+                'Safe for color-treated, permed and bleached hair',
+                'Does NOT alter your natural curl pattern',
+                'Results visible immediately after first treatment',
+                'Builds up with repeated treatments',
+              ].map(item => (
+                <div class="flex items-start gap-3">
+                  <span style="color: #A88F7B; flex-shrink: 0; font-weight: bold;">✓</span>
+                  <p class="text-sm" style="color: #3A3838;">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Is Your Hair Damaged Quiz -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Does Your Hair Need This?</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Signs Your Hair Needs <em style="color: #A88F7B;">Hair Botox</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="max-w-lg mx-auto mt-4 text-sm" style="color: #8D8076;">If you recognize 3 or more of these signs, hair botox will make a significant difference.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[
+            { icon: '💇', sign: 'Excessive Frizz', desc: 'Even in dry conditions, your hair refuses to sit smoothly.' },
+            { icon: '✂️', sign: 'Breakage & Split Ends', desc: 'Hair snaps or breaks during brushing or styling.' },
+            { icon: '🌟', sign: 'Dull & Flat', desc: 'Your hair lacks the shine it used to have. Looks lifeless.' },
+            { icon: '💧', sign: 'Dry to the Touch', desc: 'Hair feels rough, coarse or straw-like even after conditioning.' },
+            { icon: '🎨', sign: 'Color Fades Fast', desc: 'Color washes out quickly — a sign of high porosity damaged hair.' },
+            { icon: '⚡', sign: 'Static & Flyaways', desc: 'Hair stands on end with static and flyaways won\'t lay flat.' },
+          ].map(s => (
+            <div class="p-5 flex items-start gap-4" style="background: #FFFFFF; border: 1px solid #DCCDBD; border-radius: 8px;">
+              <span class="text-2xl flex-shrink-0">{s.icon}</span>
+              <div>
+                <h3 class="font-display text-base mb-1" style="color: #3A3838;">{s.sign}</h3>
+                <p class="text-sm" style="color: #8D8076;">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="text-center mt-10">
+          <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book Hair Botox Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hair Botox vs Keratin vs Olaplex -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Treatment Comparison</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Hair Botox vs Keratin <em style="color: #A88F7B;">vs Olaplex</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+          <div class="grid grid-cols-4 px-6 py-4" style="background: #F7F4EF;">
+            <p class="text-xs font-semibold" style="color: #8D8076;"></p>
+            <p class="text-xs font-semibold text-center" style="color: #A88F7B;">Hair Botox</p>
+            <p class="text-xs font-semibold text-center" style="color: #8D8076;">Keratin</p>
+            <p class="text-xs font-semibold text-center" style="color: #8D8076;">Olaplex</p>
+          </div>
+          {[
+            { label: 'Main Benefit', botox: 'Frizz & shine', keratin: 'Smoothing', olaplex: 'Bond repair' },
+            { label: 'Changes Curl?', botox: 'No ✓', keratin: 'Yes (straightens)', olaplex: 'No ✓' },
+            { label: 'Chemicals', botox: 'None', keratin: 'Some formulas', olaplex: 'None' },
+            { label: 'Lasts', botox: '2–4 months', keratin: '3–5 months', olaplex: 'Permanent bonds' },
+            { label: 'Price', botox: 'From ₩80,000', keratin: 'From ₩150,000', olaplex: 'From ₩80,000' },
+            { label: 'Best for', botox: 'Frizz & damage', keratin: 'Smoothing curls', olaplex: 'Bleached hair' },
+          ].map((row, i) => (
+            <div class="grid grid-cols-4 px-6 py-4" style={`border-top: 1px solid #DCCDBD; background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}`}>
+              <p class="text-xs" style="color: #8D8076;">{row.label}</p>
+              <p class="text-xs text-center font-semibold" style="color: #A88F7B;">{row.botox}</p>
+              <p class="text-xs text-center" style="color: #8D8076;">{row.keratin}</p>
+              <p class="text-xs text-center" style="color: #8D8076;">{row.olaplex}</p>
+            </div>
+          ))}
+        </div>
+        <p class="text-center mt-4 text-xs" style="color: #8D8076;">Not sure which treatment is right for you? Message us on WhatsApp with your hair concern and we'll recommend the best option — for free.</p>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Hair Botox <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW. Final price depends on hair length & density.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Hair Botox — Short Hair', price: 'From ₩80,000', time: '60–90 min', note: 'Above shoulder' },
+          { service: 'Hair Botox — Medium Hair', price: 'From ₩120,000', time: '90–120 min', note: 'Shoulder to mid-back' },
+          { service: 'Hair Botox — Long Hair', price: 'From ₩160,000', time: '2–2.5 hrs', note: 'Below mid-back' },
+          { service: 'Hair Botox + Blow Dry', price: 'From ₩140,000', time: '2–2.5 hrs', note: 'Includes styling' },
+          { service: 'Hair Botox + Haircut', price: 'From ₩150,000', time: '2.5–3 hrs', note: 'Best combo' },
+          { service: 'Express Botox (Roots only)', price: 'From ₩50,000', time: '45–60 min', note: 'Scalp & roots focus' },
+        ].map((item, i) => (
+          <div class="px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note} · {item.time}</p>
+              </div>
+              <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Send us a photo of your hair condition for an accurate recommendation and quote.</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Get a Free Quote</a>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-24 px-6 lg:px-12" style="background: #3A3838;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Step by Step</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #FFFFFF; font-weight: 300;">Your Hair Botox <em style="color: #A88F7B;">Appointment</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          {[
+            { step: '01', title: 'English Consultation', desc: 'We assess your hair\'s damage level, discuss your concerns and confirm that hair botox is the right treatment for your specific situation.' },
+            { step: '02', title: 'Deep Cleanse', desc: 'A clarifying shampoo removes product buildup and opens the hair cuticle to allow maximum absorption of the botox formula.' },
+            { step: '03', title: 'Botox Application', desc: 'The botox formula is applied section by section from root to tip, ensuring complete saturation of every strand.' },
+            { step: '04', title: 'Heat Processing', desc: 'A processing cap is applied and gentle heat helps the formula penetrate deep into the hair cortex. This stage takes 20–30 minutes.' },
+            { step: '05', title: 'Sealing & Blow Dry', desc: 'The formula is sealed in with a flat iron at the correct temperature. Your hair is then blow dried and styled.' },
+            { step: '06', title: 'Reveal & Aftercare', desc: 'You\'ll immediately see the difference — smoother, shinier, frizz-free hair. We walk you through aftercare in English.' },
+          ].map(s => (
+            <div class="flex gap-5 p-5" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;">
+              <p class="font-display text-2xl flex-shrink-0" style="color: #A88F7B; opacity: 0.6;">{s.step}</p>
+              <div>
+                <h3 class="font-display text-base mb-2" style="color: #FFFFFF;">{s.title}</h3>
+                <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.6);">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="text-center mt-12">
+          <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book Your Hair Botox Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Hair Botox <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'Is hair botox the same as keratin treatment?', a: 'No — they\'re quite different. Keratin smooths and straightens hair by coating the outside of the strand. Hair botox fills damage inside the hair fiber and restores it from within, without altering your curl pattern. Hair botox is gentler and contains no formaldehyde.' },
+          { q: 'How long does hair botox last?', a: 'Results typically last 2–4 months depending on how often you wash your hair, the products you use and your hair\'s condition. Using sulfate-free shampoo extends results significantly.' },
+          { q: 'Can I wash my hair after hair botox?', a: 'We recommend waiting 48–72 hours after treatment for best results. After that, use only sulfate-free shampoo to maintain the treatment as long as possible.' },
+          { q: 'Is it safe for colored or bleached hair?', a: 'Yes — hair botox is actually particularly beneficial for color-treated and bleached hair, which is typically more porous and damaged. It\'s one of the gentlest professional treatments available.' },
+          { q: 'Will it change my natural curl or wave?', a: 'No — hair botox does not alter your natural texture. Your curls and waves will return as normal after washing. It simply makes your hair healthier and easier to manage.' },
+          { q: 'How many sessions do I need?', a: 'You\'ll see a noticeable difference after just one session. However, for severely damaged hair, a course of 3 monthly treatments gives the most dramatic and lasting results.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Treatments</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/keratin-treatment-myeongdong', label: '💆 Keratin Treatment' },
+          { href: '/olaplex-treatment-myeongdong', label: '🔬 Olaplex Treatment' },
+          { href: '/hair-treatment-myeongdong', label: '💆 Hair Treatment' },
+          { href: '/scalp-treatment-myeongdong', label: '💆 Scalp Care' },
+          { href: '/hair-gloss-treatment-myeongdong', label: '✨ Hair Gloss' },
+          { href: '/hair-color-myeongdong', label: '🎨 Hair Color' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
