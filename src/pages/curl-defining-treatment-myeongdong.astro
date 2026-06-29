@@ -1,39 +1,266 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Curl Defining Treatment Myeongdong"
-  seoTitle="Curl Defining Treatment Myeongdong | Curly Hair Care at CHAHONG ROOM"
-  metaDesc="Professional curl defining treatment in Myeongdong Seoul. Enhance natural curls, reduce frizz and define waves. English-friendly at CHAHONG ROOM."
-  emoji="🌀"
-  category="Specialty"
-  heroImage="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80"
-  intro="Our curl defining treatment enhances your natural curl pattern, eliminates frizz and adds definition and bounce for beautiful, healthy curls."
-  pricing={[
-    { service: "Curl Defining Treatment", price: "From ₩70,000" },
-    { service: "Curl Define + Styling", price: "From ₩100,000" },
-    { service: "Curl Repair + Define Package", price: "From ₩140,000" },
-  ]}
-  benefits={[
-    "Enhances and defines natural curl and wave patterns",
-    "Eliminates frizz while maintaining natural movement",
-    "Adds moisture and elasticity to curly and wavy hair",
-    "Uses curl-specific professional products for lasting definition",
-    "Includes curl styling education in English",
-    "Suitable for wavy, curly and coily hair types",
-  ]}
-  faqs={[
-    { q: "Is this treatment for natural curls only?", a: "It works best on naturally wavy or curly hair. For straight hair wanting curls, we'd recommend a perm instead." },
-    { q: "How long do results last?", a: "The treatment effects last 4–6 weeks. We'll also teach you how to maintain your curls at home." },
-    { q: "Can I color my hair and get curl treatment?", a: "Yes — we recommend doing the curl treatment after coloring for best results." },
-    { q: "My curls are very frizzy — will this help?", a: "Yes — frizz control is one of the primary benefits of curl defining treatment." },
-  ]}
-  relatedLinks={[
-    { href: '/hair-perm-myeongdong', label: "Hair Perm" },
-    { href: '/digital-perm-myeongdong', label: "Digital Perm" },
-    { href: '/hair-treatment-myeongdong', label: "Hair Treatment" },
-    { href: '/hair-botox-myeongdong', label: "Hair Botox" },
-  ]}
+<Layout
+  title="Curl Defining Treatment Myeongdong | Enhance Curls at CHAHONG ROOM Seoul"
+  description="Professional curl defining treatment in Myeongdong Seoul. Enhance natural curls, reduce frizz and define wave pattern. English service at CHAHONG ROOM."
 >
-  <span slot="headline">Curl Defining Treatment<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Natural, textured, fresh -->
+    <section class="py-28 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Curl Defining · Texture Enhancement · Myeongdong</p>
+            <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5rem); color: #3A3838; font-weight: 300; line-height: 1.1;">
+              Curl Defining<br/>Treatment<br/>
+              <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+            </h1>
+            <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+            <p class="leading-relaxed mb-8" style="color: #8D8076; font-size: 1rem;">
+              Already have natural waves or curls? Our curl defining treatment enhances your natural texture — reducing frizz, defining your curl pattern and adding moisture and bounce without altering your natural hair structure. Finally, love the curls you have.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 mb-10">
+              <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+              <a href="/pricing" class="btn-outline">View Pricing</a>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+              {[
+                { num: 'No', label: 'Chemicals Used' },
+                { num: '60–90', label: 'Minutes' },
+                { num: '100%', label: 'English Service' },
+              ].map(b => (
+                <div class="text-center p-3" style="border: 1px solid #DCCDBD; border-radius: 6px; background: #FFFFFF;">
+                  <p class="font-display text-xl" style="color: #A88F7B;">{b.num}</p>
+                  <p class="text-xs tracking-widest uppercase mt-1" style="color: #8D8076;">{b.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="space-y-4">
+            <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=700&q=80" alt="Curl defining treatment Seoul" class="w-full rounded-lg object-cover" style="height: 320px;" loading="eager" />
+            <div class="grid grid-cols-2 gap-3">
+              <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=80" alt="Natural curls Myeongdong" class="w-full rounded-lg object-cover" style="height: 160px;" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&q=80" alt="Wave pattern enhancement Seoul" class="w-full rounded-lg object-cover" style="height: 160px;" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Is Curl Defining -->
+    <section class="py-24 px-6 lg:px-12" style="background: #3A3838;">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">What It Does</p>
+            <h2 class="font-display text-4xl mb-6" style="color: #FFFFFF; font-weight: 300;">Enhance What You <em style="color: #A88F7B;">Already Have</em></h2>
+            <p class="text-sm leading-relaxed mb-4" style="color: rgba(255,255,255,0.7);">Many people with natural waves and curls struggle with frizz, undefined curl pattern and lack of moisture. A curl defining treatment uses specialized products and techniques to work with your natural texture — not against it.</p>
+            <p class="text-sm leading-relaxed mb-6" style="color: rgba(255,255,255,0.7);">Unlike a perm (which permanently creates curls), curl defining treatment enhances the curls and waves you already have. It adds moisture, reduces frizz, defines your natural pattern and creates a bouncy, healthy result that lasts until your next wash.</p>
+            <div class="space-y-3">
+              {[
+                { label: 'Changes your natural curl?', value: 'No — enhances what you have' },
+                { label: 'Uses chemicals?', value: 'No — all gentle products' },
+                { label: 'Suitable for?', value: 'Wavy to curly hair types' },
+                { label: 'Results last?', value: 'Until next wash (then repeatable)' },
+                { label: 'Different from perm?', value: 'Yes — completely temporary' },
+              ].map(f => (
+                <div class="flex items-start justify-between p-3" style="background: rgba(255,255,255,0.06); border-radius: 6px;">
+                  <p class="text-xs" style="color: rgba(255,255,255,0.5);">{f.label}</p>
+                  <p class="text-xs font-semibold ml-4 text-right" style="color: #A88F7B;">{f.value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="space-y-5">
+            <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Before vs After</p>
+            {[
+              { before: 'Frizzy, undefined waves', after: 'Defined, bouncy curls' },
+              { before: 'Dry, rough texture', after: 'Moisturized, soft feel' },
+              { before: 'Limp, flat waves', after: 'Lifted, springy pattern' },
+              { before: 'Inconsistent curl pattern', after: 'Even, uniform definition' },
+              { before: 'Products not absorbing', after: 'Products work effectively' },
+            ].map(item => (
+              <div class="grid grid-cols-2 gap-3">
+                <div class="p-3" style="background: rgba(255,255,255,0.05); border-radius: 6px; border-left: 3px solid rgba(255,255,255,0.1);">
+                  <p class="text-xs" style="color: rgba(255,255,255,0.5);">{item.before}</p>
+                </div>
+                <div class="p-3" style="background: rgba(168,143,123,0.15); border-radius: 6px; border-left: 3px solid #A88F7B;">
+                  <p class="text-xs font-semibold" style="color: #A88F7B;">{item.after}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curl Types -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Who Is It For?</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Curl Types We <em style="color: #A88F7B;">Specialize In</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            {
+              type: 'Wavy Hair (2A–2C)',
+              icon: '〜',
+              desc: 'Loose S-shaped waves that often fall flat or frizz. Curl defining enhances the natural wave pattern and prevents it from stretching out throughout the day.',
+              result: 'Defined, frizz-free waves'
+            },
+            {
+              type: 'Loose Curls (3A)',
+              icon: '○',
+              desc: 'Large, loose curls that can become undefined and frizzy without proper care. Treatment restores moisture and definition to each curl spring.',
+              result: 'Bouncy, defined ringlets'
+            },
+            {
+              type: 'Medium Curls (3B)',
+              icon: '◎',
+              desc: 'Medium-sized springy curls that can shrink significantly and become very frizzy. Treatment maximizes definition and manages shrinkage.',
+              result: 'Uniform, moisturized curls'
+            },
+            {
+              type: 'Post-Perm Waves',
+              icon: '∿',
+              desc: 'Had a wave or C-curl perm? Curl defining treatment enhances and refreshes the perm pattern, especially as it matures after the first few weeks.',
+              result: 'Revived, refreshed perm waves'
+            },
+          ].map(t => (
+            <div class="p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #F7F4EF;">
+              <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-display text-2xl" style="background: #FFFFFF; color: #A88F7B; border: 1px solid #DCCDBD;">{t.icon}</div>
+              <h3 class="font-display text-base mb-2" style="color: #3A3838;">{t.type}</h3>
+              <p class="text-sm leading-relaxed mb-3" style="color: #8D8076;">{t.desc}</p>
+              <p class="text-xs font-semibold" style="color: #A88F7B;">Result: {t.result}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Step by Step</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">The Curl Defining <em style="color: #A88F7B;">Process</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-5">
+          {[
+            { step: '01', title: 'Curl Assessment', time: '10 min', desc: 'We examine your natural curl pattern, porosity, density and current condition. We discuss your curl goals and what products and techniques will work best for your specific hair type.' },
+            { step: '02', title: 'Hydrating Cleanse', time: '10 min', desc: 'A sulfate-free, moisture-rich shampoo cleanses without stripping your hair\'s natural oils. The foundation of healthy curl care.' },
+            { step: '03', title: 'Deep Conditioning Mask', time: '15–20 min', desc: 'An intensive moisture mask is applied with heat to deeply penetrate the hair shaft. Curly hair needs more moisture than straight hair — this step is essential.' },
+            { step: '04', title: 'Curl Defining Product Application', time: '10–15 min', desc: 'Professional curl defining cream and gel are applied to soaking wet hair using the praying hands and scrunching technique to encourage natural curl formation.' },
+            { step: '05', title: 'Diffusing', time: '15–20 min', desc: 'Hair is diffused on low heat to set the curl pattern without disrupting it. The diffuser encourages lift at the roots and enhances each curl\'s natural spring.' },
+            { step: '06', title: 'Final Scrunch & Reveal', time: '5 min', desc: 'Once dry, any stiffness is scrunched out for soft, defined, touchable curls. We show you exactly how to recreate this at home — in English.' },
+          ].map(s => (
+            <div class="flex gap-4 p-5" style="background: #FFFFFF; border: 1px solid #DCCDBD; border-radius: 8px;">
+              <div class="flex-shrink-0">
+                <p class="font-display text-2xl" style="color: #A88F7B;">{s.step}</p>
+                <p class="text-xs" style="color: #8D8076;">{s.time}</p>
+              </div>
+              <div style="border-left: 1px solid #DCCDBD; padding-left: 16px;">
+                <h3 class="font-display text-base mb-2" style="color: #3A3838;">{s.title}</h3>
+                <p class="text-sm leading-relaxed" style="color: #8D8076;">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Curl Defining <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Curl Defining Treatment — Short', price: 'From ₩60,000', time: '60 min', note: 'Above shoulder' },
+          { service: 'Curl Defining Treatment — Medium', price: 'From ₩80,000', time: '75 min', note: 'Shoulder to mid-back' },
+          { service: 'Curl Defining Treatment — Long', price: 'From ₩100,000', time: '90 min', note: 'Below mid-back' },
+          { service: 'Curl Define + Deep Conditioning', price: 'From ₩110,000', time: '90–100 min', note: 'Maximum moisture' },
+          { service: 'Curl Define + Haircut', price: 'From ₩110,000', time: '90–120 min', note: 'Curl-friendly cut + define' },
+          { service: 'Post-Perm Curl Refresh', price: 'From ₩50,000', time: '45–60 min', note: 'Refresh existing perm' },
+        ].map((item, i) => (
+          <div class="px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note} · {item.time}</p>
+              </div>
+              <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Have natural waves or curls? Message us — we'll recommend the best approach for your curl type!</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Book via WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Curl Defining <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'Is curl defining treatment the same as a perm?', a: 'No — they\'re completely different. A perm permanently changes your hair\'s structure to create curls that last months. Curl defining treatment enhances the natural curls you already have using gentle products and techniques. Results last until your next wash.' },
+          { q: 'My hair is straight — can I get this treatment?', a: 'Curl defining treatment is specifically for naturally wavy or curly hair. If you have straight hair and want curls, we recommend a perm or C-curl perm instead.' },
+          { q: 'Can I get this if I\'ve had a perm?', a: 'Yes! Curl defining treatment works beautifully on permed hair. It enhances the perm pattern, adds moisture and refreshes the waves — especially helpful as the perm matures past the first few weeks.' },
+          { q: 'How do I maintain my results at home?', a: 'Use a sulfate-free shampoo, apply curl cream to wet hair and scrunch upward to encourage curl formation. Diffuse or air dry — never rub with a towel. We\'ll give you a full English aftercare routine during your appointment.' },
+          { q: 'Will it work on color-treated curly hair?', a: 'Yes — curl defining treatment is safe for color-treated hair. In fact, colored hair often needs the extra moisture this treatment provides. We select products appropriate for color-treated hair.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/hair-perm-myeongdong', label: '🧪 Hair Perm' },
+          { href: '/digital-perm-myeongdong', label: '🧪 Digital Perm' },
+          { href: '/hair-treatment-myeongdong', label: '💆 Hair Treatment' },
+          { href: '/hair-botox-myeongdong', label: '💉 Hair Botox' },
+          { href: '/scalp-treatment-myeongdong', label: '💆 Scalp Treatment' },
+          { href: '/haircut-myeongdong', label: '✂️ Add a Haircut' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
