@@ -1,35 +1,280 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Hair Treatment"
-  seoTitle="Hair Treatment Myeongdong | CHAHONG ROOM Seoul"
-  metaDesc="Professional hair treatment in Myeongdong at CHAHONG ROOM. Protein packs, moisture therapy and hair clinic. English service."
-  emoji="💆"
-  category="Hair Treatment"
-  intro="Restore your hair's health and shine with our professional hair clinic treatments — protein packs, moisture therapy and more."
-  benefits={[
-    "Expert Korean stylists with 10+ years of combined experience",
-    "Full English consultation — no language barrier for international visitors",
-    "Professional Korean beauty products and techniques",
-    "Personalized service tailored to your hair type and goals",
-    "Easy booking via WhatsApp: +82 10-4794-4623",
-    "Located 2 minutes from Myeongdong Station Exit 6",
-  ]}
-  faqs={[
-    { q: "Do I need to book in advance?", a: "Walk-ins are welcome for haircuts. For color, perm and scalp treatments, we recommend booking via WhatsApp to secure your preferred time." },
-    { q: "Is English service available?", a: "Yes — our stylists are trained to consult fully in English. You will not face any language barrier at CHAHONG ROOM." },
-    { q: "Where are you located?", a: "5F, 13 Myeong-dong-gil, Jung-gu, Seoul. Just 2 minutes walk from Myeongdong Station Exit 6." },
-    { q: "What are your opening hours?", a: "We are open every day — Monday through Sunday — from 10:00 AM to 7:00 PM." },
-  ]}
-  relatedLinks={[
-    { href: '/haircut-myeongdong', label: "Haircut" },
-    { href: '/hair-color-myeongdong', label: "Hair Color" },
-    { href: '/hair-perm-myeongdong', label: "Perm" },
-    { href: '/scalp-treatment-myeongdong', label: "Scalp Care" },
-    { href: '/english-speaking-hair-salon-myeongdong', label: "English Friendly" },
-    { href: '/best-hair-salon-myeongdong', label: "Best Salon Myeongdong" },
-  ]}
+<Layout
+  title="Hair Treatment Myeongdong | Deep Repair at CHAHONG ROOM Seoul"
+  description="Professional hair treatments in Myeongdong Seoul. Deep conditioning, protein treatment, moisture mask & repair. Full English service at CHAHONG ROOM."
 >
-  <span slot="headline">Hair Treatment<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Magazine editorial style -->
+    <section class="relative overflow-hidden" style="background: #F7F4EF; min-height: 90vh;">
+      <div class="absolute right-0 top-0 bottom-0" style="width: 55%; display: none;" id="hero-img-desktop">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900&q=80" alt="Hair treatment Seoul" class="w-full h-full object-cover" loading="eager" />
+        <div class="absolute inset-0" style="background: linear-gradient(to right, #F7F4EF 5%, transparent 35%);"></div>
+      </div>
+      <div class="hidden lg:block absolute right-0 top-0 bottom-0" style="width: 55%;">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900&q=80" alt="Hair treatment Seoul" class="w-full h-full object-cover" loading="eager" />
+        <div class="absolute inset-0" style="background: linear-gradient(to right, #F7F4EF 5%, transparent 35%);"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex items-center min-h-[90vh] py-20">
+        <div class="max-w-lg">
+          <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Hair Treatment · Deep Repair · Myeongdong</p>
+          <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5.5rem); color: #3A3838; font-weight: 300; line-height: 1.05;">
+            Hair<br/>Treatment<br/>
+            <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+          </h1>
+          <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="leading-relaxed mb-8" style="color: #8D8076; font-size: 1rem;">
+            Korean hair treatments go beyond surface conditioning. Our range of professional in-salon treatments target specific hair concerns — from dryness and damage to frizz and protein loss — using premium Korean formulas that deliver visible results in one session.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+            <a href="/pricing" class="btn-outline">View Pricing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Treatment Menu -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Treatment Menu</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Every Hair Treatment <em style="color: #A88F7B;">We Offer</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="max-w-lg mx-auto mt-4 text-sm" style="color: #8D8076;">Not sure which treatment you need? Our English-speaking stylists will assess your hair and recommend the most effective option during consultation.</p>
+        </div>
+        <div class="space-y-4">
+          {[
+            {
+              name: 'Deep Conditioning Mask',
+              tag: 'Best for Dryness',
+              img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80',
+              desc: 'An intensive moisture treatment applied with heat to penetrate deep into the hair shaft. Restores hydration, softness and manageability to dry, dehydrated hair. Results are immediate — hair feels softer and more manageable from the first wash.',
+              concerns: ['Dry hair', 'Dehydrated hair', 'Frizz', 'Rough texture'],
+              price: 'From ₩30,000',
+              time: '30–45 min',
+              lasts: '2–4 weeks'
+            },
+            {
+              name: 'Protein Treatment',
+              tag: 'Best for Weak Hair',
+              img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=80',
+              desc: 'Rebuilds the protein structure of the hair that\'s been depleted by chemical treatments, heat and mechanical damage. Restores elasticity, reduces breakage and strengthens hair from root to tip. Essential for over-processed hair.',
+              concerns: ['Breakage', 'Weak hair', 'Lack of elasticity', 'Over-processed hair'],
+              price: 'From ₩40,000',
+              time: '45–60 min',
+              lasts: '3–4 weeks'
+            },
+            {
+              name: 'Moisture + Protein Balance Treatment',
+              tag: 'Best All-Rounder',
+              img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=400&q=80',
+              desc: 'The most comprehensive treatment — combines both moisture and protein in one session. Addresses multiple concerns simultaneously. Our most popular treatment because most hair needs both moisture and protein in varying degrees.',
+              concerns: ['Multiple concerns', 'Overall damage', 'Pre-travel care', 'Regular maintenance'],
+              price: 'From ₩60,000',
+              time: '60–75 min',
+              lasts: '3–5 weeks'
+            },
+            {
+              name: 'Scalp & Root Treatment',
+              tag: 'Best for Scalp Health',
+              img: 'https://images.unsplash.com/photo-1470259078422-826894b933aa?w=400&q=80',
+              desc: 'Targets the scalp and roots rather than the lengths. Includes scalp analysis, targeted serum application and massage. Ideal for oily roots, itchy scalp or hair loss concerns. Pairs well with any length treatment.',
+              concerns: ['Oily roots', 'Itchy scalp', 'Hair loss', 'Scalp buildup'],
+              price: 'From ₩50,000',
+              time: '45–60 min',
+              lasts: '2–3 weeks'
+            },
+            {
+              name: 'Shine & Gloss Treatment',
+              tag: 'Best for Dull Hair',
+              img: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&q=80',
+              desc: 'A quick treatment that adds brilliant shine and smooths the cuticle without altering color. Adds a glossy, reflective finish that makes hair look healthy and vibrant. Perfect for special occasions or as a regular maintenance treatment.',
+              concerns: ['Dull hair', 'Lack of shine', 'Flat appearance', 'Pre-event treatment'],
+              price: 'From ₩30,000',
+              time: '20–30 min',
+              lasts: '2–3 weeks'
+            },
+          ].map((t, i) => (
+            <div class="grid md:grid-cols-4 gap-0 overflow-hidden" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #FFFFFF;">
+              <div style="height: 180px; overflow: hidden;" class="md:col-span-1">
+                <img src={t.img} alt={t.name} class="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div class="p-5 md:col-span-3">
+                <div class="flex items-start justify-between mb-2">
+                  <div>
+                    <span class="text-xs px-2 py-1 mr-2" style="background: #A88F7B20; color: #A88F7B; border-radius: 4px;">{t.tag}</span>
+                    <h3 class="font-display text-lg mt-2" style="color: #3A3838;">{t.name}</h3>
+                  </div>
+                  <div class="text-right flex-shrink-0 ml-4">
+                    <p class="text-sm font-semibold" style="color: #A88F7B;">{t.price}</p>
+                    <p class="text-xs" style="color: #8D8076;">{t.time}</p>
+                  </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-3" style="color: #8D8076;">{t.desc}</p>
+                <div class="flex flex-wrap gap-2">
+                  {t.concerns.map(c => (
+                    <span class="text-xs px-2 py-1" style="background: #F7F4EF; border: 1px solid #DCCDBD; border-radius: 4px; color: #8D8076;">{c}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Find Your Treatment -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Hair Concern Guide</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Find Your <em style="color: #A88F7B;">Perfect Treatment</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden; background: #FFFFFF;">
+          <div class="grid grid-cols-3 px-6 py-4" style="background: #F7F4EF;">
+            <p class="text-xs font-semibold tracking-widest uppercase" style="color: #8D8076;">Your Concern</p>
+            <p class="text-xs font-semibold tracking-widest uppercase" style="color: #A88F7B;">Best Treatment</p>
+            <p class="text-xs font-semibold tracking-widest uppercase" style="color: #8D8076;">Also Consider</p>
+          </div>
+          {[
+            { concern: 'Hair breaks when brushing', best: 'Protein Treatment', also: 'Olaplex Treatment' },
+            { concern: 'Dry & rough texture', best: 'Deep Conditioning Mask', also: 'Hair Botox' },
+            { concern: 'Frizzy & unruly', best: 'Hair Botox', also: 'Keratin Treatment' },
+            { concern: 'Dull, lacks shine', best: 'Shine & Gloss Treatment', also: 'Deep Conditioning Mask' },
+            { concern: 'Oily scalp, dry ends', best: 'Scalp & Root Treatment', also: 'Moisture + Protein Balance' },
+            { concern: 'After bleaching/coloring', best: 'Olaplex Treatment', also: 'Protein Treatment' },
+            { concern: 'Overall damage', best: 'Moisture + Protein Balance', also: 'Hair Botox' },
+            { concern: 'Pre-travel or event', best: 'Shine & Gloss Treatment', also: 'Deep Conditioning Mask' },
+          ].map((row, i) => (
+            <div class="grid grid-cols-3 px-6 py-4" style={`border-top: 1px solid #DCCDBD; background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}`}>
+              <p class="text-sm" style="color: #3A3838;">{row.concern}</p>
+              <p class="text-sm font-semibold" style="color: #A88F7B;">{row.best}</p>
+              <p class="text-sm" style="color: #8D8076;">{row.also}</p>
+            </div>
+          ))}
+        </div>
+        <p class="text-center mt-6 text-sm" style="color: #8D8076;">Still not sure? Message us on WhatsApp with a description of your hair concern and we'll recommend the right treatment — for free.</p>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Treatment <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW. Can be added to any haircut, color or perm service.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Shine & Gloss Treatment', price: 'From ₩30,000', time: '20–30 min' },
+          { service: 'Deep Conditioning Mask', price: 'From ₩30,000', time: '30–45 min' },
+          { service: 'Scalp & Root Treatment', price: 'From ₩50,000', time: '45–60 min' },
+          { service: 'Protein Treatment', price: 'From ₩40,000', time: '45–60 min' },
+          { service: 'Moisture + Protein Balance', price: 'From ₩60,000', time: '60–75 min' },
+          { service: 'Treatment + Blow Dry', price: 'From ₩50,000', time: '60–90 min' },
+          { service: 'Treatment + Haircut', price: 'From ₩60,000', time: '90–120 min' },
+        ].map((item, i) => (
+          <div class="flex items-center justify-between px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <span class="text-sm" style="color: #3A3838;">{item.service}</span>
+            <div class="text-right">
+              <p class="text-sm font-semibold" style="color: #A88F7B;">{item.price}</p>
+              <p class="text-xs" style="color: #8D8076;">{item.time}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Tell us your hair concern and we'll recommend the best treatment for your budget.</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Get a Free Recommendation</a>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-24 px-6 lg:px-12" style="background: #3A3838;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">What to Expect</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #FFFFFF; font-weight: 300;">Your Treatment <em style="color: #A88F7B;">Experience</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-4 gap-8">
+          {[
+            { step: '01', title: 'Hair Assessment', desc: 'We examine your hair condition, porosity and damage level to recommend the most effective treatment combination.' },
+            { step: '02', title: 'Cleanse & Prep', desc: 'Hair is washed with a clarifying shampoo to open the cuticle and maximize treatment absorption.' },
+            { step: '03', title: 'Treatment Application', desc: 'Treatment is applied section by section with heat to ensure deep penetration into every strand.' },
+            { step: '04', title: 'Rinse & Style', desc: 'Treatment is rinsed, a finishing serum applied, and hair blow dried. You leave with immediately visible results.' },
+          ].map(s => (
+            <div class="text-center">
+              <p class="font-display text-5xl mb-4" style="color: #A88F7B; opacity: 0.4;">{s.step}</p>
+              <h3 class="font-display text-lg mb-3" style="color: #FFFFFF;">{s.title}</h3>
+              <p class="text-sm leading-relaxed" style="color: #DCCDBD;">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div class="text-center mt-12">
+          <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book Your Treatment Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Treatment <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'How do I know which treatment I need?', a: 'Our stylists will assess your hair during consultation and recommend the most suitable treatment. Generally: if your hair breaks easily, you need protein. If it feels dry and rough, you need moisture. If it needs both, the Moisture + Protein Balance treatment is best.' },
+          { q: 'Can I add a treatment to my haircut or color appointment?', a: 'Yes — treatments can be added to any service. In fact, we recommend adding a treatment to every color or bleaching appointment for the best possible hair condition afterwards.' },
+          { q: 'How often should I get a hair treatment?', a: 'For maintenance, once a month is ideal. For damaged hair undergoing repair, every 2–3 weeks initially, then monthly once hair condition improves. Our stylists will advise based on your hair\'s specific needs.' },
+          { q: 'Will I see results immediately?', a: 'Yes — most clients notice a significant difference immediately after their first treatment session. Hair feels softer, smoother and looks shinier from the first application.' },
+          { q: 'Are your treatments safe for colored or bleached hair?', a: 'All of our treatments are safe for color-treated and bleached hair. In fact, treatments are particularly beneficial for chemically processed hair which has been depleted of moisture and protein.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Treatments</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/hair-botox-myeongdong', label: '💉 Hair Botox' },
+          { href: '/olaplex-treatment-myeongdong', label: '🔬 Olaplex' },
+          { href: '/keratin-treatment-myeongdong', label: '💆 Keratin Treatment' },
+          { href: '/scalp-treatment-myeongdong', label: '💆 Scalp Treatment' },
+          { href: '/hair-gloss-treatment-myeongdong', label: '✨ Hair Gloss' },
+          { href: '/hair-color-myeongdong', label: '🎨 Hair Color' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
