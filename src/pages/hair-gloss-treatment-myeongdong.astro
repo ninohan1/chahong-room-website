@@ -1,0 +1,255 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout
+  title="Hair Gloss Treatment Myeongdong | Shine Boost at CHAHONG ROOM Seoul"
+  description="Professional hair gloss treatment in Myeongdong Seoul. Boost shine, refresh color and add vibrancy in 30 minutes. English service at CHAHONG ROOM."
+>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Clean, bright, shine-focused -->
+    <section class="py-32 px-6 lg:px-12" style="background: linear-gradient(135deg, #F7F4EF 0%, #FFFFFF 100%);">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Hair Gloss · Shine Treatment · Myeongdong</p>
+            <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5rem); color: #3A3838; font-weight: 300; line-height: 1.1;">
+              Hair Gloss<br/>Treatment<br/>
+              <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+            </h1>
+            <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+            <p class="leading-relaxed mb-8" style="color: #8D8076; font-size: 1rem;">
+              The quickest way to transform dull, flat hair into mirror-like shine. A hair gloss treatment adds an ultra-shiny, semi-permanent coating that enhances your natural tone, refreshes faded color and adds weeks of vibrancy — in just 30 minutes.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 mb-10">
+              <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+              <a href="/pricing" class="btn-outline">View Pricing</a>
+            </div>
+            <!-- Quick facts -->
+            <div class="grid grid-cols-3 gap-4">
+              {[
+                { num: '30', label: 'Minutes Only' },
+                { num: '4–6', label: 'Weeks Results' },
+                { num: '0', label: 'Damage Risk' },
+              ].map(b => (
+                <div class="text-center p-3" style="border: 1px solid #DCCDBD; border-radius: 6px; background: #FFFFFF;">
+                  <p class="font-display text-xl" style="color: #A88F7B;">{b.num}</p>
+                  <p class="text-xs tracking-widest uppercase mt-1" style="color: #8D8076;">{b.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="space-y-3">
+              <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&q=80" alt="Hair gloss shine treatment" class="w-full rounded-lg object-cover" style="height: 250px;" loading="eager" />
+              <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=400&q=80" alt="Korean hair gloss" class="w-full rounded-lg object-cover" style="height: 160px;" loading="lazy" />
+            </div>
+            <div class="space-y-3 mt-8">
+              <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=80" alt="Shiny hair Seoul" class="w-full rounded-lg object-cover" style="height: 160px;" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80" alt="Hair gloss result" class="w-full rounded-lg object-cover" style="height: 250px;" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What is Hair Gloss -->
+    <section class="py-24 px-6 lg:px-12" style="background: #3A3838;">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-1">
+            <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">What It Is</p>
+            <h2 class="font-display text-4xl mb-6" style="color: #FFFFFF; font-weight: 300;">What is a Hair <em style="color: #A88F7B;">Gloss?</em></h2>
+            <p class="text-sm leading-relaxed mb-4" style="color: rgba(255,255,255,0.7);">A hair gloss is a semi-permanent, demi-permanent treatment that coats the hair shaft with a shine-enhancing formula. Unlike permanent color, it contains no ammonia and very low developer — making it one of the safest color treatments available.</p>
+            <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.7);">Available in clear (shine only) or tinted (adds a subtle tone while boosting shine). The tinted version is perfect for refreshing faded color between appointments.</p>
+          </div>
+          <div class="lg:col-span-2 grid md:grid-cols-2 gap-5">
+            {[
+              { icon: '✨', title: 'Mirror-Like Shine', desc: 'Adds a brilliant, reflective finish that makes hair look like it\'s lit from within. The most noticeable difference after any treatment.' },
+              { icon: '🎨', title: 'Color Refresh', desc: 'Tinted gloss refreshes faded color and adds depth without the commitment or damage of permanent color.' },
+              { icon: '💆', title: 'Frizz Control', desc: 'The coating smooths the hair cuticle, reducing frizz and flyaways for weeks after treatment.' },
+              { icon: '⚡', title: 'Quick Treatment', desc: 'Processing time is just 20 minutes. Most appointments including wash and blow dry are under 45 minutes.' },
+            ].map(item => (
+              <div class="p-5" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;">
+                <span class="text-2xl block mb-3">{item.icon}</span>
+                <h3 class="font-display text-base mb-2" style="color: #FFFFFF;">{item.title}</h3>
+                <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.6);">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clear vs Tinted -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Choose Your Gloss</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Clear Gloss vs <em style="color: #A88F7B;">Tinted Gloss</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          {[
+            {
+              type: 'Clear Gloss',
+              subtitle: 'Shine Only — No Color Change',
+              img: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80',
+              desc: 'A completely transparent formula that adds brilliant shine without altering your color. Perfect for any hair color or condition. No risk of color change — just pure, glossy shine.',
+              bestFor: ['Natural hair wanting shine', 'After any color service', 'Regular shine maintenance', 'Pre-event treatment'],
+              price: 'From ₩50,000',
+              time: '30–40 min'
+            },
+            {
+              type: 'Tinted Gloss',
+              subtitle: 'Shine + Subtle Color Refresh',
+              img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80',
+              desc: 'A lightly tinted formula that adds shine while depositing a subtle tone. Refreshes faded color, neutralizes brassiness or adds a new dimension of tone — all while boosting shine dramatically.',
+              bestFor: ['Faded color needing refresh', 'After highlights/balayage', 'Adding ash or warm tones', 'Between color appointments'],
+              price: 'From ₩70,000',
+              time: '35–50 min'
+            },
+          ].map(g => (
+            <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+              <div style="height: 200px; overflow: hidden;">
+                <img src={g.img} alt={g.type} class="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div class="p-6">
+                <h3 class="font-display text-xl mb-1" style="color: #3A3838;">{g.type}</h3>
+                <p class="text-xs mb-3" style="color: #A88F7B;">{g.subtitle}</p>
+                <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">{g.desc}</p>
+                <p class="text-xs font-semibold mb-2" style="color: #3A3838;">Best for:</p>
+                <div class="space-y-1 mb-4">
+                  {g.bestFor.map(b => (
+                    <div class="flex items-center gap-2">
+                      <span style="color: #A88F7B; font-size: 10px;">✓</span>
+                      <p class="text-xs" style="color: #8D8076;">{b}</p>
+                    </div>
+                  ))}
+                </div>
+                <div class="flex items-center justify-between pt-4" style="border-top: 1px solid #DCCDBD;">
+                  <span class="text-sm font-semibold" style="color: #A88F7B;">{g.price}</span>
+                  <span class="text-xs" style="color: #8D8076;">⏱ {g.time}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- When to get a gloss -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Perfect Timing</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">When Should You Get a <em style="color: #A88F7B;">Hair Gloss?</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            { icon: '✈️', title: 'Before Flying Home', desc: 'Leave Seoul with your hair looking its absolute best. A gloss is the perfect last treatment before your flight.' },
+            { icon: '📸', title: 'Before a Photoshoot', desc: 'Maximum shine for photographs. Professional photographers love glossed hair — it photographs beautifully.' },
+            { icon: '🎉', title: 'Before a Special Event', desc: 'Wedding, graduation, party — whatever the occasion, a gloss gives you that polished, salon-fresh finish.' },
+            { icon: '🔄', title: 'Between Color Appointments', desc: 'Refresh faded highlights or color without the time and cost of a full color service.' },
+          ].map(item => (
+            <div class="p-5 text-center" style="background: #FFFFFF; border: 1px solid #DCCDBD; border-radius: 8px;">
+              <span class="text-3xl block mb-3">{item.icon}</span>
+              <h3 class="font-display text-base mb-2" style="color: #3A3838;">{item.title}</h3>
+              <p class="text-sm leading-relaxed" style="color: #8D8076;">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Hair Gloss <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Clear Gloss (Shine Only)', price: 'From ₩50,000', time: '30–40 min', note: 'No color change' },
+          { service: 'Tinted Gloss', price: 'From ₩70,000', time: '35–50 min', note: 'Subtle tone + shine' },
+          { service: 'Gloss + Blow Dry', price: 'From ₩80,000', time: '45–60 min', note: 'Includes styling' },
+          { service: 'After Highlights (add-on)', price: 'From ₩30,000', time: '+20 min', note: 'Finishing step' },
+          { service: 'After Balayage (add-on)', price: 'From ₩30,000', time: '+20 min', note: 'Finishing step' },
+          { service: 'Gloss + Haircut', price: 'From ₩80,000', time: '75–90 min', note: 'Perfect combo' },
+        ].map((item, i) => (
+          <div class="px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note} · {item.time}</p>
+              </div>
+              <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Want to add a gloss to your existing appointment? Just let us know when booking!</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Book via WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Hair Gloss <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'Will a clear gloss change my hair color?', a: 'No — a clear gloss is completely transparent and adds only shine without any color deposit. It\'s completely safe for any hair color.' },
+          { q: 'How long does a hair gloss last?', a: 'Typically 4–6 weeks depending on how frequently you wash your hair. Washing with cool water and color-safe shampoo extends results. The shine fades gradually rather than washing out suddenly.' },
+          { q: 'Can I get a gloss if I haven\'t colored my hair?', a: 'Absolutely! Clear gloss is perfect for natural, uncolored hair. It adds beautiful shine and reduces frizz without any color change.' },
+          { q: 'Is hair gloss damaging?', a: 'Not at all. Hair gloss contains no ammonia and very low or no peroxide developer. It\'s one of the gentlest treatments available and actually leaves hair in better condition than before.' },
+          { q: 'Can I combine a gloss with other services?', a: 'Yes — gloss is often used as a finishing step after highlights, balayage or bleaching to add shine and perfect the final tone. It can also be combined with a haircut or other treatment.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/hair-toning-myeongdong', label: '🎨 Hair Toning' },
+          { href: '/highlights-balayage-myeongdong', label: '🌟 Highlights & Balayage' },
+          { href: '/hair-color-myeongdong', label: '🎨 Hair Color' },
+          { href: '/hair-treatment-myeongdong', label: '💆 Hair Treatment' },
+          { href: '/hair-botox-myeongdong', label: '💉 Hair Botox' },
+          { href: '/haircut-myeongdong', label: '✂️ Add a Haircut' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
