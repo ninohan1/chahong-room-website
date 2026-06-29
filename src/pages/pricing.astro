@@ -5,19 +5,20 @@ import Footer from '../components/Footer.astro';
 ---
 <Layout
   title="Pricing | CHAHONG ROOM Myeongdong Hair Salon Seoul"
-  description="View pricing for haircuts, perms, coloring, scalp treatments and head spa at CHAHONG ROOM Myeongdong. English-friendly Korean hair salon in Seoul."
+  description="Full pricing for all 28 services at CHAHONG ROOM Myeongdong — haircuts, perms, coloring, scalp treatments, styling and specialty services. English-friendly Korean hair salon."
 >
   <Nav />
-  <main class="pt-28 pb-0">
+  <main class="pt-24" style="background: #F7F4EF;">
 
-    <section class="py-20 px-6 text-center border-b border-dark-border">
-      <p class="section-label mb-4">Transparent Pricing</p>
-      <h1 class="font-display text-5xl md:text-6xl font-300 mb-6">
-        Our <em class="text-gold">Pricing</em>
+    <!-- Hero -->
+    <section class="py-20 px-6 text-center" style="background: #FFFFFF; border-bottom: 1px solid #DCCDBD;">
+      <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+      <h1 class="font-display text-5xl md:text-6xl mb-6" style="color: #3A3838; font-weight: 300;">
+        Our <em style="color: #A88F7B;">Pricing</em>
       </h1>
-      <span class="gold-line"></span>
-      <p class="text-text-muted max-w-lg mx-auto text-sm font-300 leading-relaxed">
-        All prices are in Korean Won (KRW). Final pricing may vary based on hair length and condition. WhatsApp us for a personalized quote.
+      <div class="mx-auto mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      <p class="max-w-lg mx-auto text-sm leading-relaxed" style="color: #8D8076;">
+        All prices in Korean Won (KRW). Final price depends on hair length, thickness and complexity. WhatsApp us with your reference photo for a personalized quote.
       </p>
     </section>
 
@@ -25,75 +26,176 @@ import Footer from '../components/Footer.astro';
 
       {[
         {
-          title: '✂️ Haircut & Styling',
+          title: '✂️ Hair Services',
+          href: null,
           items: [
-            { service: "Women's Haircut", price: "From ₩40,000" },
-            { service: "Men's Haircut", price: "From ₩25,000" },
-            { service: "Bang Trim", price: "From ₩10,000" },
-            { service: "Blow Dry & Styling", price: "From ₩20,000" },
-            { service: "Korean Trend Styling (C-curl, S-curl)", price: "From ₩30,000" },
+            { service: "Women's Haircut", price: "From ₩40,000", link: "/womens-haircut-myeongdong" },
+            { service: "Men's Haircut", price: "From ₩25,000", link: "/mens-haircut-myeongdong" },
+            { service: "Wolf Cut", price: "From ₩50,000", link: "/haircut-myeongdong" },
+            { service: "Korean Style Haircut", price: "From ₩40,000", link: "/korean-style-haircut-myeongdong" },
+            { service: "See-Through Bangs", price: "From ₩10,000", link: "/haircut-myeongdong" },
+            { service: "Curtain Bangs", price: "From ₩10,000", link: "/haircut-myeongdong" },
+            { service: "Two-Block Cut (Men's)", price: "From ₩30,000", link: "/mens-haircut-myeongdong" },
+            { service: "Mushroom Cut", price: "From ₩35,000", link: "/haircut-myeongdong" },
           ]
         },
         {
           title: '🎨 Hair Coloring',
           items: [
-            { service: "Full Color", price: "From ₩80,000" },
-            { service: "Root Touch-up", price: "From ₩50,000" },
-            { service: "Toning", price: "From ₩40,000" },
-            { service: "Highlights / Balayage", price: "From ₩120,000" },
-            { service: "Bleaching (1 round)", price: "From ₩80,000" },
-            { service: "Fashion Color", price: "From ₩100,000" },
+            { service: "Full Color", price: "From ₩80,000", link: "/hair-color-myeongdong" },
+            { service: "Root Touch-Up", price: "From ₩50,000", link: "/hair-color-myeongdong" },
+            { service: "Highlights (Partial)", price: "From ₩80,000", link: "/highlights-balayage-myeongdong" },
+            { service: "Highlights (Full)", price: "From ₩130,000", link: "/highlights-balayage-myeongdong" },
+            { service: "Balayage", price: "From ₩150,000", link: "/highlights-balayage-myeongdong" },
+            { service: "Money Piece", price: "From ₩60,000", link: "/highlights-balayage-myeongdong" },
+            { service: "Ombre", price: "From ₩120,000", link: "/ombre-hair-color-myeongdong" },
+            { service: "Toning / Gloss", price: "From ₩40,000", link: "/hair-toning-myeongdong" },
+            { service: "Hair Gloss Treatment", price: "From ₩50,000", link: "/hair-gloss-treatment-myeongdong" },
+            { service: "Bleaching (1 round)", price: "From ₩120,000", link: "/bleaching-myeongdong" },
+            { service: "Bleach + Toner", price: "From ₩150,000", link: "/bleaching-myeongdong" },
+            { service: "K-Pop Fashion Color", price: "From ₩100,000", link: "/hair-color-myeongdong" },
+            { service: "Gray Hair Coverage", price: "From ₩50,000", link: "/gray-hair-coloring-myeongdong" },
+            { service: "Gray Blending", price: "From ₩80,000", link: "/gray-hair-coloring-myeongdong" },
+            { service: "Silver Transformation", price: "From ₩100,000", link: "/gray-hair-coloring-myeongdong" },
+            { service: "Color Correction", price: "Consultation Required", link: "/hair-color-myeongdong" },
           ]
         },
         {
           title: '🧪 Perm & Texture',
           items: [
-            { service: "C-Curl Perm", price: "From ₩120,000" },
-            { service: "S-Curl Perm", price: "From ₩120,000" },
-            { service: "Digital Perm", price: "From ₩150,000" },
-            { service: "Setting Perm", price: "From ₩130,000" },
-            { service: "Japanese Straightening", price: "From ₩200,000" },
-            { service: "Bang Perm", price: "From ₩30,000" },
+            { service: "C-Curl Perm — Short", price: "From ₩80,000", link: "/hair-perm-myeongdong" },
+            { service: "C-Curl Perm — Medium", price: "From ₩100,000", link: "/hair-perm-myeongdong" },
+            { service: "C-Curl Perm — Long", price: "From ₩130,000", link: "/hair-perm-myeongdong" },
+            { service: "S-Curl / Wave Perm — Short", price: "From ₩80,000", link: "/hair-perm-myeongdong" },
+            { service: "S-Curl / Wave Perm — Medium", price: "From ₩110,000", link: "/hair-perm-myeongdong" },
+            { service: "Digital Perm — Short", price: "From ₩130,000", link: "/digital-perm-myeongdong" },
+            { service: "Digital Perm — Medium", price: "From ₩160,000", link: "/digital-perm-myeongdong" },
+            { service: "Digital Perm — Long", price: "From ₩200,000", link: "/digital-perm-myeongdong" },
+            { service: "Volume Perm", price: "From ₩80,000", link: "/hair-perm-myeongdong" },
+            { service: "Two-Block + Perm (Men's)", price: "From ₩130,000", link: "/mens-haircut-myeongdong" },
+            { service: "Curl Defining Treatment", price: "From ₩60,000", link: "/curl-defining-treatment-myeongdong" },
           ]
         },
         {
-          title: '💆 Scalp & Hair Care',
+          title: '💆 Hair Treatments',
           items: [
-            { service: "Head Spa", price: "From ₩60,000" },
-            { service: "Scalp Treatment", price: "From ₩50,000" },
-            { service: "Keratin Smoothing", price: "From ₩150,000" },
-            { service: "Hair Clinic (Protein Pack)", price: "From ₩30,000" },
-            { service: "Anti-Hair Loss Treatment", price: "From ₩60,000" },
+            { service: "Hair Botox — Short", price: "From ₩80,000", link: "/hair-botox-myeongdong" },
+            { service: "Hair Botox — Medium", price: "From ₩120,000", link: "/hair-botox-myeongdong" },
+            { service: "Hair Botox — Long", price: "From ₩160,000", link: "/hair-botox-myeongdong" },
+            { service: "Olaplex No.3 Treatment", price: "From ₩40,000", link: "/olaplex-treatment-myeongdong" },
+            { service: "Olaplex Full In-Salon", price: "From ₩80,000", link: "/olaplex-treatment-myeongdong" },
+            { service: "Olaplex Add-On (with color/bleach)", price: "From ₩30,000", link: "/olaplex-treatment-myeongdong" },
+            { service: "Keratin Treatment — Short", price: "From ₩150,000", link: "/keratin-treatment-myeongdong" },
+            { service: "Keratin Treatment — Medium", price: "From ₩180,000", link: "/keratin-treatment-myeongdong" },
+            { service: "Keratin Treatment — Long", price: "From ₩220,000", link: "/keratin-treatment-myeongdong" },
+            { service: "Hair Straightening — Short", price: "From ₩150,000", link: "/hair-straightening-myeongdong" },
+            { service: "Hair Straightening — Medium", price: "From ₩190,000", link: "/hair-straightening-myeongdong" },
+            { service: "Deep Conditioning Mask", price: "From ₩30,000", link: "/hair-treatment-myeongdong" },
+            { service: "Protein Treatment", price: "From ₩40,000", link: "/hair-treatment-myeongdong" },
+            { service: "Shine & Gloss Treatment", price: "From ₩30,000", link: "/hair-treatment-myeongdong" },
+          ]
+        },
+        {
+          title: '🫧 Scalp Services',
+          items: [
+            { service: "Head Spa (Full)", price: "From ₩80,000", link: "/scalp-treatment-myeongdong" },
+            { service: "Scalp Analysis & Treatment", price: "From ₩60,000", link: "/scalp-treatment-myeongdong" },
+            { service: "Scalp Massage — 20 min", price: "From ₩30,000", link: "/scalp-massage-myeongdong" },
+            { service: "Scalp Massage — 40 min", price: "From ₩50,000", link: "/scalp-massage-myeongdong" },
+            { service: "Scalp Detox Treatment", price: "From ₩70,000", link: "/scalp-detox-myeongdong" },
+            { service: "Dandruff Treatment", price: "From ₩60,000", link: "/dandruff-treatment-myeongdong" },
+            { service: "Hair Loss Treatment", price: "From ₩80,000", link: "/hair-loss-treatment-myeongdong" },
+            { service: "Hair Loss Course (3 sessions)", price: "From ₩210,000", link: "/hair-loss-treatment-myeongdong" },
+          ]
+        },
+        {
+          title: '💅 Styling Services',
+          items: [
+            { service: "Blow Dry — Short Hair", price: "From ₩20,000", link: "/blow-dry-styling-myeongdong" },
+            { service: "Blow Dry — Medium Hair", price: "From ₩30,000", link: "/blow-dry-styling-myeongdong" },
+            { service: "Blow Dry — Long Hair", price: "From ₩40,000", link: "/blow-dry-styling-myeongdong" },
+            { service: "Blow Dry + Curls / S-Wave", price: "From ₩50,000", link: "/blow-dry-styling-myeongdong" },
+            { service: "Hair Set 셋팅", price: "From ₩40,000", link: "/hair-set-myeongdong" },
+            { service: "Event Updo", price: "From ₩70,000", link: "/event-styling-myeongdong" },
+            { service: "Glamour Waves & Curls", price: "From ₩60,000", link: "/event-styling-myeongdong" },
+            { service: "Photoshoot Styling", price: "From ₩80,000", link: "/event-styling-myeongdong" },
+            { service: "Bridal Updo", price: "From ₩100,000", link: "/bridal-updo-myeongdong" },
+            { service: "Bridal Trial Session", price: "From ₩90,000", link: "/bridal-updo-myeongdong" },
+            { service: "Bridesmaid Hair", price: "From ₩60,000", link: "/bridal-updo-myeongdong" },
           ]
         },
       ].map(section => (
-        <div class="mb-14">
-          <h2 class="font-display text-2xl font-300 mb-6 pb-3 border-b border-dark-border">{section.title}</h2>
-          <div class="space-y-3">
-            {section.items.map(item => (
-              <div class="flex items-center justify-between py-3 border-b border-dark-border/50 group hover:border-gold/30 transition-colors">
-                <span class="text-sm text-text-muted font-300 group-hover:text-white transition-colors">{item.service}</span>
-                <span class="text-sm text-gold font-mono">{item.price}</span>
+        <div class="mb-16">
+          <h2 class="font-display text-2xl mb-6 pb-4" style="color: #3A3838; font-weight: 300; border-bottom: 2px solid #DCCDBD;">{section.title}</h2>
+          <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+            {section.items.map((item, i) => (
+              <div class="flex items-center justify-between px-5 py-3" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+                <a href={item.link} class="text-sm transition-colors hover:underline" style="color: #3A3838;">{item.service}</a>
+                <span class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</span>
               </div>
             ))}
           </div>
         </div>
       ))}
 
-      <div class="border border-gold/30 p-8 text-center">
-        <p class="section-label mb-3">Get an Exact Quote</p>
-        <p class="text-text-muted text-sm font-300 mb-6 max-w-md mx-auto">Pricing varies by hair length, thickness, and the complexity of the desired result. Send us a WhatsApp message with your reference photo for an accurate estimate.</p>
-        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">WhatsApp for a Quote</a>
+      <!-- Popular Combos -->
+      <div class="mb-16">
+        <h2 class="font-display text-2xl mb-6 pb-4" style="color: #3A3838; font-weight: 300; border-bottom: 2px solid #DCCDBD;">🌟 Popular Combinations</h2>
+        <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+          {[
+            { service: "Wolf Cut + C-Curl Perm", price: "From ₩130,000" },
+            { service: "Two-Block + Wave Perm (Men's)", price: "From ₩140,000" },
+            { service: "Haircut + Hair Color", price: "From ₩110,000" },
+            { service: "Balayage + Toner", price: "From ₩170,000" },
+            { service: "Bleach + Toner + Treatment", price: "From ₩180,000" },
+            { service: "Head Spa + Haircut", price: "From ₩110,000" },
+            { service: "Digital Perm + Haircut", price: "From ₩180,000" },
+            { service: "Bridal Updo + Trial Session", price: "From ₩180,000" },
+          ].map((item, i) => (
+            <div class="flex items-center justify-between px-5 py-3" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+              <span class="text-sm" style="color: #3A3838;">{item.service}</span>
+              <span class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Notes -->
+      <div class="mb-12 p-5" style="background: #FFFFFF; border: 1px solid #DCCDBD; border-radius: 8px;">
+        <h3 class="font-display text-lg mb-4" style="color: #3A3838;">📋 Pricing Notes</h3>
+        <div class="space-y-2">
+          {[
+            'All prices are starting prices in Korean Won (KRW). Final price confirmed during consultation.',
+            'Hair length categories: Short (above shoulder) / Medium (shoulder to mid-back) / Long (below mid-back)',
+            'Very thick or dense hair may incur an additional charge.',
+            'Color correction, color removal or significantly damaged hair may require a consultation before pricing.',
+            'All haircut services include shampoo and basic blow dry styling.',
+            'Walk-ins welcome. WhatsApp booking recommended for color, perm and treatment services.',
+          ].map(note => (
+            <div class="flex items-start gap-2">
+              <span style="color: #A88F7B; flex-shrink: 0; font-size: 10px; margin-top: 4px;">●</span>
+              <p class="text-xs leading-relaxed" style="color: #8D8076;">{note}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="p-8 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #FFFFFF;">
+        <p class="mb-2 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Get an Exact Quote</p>
+        <h3 class="font-display text-2xl mb-4" style="color: #3A3838; font-weight: 300;">Not Sure About Pricing?</h3>
+        <p class="text-sm mb-6 max-w-md mx-auto leading-relaxed" style="color: #8D8076;">Send us a WhatsApp message with your reference photo and desired service — we'll give you an accurate quote within hours. Free consultation, no obligation.</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 WhatsApp for a Free Quote</a>
       </div>
 
     </section>
-
   </main>
-  <footer class="border-t border-dark-border py-6 px-6 text-center">
-    <p class="text-text-muted text-xs">© 2026 CHAHONG ROOM Myeongdong Hair Salon</p>
-  </footer>
 
-  <a href="https://wa.me/821047944623" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-all" aria-label="WhatsApp">
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 </Layout>
