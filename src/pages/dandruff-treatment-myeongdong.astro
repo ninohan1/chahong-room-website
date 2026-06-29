@@ -1,39 +1,220 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Dandruff Treatment Myeongdong"
-  seoTitle="Dandruff Treatment Myeongdong | Scalp Care at CHAHONG ROOM Seoul"
-  metaDesc="Professional dandruff treatment in Myeongdong Seoul. Eliminate flakes, soothe itchy scalp and restore scalp balance. English service at CHAHONG ROOM."
-  emoji="🌿"
-  category="Scalp Services"
-  heroImage="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80"
-  intro="Our professional dandruff treatment eliminates flakes, soothes irritation and restores your scalp's natural balance using premium Korean scalp care products."
-  pricing={[
-    { service: "Dandruff Scalp Treatment", price: "From ₩60,000" },
-    { service: "Dandruff Treatment + Massage", price: "From ₩90,000" },
-    { service: "Full Scalp Care Package", price: "From ₩130,000" },
-  ]}
-  benefits={[
-    "Eliminates dandruff and flakes using professional-grade scalp products",
-    "Soothes itchy, irritated and inflamed scalp",
-    "Restores scalp's natural pH and microbiome balance",
-    "Reduces sebum overproduction that causes dandruff",
-    "Uses premium Korean dermatologist-tested scalp products",
-    "Includes scalp analysis to identify the root cause",
-  ]}
-  faqs={[
-    { q: "What causes dandruff?", a: "Dandruff is usually caused by a dry scalp, excess oil, or a yeast-like fungus. Our scalp analysis identifies your specific cause." },
-    { q: "How many sessions do I need?", a: "Most clients see significant improvement after 2–3 sessions. Severe cases may need a monthly maintenance plan." },
-    { q: "Is the treatment suitable for sensitive scalps?", a: "Yes — we use gentle, dermatologist-tested products suitable for sensitive and reactive scalps." },
-    { q: "Can I color my hair if I have dandruff?", a: "We recommend treating the scalp first before any chemical services for best results and scalp health." },
-  ]}
-  relatedLinks={[
-    { href: '/scalp-treatment-myeongdong', label: "Scalp Treatment" },
-    { href: '/scalp-massage-myeongdong', label: "Scalp Massage" },
-    { href: '/scalp-detox-myeongdong', label: "Scalp Detox" },
-    { href: '/hair-loss-treatment-myeongdong', label: "Hair Loss Treatment" },
-  ]}
+<Layout
+  title="Dandruff Treatment Myeongdong | Scalp Care at CHAHONG ROOM Seoul"
+  description="Professional dandruff treatment in Myeongdong Seoul. Eliminate flakes, soothe itchy scalp and restore balance. Full English service at CHAHONG ROOM."
 >
-  <span slot="headline">Dandruff Treatment<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Clinical, trustworthy aesthetic -->
+    <section class="py-28 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Dandruff Treatment · Scalp Care · Myeongdong</p>
+            <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5rem); color: #3A3838; font-weight: 300; line-height: 1.1;">
+              Dandruff<br/>Treatment<br/>
+              <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+            </h1>
+            <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+            <p class="leading-relaxed mb-8" style="color: #8D8076; font-size: 1rem;">
+              Dandruff is more than an embarrassment — it's a scalp health issue that needs proper treatment. Our professional dandruff treatment identifies the root cause, eliminates flakes and restores your scalp's natural balance using premium Korean dermatologist-tested products.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 mb-10">
+              <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+              <a href="/pricing" class="btn-outline">View Pricing</a>
+            </div>
+            <div class="p-4" style="background: #F7F4EF; border-left: 3px solid #A88F7B; border-radius: 0 6px 6px 0;">
+              <p class="text-sm" style="color: #3A3838;"><strong>Did you know?</strong> Most dandruff shampoos only mask symptoms. Our professional treatment targets the root cause — whether dry scalp, excess oil or fungal imbalance — for lasting results.</p>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <img src="https://images.unsplash.com/photo-1470259078422-826894b933aa?w=700&q=80" alt="Dandruff scalp treatment Seoul" class="w-full rounded-lg object-cover" style="height: 300px;" loading="eager" />
+            <div class="grid grid-cols-3 gap-3">
+              {[
+                { num: '1–3', label: 'Sessions Needed' },
+                { num: '45–60', label: 'Minutes' },
+                { num: '100%', label: 'English' },
+              ].map(b => (
+                <div class="text-center p-3" style="border: 1px solid #DCCDBD; border-radius: 6px;">
+                  <p class="font-display text-lg" style="color: #A88F7B;">{b.num}</p>
+                  <p class="text-xs tracking-widest uppercase mt-1" style="color: #8D8076;">{b.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Types of Dandruff -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Identify Your Type</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">What's Causing <em style="color: #A88F7B;">Your Dandruff?</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="max-w-lg mx-auto mt-4 text-sm" style="color: #8D8076;">Different causes require different treatments. Our scalp analysis identifies your specific type for maximum effectiveness.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            {
+              type: 'Dry Scalp Dandruff',
+              signs: 'Small, white flakes. Tight feeling. Itching. Worsens in winter or air-conditioned environments.',
+              cause: 'Lack of moisture in the scalp',
+              treatment: 'Hydrating scalp mask + gentle moisturizing treatment',
+              color: '#DCCDBD'
+            },
+            {
+              type: 'Oily Scalp Dandruff',
+              signs: 'Large, yellowish flakes. Greasy appearance. Flakes stick to hair and scalp.',
+              cause: 'Excess sebum production feeding scalp fungus',
+              treatment: 'Sebum-control treatment + anti-fungal serum',
+              color: '#A88F7B'
+            },
+            {
+              type: 'Fungal Dandruff',
+              signs: 'Persistent flaking despite regular washing. Red or irritated scalp. Doesn\'t respond to regular anti-dandruff shampoo.',
+              cause: 'Malassezia fungus overgrowth',
+              treatment: 'Professional anti-fungal scalp treatment course',
+              color: '#8D8076'
+            },
+            {
+              type: 'Sensitive Scalp Dandruff',
+              signs: 'Flaking with redness and irritation. Burning sensation. Reacts to hair products.',
+              cause: 'Scalp sensitivity or product reaction',
+              treatment: 'Hypoallergenic soothing treatment + patch test',
+              color: '#3A3838'
+            },
+          ].map(t => (
+            <div class="p-5" style="background: #FFFFFF; border: 1px solid #DCCDBD; border-radius: 8px;">
+              <div class="w-3 h-3 rounded-full mb-4" style={`background: ${t.color};`}></div>
+              <h3 class="font-display text-base mb-2" style="color: #3A3838;">{t.type}</h3>
+              <p class="text-xs mb-2" style="color: #8D8076;"><strong style="color: #3A3838;">Signs:</strong> {t.signs}</p>
+              <p class="text-xs mb-3" style="color: #8D8076;"><strong style="color: #3A3838;">Cause:</strong> {t.cause}</p>
+              <p class="text-xs font-semibold" style="color: #A88F7B;">Treatment: {t.treatment}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Treatment Process -->
+    <section class="py-24 px-6 lg:px-12" style="background: #3A3838;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Our Protocol</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #FFFFFF; font-weight: 300;">The CHAHONG ROOM <em style="color: #A88F7B;">Dandruff Protocol</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="space-y-5">
+          {[
+            { step: '01', title: 'Scalp Analysis (English)', desc: 'We examine your scalp with professional analysis tools to identify the type and severity of dandruff. This step determines which products and techniques will be most effective for your specific condition.' },
+            { step: '02', title: 'Targeted Cleansing', desc: 'A professional-grade clarifying shampoo removes surface buildup, excess oil and dead skin cells. The formula is selected based on your scalp analysis results — not a one-size-fits-all approach.' },
+            { step: '03', title: 'Treatment Application', desc: 'Anti-dandruff serum and mask applied directly to the scalp. Korean professional-grade formulas penetrate deeper and work faster than any retail product.' },
+            { step: '04', title: 'Scalp Massage', desc: 'Massage increases absorption of the treatment and improves blood circulation. Also helps loosen stubborn flakes and buildup that surface washing can\'t reach.' },
+            { step: '05', title: 'Balancing Serum', desc: 'A finishing serum restores the scalp\'s natural pH and microbiome balance — the key to preventing dandruff from returning.' },
+            { step: '06', title: 'Aftercare Education', desc: 'Full aftercare guidance in English. We explain what\'s causing your dandruff, recommend home products and create a maintenance plan to keep it from returning.' },
+          ].map(s => (
+            <div class="flex gap-5 items-start p-5" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;">
+              <p class="font-display text-2xl flex-shrink-0" style="color: #A88F7B; opacity: 0.6;">{s.step}</p>
+              <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 20px;">
+                <h3 class="font-display text-base mb-2" style="color: #FFFFFF;">{s.title}</h3>
+                <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.6);">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Dandruff Treatment <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Dandruff Scalp Treatment', price: 'From ₩60,000', time: '45–60 min', note: 'Single session' },
+          { service: 'Dandruff Treatment + Massage', price: 'From ₩90,000', time: '60–75 min', note: 'With scalp massage' },
+          { service: 'Dandruff Course (3 sessions)', price: 'From ₩160,000', time: 'Monthly x3', note: 'Best for persistent dandruff' },
+          { service: 'Full Scalp Care Package', price: 'From ₩130,000', time: '75–90 min', note: 'Analysis + treatment + mask' },
+          { service: 'Dandruff Treatment + Haircut', price: 'From ₩90,000', time: '90–120 min', note: 'Popular combo' },
+        ].map((item, i) => (
+          <div class="px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note} · {item.time}</p>
+              </div>
+              <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Struggling with persistent dandruff? Message us — we'll recommend the right treatment plan.</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Book via WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Dandruff <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'Why hasn\'t dandruff shampoo fixed my dandruff?', a: 'Most anti-dandruff shampoos only treat symptoms temporarily. They don\'t address the root cause — whether that\'s excess oil feeding scalp fungus, a dry scalp lacking moisture, or a microbiome imbalance. Professional treatment targets the actual cause for lasting results.' },
+          { q: 'How many sessions do I need?', a: 'Most clients see significant improvement after just 1–2 sessions. Persistent or severe dandruff may need a course of 3 monthly treatments. We\'ll advise on the right plan during your scalp analysis.' },
+          { q: 'Is the treatment suitable for sensitive scalps?', a: 'Yes — we use gentle, dermatologist-tested products and always perform a scalp analysis before applying anything. We adapt the treatment based on your scalp\'s sensitivity level.' },
+          { q: 'Can I color my hair if I have dandruff?', a: 'We recommend treating the dandruff first before any chemical services. An unhealthy scalp doesn\'t absorb color evenly and chemical treatments can further irritate an already inflamed scalp.' },
+          { q: 'What can I do at home between treatments?', a: 'We\'ll recommend specific home products during your English aftercare consultation. Generally: use lukewarm water, avoid scratching, use a gentle sulfate-free shampoo and wash more frequently if you have an oily scalp.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/scalp-treatment-myeongdong', label: '💆 Head Spa' },
+          { href: '/scalp-detox-myeongdong', label: '🫧 Scalp Detox' },
+          { href: '/scalp-massage-myeongdong', label: '💆 Scalp Massage' },
+          { href: '/hair-loss-treatment-myeongdong', label: '🌱 Hair Loss Treatment' },
+          { href: '/hair-treatment-myeongdong', label: '💆 Hair Treatment' },
+          { href: '/haircut-myeongdong', label: '✂️ Add a Haircut' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
