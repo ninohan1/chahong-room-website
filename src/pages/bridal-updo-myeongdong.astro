@@ -1,40 +1,242 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Bridal Updo Myeongdong"
-  seoTitle="Bridal Updo Myeongdong | Wedding Hair Styling at CHAHONG ROOM Seoul"
-  metaDesc="Professional bridal updo and wedding hair styling in Myeongdong Seoul. Korean bridal looks, elegant updos, English service at CHAHONG ROOM."
-  emoji="👰"
-  category="Styling"
-  heroImage="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1200&q=80"
-  intro="From classic Korean bridal updos to modern romantic styles — our stylists create stunning wedding hair looks that last all day and photograph beautifully."
-  pricing={[
-    { service: "Bridal Updo", price: "From ₩100,000" },
-    { service: "Bridal Updo + Trial", price: "From ₩180,000" },
-    { service: "Bridesmaid Hair", price: "From ₩60,000" },
-    { service: "Bridal Package (Hair + Styling)", price: "From ₩250,000" },
-  ]}
-  benefits={[
-    "Specializes in both Korean and Western bridal hair styles",
-    "Trial session available to perfect your look before the big day",
-    "Long-lasting styles secured with professional products",
-    "Accommodates hair extensions and accessories",
-    "Full English consultation to understand your vision",
-    "Available for both brides and bridesmaids",
-  ]}
-  faqs={[
-    { q: "Should I do a trial before my wedding?", a: "Yes — we strongly recommend a trial run 2–4 weeks before your wedding to perfect the style and timing." },
-    { q: "How far in advance should I book?", a: "For weddings, book at least 2–4 weeks in advance. Peak season (spring and autumn) books up fast." },
-    { q: "Can you work with hair extensions or accessories?", a: "Yes — we regularly style hair with extensions, veils, tiaras and floral accessories." },
-    { q: "How long does a bridal updo take?", a: "Usually 60–90 minutes for the bride. Allow 30–45 minutes per bridesmaid." },
-  ]}
-  relatedLinks={[
-    { href: '/event-styling-myeongdong', label: "Event Styling" },
-    { href: '/blow-dry-styling-myeongdong', label: "Blow Dry & Styling" },
-    { href: '/hair-set-myeongdong', label: "Hair Set" },
-    { href: '/bridal-hair-myeongdong', label: "Bridal Hair" },
-  ]}
+<Layout
+  title="Bridal Updo Myeongdong | Wedding Hair at CHAHONG ROOM Seoul"
+  description="Professional bridal updo and wedding hair styling in Myeongdong Seoul. Korean bridal looks, elegant updos, English service at CHAHONG ROOM."
 >
-  <span slot="headline">Bridal Updo<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Elegant, romantic, bridal -->
+    <section class="relative overflow-hidden" style="min-height: 85vh; background: #F7F4EF;">
+      <div class="absolute inset-0 hidden lg:block" style="left: 45%;">
+        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1000&q=80" alt="Bridal updo wedding hair Myeongdong Seoul" class="w-full h-full object-cover" loading="eager" />
+        <div class="absolute inset-0" style="background: linear-gradient(to right, #F7F4EF 5%, transparent 40%);"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex items-center min-h-[85vh] py-20">
+        <div class="max-w-lg">
+          <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Bridal Updo · Wedding Hair · Myeongdong</p>
+          <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5rem); color: #3A3838; font-weight: 300; line-height: 1.1;">
+            Bridal Updo<br/>& Wedding Hair<br/>
+            <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+          </h1>
+          <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="leading-relaxed mb-8" style="color: #8D8076; font-size: 1rem;">
+            Your wedding hair deserves the very best. Our bridal styling specialists create stunning updos and bridal looks that last all day, photograph beautifully and complement your dress, accessories and personal style — with full English consultation.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-10">
+            <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book Bridal Consultation</a>
+            <a href="/pricing" class="btn-outline">View Pricing</a>
+          </div>
+          <div class="grid grid-cols-3 gap-3">
+            {[
+              { num: 'Trial', label: 'Session Available' },
+              { num: '60–90', label: 'Minutes' },
+              { num: '100%', label: 'English Service' },
+            ].map(b => (
+              <div class="text-center p-3" style="border: 1px solid #DCCDBD; border-radius: 6px; background: #FFFFFF;">
+                <p class="font-display text-sm font-semibold" style="color: #A88F7B;">{b.num}</p>
+                <p class="text-xs tracking-widest uppercase mt-1" style="color: #8D8076;">{b.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bridal Styles -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Style Options</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Bridal Hair <em style="color: #A88F7B;">Styles We Create</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              title: 'Classic Korean Bridal Updo',
+              desc: 'A polished, structured updo inspired by traditional Korean bridal aesthetics. Clean lines, elegant loops and a timeless finish. Suitable for both Korean traditional and Western wedding ceremonies.',
+              best: 'Traditional & formal weddings',
+              img: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80'
+            },
+            {
+              title: 'Romantic Loose Updo',
+              desc: 'Soft, flowing tendrils frame the face while the rest is gathered loosely upward. The most popular bridal style internationally — effortlessly beautiful and universally flattering. Perfect for garden, beach and outdoor weddings.',
+              best: 'Romantic & outdoor weddings',
+              img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80'
+            },
+            {
+              title: 'Modern Half-Up Half-Down',
+              desc: 'The upper layers are styled and pinned while the lower layers flow freely. Creates beautiful movement and is particularly flattering when hair is wavy or has a perm. A beautiful balance between polished and natural.',
+              best: 'Modern & relaxed weddings',
+              img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80'
+            },
+            {
+              title: 'Sleek Low Bun',
+              desc: 'A smooth, structured low bun at the nape of the neck. Timeless, chic and works beautifully with veils, hairpieces and accessories. Creates a clean, sophisticated aesthetic that photographs perfectly.',
+              best: 'Minimalist & chic weddings',
+              img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80'
+            },
+            {
+              title: 'Bridal Waves & Down Style',
+              desc: 'Long, romantic waves worn down or semi-down. Achieved with a professional curling iron or enhanced with a digital perm. Creates a goddess-like, ethereal look that works especially well with floral or bohemian accessories.',
+              best: 'Boho & fairytale weddings',
+              img: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80'
+            },
+            {
+              title: 'Custom Bridal Look',
+              desc: 'Bring your inspiration photos — any bridal hairstyle you\'ve saved on Pinterest or Instagram. Our stylists will study your references and create a custom look tailored to your hair length, texture and wedding vision.',
+              best: 'Any wedding style',
+              img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80'
+            },
+          ].map(s => (
+            <div class="overflow-hidden" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #F7F4EF;">
+              <div style="height: 200px; overflow: hidden;">
+                <img src={s.img} alt={s.title} class="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div class="p-5">
+                <h3 class="font-display text-lg mb-2" style="color: #3A3838;">{s.title}</h3>
+                <p class="text-sm leading-relaxed mb-3" style="color: #8D8076;">{s.desc}</p>
+                <p class="text-xs font-semibold" style="color: #A88F7B;">Best for: {s.best}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Trial Session -->
+    <section class="py-24 px-6 lg:px-12" style="background: #3A3838;">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">We Strongly Recommend</p>
+            <h2 class="font-display text-4xl mb-6" style="color: #FFFFFF; font-weight: 300;">Why You Should Book a <em style="color: #A88F7B;">Trial Session</em></h2>
+            <p class="text-sm leading-relaxed mb-4" style="color: rgba(255,255,255,0.7);">A bridal hair trial is one of the most important things you can do before your wedding day. It allows you to:</p>
+            <div class="space-y-4 mb-6">
+              {[
+                { icon: '✓', text: 'See exactly how your chosen style looks before the big day' },
+                { icon: '✓', text: 'Test how long the style holds and how it feels to wear all day' },
+                { icon: '✓', text: 'Try accessories, veils and hairpieces with the style' },
+                { icon: '✓', text: 'Make adjustments before your wedding — not on the day' },
+                { icon: '✓', text: 'Arrive on your wedding day completely calm and confident' },
+                { icon: '✓', text: 'Allow your stylist to perfect their technique for your specific hair' },
+              ].map(item => (
+                <div class="flex items-start gap-3">
+                  <span style="color: #A88F7B; font-weight: bold; flex-shrink: 0;">{item.icon}</span>
+                  <p class="text-sm" style="color: rgba(255,255,255,0.75);">{item.text}</p>
+                </div>
+              ))}
+            </div>
+            <p class="text-xs mb-6" style="color: rgba(255,255,255,0.5);">We recommend scheduling your trial 2–4 weeks before your wedding date.</p>
+            <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book Trial Session</a>
+          </div>
+          <div class="space-y-4">
+            <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=700&q=80" alt="Bridal hair trial Seoul" class="w-full rounded-lg object-cover" style="height: 280px;" loading="lazy" />
+            <div class="p-5" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;">
+              <p class="text-sm font-semibold mb-2" style="color: #FFFFFF;">Trial Session Includes:</p>
+              <div class="space-y-1">
+                {['Full English bridal consultation', 'Reference photo review', 'Complete trial styling', 'Accessory placement test', 'Photos of final result', 'Adjustments & perfecting'].map(i => (
+                  <div class="flex items-center gap-2">
+                    <span style="color: #A88F7B; font-size: 10px;">●</span>
+                    <p class="text-xs" style="color: rgba(255,255,255,0.6);">{i}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Bridal Hair <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW. Please book in advance for bridal services.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Bridal Updo', price: 'From ₩100,000', time: '60–90 min', note: 'Day-of styling' },
+          { service: 'Bridal Trial Session', price: 'From ₩90,000', time: '60–90 min', note: 'Recommended 2–4 weeks before' },
+          { service: 'Bridal Updo + Trial', price: 'From ₩180,000', time: '2 sessions', note: 'Best value bridal package' },
+          { service: 'Bridal Waves (Down Style)', price: 'From ₩80,000', time: '60–75 min', note: 'Curls & waves worn down' },
+          { service: 'Bridesmaid Hair', price: 'From ₩60,000', time: '45–60 min', note: 'Per bridesmaid' },
+          { service: 'Bridal Package (4+ people)', price: 'Contact Us', time: 'Group booking', note: 'Bride + bridesmaids' },
+        ].map((item, i) => (
+          <div class="px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note} · {item.time}</p>
+              </div>
+              <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">For group bridal bookings, please contact us via WhatsApp to arrange pricing and scheduling.</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book Bridal Appointment</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Bridal Hair <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'How far in advance should I book?', a: 'For bridal services, we recommend booking at least 2–4 weeks in advance. Peak wedding seasons (spring: March–May, autumn: September–November) book up quickly. For the trial, aim for 2–4 weeks before your wedding date.' },
+          { q: 'Can you work with hair extensions or accessories?', a: 'Yes — we regularly style hair with extensions, veils, tiaras, flower crowns and hairpins. Please mention your accessories when booking so we can allocate the right amount of time.' },
+          { q: 'How long will a bridal updo last?', a: 'With professional products and proper technique, a bridal updo should last 8–12 hours or longer. We use long-lasting setting products and finishing spray to ensure your style stays perfect throughout your ceremony and reception.' },
+          { q: 'Do you offer services for bridesmaid groups?', a: 'Yes — we accommodate group bridal bookings for the bride and bridesmaids. Contact us via WhatsApp to discuss scheduling and group pricing.' },
+          { q: 'What should I bring to my trial?', a: 'Bring your reference photos (as many as possible), any accessories or hairpieces you plan to wear, and if possible, wear a top with a similar neckline to your wedding dress. This helps us visualize the complete look.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/event-styling-myeongdong', label: '🎉 Event Styling' },
+          { href: '/blow-dry-styling-myeongdong', label: '💨 Blow Dry & Styling' },
+          { href: '/hair-set-myeongdong', label: '💅 Hair Set' },
+          { href: '/hair-color-myeongdong', label: '🎨 Bridal Color' },
+          { href: '/haircut-myeongdong', label: '✂️ Pre-Wedding Haircut' },
+          { href: '/hair-treatment-myeongdong', label: '💆 Pre-Wedding Treatment' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
