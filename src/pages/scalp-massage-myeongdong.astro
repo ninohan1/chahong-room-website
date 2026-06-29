@@ -1,40 +1,247 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Scalp Massage Myeongdong"
-  seoTitle="Scalp Massage Myeongdong | Relaxing Head Spa at CHAHONG ROOM Seoul"
-  metaDesc="Relaxing scalp massage in Myeongdong Seoul. Stimulate hair growth, relieve tension and improve scalp health. English-friendly service at CHAHONG ROOM."
-  emoji="💆"
-  category="Scalp Services"
-  heroImage="https://images.unsplash.com/photo-1595252129834-c68e1f0a5f69?w=1200&q=80"
-  intro="A professional scalp massage stimulates blood circulation, relieves tension headaches, promotes hair growth and leaves you deeply relaxed."
-  pricing={[
-    { service: "Scalp Massage (20 min)", price: "From ₩30,000" },
-    { service: "Scalp Massage (40 min)", price: "From ₩50,000" },
-    { service: "Scalp Massage + Hair Treatment", price: "From ₩80,000" },
-    { service: "Full Head Spa Package", price: "From ₩120,000" },
-  ]}
-  benefits={[
-    "Stimulates blood circulation to promote healthy hair growth",
-    "Relieves scalp tension, headaches and neck stiffness",
-    "Removes product buildup and unclogs hair follicles",
-    "Deeply relaxing — perfect after travel or long days exploring Seoul",
-    "Can be combined with scalp treatment or hair mask",
-    "Performed by trained specialists in a calm, relaxing environment",
-  ]}
-  faqs={[
-    { q: "Is scalp massage good for hair growth?", a: "Yes — regular scalp massage increases blood flow to the follicles, which can stimulate hair growth and reduce thinning." },
-    { q: "How often should I get a scalp massage?", a: "Once or twice a month is ideal for maintaining scalp health and promoting growth." },
-    { q: "Can I combine it with a hair treatment?", a: "Absolutely — we recommend combining scalp massage with a deep conditioning treatment for maximum benefit." },
-    { q: "Is it relaxing or medical?", a: "Both! Our scalp massage is deeply relaxing while also targeting scalp health and hair growth." },
-  ]}
-  relatedLinks={[
-    { href: '/scalp-treatment-myeongdong', label: "Scalp Treatment" },
-    { href: '/scalp-detox-myeongdong', label: "Scalp Detox" },
-    { href: '/hair-loss-treatment-myeongdong', label: "Hair Loss Treatment" },
-    { href: '/hair-treatment-myeongdong', label: "Hair Treatment" },
-  ]}
+<Layout
+  title="Scalp Massage Myeongdong | Relaxing Head Massage at CHAHONG ROOM Seoul"
+  description="Professional scalp massage in Myeongdong Seoul. Relieve tension, stimulate hair growth and deeply relax. English-friendly service at CHAHONG ROOM."
 >
-  <span slot="headline">Scalp Massage<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Relaxation focused, warm and calm -->
+    <section class="relative overflow-hidden" style="min-height: 80vh; background: #F7F4EF;">
+      <div class="absolute right-0 top-0 bottom-0 hidden lg:block" style="width: 50%;">
+        <img src="https://images.unsplash.com/photo-1470259078422-826894b933aa?w=900&q=80" alt="Scalp massage Myeongdong Seoul" class="w-full h-full object-cover" loading="eager" />
+        <div class="absolute inset-0" style="background: linear-gradient(to right, #F7F4EF 5%, transparent 40%);"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex items-center min-h-[80vh] py-20">
+        <div class="max-w-lg">
+          <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Scalp Massage · Relaxation · Myeongdong</p>
+          <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5rem); color: #3A3838; font-weight: 300; line-height: 1.1;">
+            Scalp Massage<br/>
+            <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+          </h1>
+          <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="leading-relaxed mb-8" style="color: #8D8076; font-size: 1rem;">
+            More than just relaxation — a professional scalp massage improves blood circulation, stimulates hair follicles, relieves tension headaches and deeply relaxes the scalp, neck and shoulders. The perfect treat during your Seoul visit.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-10">
+            <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+            <a href="/pricing" class="btn-outline">View Pricing</a>
+          </div>
+          <div class="grid grid-cols-3 gap-3">
+            {[
+              { num: '20–60', label: 'Minutes' },
+              { num: '↑', label: 'Blood Circulation' },
+              { num: '100%', label: 'English Service' },
+            ].map(b => (
+              <div class="text-center p-3" style="border: 1px solid #DCCDBD; border-radius: 6px; background: #FFFFFF;">
+                <p class="font-display text-xl" style="color: #A88F7B;">{b.num}</p>
+                <p class="text-xs tracking-widest uppercase mt-1" style="color: #8D8076;">{b.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Why Get a Scalp Massage?</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">The Benefits Go <em style="color: #A88F7B;">Beyond Relaxation</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            { icon: '🩸', title: 'Improves Blood Circulation', desc: 'Professional scalp massage significantly increases blood flow to the hair follicles. Better circulation means more oxygen and nutrients reaching each follicle — the foundation of healthy hair growth.' },
+            { icon: '🌱', title: 'Stimulates Hair Growth', desc: 'Regular scalp massage has been shown in studies to increase hair thickness and stimulate dormant follicles. Particularly beneficial for those experiencing thinning or slow hair growth.' },
+            { icon: '😌', title: 'Relieves Tension Headaches', desc: 'The scalp holds significant tension, especially for those who work at computers or experience frequent headaches. Targeted pressure point massage provides immediate relief.' },
+            { icon: '🧠', title: 'Reduces Stress & Anxiety', desc: 'Scalp massage triggers the parasympathetic nervous system — your body\'s "rest and digest" mode. Cortisol levels drop, serotonin increases, and deep relaxation follows.' },
+            { icon: '🧴', title: 'Removes Buildup', desc: 'The massage action loosens product buildup, dead skin cells and excess sebum from the scalp surface — allowing follicles to breathe and products to absorb better.' },
+            { icon: '💤', title: 'Improves Sleep Quality', desc: 'Many clients report significantly improved sleep quality after scalp massage. The deep relaxation response and stress hormone reduction carry through to bedtime.' },
+          ].map(b => (
+            <div class="p-5" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+              <span class="text-3xl block mb-3">{b.icon}</span>
+              <h3 class="font-display text-lg mb-2" style="color: #3A3838;">{b.title}</h3>
+              <p class="text-sm leading-relaxed" style="color: #8D8076;">{b.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Massage Options -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Choose Your Experience</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Scalp Massage <em style="color: #A88F7B;">Options</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="space-y-5">
+          {[
+            {
+              name: 'Express Scalp Massage',
+              duration: '20 minutes',
+              price: 'From ₩30,000',
+              desc: 'A quick but effective scalp massage focusing on the key tension points. Perfect as an add-on to a haircut or color appointment, or as a standalone pick-me-up between sightseeing.',
+              includes: ['Scalp pressure point massage', 'Neck & temple release', 'Basic relaxation'],
+              best: 'Add-on to any service'
+            },
+            {
+              name: 'Relaxing Scalp Massage',
+              duration: '40 minutes',
+              price: 'From ₩50,000',
+              desc: 'Our signature scalp massage experience. Covers the full scalp, neck, shoulders and upper back. Uses targeted pressure points and flowing techniques to achieve deep relaxation and maximum circulation boost.',
+              includes: ['Full scalp massage', 'Neck & shoulder release', 'Upper back massage', 'Pressure point therapy', 'Aromatherapy oil option'],
+              best: 'Standalone relaxation session'
+            },
+            {
+              name: 'Scalp Massage + Treatment',
+              duration: '60–75 minutes',
+              price: 'From ₩80,000',
+              desc: 'The ultimate combination — a full scalp massage followed by a targeted scalp treatment serum. The massage opens up circulation and pores so the treatment serum absorbs more deeply and effectively.',
+              includes: ['Full scalp massage', 'Neck & shoulder release', 'Scalp analysis', 'Targeted serum application', 'Treatment mask', 'Blow dry'],
+              best: 'Maximum results'
+            },
+          ].map(m => (
+            <div class="p-6" style="background: #FFFFFF; border: 1px solid #DCCDBD; border-radius: 8px;">
+              <div class="flex items-start justify-between mb-3">
+                <div>
+                  <h3 class="font-display text-xl mb-1" style="color: #3A3838;">{m.name}</h3>
+                  <p class="text-xs" style="color: #A88F7B;">Best for: {m.best}</p>
+                </div>
+                <div class="text-right flex-shrink-0 ml-4">
+                  <p class="text-sm font-semibold" style="color: #A88F7B;">{m.price}</p>
+                  <p class="text-xs" style="color: #8D8076;">⏱ {m.duration}</p>
+                </div>
+              </div>
+              <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">{m.desc}</p>
+              <div class="flex flex-wrap gap-2">
+                {m.includes.map(i => (
+                  <span class="text-xs px-2 py-1" style="background: #F7F4EF; border: 1px solid #DCCDBD; border-radius: 4px; color: #8D8076;">{i}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Perfect for Travelers -->
+    <section class="py-24 px-6 lg:px-12" style="background: #3A3838;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Perfect for Seoul Visitors</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #FFFFFF; font-weight: 300;">Why Travelers Love Our <em style="color: #A88F7B;">Scalp Massage</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          {[
+            { icon: '✈️', title: 'Post-Flight Recovery', desc: 'Long flights dehydrate the scalp and cause tension. A scalp massage after arriving in Seoul helps your body recover from jet lag and travel stress faster.' },
+            { icon: '👟', title: 'After a Day of Sightseeing', desc: 'A full day walking Myeongdong, Gyeongbokgung and Bukchon causes tension to build in the neck and scalp. Our massage releases it all.' },
+            { icon: '📱', title: 'Digital Detox', desc: 'Hours of scrolling and phone use creates "tech neck" tension. A scalp massage addresses the exact tension patterns caused by modern device use.' },
+            { icon: '🌏', title: 'A Uniquely Korean Experience', desc: 'Korean head spas and scalp massage are a distinct cultural experience not available in most Western countries. A must-do during your Seoul visit.' },
+          ].map(item => (
+            <div class="flex items-start gap-4 p-5" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;">
+              <span class="text-2xl flex-shrink-0">{item.icon}</span>
+              <div>
+                <h3 class="font-display text-lg mb-2" style="color: #FFFFFF;">{item.title}</h3>
+                <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.6);">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Scalp Massage <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Express Scalp Massage', price: 'From ₩30,000', time: '20 min', note: 'Add-on or standalone' },
+          { service: 'Relaxing Scalp Massage', price: 'From ₩50,000', time: '40 min', note: 'Full scalp & neck' },
+          { service: 'Scalp Massage + Treatment', price: 'From ₩80,000', time: '60–75 min', note: 'Massage + serum' },
+          { service: 'Scalp Massage + Haircut', price: 'From ₩70,000', time: '75–90 min', note: 'Popular combo' },
+          { service: 'Scalp Massage + Head Spa', price: 'From ₩100,000', time: '90–120 min', note: 'Ultimate experience' },
+        ].map((item, i) => (
+          <div class="px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note} · {item.time}</p>
+              </div>
+              <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Book via WhatsApp — walk-ins also welcome!</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Book via WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Scalp Massage <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'Is scalp massage good for hair growth?', a: 'Yes — research shows that regular scalp massage increases hair thickness and can stimulate dormant follicles. It improves blood flow to the scalp, delivering more oxygen and nutrients to each follicle. For best results, we recommend monthly professional massage combined with daily self-massage at home.' },
+          { q: 'How often should I get a scalp massage?', a: 'Once or twice a month is ideal for maintaining scalp health and promoting growth. If you\'re experiencing hair loss or scalp concerns, we recommend weekly sessions initially, then monthly maintenance.' },
+          { q: 'Can I get a scalp massage with any hairstyle?', a: 'Yes — scalp massage works on all hair types, lengths and styles. The massage is performed on the scalp itself, so your hair length doesn\'t affect the treatment.' },
+          { q: 'Is scalp massage painful?', a: 'Scalp massage should be deeply relaxing, not painful. We adjust pressure based on your preference — simply let your therapist know if you want lighter or firmer pressure.' },
+          { q: 'Can I add scalp massage to my haircut appointment?', a: 'Yes — scalp massage is available as an add-on to any service. Most clients add the 20-minute express massage to their haircut appointment for an extra ₩30,000.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/scalp-treatment-myeongdong', label: '💆 Head Spa' },
+          { href: '/scalp-detox-myeongdong', label: '🫧 Scalp Detox' },
+          { href: '/dandruff-treatment-myeongdong', label: '🌿 Dandruff Treatment' },
+          { href: '/hair-loss-treatment-myeongdong', label: '🌱 Hair Loss Treatment' },
+          { href: '/hair-treatment-myeongdong', label: '💆 Hair Treatment' },
+          { href: '/haircut-myeongdong', label: '✂️ Add a Haircut' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
