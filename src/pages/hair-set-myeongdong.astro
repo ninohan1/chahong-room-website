@@ -1,40 +1,283 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Hair Set Myeongdong"
-  seoTitle="Hair Set Myeongdong | Korean 셋팅 Styling at CHAHONG ROOM Seoul"
-  metaDesc="Professional Korean hair set (셋팅) in Myeongdong Seoul. Sleek, polished styling for any occasion. English-friendly service at CHAHONG ROOM."
-  emoji="💅"
-  category="Styling"
-  heroImage="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1200&q=80"
-  intro="Korean hair set (셋팅) creates polished, structured styles using rollers, irons and setting techniques — perfect for that iconic K-drama-worthy look."
-  pricing={[
-    { service: "Basic Hair Set", price: "From ₩30,000" },
-    { service: "Curl Set / Wave Set", price: "From ₩50,000" },
-    { service: "Full Glamour Set", price: "From ₩80,000" },
-    { service: "Hair Set + Updo", price: "From ₩100,000" },
-  ]}
-  benefits={[
-    "Creates polished Korean-style hair looks seen in K-dramas and K-pop",
-    "Uses professional setting techniques for long-lasting results",
-    "Perfect for photoshoots, events and special occasions",
-    "Creates volume, waves and structured curls that hold all day",
-    "Available in combination with updo styling",
-    "Full English consultation and style planning",
-  ]}
-  faqs={[
-    { q: "What is a Korean hair set?", a: "Hair set (셋팅) is a Korean styling technique using rollers, curling irons and setting sprays to create structured, long-lasting styles." },
-    { q: "How long does hair set last?", a: "A professional hair set typically lasts 1–2 days." },
-    { q: "Is hair set the same as a perm?", a: "No — a hair set is temporary styling. A perm permanently changes your curl pattern." },
-    { q: "Can I get a hair set for my graduation or photoshoot?", a: "Absolutely — hair set is perfect for any occasion where you want a polished, memorable look." },
-  ]}
-  relatedLinks={[
-    { href: '/blow-dry-styling-myeongdong', label: "Blow Dry & Styling" },
-    { href: '/bridal-updo-myeongdong', label: "Bridal Updo" },
-    { href: '/event-styling-myeongdong', label: "Event Styling" },
-    { href: '/hair-perm-myeongdong', label: "Hair Perm" },
-  ]}
+<Layout
+  title="Hair Set Myeongdong | Korean 셋팅 Styling at CHAHONG ROOM Seoul"
+  description="Professional Korean hair set (셋팅) in Myeongdong Seoul. Sleek, polished styling for any occasion. English-friendly service at CHAHONG ROOM."
 >
-  <span slot="headline">Hair Set 셋팅<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Korean aesthetic, structured, polished -->
+    <section class="relative overflow-hidden" style="min-height: 80vh; background: #F7F4EF;">
+      <div class="absolute right-0 top-0 bottom-0 hidden lg:block" style="width: 48%;">
+        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=900&q=80" alt="Korean hair set styling Myeongdong" class="w-full h-full object-cover" loading="eager" />
+        <div class="absolute inset-0" style="background: linear-gradient(to right, #F7F4EF 5%, transparent 35%);"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex items-center min-h-[80vh] py-20">
+        <div class="max-w-lg">
+          <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Hair Set 셋팅 · Korean Styling · Myeongdong</p>
+          <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5rem); color: #3A3838; font-weight: 300; line-height: 1.1;">
+            Hair Set<br/>
+            <em style="color: #A88F7B; font-style: italic;">셋팅 in Myeongdong</em>
+          </h1>
+          <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="leading-relaxed mb-8" style="color: #8D8076; font-size: 1rem;">
+            Korean hair set (셋팅) is a specialized styling technique that creates polished, structured looks using professional rollers, curling irons and setting sprays. The result? That iconic K-drama-worthy hair that holds its shape beautifully all day. Available exclusively with full English service at CHAHONG ROOM.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-10">
+            <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+            <a href="/pricing" class="btn-outline">View Pricing</a>
+          </div>
+          <!-- Korean characters accent -->
+          <div class="flex gap-6">
+            {[
+              { korean: '셋팅', english: 'Setting' },
+              { korean: '볼륨', english: 'Volume' },
+              { korean: '웨이브', english: 'Waves' },
+            ].map(k => (
+              <div class="text-center">
+                <p class="font-display text-2xl" style="color: #A88F7B;">{k.korean}</p>
+                <p class="text-xs tracking-widest uppercase mt-1" style="color: #8D8076;">{k.english}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What is Hair Set -->
+    <section class="py-24 px-6 lg:px-12" style="background: #3A3838;">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">What Is It?</p>
+            <h2 class="font-display text-4xl mb-6" style="color: #FFFFFF; font-weight: 300;">Understanding <em style="color: #A88F7B;">Korean Hair Set</em></h2>
+            <p class="text-sm leading-relaxed mb-4" style="color: rgba(255,255,255,0.7);">Hair set (셋팅) is distinctly Korean. Unlike a simple blow dry or curling iron styling, hair set uses professional heat tools at precise temperatures combined with setting sprays and rollers to create structured, long-lasting styles that hold their shape throughout the day.</p>
+            <p class="text-sm leading-relaxed mb-4" style="color: rgba(255,255,255,0.7);">The technique was perfected in Korean drama productions where actors needed their hair to stay perfectly styled through long shooting days. It has since become a staple of Korean salon culture — available for everyday clients who want that polished, camera-ready finish.</p>
+            <p class="text-sm leading-relaxed mb-6" style="color: rgba(255,255,255,0.7);">Hair set is NOT a perm — it's temporary styling that lasts 1–2 days. For permanent waves, we offer perms. For a one-time styled look, hair set is perfect.</p>
+            <div class="grid grid-cols-2 gap-3">
+              {[
+                { label: 'Temporary?', value: 'Yes — 1–2 days' },
+                { label: 'Damage?', value: 'Minimal with heat protection' },
+                { label: 'Duration', value: '30–80 minutes' },
+                { label: 'Same as perm?', value: 'No — temporary only' },
+              ].map(f => (
+                <div class="p-3" style="background: rgba(255,255,255,0.08); border-radius: 6px;">
+                  <p class="text-xs" style="color: rgba(255,255,255,0.5);">{f.label}</p>
+                  <p class="text-sm font-semibold mt-1" style="color: #A88F7B;">{f.value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="space-y-4">
+            <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=700&q=80" alt="Korean hair set result" class="w-full rounded-lg object-cover" style="height: 280px;" loading="lazy" />
+            <div class="grid grid-cols-2 gap-3">
+              <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=80" alt="Hair set process Seoul" class="w-full rounded-lg object-cover" style="height: 150px;" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80" alt="Korean styling Myeongdong" class="w-full rounded-lg object-cover" style="height: 150px;" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hair Set Styles -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Style Options</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Hair Set <em style="color: #A88F7B;">Style Options</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              title: 'Classic Korean Wave Set',
+              korean: '웨이브 셋팅',
+              desc: 'Soft, structured waves set using rollers and a curling iron. The signature Korean hair set look — polished waves that hold shape beautifully. Very popular for photoshoots and special occasions.',
+              lasts: '1–2 days',
+              time: '45–60 min',
+              price: 'From ₩50,000'
+            },
+            {
+              title: 'Volume Curl Set',
+              korean: '볼륨 컬 셋팅',
+              desc: 'Voluminous, bouncy curls set with professional heat tools. Creates maximum volume and a glamorous, full-bodied finish. Perfect for events where you want maximum impact.',
+              lasts: '1–2 days',
+              time: '50–70 min',
+              price: 'From ₩60,000'
+            },
+            {
+              title: 'Sleek Straight Set',
+              korean: '스트레이트 셋팅',
+              desc: 'Pin-straight, glossy finish created through professional blow drying and flat iron setting. Creates a sleek, sophisticated look that photographs beautifully and holds its smooth shape all day.',
+              lasts: '1–2 days',
+              time: '30–45 min',
+              price: 'From ₩40,000'
+            },
+            {
+              title: 'K-Drama Curl Set',
+              korean: 'K-드라마 컬',
+              desc: 'The exact curling technique used by Korean drama stylists. Large, soft curls that frame the face beautifully. Creates that iconic K-drama actress look seen in popular Korean dramas.',
+              lasts: '1–2 days',
+              time: '50–65 min',
+              price: 'From ₩55,000'
+            },
+            {
+              title: 'Half-Up Set Style',
+              korean: '하프업 셋팅',
+              desc: 'The upper sections are pinned and set while the lower layers are styled with waves or curls. A beautiful balance between polished and natural. Perfect for semi-formal occasions.',
+              lasts: '1–2 days',
+              time: '45–60 min',
+              price: 'From ₩55,000'
+            },
+            {
+              title: 'Custom Set Style',
+              korean: '커스텀 셋팅',
+              desc: 'Bring your reference photos — any Korean celebrity or K-pop idol hair look you want recreated. Our stylists will study your references and create a customized set style tailored to your hair.',
+              lasts: '1–2 days',
+              time: '60–80 min',
+              price: 'From ₩70,000'
+            },
+          ].map(s => (
+            <div class="p-5" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #F7F4EF;">
+              <div class="flex items-start justify-between mb-2">
+                <h3 class="font-display text-lg" style="color: #3A3838;">{s.title}</h3>
+                <span class="text-xs ml-2 flex-shrink-0" style="color: #A88F7B;">{s.korean}</span>
+              </div>
+              <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">{s.desc}</p>
+              <div class="grid grid-cols-3 gap-2 pt-3 text-xs" style="border-top: 1px solid #DCCDBD;">
+                <div>
+                  <p style="color: #8D8076;">Price</p>
+                  <p style="color: #A88F7B; font-weight: 600;">{s.price}</p>
+                </div>
+                <div>
+                  <p style="color: #8D8076;">Time</p>
+                  <p style="color: #3A3838;">{s.time}</p>
+                </div>
+                <div>
+                  <p style="color: #8D8076;">Lasts</p>
+                  <p style="color: #3A3838;">{s.lasts}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Perfect for -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Who Is It For?</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Hair Set is <em style="color: #A88F7B;">Perfect For...</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            { icon: '📸', title: 'Seoul Photoshoots', desc: 'Content creators and travelers getting photos at Gyeongbokgung, Bukchon, Namsan or Myeongdong love a professional hair set for their Seoul content.' },
+            { icon: '🎓', title: 'Graduation Ceremony', desc: 'A special milestone deserves special hair. Hair set creates a polished, formal look that holds perfectly throughout a long graduation day.' },
+            { icon: '🎵', title: 'K-Pop Concert', desc: 'Attending a K-pop concert in Seoul? Arrive with K-pop worthy hair. We\'ll recreate your favorite idol\'s styling for the ultimate fan experience.' },
+            { icon: '💕', title: 'Special Date Night', desc: 'Whether it\'s a romantic dinner in Gangnam or a night out in Hongdae — hair set ensures you look your absolute best for the occasion.' },
+          ].map(item => (
+            <div class="p-5 text-center" style="background: #FFFFFF; border: 1px solid #DCCDBD; border-radius: 8px;">
+              <span class="text-3xl block mb-3">{item.icon}</span>
+              <h3 class="font-display text-base mb-2" style="color: #3A3838;">{item.title}</h3>
+              <p class="text-sm leading-relaxed" style="color: #8D8076;">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Hair Set <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Sleek Straight Set', price: 'From ₩40,000', time: '30–45 min', note: 'Smooth, polished finish' },
+          { service: 'Classic Korean Wave Set', price: 'From ₩50,000', time: '45–60 min', note: 'Signature Korean waves' },
+          { service: 'K-Drama Curl Set', price: 'From ₩55,000', time: '50–65 min', note: 'Soft, face-framing curls' },
+          { service: 'Half-Up Set Style', price: 'From ₩55,000', time: '45–60 min', note: 'Elegant half-up styling' },
+          { service: 'Volume Curl Set', price: 'From ₩60,000', time: '50–70 min', note: 'Maximum glamour' },
+          { service: 'Custom Set Style', price: 'From ₩70,000', time: '60–80 min', note: 'Reference photo recreation' },
+          { service: 'Hair Set + Updo', price: 'From ₩100,000', time: '75–90 min', note: 'Set + structured updo' },
+        ].map((item, i) => (
+          <div class="px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note} · {item.time}</p>
+              </div>
+              <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Send your reference photo — we'll recreate your desired Korean style!</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Book via WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Hair Set <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'What is Korean hair set (셋팅)?', a: 'Hair set is a Korean professional styling technique that uses heat tools, rollers and setting products to create structured, polished styles that hold their shape for 1–2 days. It\'s a staple of Korean salon culture and is used by Korean drama stylists to achieve those iconic K-drama hair looks.' },
+          { q: 'Is hair set the same as a perm?', a: 'No — hair set is completely temporary styling that lasts 1–2 days. A perm permanently changes your curl pattern and lasts months. If you want a temporary styled look for an event or photoshoot, hair set is perfect. For long-lasting curls, we recommend a perm.' },
+          { q: 'How long does hair set last?', a: 'Typically 1–2 days. Sleeping on a silk pillowcase and avoiding humidity can extend results. Most clients enjoy their set look for 1 full day of activities.' },
+          { q: 'Can I get hair set if I have straight Asian hair?', a: 'Yes — hair set works on all hair types including straight Asian hair. Our stylists use professional products and techniques specifically designed to hold styles on straight hair.' },
+          { q: 'Can I get hair set for my photoshoot in Seoul?', a: 'Absolutely — photoshoot styling is one of our most popular hair set requests. Many international content creators, influencers and travelers come to CHAHONG ROOM specifically for photoshoot styling before their Seoul content days.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/blow-dry-styling-myeongdong', label: '💨 Blow Dry & Styling' },
+          { href: '/event-styling-myeongdong', label: '🎉 Event Styling' },
+          { href: '/bridal-updo-myeongdong', label: '👰 Bridal Updo' },
+          { href: '/hair-perm-myeongdong', label: '🧪 Hair Perm' },
+          { href: '/haircut-myeongdong', label: '✂️ Add a Haircut' },
+          { href: '/hair-color-myeongdong', label: '🎨 Add Color' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.so-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
