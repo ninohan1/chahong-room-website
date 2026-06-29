@@ -1,40 +1,273 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Hair Toning Myeongdong"
-  seoTitle="Hair Toning Myeongdong | Neutralize Brassiness at CHAHONG ROOM Seoul"
-  metaDesc="Professional hair toning in Myeongdong Seoul. Neutralize brassiness, refresh color and achieve ashy, cool or warm tones. English service at CHAHONG ROOM."
-  emoji="🎨"
-  category="Hair Color"
-  heroImage="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80"
-  intro="Hair toning neutralizes unwanted yellow and brassy tones after bleaching or lightening — giving you the perfect ash, beige, silver or warm tone you're after."
-  pricing={[
-    { service: "Toner Only", price: "From ₩40,000" },
-    { service: "Toner + Blow Dry", price: "From ₩60,000" },
-    { service: "Highlights + Toner", price: "From ₩160,000" },
-    { service: "Bleach + Toner", price: "From ₩150,000" },
-  ]}
-  benefits={[
-    "Eliminates brassy, yellow and orange tones after bleaching",
-    "Achieves popular Korean tones: ash grey, beige blonde, milk tea brown",
-    "Adds shine and depth to lightened hair",
-    "Quick service — usually 20–40 minutes",
-    "Can be combined with highlights, balayage or bleaching",
-    "Full English consultation to choose your perfect tone",
-  ]}
-  faqs={[
-    { q: "Do I need to bleach first before toning?", a: "Usually yes — toners work best on pre-lightened hair. We can assess your hair and advise during consultation." },
-    { q: "How long does toner last?", a: "Typically 4–8 weeks depending on your hair porosity and washing frequency." },
-    { q: "Can toning fix orange hair?", a: "Yes! Blue-based toners neutralize orange, while purple toners neutralize yellow." },
-    { q: "Will toning damage my hair?", a: "No — toning is a very gentle process and actually conditions the hair while depositing color." },
-  ]}
-  relatedLinks={[
-    { href: '/hair-color-myeongdong', label: "Hair Color" },
-    { href: '/bleaching-myeongdong', label: "Bleaching" },
-    { href: '/highlights-balayage-myeongdong', label: "Highlights & Balayage" },
-    { href: '/ombre-hair-color-myeongdong', label: "Ombre Color" },
-  ]}
+<Layout
+  title="Hair Toning Myeongdong | Neutralize Brassiness at CHAHONG ROOM Seoul"
+  description="Professional hair toning in Myeongdong Seoul. Neutralize brassiness, achieve perfect ash, beige or silver tones. Full English service at CHAHONG ROOM."
 >
-  <span slot="headline">Hair Toning<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Color-forward design -->
+    <section class="relative overflow-hidden" style="min-height: 80vh;">
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1600&q=80" alt="Hair toning Myeongdong Seoul" class="w-full h-full object-cover" loading="eager" />
+        <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(58,56,56,0.92) 0%, rgba(58,56,56,0.5) 60%, transparent 100%);"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex items-center min-h-[80vh]">
+        <div class="max-w-2xl">
+          <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Hair Toning · Color Correction · Myeongdong</p>
+          <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 7vw, 6rem); color: #FFFFFF; font-weight: 300; line-height: 1.05;">
+            Hair Toning<br/>
+            <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+          </h1>
+          <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="leading-relaxed mb-8" style="color: rgba(255,255,255,0.8); font-size: 1rem;">
+            The secret weapon of Korean colorists. Toning neutralizes unwanted yellow and brassy tones after bleaching or lightening — giving you the perfect ash, beige, silver or warm finish you've been looking for.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-12">
+            <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+            <a href="/pricing" style="border: 1.5px solid rgba(255,255,255,0.4); color: white; font-weight: 600; padding: 14px 32px; border-radius: 6px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block;">View Pricing</a>
+          </div>
+          <!-- Tone swatches -->
+          <div class="flex gap-4 flex-wrap">
+            {[
+              { color: '#B8B8B0', label: 'Ash Grey' },
+              { color: '#D4C5A9', label: 'Beige Blonde' },
+              { color: '#C8B89A', label: 'Milk Tea' },
+              { color: '#E8E0D8', label: 'Silver' },
+              { color: '#C4956A', label: 'Warm Gold' },
+            ].map(t => (
+              <div class="text-center">
+                <div class="w-10 h-10 rounded-full mb-1" style={`background: ${t.color}; border: 2px solid rgba(255,255,255,0.3);`}></div>
+                <p class="text-xs" style="color: rgba(255,255,255,0.6);">{t.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What is Toning -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Understanding Toning</p>
+            <h2 class="font-display text-4xl mb-6" style="color: #3A3838; font-weight: 300;">Why Toning is the <em style="color: #A88F7B;">Final Step</em> That Makes All the Difference</h2>
+            <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">When hair is bleached or lightened, it naturally pulls warm, yellow and orange tones. This is because the warm pigments in hair are the last to be removed during the lightening process. Without toning, even the best bleach job can look brassy or yellow.</p>
+            <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">Toner deposits a small amount of color onto the hair to neutralize these unwanted tones. It works using color theory — purple neutralizes yellow, blue neutralizes orange. The result is a perfectly refined, polished shade.</p>
+            <p class="text-sm leading-relaxed mb-6" style="color: #8D8076;">At CHAHONG ROOM, toning is available as a standalone service or as an add-on to highlights, balayage or bleaching services. Our colorists specialize in the cool, ashy and beige tones that are most popular in Korea.</p>
+            <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book Now</a>
+          </div>
+          <div>
+            <!-- Color wheel explanation -->
+            <div class="p-6 mb-4" style="background: #F7F4EF; border: 1px solid #DCCDBD; border-radius: 8px;">
+              <h3 class="font-display text-lg mb-4" style="color: #3A3838;">The Color Theory Behind Toning</h3>
+              <div class="space-y-3">
+                {[
+                  { from: 'Yellow Hair', arrow: '→', toner: 'Purple Toner', result: 'Ash / Platinum Blonde' },
+                  { from: 'Orange Hair', arrow: '→', toner: 'Blue Toner', result: 'Ash Brown / Beige' },
+                  { from: 'Brassy Gold', arrow: '→', toner: 'Violet Toner', result: 'Cool Beige Blonde' },
+                  { from: 'Light Yellow', arrow: '→', toner: 'Silver Toner', result: 'Platinum Silver' },
+                ].map(row => (
+                  <div class="flex items-center gap-3 text-xs p-3" style="background: #FFFFFF; border-radius: 6px; border: 1px solid #DCCDBD;">
+                    <span style="color: #8D8076; min-width: 80px;">{row.from}</span>
+                    <span style="color: #A88F7B;">{row.arrow}</span>
+                    <span style="color: #A88F7B; font-weight: 600;">{row.toner}</span>
+                    <span style="color: #A88F7B;">{row.arrow}</span>
+                    <span style="color: #3A3838; font-weight: 600;">{row.result}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <p class="text-xs text-center" style="color: #8D8076;">Our colorists will assess your hair and select the perfect toner shade during consultation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Korean Tones -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">2025 Trends</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Most Requested Korean <em style="color: #A88F7B;">Toner Shades</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              color: '#B8B8B0',
+              name: 'Ash Grey',
+              korean: '애쉬 그레이',
+              popularity: 'Most Popular',
+              desc: 'Cool, sophisticated grey tone. Requires hair to be lifted to a pale yellow level first. Creates a striking, editorial look. Very popular among K-pop fans and fashion-forward clients.',
+              bleachLevel: 'Very light (level 9–10)',
+              maintenance: 'Every 4–6 weeks'
+            },
+            {
+              color: '#D4C5A9',
+              name: 'Beige Blonde',
+              korean: '베이지 블론드',
+              popularity: 'Trending 2025',
+              desc: 'Warm-cool neutral blonde. The middle ground between warm and cool tones. Incredibly flattering on most skin tones — the most universally wearable blonde shade.',
+              bleachLevel: 'Light (level 8–9)',
+              maintenance: 'Every 6–8 weeks'
+            },
+            {
+              color: '#C8B89A',
+              name: 'Milk Tea',
+              korean: '밀크티',
+              popularity: 'Korean Staple',
+              desc: 'Korea\'s signature color — a warm, creamy beige that sits between blonde and brown. Incredibly low maintenance and flattering. Works on hair that doesn\'t need to be fully bleached.',
+              bleachLevel: 'Medium (level 7–8)',
+              maintenance: 'Every 6–8 weeks'
+            },
+            {
+              color: '#E8E0D8',
+              name: 'Platinum Silver',
+              korean: '플래티넘 실버',
+              popularity: 'Statement Look',
+              desc: 'Maximum lightness with a silver finish. The most dramatic result — requires hair to be lifted to the palest possible level. Stunning but requires commitment and maintenance.',
+              bleachLevel: 'Palest level (10)',
+              maintenance: 'Every 3–4 weeks'
+            },
+            {
+              color: '#C4956A',
+              name: 'Warm Gold',
+              korean: '웜 골드',
+              popularity: 'Natural Glow',
+              desc: 'Enhances natural warm tones rather than neutralizing them. For clients who love a sun-kissed, golden look rather than cool ashy tones. Very low maintenance.',
+              bleachLevel: 'Medium-light (level 7–8)',
+              maintenance: 'Every 6–8 weeks'
+            },
+            {
+              color: '#D4B8B8',
+              name: 'Rose Beige',
+              korean: '로즈 베이지',
+              popularity: 'Feminine & Soft',
+              desc: 'A subtle pink-beige tone that adds warmth and femininity. Very popular in 2025. Works beautifully on warm skin tones. A softer, more wearable alternative to rose gold.',
+              bleachLevel: 'Light-medium (level 8)',
+              maintenance: 'Every 5–6 weeks'
+            },
+          ].map(t => (
+            <div class="overflow-hidden" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #FFFFFF;">
+              <div class="h-16" style={`background: ${t.color};`}></div>
+              <div class="p-5">
+                <div class="flex items-start justify-between mb-2">
+                  <div>
+                    <h3 class="font-display text-lg" style="color: #3A3838;">{t.name}</h3>
+                    <p class="text-xs" style="color: #8D8076;">{t.korean}</p>
+                  </div>
+                  <span class="text-xs px-2 py-1 flex-shrink-0" style="background: #A88F7B20; color: #A88F7B; border-radius: 4px;">{t.popularity}</span>
+                </div>
+                <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">{t.desc}</p>
+                <div class="grid grid-cols-2 gap-2 text-xs pt-3" style="border-top: 1px solid #DCCDBD;">
+                  <div>
+                    <p style="color: #8D8076;">Bleach Required</p>
+                    <p style="color: #3A3838; font-weight: 500; margin-top: 2px;">{t.bleachLevel}</p>
+                  </div>
+                  <div>
+                    <p style="color: #8D8076;">Maintenance</p>
+                    <p style="color: #3A3838; font-weight: 500; margin-top: 2px;">{t.maintenance}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Toning <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Toner Only (Standalone)', price: 'From ₩40,000', time: '30–45 min', note: 'On pre-lightened hair' },
+          { service: 'Toner + Blow Dry', price: 'From ₩60,000', time: '45–60 min', note: 'Includes styling' },
+          { service: 'Highlights + Toner', price: 'From ₩160,000', time: '3–4.5 hrs', note: 'Most popular combo' },
+          { service: 'Balayage + Toner', price: 'From ₩170,000', time: '3–5 hrs', note: 'Natural gradient + tone' },
+          { service: 'Bleach + Toner', price: 'From ₩150,000', time: '2.5–5 hrs', note: 'Full lightening + tone' },
+          { service: 'Gloss Treatment', price: 'From ₩50,000', time: '30–45 min', note: 'Clear or tinted gloss' },
+          { service: 'Root Shadow / Shadow Root', price: 'From ₩60,000', time: '1–1.5 hrs', note: 'Soft root blending' },
+        ].map((item, i) => (
+          <div class="px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note} · {item.time}</p>
+              </div>
+              <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Send us a photo of your current hair color — we'll recommend the perfect toner and give you an accurate quote.</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Get a Free Color Consultation</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Toning <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'Do I need to bleach my hair before toning?', a: 'Usually yes — toners work best on pre-lightened hair because they deposit color onto a blank canvas. The lighter your hair, the more clearly the toner color will show. Some toners can work on unbleached hair for subtle results, but for dramatic shade changes, lightening first is necessary.' },
+          { q: 'How long does toner last?', a: 'Typically 4–8 weeks depending on your hair\'s porosity, how often you wash it and whether you use color-safe products. Washing with cool water and sulfate-free shampoo extends toner life significantly.' },
+          { q: 'Will toner fix my orange hair?', a: 'Yes! This is exactly what toner is designed for. Blue-based toners neutralize orange tones. The key is ensuring your hair is lifted to the right level first — very dark orange requires more lightening before toning will be effective. We\'ll assess during consultation.' },
+          { q: 'Is toning damaging?', a: 'Toning is one of the gentlest salon processes available. The toner formula contains very little or no developer, meaning minimal damage. It actually often leaves hair feeling smoother and softer than before.' },
+          { q: 'Can I tone at home instead of coming to the salon?', a: 'While home toning products exist, professional toning gives significantly more precise and predictable results. Our colorists select the exact shade needed for your hair\'s current level and apply it evenly for a flawless finish.' },
+          { q: 'My hair went too ashy/grey — can it be fixed?', a: 'Yes — over-toned hair can be corrected with a warm gloss or toner to add warmth back. If you\'re unhappy with how your toner turned out elsewhere, message us with a photo and we can advise on the best correction approach.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/hair-color-myeongdong', label: '🎨 Hair Color' },
+          { href: '/highlights-balayage-myeongdong', label: '🌟 Highlights & Balayage' },
+          { href: '/bleaching-myeongdong', label: '⚡ Bleaching' },
+          { href: '/ombre-hair-color-myeongdong', label: '🌈 Ombre Color' },
+          { href: '/hair-gloss-treatment-myeongdong', label: '✨ Hair Gloss' },
+          { href: '/gray-hair-coloring-myeongdong', label: '🩶 Gray Hair Coloring' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
