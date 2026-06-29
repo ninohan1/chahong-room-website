@@ -1,39 +1,236 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Scalp Detox Myeongdong"
-  seoTitle="Scalp Detox Myeongdong | Deep Cleanse Scalp Treatment at CHAHONG ROOM"
-  metaDesc="Professional scalp detox in Myeongdong Seoul. Remove buildup, unclog follicles and restore scalp health. English-friendly service at CHAHONG ROOM."
-  emoji="🫧"
-  category="Scalp Services"
-  heroImage="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80"
-  intro="A scalp detox deeply cleanses the scalp, removes product buildup, unclogs follicles and creates the ideal foundation for healthy hair growth."
-  pricing={[
-    { service: "Scalp Detox Treatment", price: "From ₩70,000" },
-    { service: "Scalp Detox + Massage", price: "From ₩100,000" },
-    { service: "Scalp Detox + Hair Treatment", price: "From ₩130,000" },
-  ]}
-  benefits={[
-    "Removes months of product buildup, oil and environmental pollutants",
-    "Unclogs hair follicles to allow healthy hair growth",
-    "Balances scalp oil production for less greasy roots",
-    "Refreshes and invigorates the scalp with cooling sensations",
-    "Creates the perfect clean base before any chemical service",
-    "Recommended every 1–2 months for optimal scalp health",
-  ]}
-  faqs={[
-    { q: "How is a scalp detox different from regular shampooing?", a: "A professional scalp detox uses specialized exfoliating and clarifying products that penetrate deeper than regular shampoo to remove stubborn buildup." },
-    { q: "Will it dry out my scalp?", a: "No — our detox treatments are followed by a balancing treatment to restore moisture and pH." },
-    { q: "How often should I get a scalp detox?", a: "Every 4–8 weeks is ideal, especially if you use a lot of styling products." },
-    { q: "Can I color my hair after a scalp detox?", a: "Yes — a clean scalp actually helps color absorb more evenly. We recommend a detox before coloring." },
-  ]}
-  relatedLinks={[
-    { href: '/scalp-treatment-myeongdong', label: "Scalp Treatment" },
-    { href: '/scalp-massage-myeongdong', label: "Scalp Massage" },
-    { href: '/dandruff-treatment-myeongdong', label: "Dandruff Treatment" },
-    { href: '/hair-loss-treatment-myeongdong', label: "Hair Loss Treatment" },
-  ]}
+<Layout
+  title="Scalp Detox Myeongdong | Deep Cleanse at CHAHONG ROOM Seoul"
+  description="Professional scalp detox in Myeongdong Seoul. Remove buildup, unclog follicles and restore scalp health. Full English service at CHAHONG ROOM."
 >
-  <span slot="headline">Scalp Detox<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Fresh, clean, detox aesthetic -->
+    <section class="py-32 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Scalp Detox · Deep Cleanse · Myeongdong</p>
+            <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 6vw, 5rem); color: #3A3838; font-weight: 300; line-height: 1.1;">
+              Scalp Detox<br/>
+              <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+            </h1>
+            <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+            <p class="leading-relaxed mb-8" style="color: #8D8076; font-size: 1rem;">
+              Your scalp accumulates months of product buildup, excess sebum, dead skin cells and environmental pollutants. A professional scalp detox removes all of it — unclogging follicles, resetting your scalp's natural balance and creating the optimal foundation for healthy hair growth.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 mb-10">
+              <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+              <a href="/pricing" class="btn-outline">View Pricing</a>
+            </div>
+            <!-- When did you last detox -->
+            <div class="p-4" style="background: #FFFFFF; border: 1px solid #DCCDBD; border-radius: 8px;">
+              <p class="text-xs font-semibold mb-2" style="color: #3A3838;">Signs You Need a Scalp Detox:</p>
+              <div class="grid grid-cols-2 gap-2">
+                {['Hair feels heavy or flat', 'Scalp itches despite washing', 'Products stop working well', 'Roots get oily very fast', 'Hair growth seems slow', 'Scalp has odor'].map(s => (
+                  <div class="flex items-center gap-2">
+                    <span style="color: #A88F7B; font-size: 10px;">●</span>
+                    <p class="text-xs" style="color: #8D8076;">{s}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <img src="https://images.unsplash.com/photo-1470259078422-826894b933aa?w=700&q=80" alt="Scalp detox treatment Seoul" class="w-full rounded-lg object-cover" style="height: 320px;" loading="eager" />
+            <div class="grid grid-cols-3 gap-3">
+              {[
+                { num: '45–60', label: 'Minutes' },
+                { num: '4–8', label: 'Weeks Interval' },
+                { num: '100%', label: 'English' },
+              ].map(b => (
+                <div class="text-center p-3" style="border: 1px solid #DCCDBD; border-radius: 6px; background: #FFFFFF;">
+                  <p class="font-display text-lg" style="color: #A88F7B;">{b.num}</p>
+                  <p class="text-xs tracking-widest uppercase mt-1" style="color: #8D8076;">{b.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Builds Up -->
+    <section class="py-24 px-6 lg:px-12" style="background: #3A3838;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">The Problem</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #FFFFFF; font-weight: 300;">What's <em style="color: #A88F7B;">Building Up</em> on Your Scalp?</h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="max-w-lg mx-auto mt-4 text-sm" style="color: rgba(255,255,255,0.6);">Regular shampoo removes surface dirt — but professional detox goes much deeper.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {[
+            { icon: '🧴', title: 'Product Buildup', desc: 'Dry shampoo, hairspray, styling cream, serums — these accumulate on the scalp over weeks and months. Regular shampoo cannot fully remove them.' },
+            { icon: '🫧', title: 'Excess Sebum', desc: 'Your scalp produces natural oil (sebum). In excess, it mixes with dead skin cells to form a layer that blocks follicles and creates the perfect environment for bacteria.' },
+            { icon: '💀', title: 'Dead Skin Cells', desc: 'The scalp sheds skin cells continuously. Without proper exfoliation, these accumulate and clog follicles — restricting hair growth and causing itching.' },
+            { icon: '🏙️', title: 'Environmental Pollutants', desc: 'Air pollution, dust and particles from daily life settle on the scalp. In cities like Seoul, pollution levels mean this buildup is significant for daily commuters.' },
+            { icon: '💧', title: 'Hard Water Minerals', desc: 'Mineral deposits from hard water build up on the scalp over time, causing dryness and making hair feel heavy and dull.' },
+            { icon: '🦠', title: 'Scalp Microbiome Imbalance', desc: 'Buildup disrupts the scalp\'s natural bacterial balance, contributing to dandruff, itching and hair loss. Detox restores microbiome health.' },
+          ].map(item => (
+            <div class="p-5 flex items-start gap-4" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;">
+              <span class="text-2xl flex-shrink-0">{item.icon}</span>
+              <div>
+                <h3 class="font-display text-base mb-2" style="color: #FFFFFF;">{item.title}</h3>
+                <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.6);">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- The Detox Process -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Step by Step</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">The Scalp Detox <em style="color: #A88F7B;">Process</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-5">
+          {[
+            { step: '01', title: 'Pre-Detox Scalp Analysis', time: '10 min', desc: 'We examine your scalp to assess buildup levels, scalp condition and any concerns. This determines the strength and type of detox products most appropriate for you.' },
+            { step: '02', title: 'Pre-Treatment Oil Application', time: '10 min', desc: 'A light oil is applied to the scalp to help loosen and dissolve product buildup and hardened sebum before cleansing begins. This step makes the detox significantly more effective.' },
+            { step: '03', title: 'Professional Scalp Scrub', time: '10–15 min', desc: 'A professional-grade scalp exfoliant is massaged into the scalp using circular motions. This physically removes dead skin cells, loosens buildup and stimulates blood circulation.' },
+            { step: '04', title: 'Clarifying Deep Cleanse', time: '10 min', desc: 'A professional clarifying shampoo removes the loosened buildup, excess oil and exfoliated skin cells. Far stronger than any retail clarifying shampoo — removes months of buildup in one wash.' },
+            { step: '05', title: 'Balancing Treatment Mask', time: '10–15 min', desc: 'After such deep cleansing, the scalp needs balancing. A professional mask restores natural pH, replenishes moisture and supports the scalp microbiome.' },
+            { step: '06', title: 'Sealing Serum & Finish', time: '5–10 min', desc: 'A lightweight finishing serum seals and protects the clean scalp. Hair is blow dried. You leave with the cleanest, most refreshed scalp you\'ve ever had.' },
+          ].map(s => (
+            <div class="flex gap-4 p-5" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+              <div class="flex-shrink-0">
+                <p class="font-display text-2xl" style="color: #A88F7B;">{s.step}</p>
+                <p class="text-xs" style="color: #8D8076;">{s.time}</p>
+              </div>
+              <div style="border-left: 1px solid #DCCDBD; padding-left: 16px;">
+                <h3 class="font-display text-base mb-2" style="color: #3A3838;">{s.title}</h3>
+                <p class="text-sm leading-relaxed" style="color: #8D8076;">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- When to Detox -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Timing Guide</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">When Should You <em style="color: #A88F7B;">Detox?</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            { icon: '🎨', title: 'Before Hair Color', desc: 'A clean scalp allows color to absorb more evenly. We recommend a detox 1–2 weeks before any color service.' },
+            { icon: '🧪', title: 'Before a Perm', desc: 'Clean follicles and a healthy scalp allow perm solution to process more evenly and effectively.' },
+            { icon: '📅', title: 'Every 4–8 Weeks', desc: 'For regular maintenance — especially for those who use a lot of styling products or live in cities.' },
+            { icon: '✈️', title: 'After Travel', desc: 'Air travel, different water quality and environmental changes make post-travel detox a great reset.' },
+          ].map(item => (
+            <div class="p-5 text-center" style="background: #FFFFFF; border: 1px solid #DCCDBD; border-radius: 8px;">
+              <span class="text-3xl block mb-3">{item.icon}</span>
+              <h3 class="font-display text-base mb-2" style="color: #3A3838;">{item.title}</h3>
+              <p class="text-sm leading-relaxed" style="color: #8D8076;">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Scalp Detox <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Scalp Detox Treatment', price: 'From ₩70,000', time: '45–60 min', note: 'Full detox protocol' },
+          { service: 'Scalp Detox + Massage', price: 'From ₩100,000', time: '60–75 min', note: 'Detox + relaxing massage' },
+          { service: 'Scalp Detox + Hair Treatment', price: 'From ₩120,000', time: '75–90 min', note: 'Clean scalp + hair repair' },
+          { service: 'Scalp Detox + Haircut', price: 'From ₩100,000', time: '75–90 min', note: 'Popular combo' },
+          { service: 'Pre-Color Detox (add-on)', price: 'From ₩40,000', time: '30 min', note: 'Before color service' },
+          { service: 'Monthly Detox Plan (x3)', price: 'From ₩180,000', time: 'Monthly x3', note: 'Regular maintenance' },
+        ].map((item, i) => (
+          <div class="px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note} · {item.time}</p>
+              </div>
+              <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Book via WhatsApp — walk-ins also welcome for scalp detox!</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Book via WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Scalp Detox <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'How is a scalp detox different from regular shampooing?', a: 'A professional scalp detox uses specialized exfoliating and clarifying products that penetrate far deeper than any retail shampoo. The multi-step process physically exfoliates dead skin cells, dissolves stubborn product buildup and removes months of accumulated sebum and pollutants in a single session.' },
+          { q: 'Will a scalp detox dry out my scalp?', a: 'The detox is always followed by a balancing treatment mask that restores moisture and pH. Most clients find their scalp feels refreshed and balanced — not dry — after treatment.' },
+          { q: 'How often should I get a scalp detox?', a: 'Every 4–8 weeks is ideal for most people. If you use a lot of styling products, live in a polluted city or have an oily scalp, every 4 weeks is recommended. For minimal product users, every 6–8 weeks is sufficient.' },
+          { q: 'Can I color my hair after a scalp detox?', a: 'Yes — and we actually recommend it. A clean scalp absorbs color more evenly, reducing patchiness and improving color vibrancy. We recommend getting a detox 1–2 weeks before your color appointment.' },
+          { q: 'Is scalp detox safe for color-treated hair?', a: 'Yes — the detox focuses on the scalp, not the hair lengths. We select products appropriate for your hair type. Color-treated hair clients receive a gentler formula that won\'t strip color from the lengths.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Related Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/scalp-treatment-myeongdong', label: '💆 Head Spa' },
+          { href: '/scalp-massage-myeongdong', label: '💆 Scalp Massage' },
+          { href: '/dandruff-treatment-myeongdong', label: '🌿 Dandruff Treatment' },
+          { href: '/hair-loss-treatment-myeongdong', label: '🌱 Hair Loss Treatment' },
+          { href: '/hair-color-myeongdong', label: '🎨 Hair Color' },
+          { href: '/haircut-myeongdong', label: '✂️ Add a Haircut' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
