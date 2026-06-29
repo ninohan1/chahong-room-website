@@ -1,35 +1,383 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Digital Perm"
-  seoTitle="Digital Perm Myeongdong | CHAHONG ROOM Seoul"
-  metaDesc="Book a digital perm in Myeongdong at CHAHONG ROOM Seoul. Long-lasting natural waves, English service for international tourists."
-  emoji="🧪"
-  category="Digital Perm"
-  intro="The digital perm uses heated rods for defined, long-lasting waves that hold shape even after washing."
-  benefits={[
-    "Expert Korean stylists with 10+ years of combined experience",
-    "Full English consultation — no language barrier for international visitors",
-    "Professional Korean beauty products and techniques",
-    "Personalized service tailored to your hair type and goals",
-    "Easy booking via WhatsApp: +82 10-4794-4623",
-    "Located 2 minutes from Myeongdong Station Exit 6",
-  ]}
-  faqs={[
-    { q: "Do I need to book in advance?", a: "Walk-ins are welcome for haircuts. For color, perm and scalp treatments, we recommend booking via WhatsApp to secure your preferred time." },
-    { q: "Is English service available?", a: "Yes — our stylists are trained to consult fully in English. You will not face any language barrier at CHAHONG ROOM." },
-    { q: "Where are you located?", a: "5F, 13 Myeong-dong-gil, Jung-gu, Seoul. Just 2 minutes walk from Myeongdong Station Exit 6." },
-    { q: "What are your opening hours?", a: "We are open every day — Monday through Sunday — from 10:00 AM to 7:00 PM." },
-  ]}
-  relatedLinks={[
-    { href: '/haircut-myeongdong', label: "Haircut" },
-    { href: '/hair-color-myeongdong', label: "Hair Color" },
-    { href: '/hair-perm-myeongdong', label: "Perm" },
-    { href: '/scalp-treatment-myeongdong', label: "Scalp Care" },
-    { href: '/english-speaking-hair-salon-myeongdong', label: "English Friendly" },
-    { href: '/best-hair-salon-myeongdong', label: "Best Salon Myeongdong" },
-  ]}
+<Layout
+  title="Digital Perm Myeongdong | Korean Digital Perm at CHAHONG ROOM Seoul"
+  description="Professional digital perm in Myeongdong Seoul. Long-lasting waves that look better dry. Expert Korean digital perm technique with full English service at CHAHONG ROOM."
 >
-  <span slot="headline">Digital Perm<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — Full width image with overlay text -->
+    <section class="relative min-h-screen flex items-end overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=1600&q=80" alt="Digital perm Myeongdong Seoul" class="w-full h-full object-cover" loading="eager" />
+        <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(58,56,56,0.95) 0%, rgba(58,56,56,0.4) 50%, transparent 100%);"></div>
+      </div>
+      <div class="relative z-10 px-6 lg:px-12 max-w-7xl mx-auto w-full pb-20">
+        <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Digital Perm · Myeongdong · Seoul</p>
+        <h1 class="font-display mb-6" style="font-size: clamp(2.8rem, 7vw, 6rem); color: #FFFFFF; font-weight: 300; line-height: 1.05;">
+          Digital Perm<br/>
+          <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+        </h1>
+        <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        <p class="max-w-2xl leading-relaxed mb-8" style="color: rgba(255,255,255,0.8); font-size: 1rem;">
+          The most advanced Korean perm technique — heated rods create defined, long-lasting waves that look stunning dry. Unlike traditional perms, your digital perm looks better the next day, not the day of. Results last up to 12 months.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+          <a href="#what-is" style="border: 1.5px solid rgba(255,255,255,0.5); color: white; font-weight: 600; padding: 14px 32px; border-radius: 6px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block;">Learn More ↓</a>
+        </div>
+        <!-- Quick stats -->
+        <div class="flex flex-wrap gap-8 mt-12">
+          {[
+            { num: '6–12', label: 'Months Results Last' },
+            { num: '3–5', label: 'Hours Appointment' },
+            { num: '100%', label: 'English Service' },
+            { num: 'Free', label: 'Consultation' },
+          ].map(b => (
+            <div>
+              <p class="font-display text-2xl" style="color: #A88F7B;">{b.num}</p>
+              <p class="text-xs tracking-widest uppercase" style="color: rgba(255,255,255,0.6);">{b.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- What is Digital Perm -->
+    <section id="what-is" class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Understanding Digital Perm</p>
+            <h2 class="font-display text-4xl mb-6" style="color: #3A3838; font-weight: 300;">What Makes Digital Perm <em style="color: #A88F7B;">Different?</em></h2>
+            <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">Digital perm (디지털 파마) is a Korean innovation that uses temperature-controlled heated rods connected to a digital machine — hence the name. Unlike traditional cold perms where rods are left for a set time, the digital machine precisely controls the heat applied to each rod, creating consistent, predictable results.</p>
+            <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">The key difference from other perms: <strong style="color: #3A3838;">digital perm looks better dry than wet.</strong> Traditional perms look defined when wet and loose when dry. Digital perm is the opposite — waves become more defined and beautiful as hair dries, making it perfect for everyday styling.</p>
+            <p class="text-sm leading-relaxed mb-6" style="color: #8D8076;">This technique was developed in Korea specifically for Asian hair — finer and straighter than most Western hair types — and it produces results that last significantly longer than traditional cold perms.</p>
+            <div class="grid grid-cols-2 gap-4">
+              {[
+                { label: 'Traditional Perm', value: 'Looks best wet' },
+                { label: 'Digital Perm', value: 'Looks best dry ✨' },
+                { label: 'Traditional Lasts', value: '2–4 months' },
+                { label: 'Digital Lasts', value: '6–12 months' },
+              ].map(c => (
+                <div class="p-3" style="border: 1px solid #DCCDBD; border-radius: 6px;">
+                  <p class="text-xs" style="color: #8D8076;">{c.label}</p>
+                  <p class="text-sm font-semibold mt-1" style="color: #3A3838;">{c.value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="space-y-4">
+            <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=700&q=80" alt="Digital perm waves result" class="w-full rounded-lg object-cover" style="height: 300px;" loading="lazy" />
+            <div class="grid grid-cols-2 gap-4">
+              <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&q=80" alt="Digital perm process" class="w-full rounded-lg object-cover" style="height: 150px;" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=80" alt="Korean salon digital perm" class="w-full rounded-lg object-cover" style="height: 150px;" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Digital Perm Styles -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Style Options</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Digital Perm <em style="color: #A88F7B;">Style Variations</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="max-w-lg mx-auto mt-4 text-sm" style="color: #8D8076;">Digital perm isn't one-size-fits-all. The rod size, placement and technique create dramatically different results.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            { title: 'Classic Digital Wave', rod: 'Large rods', result: 'Loose, romantic waves. The most natural-looking result — like you just stepped off a beach in Jeju. Perfect for medium to long hair.', ideal: 'Natural everyday look' },
+            { title: 'S-Wave Digital', rod: 'Medium rods', result: 'Defined S-shaped waves with more movement than classic. A popular choice among K-drama fans — creates that iconic Korean actress hair.', ideal: 'K-drama inspired look' },
+            { title: 'Spiral Digital', rod: 'Small rods', result: 'Tighter, more defined curls with significant volume. Creates a bold, statement look. Best for those wanting maximum transformation.', ideal: 'Bold volume & curls' },
+            { title: 'Root Volume Digital', rod: 'Mix of sizes', result: 'Focuses heat at the roots for lift and volume, with softer waves through the lengths. Ideal for fine, flat hair that needs body.', ideal: 'Volume for fine hair' },
+          ].map(s => (
+            <div class="p-5" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #FFFFFF;">
+              <div class="w-8 h-8 rounded-full mb-4 flex items-center justify-center" style="background: #A88F7B20;">
+                <span style="color: #A88F7B; font-size: 16px;">🌀</span>
+              </div>
+              <h3 class="font-display text-base mb-1" style="color: #3A3838;">{s.title}</h3>
+              <p class="text-xs mb-2" style="color: #A88F7B;">{s.rod}</p>
+              <p class="text-sm leading-relaxed mb-3" style="color: #8D8076;">{s.result}</p>
+              <p class="text-xs font-semibold" style="color: #3A3838;">Best for: {s.ideal}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Digital vs Traditional Comparison -->
+    <section class="py-24 px-6 lg:px-12" style="background: #3A3838;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Comparison</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #FFFFFF; font-weight: 300;">Digital Perm vs <em style="color: #A88F7B;">Other Perms</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div style="border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; overflow: hidden;">
+          <div class="grid grid-cols-4 px-6 py-4" style="background: rgba(168,143,123,0.2);">
+            <p class="text-xs font-semibold tracking-widest uppercase" style="color: #A88F7B;"></p>
+            <p class="text-xs font-semibold tracking-widest uppercase text-center" style="color: #A88F7B;">Digital Perm</p>
+            <p class="text-xs font-semibold tracking-widest uppercase text-center" style="color: rgba(255,255,255,0.5);">C-Curl Perm</p>
+            <p class="text-xs font-semibold tracking-widest uppercase text-center" style="color: rgba(255,255,255,0.5);">Wave Perm</p>
+          </div>
+          {[
+            { label: 'Looks Best', digital: 'When dry', ccurl: 'When wet', wave: 'When wet' },
+            { label: 'Lasts', digital: '6–12 months', ccurl: '4–6 months', wave: '3–5 months' },
+            { label: 'Price', digital: 'From ₩130,000', ccurl: 'From ₩80,000', wave: 'From ₩90,000' },
+            { label: 'Time', digital: '3–5 hours', ccurl: '2–3 hours', wave: '2–3 hours' },
+            { label: 'Heat Used', digital: 'Yes (controlled)', ccurl: 'No (cold)', wave: 'No (cold)' },
+            { label: 'Definition', digital: 'High', ccurl: 'Medium', wave: 'Low-Medium' },
+            { label: 'Best for', digital: 'Defined waves', ccurl: 'Natural curl', wave: 'Beachy texture' },
+          ].map((row, i) => (
+            <div class="grid grid-cols-4 px-6 py-4" style={`border-top: 1px solid rgba(255,255,255,0.08); background: ${i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.03)'}`}>
+              <p class="text-xs" style="color: rgba(255,255,255,0.5);">{row.label}</p>
+              <p class="text-xs text-center font-semibold" style="color: #A88F7B;">{row.digital}</p>
+              <p class="text-xs text-center" style="color: rgba(255,255,255,0.5);">{row.ccurl}</p>
+              <p class="text-xs text-center" style="color: rgba(255,255,255,0.5);">{row.wave}</p>
+            </div>
+          ))}
+        </div>
+        <div class="text-center mt-10">
+          <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Ask Us Which Perm Suits You</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Digital Perm <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW. Final price depends on hair length, density & desired result.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: 'Digital Perm — Short Hair', price: 'From ₩130,000', time: '3–4 hrs', note: 'Above shoulder length' },
+          { service: 'Digital Perm — Medium Hair', price: 'From ₩160,000', time: '3.5–4.5 hrs', note: 'Shoulder to mid-back' },
+          { service: 'Digital Perm — Long Hair', price: 'From ₩200,000', time: '4–5 hrs', note: 'Below mid-back' },
+          { service: 'Digital Perm + Haircut', price: 'From ₩180,000', time: '4–5.5 hrs', note: 'Best value combo' },
+          { service: 'Digital Perm + Treatment', price: 'Add ₩30,000', time: '+30 min', note: 'Recommended for colored hair' },
+          { service: 'Touch-Up (within 3 months)', price: 'Consultation required', time: 'Varies', note: 'Subject to assessment' },
+        ].map((item, i) => (
+          <div class="px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note} · {item.time}</p>
+              </div>
+              <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #FFFFFF;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Send a reference photo via WhatsApp for an accurate quote based on your hair length and desired result.</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Get a Free Quote</a>
+      </div>
+    </section>
+
+    <!-- Who is it for -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12">
+          <div>
+            <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Is Digital Perm Right For You?</p>
+            <h2 class="font-display text-4xl mb-6" style="color: #3A3838; font-weight: 300;">Digital Perm Is <em style="color: #A88F7B;">Perfect If...</em></h2>
+            <div class="space-y-4">
+              {[
+                { icon: '✓', text: 'You want waves that look great even after sleeping on them' },
+                { icon: '✓', text: 'You hate spending time styling your hair every morning' },
+                { icon: '✓', text: 'You want long-lasting results (6–12 months)' },
+                { icon: '✓', text: 'You have medium to long hair (shoulder length or longer)' },
+                { icon: '✓', text: 'You want defined waves, not just loose texture' },
+                { icon: '✓', text: 'You\'ve been disappointed with traditional perms before' },
+                { icon: '✓', text: 'You want that iconic K-drama wave look' },
+              ].map(item => (
+                <div class="flex items-start gap-3 p-3" style="border-left: 3px solid #A88F7B;">
+                  <span class="font-bold" style="color: #A88F7B;">{item.icon}</span>
+                  <p class="text-sm" style="color: #3A3838;">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #8D8076;">You Might Prefer a C-Curl Perm If...</p>
+            <h2 class="font-display text-4xl mb-6" style="color: #3A3838; font-weight: 300;">When to Choose <em style="color: #A88F7B;">Other Options</em></h2>
+            <div class="space-y-4">
+              {[
+                { text: 'Your hair is shorter than shoulder length' },
+                { text: 'You prefer natural-looking texture over defined waves' },
+                { text: 'Budget is a primary concern (C-curl starts from ₩80,000)' },
+                { text: 'Your hair is heavily bleached or very damaged' },
+                { text: 'You want soft ends rather than waves throughout' },
+              ].map(item => (
+                <div class="flex items-start gap-3 p-3" style="border-left: 3px solid #DCCDBD;">
+                  <span style="color: #8D8076;">→</span>
+                  <p class="text-sm" style="color: #8D8076;">{item.text}</p>
+                </div>
+              ))}
+            </div>
+            <div class="mt-6 p-4" style="background: #F7F4EF; border-radius: 8px;">
+              <p class="text-sm" style="color: #8D8076;">Not sure which perm is right for you? Send us a photo via WhatsApp and we'll recommend the best option for your hair type and desired look — for free.</p>
+              <a href="https://wa.me/821047944623" target="_blank" class="btn-outline mt-4 inline-block text-xs">Get Free Recommendation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Step by Step</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Your Digital Perm <em style="color: #A88F7B;">Appointment</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="space-y-6">
+          {[
+            { step: '01', time: '20–30 min', title: 'English Consultation & Hair Assessment', desc: 'We analyze your hair\'s condition, texture and elasticity. Review your reference photos together and agree on the exact wave pattern, rod size and technique that will give you the best result. We\'ll also tell you honestly if your hair needs strengthening before the perm.' },
+            { step: '02', time: '15–20 min', title: 'Pre-Perm Conditioning Treatment', desc: 'A bond-strengthening treatment is applied to prepare your hair for the perm solution. This step significantly reduces damage and helps your hair hold the perm better and longer.' },
+            { step: '03', time: '30–45 min', title: 'Rod Placement', desc: 'Heated rods are precisely placed throughout your hair according to the agreed wave pattern. The rod size and placement determine the final look — our stylists are meticulous at this stage.' },
+            { step: '04', time: '30–45 min', title: 'Digital Machine Processing', desc: 'The digital machine controls the temperature of each rod precisely. This is what sets digital perm apart — consistent heat means consistent, predictable results across all your hair.' },
+            { step: '05', time: '20–30 min', title: 'Setting & Neutralizing', desc: 'Perm solution is applied and neutralized to lock in the wave pattern. Your hair is then rinsed thoroughly and a deep conditioning mask is applied.' },
+            { step: '06', time: '20–30 min', title: 'Reveal & Aftercare Education', desc: 'Rods removed, final rinse, blow dry to reveal your waves. We show you exactly how to style and maintain your digital perm at home — in English. You leave knowing exactly how to care for your new look.' },
+          ].map(s => (
+            <div class="flex gap-6 items-start p-5" style="background: #FFFFFF; border: 1px solid #DCCDBD; border-radius: 8px;">
+              <div class="text-center flex-shrink-0" style="min-width: 60px;">
+                <p class="font-display text-2xl" style="color: #A88F7B;">{s.step}</p>
+                <p class="text-xs" style="color: #8D8076;">{s.time}</p>
+              </div>
+              <div style="border-left: 1px solid #DCCDBD; padding-left: 20px;">
+                <h3 class="font-display text-base mb-2" style="color: #3A3838;">{s.title}</h3>
+                <p class="text-sm leading-relaxed" style="color: #8D8076;">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Aftercare -->
+    <section class="py-24 px-6 lg:px-12" style="background: #A88F7B;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: rgba(255,255,255,0.7);">After Your Appointment</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #FFFFFF; font-weight: 300;">Digital Perm <em style="font-style: italic;">Aftercare Guide</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: rgba(255,255,255,0.4);"></div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              period: 'First 48 Hours',
+              icon: '⚠️',
+              rules: [
+                'Do NOT wash your hair',
+                'Do NOT tie your hair up',
+                'Do NOT wear a hat or helmet',
+                'Do NOT brush — fingers only',
+                'Sleep with hair loose',
+              ]
+            },
+            {
+              period: 'Week 1–4',
+              icon: '✅',
+              rules: [
+                'Use sulfate-free shampoo only',
+                'Apply curl cream while hair is damp',
+                'Air dry whenever possible',
+                'Use a diffuser if blow drying',
+                'Avoid excessive heat styling',
+              ]
+            },
+            {
+              period: 'Long-Term Care',
+              icon: '💆',
+              rules: [
+                'Deep condition once a week',
+                'Sleep on a silk pillowcase',
+                'Trim ends every 2–3 months',
+                'Avoid chlorine (swimming pools)',
+                'Visit us for a treatment every 2 months',
+              ]
+            },
+          ].map(c => (
+            <div class="p-5" style="background: rgba(255,255,255,0.15); border-radius: 8px; border: 1px solid rgba(255,255,255,0.2);">
+              <p class="text-xl mb-2">{c.icon}</p>
+              <h3 class="font-display text-lg mb-4" style="color: #FFFFFF;">{c.period}</h3>
+              <div class="space-y-2">
+                {c.rules.map(r => (
+                  <div class="flex items-start gap-2">
+                    <span style="color: rgba(255,255,255,0.6); flex-shrink: 0;">·</span>
+                    <p class="text-sm" style="color: rgba(255,255,255,0.85);">{r}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Digital Perm <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'How long does a digital perm last?', a: 'Digital perm typically lasts 6–12 months depending on your hair type, how well you follow the aftercare routine and how fast your hair grows. It\'s one of the longest-lasting perm options available.' },
+          { q: 'Is digital perm more damaging than regular perm?', a: 'Digital perm uses heat, which sounds more damaging, but the precise temperature control actually means less risk than uncontrolled heat. The conditioning treatment we apply before and after also significantly reduces damage. Most clients find their hair condition is acceptable post-perm.' },
+          { q: 'Can I get a digital perm if my hair is colored?', a: 'It depends on the condition of your hair. If your hair is lightly colored, it\'s usually possible. If it\'s heavily bleached or very damaged, we may recommend a strengthening treatment first, or suggest a gentler perm option. We\'ll assess honestly during consultation.' },
+          { q: 'How should I style my digital perm?', a: 'Apply curl cream or mousse to damp hair and scrunch gently. Air dry or use a diffuser on low heat. Avoid brushing — use your fingers. The waves will look more defined as your hair dries. Do not straighten your perm as it will damage the wave pattern.' },
+          { q: 'Can I get a digital perm on short hair?', a: 'Digital perm works best on hair that is shoulder length or longer. For shorter hair, we generally recommend a C-curl or volume perm instead. During consultation we\'ll assess whether digital perm is suitable for your length.' },
+          { q: 'How do I know if digital perm is right for me vs C-curl?', a: 'If you want waves that look great without effort when dry, go digital. If you prefer a softer, more natural look especially when wet, C-curl may suit you better. Budget is also a factor — digital perm costs more but lasts significantly longer. Send us photos and we\'ll recommend the best option for free.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Explore More Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/hair-perm-myeongdong', label: '🧪 C-Curl Perm' },
+          { href: '/haircut-myeongdong', label: '✂️ Add a Haircut' },
+          { href: '/hair-color-myeongdong', label: '🎨 Add Color' },
+          { href: '/hair-treatment-myeongdong', label: '💆 Hair Treatment' },
+          { href: '/olaplex-treatment-myeongdong', label: '🔬 Olaplex' },
+          { href: '/keratin-treatment-myeongdong', label: '💆 Keratin' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
