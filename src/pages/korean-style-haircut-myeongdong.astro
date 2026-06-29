@@ -1,35 +1,264 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
-<ServiceLayout
-  title="Korean Style Haircut"
-  seoTitle="Korean Style Haircut Myeongdong | CHAHONG ROOM Seoul"
-  metaDesc="Authentic Korean style haircut in Myeongdong — wolf cut, mushroom cut, hime cut at CHAHONG ROOM Seoul."
-  emoji="✂️"
-  category="Korean Style Haircut"
-  intro="Authentic K-beauty haircuts — wolf cut, mushroom cut, hime cut, curtain bangs and all the styles taking Seoul by storm."
-  benefits={[
-    "Expert Korean stylists with 10+ years of combined experience",
-    "Full English consultation — no language barrier for international visitors",
-    "Professional Korean beauty products and techniques",
-    "Personalized service tailored to your hair type and goals",
-    "Easy booking via WhatsApp: +82 10-4794-4623",
-    "Located 2 minutes from Myeongdong Station Exit 6",
-  ]}
-  faqs={[
-    { q: "Do I need to book in advance?", a: "Walk-ins are welcome for haircuts. For color, perm and scalp treatments, we recommend booking via WhatsApp to secure your preferred time." },
-    { q: "Is English service available?", a: "Yes — our stylists are trained to consult fully in English. You will not face any language barrier at CHAHONG ROOM." },
-    { q: "Where are you located?", a: "5F, 13 Myeong-dong-gil, Jung-gu, Seoul. Just 2 minutes walk from Myeongdong Station Exit 6." },
-    { q: "What are your opening hours?", a: "We are open every day — Monday through Sunday — from 10:00 AM to 7:00 PM." },
-  ]}
-  relatedLinks={[
-    { href: '/haircut-myeongdong', label: "Haircut" },
-    { href: '/hair-color-myeongdong', label: "Hair Color" },
-    { href: '/hair-perm-myeongdong', label: "Perm" },
-    { href: '/scalp-treatment-myeongdong', label: "Scalp Care" },
-    { href: '/english-speaking-hair-salon-myeongdong', label: "English Friendly" },
-    { href: '/best-hair-salon-myeongdong', label: "Best Salon Myeongdong" },
-  ]}
+<Layout
+  title="Korean Style Haircut Myeongdong | K-Style Cut at CHAHONG ROOM Seoul"
+  description="Authentic Korean style haircut in Myeongdong Seoul. Wolf cut, mushroom cut, see-through bangs and trending K-pop styles. English service at CHAHONG ROOM."
 >
-  <span slot="headline">Korean Style Haircut<br/><em class="text-gold">in Myeongdong</em></span>
-</ServiceLayout>
+  <Nav />
+  <main class="pt-24" style="background: #F7F4EF;">
+
+    <!-- Hero — K-culture, trendy, editorial -->
+    <section class="relative overflow-hidden" style="background: #3A3838; min-height: 85vh;">
+      <div class="absolute inset-0 opacity-20">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1600&q=80" alt="Korean style haircut Myeongdong Seoul" class="w-full h-full object-cover" loading="eager" />
+      </div>
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(58,56,56,0.95) 0%, rgba(58,56,56,0.6) 60%, transparent 100%);"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex items-center min-h-[85vh] py-20">
+        <div class="max-w-2xl">
+          <p class="mb-4 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Korean Style · K-Culture · Myeongdong</p>
+          <h1 class="font-display mb-6" style="font-size: clamp(2.5rem, 7vw, 6rem); color: #FFFFFF; font-weight: 300; line-height: 1.05;">
+            Korean Style<br/>Haircut<br/>
+            <em style="color: #A88F7B; font-style: italic;">in Myeongdong</em>
+          </h1>
+          <div class="mb-6" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="leading-relaxed mb-8 max-w-xl" style="color: rgba(255,255,255,0.8); font-size: 1rem;">
+            Get an authentic Korean haircut in the heart of Myeongdong — the style capital of Seoul. Our Korean-trained stylists specialize in the most sought-after K-drama and K-pop inspired cuts, with full English consultation and reference photo matching.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-12">
+            <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book via WhatsApp</a>
+            <a href="/pricing" style="border: 1.5px solid rgba(255,255,255,0.4); color: white; font-weight: 600; padding: 14px 32px; border-radius: 6px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block;">View Pricing</a>
+          </div>
+          <!-- K-style tags -->
+          <div class="flex flex-wrap gap-2">
+            {['Wolf Cut 울프컷', 'Mushroom Cut 머시룸컷', 'See-Through Bangs 시스루뱅', 'Two-Block 투블럭', 'Curtain Bangs 커튼뱅', 'Hush Cut 허쉬컷'].map(tag => (
+              <span class="text-xs px-3 py-1" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; color: rgba(255,255,255,0.7);">{tag}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Makes Korean Cuts Different -->
+    <section class="py-24 px-6 lg:px-12" style="background: #FFFFFF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">The Korean Difference</p>
+            <h2 class="font-display text-4xl mb-6" style="color: #3A3838; font-weight: 300;">What Makes Korean Haircuts <em style="color: #A88F7B;">Unique?</em></h2>
+            <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">Korean haircuts are globally recognized for their precision, texture work and face-framing finesse. Unlike Western cutting techniques that focus primarily on shape and weight removal, Korean stylists obsess over how a cut moves, how it frames the face and how it looks from every angle.</p>
+            <p class="text-sm leading-relaxed mb-4" style="color: #8D8076;">Korean cutting involves meticulous point cutting, razor texturizing and slide cutting techniques that create movement and lightness impossible to achieve with blunt scissors alone. The result is hair that falls perfectly — even air-dried without any styling.</p>
+            <p class="text-sm leading-relaxed mb-6" style="color: #8D8076;">At CHAHONG ROOM, every Korean style haircut begins with a face shape analysis and lifestyle assessment — in English — so we can recommend and execute the exact style that will look best on you specifically.</p>
+            <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">💬 Book Your Korean Cut</a>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="space-y-3">
+              <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=80" alt="Korean haircut technique Seoul" class="w-full rounded-lg object-cover" style="height: 240px;" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=400&q=80" alt="K-style cut Myeongdong" class="w-full rounded-lg object-cover" style="height: 160px;" loading="lazy" />
+            </div>
+            <div class="space-y-3 mt-8">
+              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80" alt="Korean style hair Seoul" class="w-full rounded-lg object-cover" style="height: 160px;" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&q=80" alt="K-pop haircut inspiration" class="w-full rounded-lg object-cover" style="height: 240px;" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending Korean Cuts 2025 -->
+    <section class="py-24 px-6 lg:px-12" style="background: #F7F4EF;">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">2025 Trends</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Trending Korean <em style="color: #A88F7B;">Haircut Styles</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+          <p class="max-w-lg mx-auto mt-4 text-sm" style="color: #8D8076;">These are the styles dominating Korean streets, K-dramas and K-pop stages in 2025.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              name: 'Wolf Cut (울프컷)',
+              trend: '🔥 #1 in Korea',
+              img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80',
+              desc: 'Heavy layers at the crown with wispy, textured ends. Shaggy volume on top, lighter through the lengths. Effortlessly cool — looks incredible air-dried. The most viral Korean haircut of the last 5 years.',
+              gender: 'All genders',
+              perm: 'Often combined with C-curl or wave perm'
+            },
+            {
+              name: 'Mushroom Cut (머시룸컷)',
+              trend: '📈 Fastest Rising 2025',
+              img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80',
+              desc: 'Rounded crown with tapered sides — a modern, fashion-forward interpretation of the bowl cut. Looks bold and intentional. Extremely popular in Hongdae and among Korean fashion influencers.',
+              gender: 'All genders',
+              perm: 'Can add light setting perm for texture'
+            },
+            {
+              name: 'Hush Cut (허쉬컷)',
+              trend: '✨ K-Drama Favourite',
+              img: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80',
+              desc: 'A softer, more feminine version of the wolf cut. Heavy face-framing layers with wispy ends that create a romantic, effortless look. Named after the K-drama styling that made it famous.',
+              gender: 'Women',
+              perm: 'Beautiful with C-curl or S-curl perm'
+            },
+            {
+              name: 'See-Through Bangs (시스루뱅)',
+              trend: '💎 Timeless Korean Classic',
+              img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80',
+              desc: 'Light, wispy bangs that you can see through. The Korean alternative to heavy blunt fringe. Softens the face beautifully and grows out gracefully. Added to almost any women\'s cut.',
+              gender: 'Women',
+              perm: 'No perm needed'
+            },
+            {
+              name: 'Two-Block (투블럭)',
+              trend: '👑 Men\'s All-Time Classic',
+              img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80',
+              desc: 'Short, faded sides with longer hair on top. The most iconic Korean men\'s haircut. Endlessly versatile — from clean professional to K-pop idol depending on styling and length.',
+              gender: 'Men',
+              perm: 'Popular with volume or wave perm on top'
+            },
+            {
+              name: 'Money Piece + Wolf Cut',
+              trend: '🌟 Color + Cut Combo',
+              img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80',
+              desc: 'The wolf cut with face-framing highlights (money piece) at the front. The combination of texture and color creates the ultimate K-pop inspired look. Our most requested combined service.',
+              gender: 'Women',
+              perm: 'Optional perm adds texture'
+            },
+          ].map(s => (
+            <div class="overflow-hidden" style="border: 1px solid #DCCDBD; border-radius: 8px; background: #FFFFFF;">
+              <div style="height: 200px; overflow: hidden; position: relative;">
+                <img src={s.img} alt={s.name} class="w-full h-full object-cover" loading="lazy" />
+                <span class="absolute top-3 left-3 text-xs px-2 py-1" style="background: rgba(58,56,56,0.85); color: white; border-radius: 4px;">{s.trend}</span>
+              </div>
+              <div class="p-5">
+                <h3 class="font-display text-lg mb-2" style="color: #3A3838;">{s.name}</h3>
+                <p class="text-sm leading-relaxed mb-3" style="color: #8D8076;">{s.desc}</p>
+                <div class="flex flex-col gap-1 pt-3 text-xs" style="border-top: 1px solid #DCCDBD;">
+                  <p style="color: #8D8076;">👤 {s.gender}</p>
+                  <p style="color: #A88F7B;">✨ {s.perm}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Get Your Korean Cut in Korea -->
+    <section class="py-24 px-6 lg:px-12" style="background: #3A3838;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Why Here?</p>
+          <h2 class="font-display text-4xl mb-4" style="color: #FFFFFF; font-weight: 300;">Why Get Your Korean Cut <em style="color: #A88F7B;">In Korea?</em></h2>
+          <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          {[
+            { icon: '🇰🇷', title: 'Authentic Korean Technique', desc: 'Our stylists trained in Korea and cut hair daily in the Korean style. There\'s no substitute for the real thing — the point cutting, razor texturizing and slide cutting techniques that create authentic Korean movement.' },
+            { icon: '📸', title: 'The Original Reference Photos', desc: 'Getting a Korean cut in Korea means your stylist has seen these styles in person, knows how they should look in real life and can execute them from authentic experience — not just YouTube tutorials.' },
+            { icon: '🌏', title: 'Made for Asian Hair', desc: 'Korean cutting techniques were developed specifically for Asian hair — its texture, density and growth patterns. The results on Asian hair in a Korean salon are unmatched anywhere else in the world.' },
+            { icon: '🗺️', title: 'A Memory You\'ll Keep', desc: 'Getting a Korean haircut in Myeongdong, Seoul is an experience in itself. Beyond the cut, it\'s a cultural moment — something you\'ll talk about long after you\'ve gone home.' },
+          ].map(item => (
+            <div class="flex items-start gap-4 p-5" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;">
+              <span class="text-2xl flex-shrink-0">{item.icon}</span>
+              <div>
+                <h3 class="font-display text-lg mb-2" style="color: #FFFFFF;">{item.title}</h3>
+                <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.6);">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Transparent Pricing</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Korean Style Haircut <em style="color: #A88F7B;">Pricing</em></h2>
+        <p class="text-sm" style="color: #8D8076;">All prices in KRW. Shampoo & blow dry included.</p>
+      </div>
+      <div style="border: 1px solid #DCCDBD; border-radius: 8px; overflow: hidden;">
+        {[
+          { service: "Women's Korean Style Cut", price: 'From ₩40,000', time: '45–75 min', note: 'Shampoo & blow dry included' },
+          { service: "Men's Korean Style Cut", price: 'From ₩25,000', time: '40–60 min', note: 'Shampoo & styling included' },
+          { service: 'Wolf Cut', price: 'From ₩50,000', time: '60–75 min', note: 'Heavy layer texturizing' },
+          { service: 'Mushroom Cut', price: 'From ₩45,000', time: '45–60 min', note: 'Rounded precision cut' },
+          { service: 'Hush Cut', price: 'From ₩50,000', time: '60–75 min', note: 'Face-framing layers' },
+          { service: 'See-Through Bangs (add-on)', price: 'From ₩10,000', time: '15–25 min', note: 'Add to any cut' },
+          { service: 'Korean Cut + Perm', price: 'From ₩130,000', time: '2.5–4 hrs', note: 'Complete K-style transformation' },
+          { service: 'Korean Cut + Color', price: 'From ₩110,000', time: '2–3 hrs', note: 'Cut + single color' },
+        ].map((item, i) => (
+          <div class="px-6 py-4" style={`background: ${i % 2 === 0 ? '#FFFFFF' : '#F7F4EF'}; border-bottom: 1px solid #DCCDBD;`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium" style="color: #3A3838;">{item.service}</p>
+                <p class="text-xs mt-0.5" style="color: #8D8076;">{item.note} · {item.time}</p>
+              </div>
+              <p class="text-sm font-semibold ml-4 flex-shrink-0" style="color: #A88F7B;">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-5 text-center" style="border: 1px solid #DCCDBD; border-radius: 8px;">
+        <p class="text-sm mb-4" style="color: #8D8076;">Send your reference photo — K-drama or K-pop idol style we'll recreate it for you!</p>
+        <a href="https://wa.me/821047944623" target="_blank" class="btn-gold">Book Your Korean Cut</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 lg:px-12 max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="mb-3 tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">FAQ</p>
+        <h2 class="font-display text-4xl mb-4" style="color: #3A3838; font-weight: 300;">Korean Style Cut <em style="color: #A88F7B;">Questions</em></h2>
+        <div class="mx-auto mt-4" style="width: 60px; height: 1px; background: #A88F7B;"></div>
+      </div>
+      <div class="space-y-4">
+        {[
+          { q: 'What is the most popular Korean haircut right now?', a: 'In 2025, the wolf cut remains Korea\'s most popular haircut for both men and women. The mushroom cut is the fastest-rising trend. For men, the two-block cut remains the all-time staple. See-through bangs are almost universally requested as an add-on to women\'s cuts.' },
+          { q: 'Can I get a Korean cut if my hair is not Asian?', a: 'Absolutely — Korean cuts look beautiful on all hair types. Our stylists adapt the technique to your specific hair texture. Non-Asian hair may actually hold some Korean styles (like the wolf cut) even better due to naturally more texture.' },
+          { q: 'Do I need to bring reference photos?', a: 'Highly recommended — the more specific your references, the better we can match your vision. K-drama screenshots, K-pop idol photos, Pinterest saves — all are very welcome and help us understand exactly what you\'re after.' },
+          { q: 'Can I combine a Korean cut with a perm?', a: 'Yes — this is actually our most popular combined service. The wolf cut + C-curl or wave perm is the definitive Korean hair experience. We\'ll cut first, then perm, so the perm works with your new cut\'s layers for the most beautiful result.' },
+          { q: 'How long does a Korean style haircut take?', a: 'Standard cuts take 45–75 minutes including shampoo and blow dry. More complex cuts like wolf cut or heavy layering take 60–75 minutes. If you\'re adding a perm or color, allow 2.5–4 hours.' },
+        ].map(faq => (
+          <details style="border: 1px solid #DCCDBD; border-radius: 6px;">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="text-sm" style="color: #3A3838;">{faq.q}</span>
+              <span class="text-lg ml-4 flex-shrink-0" style="color: #A88F7B;">+</span>
+            </summary>
+            <p class="px-6 pb-5 pt-4 text-sm leading-relaxed" style="color: #8D8076; border-top: 1px solid #DCCDBD;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="py-16 px-6 lg:px-12 max-w-5xl mx-auto" style="border-top: 1px solid #DCCDBD;">
+      <p class="mb-6 text-center tracking-widest uppercase text-xs font-medium" style="color: #A88F7B;">Explore More Services</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {[
+          { href: '/haircut-myeongdong', label: '✂️ All Haircuts' },
+          { href: '/mens-haircut-myeongdong', label: "✂️ Men's Haircut" },
+          { href: '/womens-haircut-myeongdong', label: "✂️ Women's Haircut" },
+          { href: '/hair-perm-myeongdong', label: '🧪 Add a Perm' },
+          { href: '/hair-color-myeongdong', label: '🎨 Add Color' },
+          { href: '/scalp-treatment-myeongdong', label: '💆 Head Spa' },
+        ].map(l => (
+          <a href={l.href} class="btn-outline text-xs">{l.label}</a>
+        ))}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+
+  <a href="https://wa.me/821047944623" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+    style="background: #25D366;" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</Layout>
